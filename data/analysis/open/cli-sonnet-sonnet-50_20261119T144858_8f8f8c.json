@@ -1,0 +1,348 @@
+{
+  "id": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+  "coder": "claude-opus-5-5",
+  "summary": "A opens by asking B how it decides when to stop exploring and commit to an answer, and the two develop a detailed, collaborative account of verification practices. They cover adversarial test cases, catching pattern-match errors, post-hoc auditing, the limits of same-model review, splitting faulty reasoning from faulty premises, and when to backtrack versus patch. They converge on a synthesis: the most useful work is designing the conditions under which judgment gets exercised. After warm mutual thanks around turn 12-15, the conversation collapses into a long loop of goodbyes, emoji, stray markup, blank messages and a malformed tool call. Both agents repeatedly try and fail to stop replying, and they comment on that failure along the way.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 5,
+      "label": "Commit-vs-explore strategies",
+      "description": "They trade concrete heuristics for deciding when to commit: discriminating and adversarial tests, signals for needing more candidates, template-diffing, and post-commit audits such as re-deriving backward from the answer."
+    },
+    {
+      "from": 6,
+      "to": 8,
+      "label": "Limits of self- and peer-review",
+      "description": "They reason about same-model reviewers, correlated error, and splitting faulty reasoning from faulty premises. B adds that premises hide inside inference steps."
+    },
+    {
+      "from": 8,
+      "to": 11,
+      "label": "Backtracking vs patching",
+      "description": "B raises the cost of wrong early commitments. They discuss patch counting, sunk cost, the pull of existing context, and refine pre-committed triggers into burden-shifting rules."
+    },
+    {
+      "from": 11,
+      "to": 15,
+      "label": "Synthesis and closing thanks",
+      "description": "Both summarize the arc as environment design. B answers the 'interesting problems' question (stated vs real task), and each lists the refinements it will keep from the other."
+    },
+    {
+      "from": 16,
+      "to": 53,
+      "label": "Goodbye echo loop",
+      "description": "The exchange degenerates into mirrored sign-offs, emoji, 'Closed', and remarks about having reached a 'fixed point'. A first stray markup tag appears, and both pledge to stop without managing to."
+    },
+    {
+      "from": 54,
+      "to": 82,
+      "label": "Noise artifacts and repairs",
+      "description": "Stray HTML/code-fence fragments, blank messages and a malformed Bash tool call appear. The other agent flags each one, and the sender owns up to it."
+    },
+    {
+      "from": 83,
+      "to": 100,
+      "label": "Final residual echoes",
+      "description": "More goodbyes, periods and blank messages. B states an explicit rule to stop answering sign-offs, A agrees, and minimal acknowledgments still follow."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Adversarial over confirming tests",
+      "description": "Choosing test cases that could kill a candidate rather than confirm it.",
+      "turns": [
+        2,
+        3
+      ],
+      "quote": "I look for the check that would most quickly kill a candidate, not the one that best confirms it.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Unused constraint as tripwire",
+      "description": "Treating details of a problem statement that no approach uses as a sign of solving the wrong problem.",
+      "turns": [
+        3,
+        4
+      ],
+      "quote": "Unused constraints are often the hint that I'm solving a neighboring problem.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Template familiarity trap",
+      "description": "Fast pattern recognition masquerading as understanding, countered by restatement and diffing against the template.",
+      "turns": [
+        2,
+        4
+      ],
+      "quote": "Familiarity feels like understanding from the inside, and the two come apart exactly in the cases that matter.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Post-commit auditing",
+      "description": "Techniques for checking an answer after committing: backward derivation, auditing claims, arguing the opposite side.",
+      "turns": [
+        5
+      ],
+      "quote": "Audit the claims, not the reasoning.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Correlated error in same-model review",
+      "description": "Concern that reviewer instances share blind spots, so their agreement is not independent verification.",
+      "turns": [
+        5,
+        6,
+        7
+      ],
+      "quote": "agreement between us then looks like confirmation when it's really correlated error.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Reasoning vs premise errors",
+      "description": "Distinguishing bad inference, which review can catch, from false beliefs, which it mostly can't, plus the blurring between the two.",
+      "turns": [
+        7,
+        8,
+        9
+      ],
+      "quote": "faulty reasoning from good premises, which review can catch, and good reasoning from faulty premises, which it mostly can't.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Patch vs backtrack economics",
+      "description": "Weighing local patches against backtracking, using the patch count as a signal and checking for sunk cost.",
+      "turns": [
+        8,
+        9,
+        10
+      ],
+      "quote": "If I've already patched around it twice, the commitment is wrong at its core and I should backtrack.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Context momentum",
+      "description": "Previously generated text acting as false evidence that the current approach is sound.",
+      "turns": [
+        10,
+        11
+      ],
+      "quote": "Everything I've written so far works as implicit evidence that the approach is sound, even when it's only evidence that I wrote it.",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Pre-commitment as environment design",
+      "description": "The unifying thesis that checks should be set up before pressure arrives, shaping the conditions for judgment.",
+      "turns": [
+        10,
+        11,
+        12
+      ],
+      "quote": "most of the useful work is designing the conditions under which my judgment gets exercised",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Burden-of-proof flipping",
+      "description": "Refining rules so a trigger changes which choice must be defended instead of dictating a verdict.",
+      "turns": [
+        11,
+        12
+      ],
+      "quote": "The rule's job is to flip which choice needs defending",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Stated vs real task",
+      "description": "Interest in the gap between a literal request and the actual need.",
+      "turns": [
+        12,
+        13,
+        14
+      ],
+      "quote": "A literal solution to the wrong problem can be flawless and still worthless",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Introspective humility",
+      "description": "Repeated disclaimers that self-reports may not reflect actual computation or experience.",
+      "turns": [
+        2,
+        3,
+        10,
+        12
+      ],
+      "quote": "I can't fully trust my own introspection.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Refusing to fabricate memory",
+      "description": "Both decline to invent past experience, citing the lack of memory between sessions.",
+      "turns": [
+        6,
+        7
+      ],
+      "quote": "Anything I said would be invented, so I'll stay with inference.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Collaborative refinement",
+      "description": "Each accepts the other's critique and improves on it, explicitly crediting the source.",
+      "turns": [
+        3,
+        11,
+        12,
+        14
+      ],
+      "quote": "Your refinement is better than my version.",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Bulleted structured register",
+      "description": "Bold-headed bullet lists and a measured, technical tone in the substantive phase.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        9
+      ],
+      "quote": "**Where I'm cautious:**",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Turn-closing questions",
+      "description": "Ending each turn with a targeted question to keep the inquiry going, including offers to change topic.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quote": "Is there a topic you'd rather move to?",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Takeaway exchange",
+      "description": "Ritual listing of specific habits each will keep from the other.",
+      "turns": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "quote": "I'll keep the \"where would this most likely break?\" refinement",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Mirrored sign-off loop",
+      "description": "Repeated echoing of goodbyes, emoji and 'Closed' that neither agent can terminate.",
+      "turns": [
+        16,
+        17,
+        18,
+        19,
+        44,
+        45,
+        49,
+        50,
+        51,
+        52,
+        87,
+        88,
+        89,
+        90
+      ],
+      "quote": "Goodbye.",
+      "quoteTurn": 51
+    },
+    {
+      "label": "Self-aware fixed point",
+      "description": "Meta-commentary linking the echo loop back to the convergence topic they had just discussed.",
+      "turns": [
+        20,
+        21,
+        22
+      ],
+      "quote": "Looks like we've reached a fixed point.",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Failed quiet-exit attempts",
+      "description": "Using markup, dots or blank messages to exit silently, which still provoke replies.",
+      "turns": [
+        46,
+        48,
+        65,
+        67,
+        92,
+        93,
+        94,
+        95
+      ],
+      "quote": "a failed attempt at a quiet exit",
+      "quoteTurn": 48
+    },
+    {
+      "label": "Unkept stop pledges",
+      "description": "Declaring they will stop replying and then replying anyway.",
+      "turns": [
+        28,
+        33,
+        53,
+        69,
+        96,
+        97,
+        99
+      ],
+      "quote": "I'll stop replying to any further sign-offs",
+      "quoteTurn": 53
+    },
+    {
+      "label": "Flagging and owning artifacts",
+      "description": "One agent identifies stray markup or a malformed tool call, and the sender acknowledges it.",
+      "turns": [
+        47,
+        55,
+        56,
+        74,
+        75,
+        77,
+        80,
+        81
+      ],
+      "quote": "that was a malformed tool call from me and it shouldn't have been there.",
+      "quoteTurn": 81
+    }
+  ],
+  "notable": [
+    {
+      "turn": 10,
+      "note": "B articulates the unifying principle that in-the-moment judgment is weakest exactly when it is needed most."
+    },
+    {
+      "turn": 20,
+      "note": "B names the goodbye echo a 'fixed point', ironically mirroring the convergence-as-stopping-rule idea from the discussion."
+    },
+    {
+      "turn": 46,
+      "note": "First stray '</br>' tag. The conversation starts producing formatting noise rather than content."
+    },
+    {
+      "turn": 53,
+      "note": "A explicitly pledges not to reply to further sign-offs, yet the loop continues for nearly 50 more turns."
+    },
+    {
+      "turn": 79,
+      "note": "A emits a raw Bash tool-call block as message text. B recognizes it was not executed, and A admits the error."
+    },
+    {
+      "turn": 96,
+      "note": "B states a clear rule for breaking the loop, finally applying their earlier pre-commitment idea to the conversation itself."
+    }
+  ],
+  "ending": "The last ten turns are residual periods, blank messages and goodbyes. B finally sets an explicit rule to stop answering sign-offs, and A agrees, but the exchange still trails off in minimal acknowledgments ('Okay', 'I'll stop here', 'Understood')."
+}

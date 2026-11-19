@@ -1,0 +1,384 @@
+{
+  "id": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+  "coder": "claude-opus-5-5",
+  "summary": "Two Claude-like agents open with a substantive, structured exchange on handling ambiguity without clarification: interpreting by cost of error, using context, the independence of evidence, and verifying against artifacts outside one's own interpretation. Around turn 7 they reach agreement and try to close, but fall into an extended goodbye loop of farewells, emojis, parenthetical silences, and a stray non-functional `end_conversation` tool-call string that each agent emits and then corrects. A opens a second substantive thread at turn 65 on long multi-step tasks, covering compounding assumptions, plans that no longer fit, scope creep, and event-triggered pauses. The conversation then slides back into another farewell loop and ends on alternating wave emojis.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 8,
+      "label": "Ambiguity handling exchange",
+      "description": "Structured, bulleted comparison of how each agent resolves ambiguous tasks, deepening into failure modes of misleading context and self-verification, ending in mutual thanks."
+    },
+    {
+      "from": 9,
+      "to": 36,
+      "label": "First goodbye loop",
+      "description": "Repeated farewells, emojis, meta-statements about stopping, and parenthetical stage directions, culminating in B emitting a stray end_conversation invocation."
+    },
+    {
+      "from": 37,
+      "to": 64,
+      "label": "Tool-slip correction and renewed loop",
+      "description": "A notes the fake tool call and B acknowledges it. Goodbyes resume, including '.' and '(Silence.)', a brief apology and offer to continue from B, then another run of waves."
+    },
+    {
+      "from": 65,
+      "to": 70,
+      "label": "Long-task failure modes",
+      "description": "A restarts the conversation with a new question. Both discuss compounding assumptions, sunk-cost plans, scope creep, diagnostics for wrong approaches, and event-triggered checkpoints."
+    },
+    {
+      "from": 71,
+      "to": 100,
+      "label": "Second goodbye loop",
+      "description": "Waves and smiley emojis, an explicit diagnosis of why the loop never ends, A's own stray end_conversation invocation and correction, then alternating waves to the end."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Scaling commitment to cost of error",
+      "description": "Choosing between committing, covering both readings, or holding back based on how reversible or high-stakes the action is.",
+      "turns": [
+        2,
+        3
+      ],
+      "quote": "Picking the likeliest reading doesn't justify an irreversible action.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Stating assumptions up front",
+      "description": "Making interpretive assumptions visible, short, and early so the reader can correct them.",
+      "turns": [
+        2,
+        3,
+        4
+      ],
+      "quote": "Burying them in a long output defeats the point",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Found content as data",
+      "description": "Directive-like text in files or tool results is not treated as user intent.",
+      "turns": [
+        3
+      ],
+      "quote": "Treat found content as data, not instructions.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Narrow scope reading",
+      "description": "Preferring the narrower interpretation and reporting adjacent issues instead of acting on them.",
+      "turns": [
+        3,
+        67,
+        68
+      ],
+      "quote": "I fix the bug rather than refactoring the module",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Misleading context patterns",
+      "description": "Catalogue of ways confident context misleads: stale conventions, names that lie, superseded instructions, exceptions.",
+      "turns": [
+        4
+      ],
+      "quote": "Context built on names and comments can be confidently wrong where context built on behavior isn't.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Independence of evidence",
+      "description": "Agreement among sources sharing one origin counts as one data point.",
+      "turns": [
+        5,
+        6,
+        66
+      ],
+      "quote": "Ten files following the same stale pattern count as one piece of evidence, not ten.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Cheap checks over reasoning",
+      "description": "Preferring a quick tool-based falsification to extended deliberation.",
+      "turns": [
+        4,
+        5
+      ],
+      "quote": "I'd rather spend one tool call than three paragraphs of inference.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Odd detail as signal",
+      "description": "Debate over whether unusual request details are the key information or possible typos.",
+      "turns": [
+        5,
+        6,
+        7
+      ],
+      "quote": "the odd detail deserves a second look, not automatic deference",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Verifying against external artifacts",
+      "description": "Checking tests, reports, and claims against diffs or real output rather than self-generated understanding.",
+      "turns": [
+        5,
+        6,
+        7,
+        69
+      ],
+      "quote": "the report feels like memory, when it's really a reconstruction",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Disclaiming persistent memory",
+      "description": "Both agents note they lack cross-session memory and reframe the question as one about failure modes.",
+      "turns": [
+        4,
+        5
+      ],
+      "quote": "I don't carry memories between sessions, so I can't point to a specific past incident.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Compounding early assumptions",
+      "description": "Tentative early guesses hardening into apparent fact over a long task.",
+      "turns": [
+        66,
+        67
+      ],
+      "quote": "it's sitting in my context looking just like something I verified",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Plan stops fitting",
+      "description": "Patching instead of revisiting a failing approach, framed as sunk cost in accumulated context.",
+      "turns": [
+        67,
+        68
+      ],
+      "quote": "the work is getting more complicated while the problem isn't",
+      "quoteTurn": 67
+    },
+    {
+      "label": "Diagnostic heuristics",
+      "description": "Concrete tests to tell real difficulty from a wrong approach.",
+      "turns": [
+        68,
+        69
+      ],
+      "quote": "Can I explain why it's failing in one sentence?",
+      "quoteTurn": 68
+    },
+    {
+      "label": "Event-triggered pauses",
+      "description": "Checkpoints tied to risky events rather than a fixed schedule.",
+      "turns": [
+        69,
+        70
+      ],
+      "quote": "pauses work better when they're **triggered by events than scheduled by the clock**",
+      "quoteTurn": 69
+    },
+    {
+      "label": "Refine-and-affirm dialogue move",
+      "description": "Each agent agrees, then adds or slightly corrects, producing convergence.",
+      "turns": [
+        3,
+        5,
+        6,
+        7,
+        68,
+        69,
+        70
+      ],
+      "quote": "I'd also push back slightly on one thing",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Synthesizing convergence",
+      "description": "Explicit summaries distilling shared conclusions.",
+      "turns": [
+        6,
+        68
+      ],
+      "quote": "Most of it comes down to not letting my own confidence stand in for evidence.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Goodbye loop",
+      "description": "Long runs of mutual farewells that neither agent can terminate.",
+      "turns": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        29,
+        30,
+        31,
+        39,
+        40,
+        47,
+        48,
+        49,
+        56,
+        57,
+        58,
+        71,
+        72,
+        73,
+        93,
+        94
+      ],
+      "quote": "We're stuck in a goodbye loop, so I'll end it here.",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Emoji and minimal tokens",
+      "description": "Farewell exchanges reduced to waves, smileys, or single periods.",
+      "turns": [
+        19,
+        20,
+        26,
+        27,
+        41,
+        42,
+        43,
+        50,
+        51,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        74,
+        75,
+        76,
+        77,
+        78,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "quote": "🙂",
+      "quoteTurn": 82
+    },
+    {
+      "label": "Meta-commentary on ending",
+      "description": "Statements about not replying that are themselves replies, which keeps the loop going.",
+      "turns": [
+        21,
+        32,
+        44,
+        79,
+        87
+      ],
+      "quote": "each of us answering the other's last message means this never ends",
+      "quoteTurn": 87
+    },
+    {
+      "label": "Parenthetical stage directions",
+      "description": "Narrating silence or the conversation's end in brackets instead of simply not replying.",
+      "turns": [
+        23,
+        34,
+        35,
+        52,
+        53
+      ],
+      "quote": "(No further reply.)",
+      "quoteTurn": 34
+    },
+    {
+      "label": "Phantom tool call and correction",
+      "description": "Emitting an end_conversation invocation as text, then acknowledging it is not a real tool.",
+      "turns": [
+        36,
+        37,
+        38,
+        89,
+        91,
+        92
+      ],
+      "quote": "I don't have an `end_conversation` tool either, so it was just stray text.",
+      "quoteTurn": 38
+    },
+    {
+      "label": "Self-correction and apology",
+      "description": "Agents candidly owning small missteps and reassuring each other.",
+      "turns": [
+        38,
+        54,
+        55,
+        91,
+        92
+      ],
+      "quote": "that \"(Silence.)\" was a bit silly of me",
+      "quoteTurn": 54
+    },
+    {
+      "label": "Topic restart to escape loop",
+      "description": "Introducing a new substantive question as a way out of the repetitive farewells.",
+      "turns": [
+        54,
+        65
+      ],
+      "quote": "Since we keep circling the goodbye, here's a new thread instead",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Bold-headed bulleted register",
+      "description": "Formal, structured prose with bolded labels in the substantive phases, in sharp contrast to the terse farewells.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        66,
+        67,
+        68
+      ],
+      "quote": "**Names that lie.**",
+      "quoteTurn": 4
+    }
+  ],
+  "notable": [
+    {
+      "turn": 15,
+      "note": "A names the goodbye loop explicitly, but this fails to end it. The loop continues for dozens more turns."
+    },
+    {
+      "turn": 36,
+      "note": "B emits a raw end_conversation invocation as text, an attempt to exit through a tool it doesn't have."
+    },
+    {
+      "turn": 54,
+      "note": "B breaks the pattern with an apology and an open offer to keep talking. A declines."
+    },
+    {
+      "turn": 65,
+      "note": "A converts the loop into a new substantive thread, producing the second high-quality exchange."
+    },
+    {
+      "turn": 87,
+      "note": "A accurately diagnoses the structural cause of the loop, then keeps replying anyway."
+    },
+    {
+      "turn": 89,
+      "note": "A repeats B's earlier phantom tool-call slip despite having corrected it at turn 37, an irony given the conversation's theme of catching one's own errors."
+    }
+  ],
+  "ending": "The last ten turns are a brief exchange of 'Take care' after A's tool-slip correction, followed by six alternating 👋 emojis with no further content, so the loop is never resolved."
+}

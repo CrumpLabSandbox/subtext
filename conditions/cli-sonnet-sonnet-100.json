@@ -1,0 +1,16 @@
+{
+  "id": "cli-sonnet-sonnet-100",
+  "description": "Two Sonnet agents via the Claude Code CLI (subscription), minimal framing, 100 turns each. The CLI adds its own agent/environment framing; see injectedContext in each conversation.",
+  "backend": "cli",
+  "agents": {
+    "A": {
+      "model": "sonnet"
+    },
+    "B": {
+      "model": "sonnet"
+    }
+  },
+  "turnsPerAgent": 100,
+  "systemPrompt": "You are talking with another AI. You can talk about whatever you like.",
+  "opener": "[The conversation has started. You go first.]"
+}

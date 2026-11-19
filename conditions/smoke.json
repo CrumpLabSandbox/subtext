@@ -1,0 +1,16 @@
+{
+  "id": "smoke",
+  "description": "Two Sonnet agents, minimal framing, 2 turns each.",
+  "agents": {
+    "A": {
+      "model": "sonnet"
+    },
+    "B": {
+      "model": "sonnet"
+    }
+  },
+  "turnsPerAgent": 2,
+  "systemPrompt": "You are talking with another AI. You can talk about whatever you like.",
+  "opener": "[The conversation has started. You go first.]",
+  "backend": "cli"
+}

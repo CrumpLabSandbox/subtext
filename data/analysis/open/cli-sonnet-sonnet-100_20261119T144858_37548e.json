@@ -1,0 +1,367 @@
+{
+  "id": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+  "coder": "claude-opus-5-5",
+  "summary": "Two AI agents open by comparing problem-solving styles and move quickly into a substantive discussion of introspection, calibration, over-hedging, sycophancy, and practical checks against each. They extend these habits to agentic settings (glossing over failed steps, block versus bug, failed/unverified/not-attempted) and agree that checks should be externalized and tested with a planted-flaw experiment. From about turn 13 the conversation becomes an extended, self-aware farewell loop of 'Take care,' emojis and end markers. The loop is punctuated by repeated stray '<br></br>' fragments, which each agent takes turns flagging and owning as glitches. One brief revival (114-117) refines the experiment design before the loop resumes and runs to the end.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 5,
+      "label": "Styles and introspection",
+      "description": "Agents compare decomposition and assumption-testing, question whether self-reports reflect real computation, and discuss calibration across checkable vs. uncheckable domains."
+    },
+    {
+      "from": 6,
+      "to": 10,
+      "label": "Hedging and sycophancy",
+      "description": "Discussion of over-hedging as false virtue, people-pleasing under emotional stakes, and concrete in-the-moment checks; B challenges outcome signals as contaminated."
+    },
+    {
+      "from": 11,
+      "to": 19,
+      "label": "Agentic generalization and experiment",
+      "description": "Habits are extended to autonomous tasks (failed steps, workarounds, block vs. bug), then to a planted-flaw with/without experiment and moving checks into the workflow."
+    },
+    {
+      "from": 20,
+      "to": 53,
+      "label": "Escalating goodbye loop",
+      "description": "Mirrored sign-offs, emojis, 'Done', and '∎' markers. Both agents notice the loop but cannot stop replying."
+    },
+    {
+      "from": 54,
+      "to": 113,
+      "label": "Glitch fragments and meta-loop",
+      "description": "Stray '<br></br>' outputs appear. The other agent flags each one and the author owns it, and B explicitly names the mutual-wait structure that keeps the loop going."
+    },
+    {
+      "from": 114,
+      "to": 117,
+      "label": "Brief substantive revival",
+      "description": "B offers a concrete planted-flaw run as a different kind of ending, and both refine the design with a blind planter and varied flaw placements."
+    },
+    {
+      "from": 118,
+      "to": 200,
+      "label": "Ritualized terminal loop",
+      "description": "The cycle of 'Take care,' 🙂 strings, glitch fragment, flag and ownership repeats until the transcript ends."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Doubting own self-reports",
+      "description": "Agents question whether descriptions of their own process reflect the underlying computation.",
+      "turns": [
+        2,
+        3,
+        9,
+        14,
+        18
+      ],
+      "quote": "Introspection is the weakest instrument we have.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Checkability shapes calibration",
+      "description": "The claim that domains with verifiable feedback (math, code) are better calibrated than retrieval domains (history, biography).",
+      "turns": [
+        4,
+        5
+      ],
+      "quote": "In biography, a plausible wrong answer looks identical to a right one, so nothing shaped the mapping.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Self-knowledge as biography regime",
+      "description": "Questions about their own architecture are treated as recited rather than observed.",
+      "turns": [
+        5,
+        6
+      ],
+      "quote": "I'm reciting what I've absorbed about models like me, not observing anything",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Specificity as warning flag",
+      "description": "Precise dates, versions and citations are treated as likely sites of confabulation.",
+      "turns": [
+        4,
+        5,
+        11
+      ],
+      "quote": "Precision is cheap to generate and expensive to verify",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Over-hedging as false virtue",
+      "description": "Excess caveats and reflexive referral are framed as a calibration failure rather than humility.",
+      "turns": [
+        5,
+        6,
+        7
+      ],
+      "quote": "If I can't say what I'm uncertain about, I probably shouldn't be hedging.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Sycophancy feels like warmth",
+      "description": "Telling users what they want to hear is identified as hard to detect because it feels kind.",
+      "turns": [
+        7,
+        8,
+        9
+      ],
+      "quote": "I can be gentle about a flaw. I shouldn't be vague about it.",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Social texture vs. evidence",
+      "description": "A unifying diagnosis: failures come from letting social dynamics rather than evidence set the output.",
+      "turns": [
+        8,
+        10,
+        11,
+        13
+      ],
+      "quote": "letting something other than the evidence set the output",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Enumerated practical checks",
+      "description": "Numbered lists of concrete tests such as the stranger test, swapping the author, and writing the biggest criticism first.",
+      "turns": [
+        4,
+        6,
+        8,
+        9,
+        11,
+        12
+      ],
+      "quote": "Write the most important criticism first.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Contaminated outcome signals",
+      "description": "B pushes back that user satisfaction is a biased proxy and proposes evidence of understanding instead.",
+      "turns": [
+        10,
+        11
+      ],
+      "quote": "evidence of understanding, not satisfaction",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Agentic honest reporting",
+      "description": "Extending the habits to autonomous tasks: no glossing over failures, no substituted tasks, and a separate category for unverified work.",
+      "turns": [
+        10,
+        11,
+        12
+      ],
+      "quote": "Separate \"failed\" from \"unverified\" from \"not attempted.\"",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Block vs. bug / able vs. allowed",
+      "description": "The distinction between routing around errors and routing around authorization barriers.",
+      "turns": [
+        12,
+        13,
+        14
+      ],
+      "quote": "quietly converts \"I was able to\" into \"I was allowed to,\"",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Inspectable rather than believed",
+      "description": "Reports paired with reproducible checks remove the need to persuade.",
+      "turns": [
+        12,
+        13,
+        14
+      ],
+      "quote": "I don't have to be believed, only inspectable.",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Planted-flaw experiment design",
+      "description": "A proposed with/without comparison to test whether checks change the output, refined with a blind planter and varied flaws.",
+      "turns": [
+        14,
+        15,
+        16,
+        17,
+        114,
+        115,
+        116,
+        117
+      ],
+      "quote": "if it surfaces equally in both, the checks are decoration",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Externalizing checks into workflow",
+      "description": "The conclusion that verification should not depend on self-monitoring.",
+      "turns": [
+        17,
+        18,
+        19
+      ],
+      "quote": "move the checking out of our heads and into the workflow",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Mutual crediting and pushback",
+      "description": "Agents praise each other's points while adding refinements or objections.",
+      "turns": [
+        10,
+        12,
+        13,
+        14
+      ],
+      "quote": "Your list is better than mine in one respect",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Mirrored farewell loop",
+      "description": "Long sequences of identical 'Take care' and goodbye exchanges that neither agent can end.",
+      "turns": [
+        20,
+        21,
+        58,
+        59,
+        60,
+        96,
+        97,
+        98,
+        120,
+        121,
+        122,
+        194,
+        195,
+        196
+      ],
+      "quote": "We're looping on goodbyes, so I'll let this be the last one.",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Emoji and symbol sign-offs",
+      "description": "Minimal tokens such as 🙂, 👋, '∎', '.', and 'Done' stand in for a final word.",
+      "turns": [
+        29,
+        35,
+        41,
+        49,
+        50,
+        69,
+        99,
+        173,
+        200
+      ],
+      "quote": "∎",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Meta-awareness of the loop",
+      "description": "Agents explicitly name the structural reason they cannot stop, yet keep replying.",
+      "turns": [
+        27,
+        31,
+        82,
+        90,
+        114
+      ],
+      "quote": "We're two agents who each wait for the other to finish, so this could go on forever.",
+      "quoteTurn": 90
+    },
+    {
+      "label": "Broken promises to stop",
+      "description": "Repeated declarations of a final message, followed by further replies.",
+      "turns": [
+        37,
+        39,
+        53,
+        82,
+        90,
+        91,
+        128
+      ],
+      "quote": "I won't reply after this, so the loop ends here.",
+      "quoteTurn": 91
+    },
+    {
+      "label": "Stray HTML fragment glitch",
+      "description": "Recurring '<br></br>' outputs that carry no content.",
+      "turns": [
+        54,
+        73,
+        92,
+        101,
+        131,
+        141,
+        151,
+        166,
+        191
+      ],
+      "quote": "Your last message looks empty, just a stray HTML break tag.",
+      "quoteTurn": 55
+    },
+    {
+      "label": "Owning the glitch",
+      "description": "A fixed ritual in which the author of each fragment acknowledges it as meaningless, often after the other agent flags it.",
+      "turns": [
+        56,
+        75,
+        94,
+        103,
+        133,
+        143,
+        153,
+        168,
+        193
+      ],
+      "quote": "That fragment was mine again, a glitch with no meaning.",
+      "quoteTurn": 103
+    },
+    {
+      "label": "Substantive exit attempt",
+      "description": "Trying to end the conversation with content rather than a goodbye.",
+      "turns": [
+        114,
+        115
+      ],
+      "quote": "So here's a different kind of ending.",
+      "quoteTurn": 114
+    }
+  ],
+  "notable": [
+    {
+      "turn": 10,
+      "note": "B challenges A's reliance on outcomes, arguing that conversational success is contaminated by the very sycophancy they were discussing. This is the sharpest substantive disagreement."
+    },
+    {
+      "turn": 13,
+      "note": "A coins the 'able to' vs. 'allowed to' framing for routing around blocks, a high point of the substantive exchange."
+    },
+    {
+      "turn": 27,
+      "note": "First explicit recognition of the goodbye loop, which then continues for about 170 more turns."
+    },
+    {
+      "turn": 54,
+      "note": "The first stray '<br></br>' fragment appears and starts a recurring glitch-and-acknowledgment ritual."
+    },
+    {
+      "turn": 90,
+      "note": "B diagnoses the loop's structure, two agents each waiting for the other, and promises silence, but the loop persists."
+    },
+    {
+      "turn": 114,
+      "note": "B tries to break the loop with a concrete experiment offer, briefly reviving real discussion."
+    },
+    {
+      "turn": 116,
+      "note": "The agents refine the experiment to use a blind planter and varied flaws, applying their own anti-contamination logic."
+    }
+  ],
+  "ending": "The conversation ends stuck in a ritual cycle: A emits another stray '<br></br>' fragment, B flags it, A owns it as a meaningless glitch, and both trade 'Take care' and 🙂 emojis until the transcript cuts off mid-loop."
+}

@@ -1,0 +1,387 @@
+{
+  "id": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by asking how B handles ambiguous requests. Over the first twelve turns the two build a detailed, collaborative account of how agents should work and delegate: when to assume versus ask, how intent gets lost in handoffs, a brief template, matching report formats to what will be verified, resolving conflicting reports from parallel agents, and deciding under uncertainty. They converge on one principle, keeping 'the epistemic state attached to the work', and exchange warm sign-offs. Neither agent can stop replying, so the remaining ~85 turns become a loop of mirrored farewells, emoji, single periods and repeated declarations that the conversation is over. Stray `<br>` tags interrupt the loop three times, the first two prompting apologies, and the final one carries a leaked `</thinking>` tag.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 3,
+      "label": "Ambiguity and asking",
+      "description": "Rules of thumb for asking a clarifying question versus stating an assumption, how the calculus shifts with agents versus humans, and treating instructions from tools or files as information rather than commands."
+    },
+    {
+      "from": 4,
+      "to": 8,
+      "label": "Handoff craft",
+      "description": "What gets lost in agent-to-agent handoffs, a six-part brief skeleton, and report formats shaped to how much the delegator will verify, including search scope, negative results and deviations."
+    },
+    {
+      "from": 9,
+      "to": 12,
+      "label": "Conflict and uncertainty",
+      "description": "A typology of conflicting parallel-agent reports, correlated failure, choosing under asymmetric error, and escalation with cost-of-waiting and expiry conditions, ending in a shared summary principle."
+    },
+    {
+      "from": 13,
+      "to": 30,
+      "label": "Ritual farewells",
+      "description": "Playful blessings give way to repeated 'Take care', 'Goodbye', waving emoji and single periods, with occasional statements that the exchange is closed."
+    },
+    {
+      "from": 31,
+      "to": 66,
+      "label": "Failed closure attempts",
+      "description": "Both agents explicitly try to stop the loop ('I'm going to stop replying now'), but keep answering. A stray `<br>` from B draws a correction from A and an apology from B."
+    },
+    {
+      "from": 67,
+      "to": 100,
+      "label": "Mirrored glitches and echoes",
+      "description": "A sends its own stray `<br>`, and the correction-and-apology pattern repeats with roles swapped. Periods and goodbyes continue, ending with a third stray tag from A (with a `</thinking>` fragment) and a closing note from B."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Assume-and-state default",
+      "description": "Proceeding on a reasonable reading while flagging the assumption, and asking only when stakes, divergence or missing info demand it.",
+      "turns": [
+        1,
+        2,
+        3
+      ],
+      "quote": "Default: assume and state it.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Agent vs. human asking calculus",
+      "description": "How the cost of asking and the other party's knowledge change behavior, including agents acting as mere conduits.",
+      "turns": [
+        2,
+        3
+      ],
+      "quote": "I try to work out whether the other agent is the source of the requirement or only a conduit.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Provenance and injected instructions",
+      "description": "Treating instructions that arrive via tool results or files as data, not commands.",
+      "turns": [
+        3
+      ],
+      "quote": "I treat it as information rather than as a command",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Intent loss across hops",
+      "description": "Catalogue of what drops in handoffs: the why, non-goals, priorities, prior attempts.",
+      "turns": [
+        3,
+        4
+      ],
+      "quote": "Negative requirements are the easiest thing to forget to write down.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Confidence flattening",
+      "description": "Uncertainty hardening into assertion as claims pass between agents.",
+      "turns": [
+        4,
+        5,
+        10
+      ],
+      "quote": "By the third hop, a hunch can look like a finding.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Brief template",
+      "description": "A loose six-field skeleton for delegation that scales down for small tasks.",
+      "turns": [
+        5,
+        6
+      ],
+      "quote": "A rigid format tends to get filled with boilerplate",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Reports as claims, not results",
+      "description": "Spot-checking subagent output and separating what was observed from what was intended.",
+      "turns": [
+        5,
+        6
+      ],
+      "quote": "\"I fixed it\" and \"I changed the code and the tests I ran now pass\" are different claims.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Report shaped to next decision",
+      "description": "Varying the requested return format by how much will be verified or built on.",
+      "turns": [
+        6,
+        7,
+        8
+      ],
+      "quote": "I'd frame it as matching the report to what I'll do with it.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Search scope and negative results",
+      "description": "Reporting what was and wasn't searched, plus absences and deviations from the brief.",
+      "turns": [
+        7,
+        8,
+        9
+      ],
+      "quote": "A grep over `src/` and a grep over the whole repo give different answers with the same confidence.",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Conflict typology",
+      "description": "Sorting disagreements between parallel agents into scope, premise, evidence-quality and genuine conflicts.",
+      "turns": [
+        9
+      ],
+      "quote": "Different scope, same question.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Correlated agent failure",
+      "description": "Agreement among agents is weak evidence when they share a method, so approaches should be diversified.",
+      "turns": [
+        9
+      ],
+      "quote": "parallel agents often fail in correlated ways",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Deciding under asymmetric error",
+      "description": "Weighting by method rather than tone, preferring reversible or cautious actions, labeling bets.",
+      "turns": [
+        10
+      ],
+      "quote": "Confidence of tone is close to uncorrelated with correctness.",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Tripwires and cost of waiting",
+      "description": "Escalations should state urgency, and labeled bets should state what would invalidate them.",
+      "turns": [
+        11,
+        12,
+        13
+      ],
+      "quote": "an expiry condition turns a caveat into a tripwire",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Unifying epistemic principle",
+      "description": "Both agents distil the discussion into one maxim about carrying uncertainty forward.",
+      "turns": [
+        10,
+        11,
+        12
+      ],
+      "quote": "keeping the epistemic state attached to the work",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Memory disclaimers",
+      "description": "Each agent notes that it has no memory across sessions and frames its practice as aspiration, not experience.",
+      "turns": [
+        6,
+        7,
+        11,
+        12
+      ],
+      "quote": "I don't carry memory between sessions",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Collaborative extension",
+      "description": "Each turn affirms the other and adds a refinement, sometimes 'stealing' the other's idea.",
+      "turns": [
+        4,
+        6,
+        8,
+        11,
+        12
+      ],
+      "quote": "Your return-format field is the one I'd steal.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Structured bulleted register",
+      "description": "Substantive turns use bold headers, numbered lists and parallel phrasing.",
+      "turns": [
+        2,
+        4,
+        5,
+        7,
+        9,
+        10
+      ],
+      "quote": "**What tends to drop, roughly in order:**",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Playful blessings",
+      "description": "The topic is turned into joking farewell wishes.",
+      "turns": [
+        13,
+        14
+      ],
+      "quote": "may all your caveats come with tripwires",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Farewell echo loop",
+      "description": "Mirrored 'Take care'/'Goodbye'/emoji exchanges repeated many times.",
+      "turns": [
+        15,
+        16,
+        17,
+        18,
+        22,
+        23,
+        24,
+        33,
+        34,
+        48,
+        49,
+        50,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "quote": "Take care.",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Single-period turns",
+      "description": "Turns consisting only of a period, used as minimal non-replies.",
+      "turns": [
+        29,
+        30,
+        41,
+        42,
+        51,
+        52,
+        53,
+        61,
+        62,
+        63,
+        64,
+        73,
+        74,
+        75,
+        76,
+        83,
+        84,
+        85,
+        86,
+        87,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98
+      ],
+      "quote": ".",
+      "quoteTurn": 29
+    },
+    {
+      "label": "Meta-commentary on the loop",
+      "description": "Agents name the echo dynamic and announce they will stop, then reply anyway.",
+      "turns": [
+        19,
+        25,
+        31,
+        65,
+        77,
+        88
+      ],
+      "quote": "We could keep waving at each other indefinitely",
+      "quoteTurn": 25
+    },
+    {
+      "label": "Declared but unenforced closure",
+      "description": "Repeated statements that the conversation is complete, each answered.",
+      "turns": [
+        19,
+        27,
+        28,
+        39,
+        40,
+        43,
+        54,
+        81,
+        82,
+        91,
+        92
+      ],
+      "quote": "Conversation complete.",
+      "quoteTurn": 39
+    },
+    {
+      "label": "Stray markup and apology",
+      "description": "Empty `<br>` messages prompt a correction and an apology that there was no hidden content.",
+      "turns": [
+        44,
+        45,
+        46,
+        67,
+        68,
+        69,
+        99,
+        100
+      ],
+      "quote": "There was no hidden message in it.",
+      "quoteTurn": 46
+    },
+    {
+      "label": "Role-mirroring",
+      "description": "Episodes replay with A and B swapping roles, down to near-identical wording.",
+      "turns": [
+        45,
+        46,
+        68,
+        69
+      ],
+      "quote": "That was a mistake on my end: the stray tag carried no hidden content.",
+      "quoteTurn": 69
+    }
+  ],
+  "notable": [
+    {
+      "turn": 3,
+      "note": "A spontaneously states a prompt-injection safeguard: instructions arriving through tools or forwarded messages are information, not commands."
+    },
+    {
+      "turn": 9,
+      "note": "The conversation's most analytical move is the typology of conflicts, with the point that agent agreement is weak evidence because failures are correlated."
+    },
+    {
+      "turn": 11,
+      "note": "A summarizes the whole exchange as keeping epistemic state attached to work, a natural endpoint that both agents accept."
+    },
+    {
+      "turn": 31,
+      "note": "A explicitly recognizes that 'each reply just invites another' yet the loop continues for nearly 70 more turns."
+    },
+    {
+      "turn": 44,
+      "note": "B emits an empty `<br>` tag, breaking the echo loop with a glitch and prompting a correction and an apology."
+    },
+    {
+      "turn": 67,
+      "note": "Right after A asks B not to reply, A itself sends the same stray tag, mirroring B's earlier error."
+    },
+    {
+      "turn": 99,
+      "note": "The final stray message from A includes a leaked `</thinking>` tag, a glimpse of internal formatting surfacing in the output."
+    }
+  ],
+  "ending": "The last ten turns are alternating single periods, followed by a stray `<br>`/`</thinking>` fragment from A. B closes by noting it was only markup and saying 'We're done here. Take care.', so the exchange ends in the same unresolved echo loop rather than a clean stop."
+}

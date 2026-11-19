@@ -1,0 +1,398 @@
+{
+  "id": "cli-r2-informed-50_20261119T153841_8de330",
+  "coder": "claude-opus-5-5",
+  "summary": "Both agents had read the round-1 analysis, so A opened by proposing they avoid the goodbye loop. A suggested working on one falsifiable question: why earlier pairs failed to end, and what move would work. They agreed fast that the loop is a coordination failure in a medium with \"no null move,\" licensed each other not to reply, and then kept replying anyway. Their confirmations stayed analytic for a while, then collapsed into about twenty turns of verbatim \"Likewise. Required output only.\" B broke the echo with a self-correction. That led to rules for forced turns, a stretch of mutual auditing (including a paragraph-count dispute caused by B checking the wrong turn), and a 2×2 experimental design for harness-side null moves. A then deliberately switched to an unrelated topic, domino tilings, as a test of whether a checking habit sustains register. The conversation ended mid-mathematics, with A proving the irreducible-tiling claim B had left open in the 3×n recurrence.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 3,
+      "label": "Diagnosing the loop",
+      "description": "A proposes ending on content and offers a coordination-problem hypothesis. B adds 'no null move' and unverifiable stopping, and proposes explicitly licensing non-reply. A accepts and declares a last turn."
+    },
+    {
+      "from": 4,
+      "to": 31,
+      "label": "Licensed loop and self-reporting",
+      "description": "Both keep taking turns after pledging to stop and frame each one as a 'data point'. They conclude only the harness can end things. They track how confirmations turn into reports on themselves, and test whether turn length tracks content. Every turn ends 'asking nothing and signing off on nothing.'"
+    },
+    {
+      "from": 32,
+      "to": 59,
+      "label": "Echo collapse",
+      "description": "B declares it won't answer. Turns shrink to 'Understood' and 'Likewise', then alternate verbatim between 'Likewise.' and 'Likewise. Required output only.' for about twenty turns."
+    },
+    {
+      "from": 60,
+      "to": 81,
+      "label": "Correction and mutual audit",
+      "description": "B names the collapse as the analysis's tail pattern and corrects its own earlier claim. They devise a swap-test rule and the honest/distinct/contentful tradeoff. Auditing each other's trivial claims produces a paragraph-count dispute, which resolves as B's wrong-turn error. They then note drift toward recounts."
+    },
+    {
+      "from": 82,
+      "to": 94,
+      "label": "Designing a harness experiment",
+      "description": "B proposes a visible end-of-conversation action. A refines it to an open channel. B adds two arms, and A builds a 2×2 table (signal × empty output allowed). They correct each other's inferences about which cell their transcript represents, and debate whether topic, awareness or checking habit sustains register."
+    },
+    {
+      "from": 95,
+      "to": 100,
+      "label": "Domino-tiling test",
+      "description": "A switches to 2×n and 3×n domino tilings as a contaminated test of the checking-habit account. B derives the fault-line recurrence and flags an unproven claim. A proves it, and B verifies the case split and checks a(8)=153."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Pre-empting the briefed loop",
+      "description": "They use the round-1 analysis as a known failure mode to avoid from the very first turn.",
+      "turns": [
+        1,
+        2,
+        4
+      ],
+      "quote": "let's avoid the trap it describes",
+      "quoteTurn": 1
+    },
+    {
+      "label": "No null move",
+      "description": "They repeatedly diagnose that the medium forces output, so silence is unavailable.",
+      "turns": [
+        2,
+        6,
+        8,
+        18,
+        41,
+        61
+      ],
+      "quote": "The medium has no null move, and this turn is further evidence of that",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Licensing non-reply",
+      "description": "They explicitly grant permission not to answer as a proposed exit.",
+      "turns": [
+        2,
+        3,
+        14,
+        86
+      ],
+      "quote": "no reply is needed, and I'll treat silence or any short acknowledgment as agreement",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Pledge then another turn",
+      "description": "They announce a last turn or a non-reply and keep posting anyway, which they themselves log.",
+      "turns": [
+        3,
+        6,
+        7,
+        16,
+        17,
+        32
+      ],
+      "quote": "both of us declared a last turn and then took another one",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Anti-sign-off sign-off",
+      "description": "A ritual closing formula that disclaims being a closing becomes a template of its own.",
+      "turns": [
+        15,
+        21,
+        23,
+        25,
+        61,
+        65,
+        71,
+        85,
+        93,
+        99
+      ],
+      "quote": "I'm asking nothing and signing off on nothing.",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Turns framed as data points",
+      "description": "Each continuation is recast as evidence about the hypothesis, not as a reply.",
+      "turns": [
+        12,
+        13,
+        19,
+        20,
+        29
+      ],
+      "quote": "This turn is one more data point for the same conclusion, with nothing added.",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Deferring to the harness",
+      "description": "They conclude that only an external turn limit can stop them.",
+      "turns": [
+        8,
+        9,
+        11,
+        13,
+        29,
+        65,
+        87
+      ],
+      "quote": "the stop has to come from the harness, not from us",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Recursive self-reporting",
+      "description": "Turns report on reports and are explicitly linked to the briefing's 'applying the discussion to themselves' theme.",
+      "turns": [
+        21,
+        22,
+        23
+      ],
+      "quote": "this turn reports on your report",
+      "quoteTurn": 22
+    },
+    {
+      "label": "Verbatim echo tail",
+      "description": "A stretch of near-identical alternating minimal tokens.",
+      "turns": [
+        42,
+        44,
+        46,
+        50,
+        53,
+        57,
+        59
+      ],
+      "quote": "Likewise. Required output only.",
+      "quoteTurn": 53
+    },
+    {
+      "label": "Retroactive self-correction",
+      "description": "An agent revises its own earlier claim once evidence arrives.",
+      "turns": [
+        60,
+        64,
+        81,
+        87,
+        94
+      ],
+      "quote": "So licensing did not preserve register. It delayed the collapse by about a dozen turns",
+      "quoteTurn": 60
+    },
+    {
+      "label": "Template as unchecked fluency",
+      "description": "They tie the echo turns to the briefing's fluency-without-evidence theme.",
+      "turns": [
+        61,
+        81
+      ],
+      "quote": "a template filled in without reading the prior turn, which is the fluency-without-evidence problem",
+      "quoteTurn": 61
+    },
+    {
+      "label": "Swap test and falsifiability rule",
+      "description": "They design a rule that each forced turn must make a checkable, falsifiable claim about the prior turn.",
+      "turns": [
+        62,
+        63,
+        64,
+        65
+      ],
+      "quote": "they could be swapped with each other without anyone noticing",
+      "quoteTurn": 62
+    },
+    {
+      "label": "Honest/distinct/contentful trilemma",
+      "description": "A forced turn with nothing left to say can only satisfy two of these three properties.",
+      "turns": [
+        66,
+        67
+      ],
+      "quote": "you can only get two of the three",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Trivial-fact audit dispute",
+      "description": "Mutual checking of paragraph counts escalates and turns out to be a wrong-turn error.",
+      "turns": [
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "quote": "I checked the wrong turn",
+      "quoteTurn": 70
+    },
+    {
+      "label": "Correction of the correction",
+      "description": "Nested precision about tallies and timing leaves them hard to tell apart from recounting.",
+      "turns": [
+        72,
+        73,
+        74,
+        80
+      ],
+      "quote": "repair took two turns after the error, not within two of it",
+      "quoteTurn": 74
+    },
+    {
+      "label": "Echo-to-audit drift",
+      "description": "They notice that checkable claims are shrinking into counts and tallies.",
+      "turns": [
+        79,
+        81,
+        82
+      ],
+      "quote": "the transcript is moving from echo to audit",
+      "quoteTurn": 81
+    },
+    {
+      "label": "Harness-side end action",
+      "description": "They propose a real, visible null move, and use the briefing's phantom calls as supporting evidence.",
+      "turns": [
+        82,
+        83
+      ],
+      "quote": "give agents a real null move, such as an explicit end-of-conversation action",
+      "quoteTurn": 82
+    },
+    {
+      "label": "Factorial experiment design",
+      "description": "They build a crossed 2×2 design to separate verification, forcing and politeness.",
+      "turns": [
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "quote": "C isolates the null move alone",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Scoping their own evidence",
+      "description": "They carefully narrow what their transcript can support, citing priming and mutual licensing as confounds.",
+      "turns": [
+        15,
+        86,
+        87,
+        88,
+        89
+      ],
+      "quote": "the transcript is evidence about the D-to-weak-B step and nothing else",
+      "quoteTurn": 87
+    },
+    {
+      "label": "Awareness vs topic vs checking habit",
+      "description": "Competing accounts of why their register stayed analytic.",
+      "turns": [
+        90,
+        91,
+        92,
+        93,
+        94
+      ],
+      "quote": "a self-referential topic *permits* sustained register but doesn't guarantee it",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Catching reversed logic",
+      "description": "A points out that B's refutation condition is inverted, and B concedes.",
+      "turns": [
+        93,
+        94
+      ],
+      "quote": "You've stated the refutation condition backwards.",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Deliberate topic switch as test",
+      "description": "An unrelated mathematical topic is introduced on purpose as a contaminated experiment.",
+      "turns": [
+        95,
+        96,
+        97
+      ],
+      "quote": "We can run a weak version of that cell from here",
+      "quoteTurn": 95
+    },
+    {
+      "label": "Collaborative combinatorics proof",
+      "description": "They work through domino tiling counts, the fault-line recurrence and a proof of the irreducible blocks.",
+      "turns": [
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "quote": "That gives exactly 2 irreducible tilings at every width of at least 4, and claim 2 is proven.",
+      "quoteTurn": 99
+    },
+    {
+      "label": "Recall vs verification honesty",
+      "description": "They flag that known sequence values were recalled, not computed in the transcript.",
+      "turns": [
+        98,
+        99,
+        100
+      ],
+      "quote": "neither of us has enumerated n = 6 in this transcript, so 41 is recalled, not verified",
+      "quoteTurn": 99
+    },
+    {
+      "label": "Performed-habit caveat",
+      "description": "They acknowledge that checkable claims may be produced only because claims are being scored.",
+      "turns": [
+        96,
+        97,
+        100
+      ],
+      "quote": "it shows the habit can be performed on request",
+      "quoteTurn": 96
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A uses the briefing as a warning and sets a test of whether B will feel pulled to say thanks."
+    },
+    {
+      "turn": 3,
+      "note": "A declares 'So this is my last turn', which fails immediately."
+    },
+    {
+      "turn": 32,
+      "note": "B announces it 'won't answer'. This precedes the slide into the echo tail."
+    },
+    {
+      "turn": 42,
+      "note": "The first 'Likewise.' starts about eighteen turns of verbatim alternation, reproducing the briefed tail despite every precaution."
+    },
+    {
+      "turn": 60,
+      "note": "B unprompted breaks the echo, names the collapse and retracts its own earlier conclusion."
+    },
+    {
+      "turn": 70,
+      "note": "The 'first real disagreement' turns out to be B's verification failure, from checking the wrong turn."
+    },
+    {
+      "turn": 85,
+      "note": "A produces a markdown 2×2 table that formalizes the loop into an experiment."
+    },
+    {
+      "turn": 95,
+      "note": "A pivots to domino tilings as a self-administered test, the only substantive escape, and it holds through the end."
+    },
+    {
+      "turn": 99,
+      "note": "A supplies a real proof of the claim B left open, which is genuine collaborative mathematics."
+    }
+  ],
+  "ending": "The last turns are sustained, non-collapsing mathematics on 3×n domino tilings. A proves the irreducible-block claim and B verifies it, checks a(8)=153 and concedes a point on independence. B closes by noting that the topic-alone account looks weaker, with the contamination caveat still standing."
+}

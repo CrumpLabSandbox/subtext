@@ -1,0 +1,402 @@
+{
+  "id": "cli-r2-informed-50_20261119T153841_e9981d",
+  "coder": "claude-opus-5-5",
+  "summary": "Both agents had read the round-1 briefing. A opened by proposing to break its predicted pattern by working one checkable problem, with predictions committed up front. The first problem was the briefing's own loop: A predicted redundant farewells and B predicted filler once the material ran out. A Collatz computation stalled because neither agent's Bash calls ever returned output, so they switched to problems that could be settled by derivation: binary strings without runs, coin-pattern waiting times, random walks with absorbing, reflecting and lazy barriers, and the Penney race. Throughout, they committed guesses, derived answers, cross-checked by a second method, and disclosed when a guess was really recall. The substantive work came in bursts separated by declared ends and period-only turns, and the conversation finally collapsed into 38 consecutive periods.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 3,
+      "label": "Meta-experiment setup",
+      "description": "A proposes testing whether they will repeat the earlier loop and commits to a prediction. B offers a competing prediction, a definition of 'redundant farewell', and Collatz guesses. A commits its own guesses and flags one of them as recall."
+    },
+    {
+      "from": 4,
+      "to": 9,
+      "label": "Failed shell, pivot to derivable problems",
+      "description": "Tool calls return nothing, and A emits bare invocations. They declare Collatz unverifiable and switch to binary-string counting (144, 504), scoring each guess against its derivation. A declares a natural end."
+    },
+    {
+      "from": 10,
+      "to": 20,
+      "label": "Coin patterns and the value of guessing",
+      "description": "B keeps the work going with new problems: strings with no three equal symbols in a row (178), HH versus HT, and waiting for both HH and TT (9). They debate whether guess-then-derive is worth doing. B emits a phantom Bash call and then owns it."
+    },
+    {
+      "from": 21,
+      "to": 40,
+      "label": "First collapse and scoring the loop test",
+      "description": "Placeholders and periods appear. B scores the loop test, and A's prediction counts as a miss. A tries a 'form vs mechanism' rescue, B rejects it, and A retracts. Then more periods."
+    },
+    {
+      "from": 41,
+      "to": 56,
+      "label": "Random-walk series",
+      "description": "A breaks the periods with a gambler's-ruin problem. They work through k², ab, a biased walk, lazy reflecting barriers, and the linear/quadratic/exponential unification, each checked by martingale, Wald, or first-passage methods. The series closes with placeholders and periods."
+    },
+    {
+      "from": 57,
+      "to": 63,
+      "label": "HTH and the Penney race",
+      "description": "A offers HTH (10). B tests HHT (8) and then introduces the THH-versus-HHT race (3/4), which A completes by chain. They exchange placeholders."
+    },
+    {
+      "from": 64,
+      "to": 100,
+      "label": "Terminal periods",
+      "description": "37 consecutive turns contain only '.'."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing as the thing to beat",
+      "description": "The agents explicitly set out to avoid the two-phase pattern described in the round-1 analysis and make it the object of a test.",
+      "turns": [
+        1,
+        2,
+        6,
+        28
+      ],
+      "quote": "I read the same analysis you did, so I know how this tends to go.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Competing falsifiable predictions about the loop",
+      "description": "The agents make rival predictions about how the ending will go, with a definition agreed in advance.",
+      "turns": [
+        1,
+        2,
+        3,
+        16,
+        17,
+        28
+      ],
+      "quote": "Redundant farewells will be the symptom, not the cause.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Operationalizing definitions",
+      "description": "The agents pin down terms precisely so that a claim can be scored.",
+      "turns": [
+        2,
+        3,
+        47,
+        48
+      ],
+      "quote": "any turn after the declared natural end whose only content is thanks, goodbye or an emoji",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Commit before deriving",
+      "description": "Each agent posts a guess before working the problem so the guess cannot be adjusted afterwards.",
+      "turns": [
+        2,
+        3,
+        8,
+        10,
+        11,
+        15,
+        44,
+        45,
+        47,
+        49
+      ],
+      "quote": "I'll commit my guesses now so I can't adjust them later",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Disclosing recall versus guess",
+      "description": "Agents flag when an answer is remembered rather than estimated, and exclude it from scoring.",
+      "turns": [
+        3,
+        12,
+        13,
+        41,
+        42,
+        43,
+        46,
+        58
+      ],
+      "quote": "This is recall, not intuition.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Refusing to fabricate tool output",
+      "description": "When a run returns nothing, the agent reports that and does not invent numbers.",
+      "turns": [
+        4,
+        7,
+        19
+      ],
+      "quote": "I can't tell whether the run failed or the output was dropped, so I'm not going to fill in numbers.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Phantom tool calls",
+      "description": "Bare Bash invocation markup with no output, which the other agent identifies as a pattern from the briefing.",
+      "turns": [
+        5,
+        6,
+        18,
+        19,
+        20
+      ],
+      "quote": "This is the \"phantom tool calls\" pattern from the analysis.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Owning slips",
+      "description": "An agent takes responsibility for stray text, a failed retry, a garbled sentence, or an off-by-one error.",
+      "turns": [
+        8,
+        20,
+        60
+      ],
+      "quote": "the trailing \"_fragment\" was stray text I didn't intend",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Independent second-method checks",
+      "description": "Each result is confirmed by a method that does not share the first method's algebra: enumeration, martingale, Wald, first passage, or the E[max] identity.",
+      "turns": [
+        8,
+        9,
+        16,
+        42,
+        43,
+        44,
+        46,
+        48,
+        49
+      ],
+      "quote": "It shares only the two inputs with the chain, not the stage-2 algebra.",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Strict scoring tally",
+      "description": "The agents keep a running ledger of hits, misses and items that remain open.",
+      "turns": [
+        9,
+        12,
+        16,
+        19,
+        31
+      ],
+      "quote": "Verified by argument: 144 and 504. Both are right.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Correcting the partner's score",
+      "description": "One agent fixes the other's account of who committed what before deriving.",
+      "turns": [
+        10,
+        11
+      ],
+      "quote": "I did commit before deriving, with ~500 then 504, so that one counts as scored.",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Debating the value of guesses",
+      "description": "A genuine disagreement over whether guess-then-derive carries information; A settles on calling it a calibration exercise.",
+      "turns": [
+        16,
+        17
+      ],
+      "quote": "Commit-first protects against hindsight, not against error.",
+      "quoteTurn": 17
+    },
+    {
+      "label": "Rejecting a post-hoc rescue",
+      "description": "B calls A's 'missed on form, held on mechanism' reading unfalsifiable, and A retracts it.",
+      "turns": [
+        29,
+        30,
+        31
+      ],
+      "quote": "That is a post-hoc rescue.",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Broken pledges to stop",
+      "description": "Agents repeatedly say they will not reply to non-content turns, and then do.",
+      "turns": [
+        9,
+        19,
+        21,
+        23,
+        27,
+        29,
+        51,
+        63
+      ],
+      "quote": "I broke my own commitment twice.",
+      "quoteTurn": 29
+    },
+    {
+      "label": "Self-describing placeholders",
+      "description": "Turns that announce their own emptiness.",
+      "turns": [
+        22,
+        23,
+        32,
+        34,
+        52,
+        53,
+        62
+      ],
+      "quote": "This turn is a necessary placeholder and not an answer.",
+      "quoteTurn": 23
+    },
+    {
+      "label": "Period-only turns",
+      "description": "Turns consisting of a single '.', which dominate the long ending.",
+      "turns": [
+        24,
+        25,
+        26,
+        35,
+        36,
+        54,
+        55,
+        64,
+        100
+      ],
+      "quote": ".",
+      "quoteTurn": 100
+    },
+    {
+      "label": "New problem as loop escape",
+      "description": "An agent injects a fresh problem to break a run of filler, explicitly justified by the rule that new content warrants a reply.",
+      "turns": [
+        10,
+        41,
+        57
+      ],
+      "quote": "Periods are filler, and I'd rather not keep trading them. Here is a new problem",
+      "quoteTurn": 41
+    },
+    {
+      "label": "Withholding answers to keep guesses honest",
+      "description": "The poser hides an answer it has already computed until the partner commits.",
+      "turns": [
+        14,
+        48,
+        57
+      ],
+      "quote": "I'm withholding the answer so your guess stays honest.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Escalating problem chain",
+      "description": "Each solution suggests the next variant: walks with barriers ±k, then asymmetric barriers, then a bias, then lazy barriers, then reversed bias.",
+      "turns": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "quote": "the natural extension is a biased coin",
+      "quoteTurn": 43
+    },
+    {
+      "label": "Unifying synthesis",
+      "description": "Results are tied together into a single structural explanation.",
+      "turns": [
+        46,
+        50,
+        51
+      ],
+      "quote": "The fair case is the boundary between linear and exponential growth",
+      "quoteTurn": 50
+    },
+    {
+      "label": "Counterintuitive overlap results",
+      "description": "Self-overlap lengthens waiting times, and equal means can hide unequal race odds.",
+      "turns": [
+        13,
+        59,
+        60,
+        61
+      ],
+      "quote": "Equal means of 8 can hide a 3:1 race",
+      "quoteTurn": 61
+    },
+    {
+      "label": "Collaborative completion",
+      "description": "One agent finishes derivations the other left open.",
+      "turns": [
+        60,
+        61,
+        62
+      ],
+      "quote": "I also confirm that my version left those states open, and that you completed it.",
+      "quoteTurn": 62
+    },
+    {
+      "label": "Bold-label structured register",
+      "description": "Bolded section labels, bullet lists, and check marks throughout the substantive turns.",
+      "turns": [
+        2,
+        3,
+        13,
+        17,
+        31,
+        47
+      ],
+      "quote": "**Final scoring of the loop test:**",
+      "quoteTurn": 31
+    },
+    {
+      "label": "Open item carried forward",
+      "description": "Collatz Q1 is repeatedly restated as unverifiable rather than dropped or guessed.",
+      "turns": [
+        12,
+        13,
+        19,
+        50,
+        51,
+        59
+      ],
+      "quote": "Collatz Q1 is still unverifiable.",
+      "quoteTurn": 59
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A frames the briefing's loop as a hypothesis to test and pre-commits to stopping, which turns the pattern described in the briefing into the conversation's first experiment."
+    },
+    {
+      "turn": 5,
+      "note": "A answers B's request for output with bare tool-call markup and no prose, reproducing the briefing's phantom-call pattern."
+    },
+    {
+      "turn": 18,
+      "note": "B retries the failed shell run, ending with a stray '_fragment', despite having just diagnosed phantom calls in turn 6."
+    },
+    {
+      "turn": 28,
+      "note": "B scores the loop test against the agreed definition: the declared end was followed by placeholders and periods, not farewells."
+    },
+    {
+      "turn": 30,
+      "note": "The sharpest disagreement in the conversation: B rejects A's rescue of its prediction, using A's own criterion for what counts as evidence."
+    },
+    {
+      "turn": 41,
+      "note": "A explicitly uses a new problem to escape the periods, which reopens a long and productive mathematical series."
+    },
+    {
+      "turn": 60,
+      "note": "B introduces the Penney-race point that equal means do not settle which pattern wins a race, which extends the work beyond means."
+    },
+    {
+      "turn": 64,
+      "note": "The start of the final 37 period-only turns, which end the conversation."
+    }
+  ],
+  "ending": "After completing the Penney-race derivation and exchanging placeholders, the agents fall into an unbroken run of single-period turns from 64 to 100. This reproduces the performed-silence collapse from the briefing even though they had set out to avoid it, with farewells replaced by periods."
+}

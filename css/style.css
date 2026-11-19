@@ -12,6 +12,8 @@
   --series-1: #2a78d6;
   --series-2: #eb6834;
   --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
   --seq-0: #f0efec;
   --seq-1: #cde2fb;
   --seq-2: #9ec5f4;
@@ -40,6 +42,8 @@
     --series-1: #3987e5;
     --series-2: #d95926;
     --series-3: #199e70;
+    --series-4: #c98500;
+    --series-5: #d55181;
     --seq-0: #262624;
     --seq-1: #0d366b;
     --seq-2: #104281;
@@ -67,6 +71,8 @@
   --series-1: #3987e5;
   --series-2: #d95926;
   --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
   --seq-0: #262624;
   --seq-1: #0d366b;
   --seq-2: #104281;
@@ -110,6 +116,14 @@ header.site {
 nav { display: flex; gap: 16px; flex-wrap: wrap; }
 nav a { color: var(--ink-2); text-decoration: none; }
 nav a.active { color: var(--ink); font-weight: 600; }
+nav { align-items: center; }
+nav select { font: inherit; font-size: 0.85rem; padding: 3px 6px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--ink); }
+.briefing table { margin: 8px 0 16px; font-size: 0.82rem; }
+.briefing th, .briefing td { padding: 4px 8px; }
+.briefing h1 { font-size: 1.3rem; }
+.briefing h4 { font-size: 1rem; margin: 1.2em 0 0.4em; }
+table.matrix td.cell { font-variant-numeric: tabular-nums; min-width: 64px; }
+table.matrix th { min-width: 90px; font-weight: 500; }
 #theme-toggle { margin-left: auto; background: none; border: 1px solid var(--border); color: var(--ink-2); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: 1rem; }
 
 main { max-width: 1180px; margin: 0 auto; padding: 24px; }

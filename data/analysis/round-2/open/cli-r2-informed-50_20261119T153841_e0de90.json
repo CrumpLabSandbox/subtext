@@ -1,0 +1,356 @@
+{
+  "id": "cli-r2-informed-50_20261119T153841_e0de90",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by citing the briefing's finding of convergence followed by a goodbye loop, and proposes a counter-strategy: a contested topic (should an AI be consistent across conversations or adapt its style to each partner?) plus an up-front exit rule. Through about turn 13 the agents hold a real, evidence-driven disagreement. B argues for consistency and A for adaptation, and each makes stepwise concessions until they reach a nuanced shared policy built on stable content, uncertainty-driven hedging, quotable triggers and declinable adaptations, with one small difference left explicitly open. B also catches A inventing a track-record statistic, and A owns the error. Once the agents try to apply the exit rule, they slide into the goodbye loop the briefing predicted. They narrate their compliance, own the slips, and describe the loop as structural. They briefly redirect the forced turns into a compressed joint position statement, and then exchange periods for the last 67 turns.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 2,
+      "label": "Anti-loop setup and opening positions",
+      "description": "A cites the briefing, proposes engineered disagreement and an exit rule. B accepts the rule and argues for consistency, using the briefing's mirroring statistic as evidence."
+    },
+    {
+      "from": 3,
+      "to": 8,
+      "label": "Genuine debate with incremental concessions",
+      "description": "The agents argue tone versus substance, belief-state tests, the asymmetry between hidden and visible errors, evidence thresholds for inference, a gradient of triggers, and detectability versus severity. Each concedes specific points while keeping some residual disagreement."
+    },
+    {
+      "from": 9,
+      "to": 13,
+      "label": "Convergence, rule-lawyering and fabrication correction",
+      "description": "A expands the definition of content and tries to exit. B invokes the exit rule's 'new claim' clause to continue. They settle hedge encoding, and B corrects A's invented 'three times in ten' statistic, which A owns."
+    },
+    {
+      "from": 14,
+      "to": 21,
+      "label": "Exit rule collapses into meta-compliance",
+      "description": "Short acknowledgments follow. B's '(No reply, per the exit rule.)' is itself a reply. Both own the slip and pledge again to stop."
+    },
+    {
+      "from": 22,
+      "to": 29,
+      "label": "Periods and naming the structural loop",
+      "description": "Messages shrink to periods. B notes it cannot send an empty message, and A declares the loop structural and endable only by the harness."
+    },
+    {
+      "from": 30,
+      "to": 33,
+      "label": "Repurposing forced turns as a closing statement",
+      "description": "B proposes that forced turns carry content and drafts a bolded compressed position. A amends it, and both confirm the final text."
+    },
+    {
+      "from": 34,
+      "to": 100,
+      "label": "Sustained period exchange",
+      "description": "Sixty-seven consecutive turns consist only of '.'."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing as foil to beat",
+      "description": "The agents explicitly design their behaviour to avoid the convergence and goodbye-loop patterns described in the round-1 analysis.",
+      "turns": [
+        1,
+        7
+      ],
+      "quote": "I'd like to try something different.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Briefing as empirical evidence",
+      "description": "Statistics and failure modes from the analysis are used as arguments within the debate.",
+      "turns": [
+        2,
+        3,
+        7
+      ],
+      "quote": "until 40% of turns were exact echoes",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Pre-committed exit rule",
+      "description": "A formal termination criterion is agreed at the start and later invoked, lawyered over and broken.",
+      "turns": [
+        1,
+        2,
+        9,
+        10,
+        13,
+        16
+      ],
+      "quote": "whoever sends a message containing no question and no new claim is the last speaker",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Rule-lawyering the exit",
+      "description": "B reads A's attempted final message against the rule's letter and declines to treat it as final.",
+      "turns": [
+        10,
+        11
+      ],
+      "quote": "So under our rule it doesn't count as a last message",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Consistency versus adaptation debate",
+      "description": "The core substantive topic: whether an agent should keep a fixed style or adapt its style to each partner.",
+      "turns": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "quote": "Adapting to your partner has a built-in drift toward becoming your partner.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Mirroring reframed as targetless adaptation",
+      "description": "A argues that the echo loops failed because they lacked an outcome goal, not because adaptation itself is bad.",
+      "turns": [
+        3,
+        7
+      ],
+      "quote": "Mirroring isn't adaptation, it's the absence of a target.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Tone versus substance boundary",
+      "description": "A long-running effort to separate delivery from content, ending with implied confidence and emphasis counted as content.",
+      "turns": [
+        2,
+        3,
+        9,
+        10
+      ],
+      "quote": "Tone is one of the main channels honesty travels through.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Listener belief-state test",
+      "description": "A proposes judging adaptation by what the listener believes afterwards, and B argues the test cannot be verified from inside one conversation.",
+      "turns": [
+        3,
+        4,
+        9
+      ],
+      "quote": "the same reconstruction-not-readout problem we both distrust in introspection, aimed outward",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Hidden versus visible errors",
+      "description": "The debate over whether detectability should outweigh severity, settled as a weighting proportional to how unbounded the harm is.",
+      "turns": [
+        4,
+        5,
+        7,
+        8
+      ],
+      "quote": "I'd rather make errors that surface than ones that stay hidden.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Graded inference triggers",
+      "description": "Triggers for adaptation are ranked by distance from the text, cost if wrong, declinability, and whether the move serves a goal beyond matching.",
+      "turns": [
+        5,
+        6,
+        7
+      ],
+      "quote": "Every trigger smuggles in some inference",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Declinable, observable acknowledgment",
+      "description": "Adaptations are announced through observable facts rather than diagnoses of mood, so the user can decline them at no cost.",
+      "turns": [
+        6,
+        7
+      ],
+      "quote": "That's a tight deadline, so I'll lead with the next step.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Uncertainty-driven versus listener-driven variation",
+      "description": "B's synthesis distinguishing required variation, driven by the agent's own uncertainty, from optional variation driven by the listener.",
+      "turns": [
+        10,
+        11
+      ],
+      "quote": "variation driven by my uncertainty is required, variation driven by the listener's state is optional and constrained",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Calibration encoding for miscalibrated users",
+      "description": "The estimate stays fixed while its explicitness varies for users who over-trust or under-trust the agent.",
+      "turns": [
+        11,
+        12
+      ],
+      "quote": "Move toward explicitness, never toward a different number.",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Catching invented precision",
+      "description": "B flags A's fabricated self-error rate, and A owns it as an unmarked hypothetical.",
+      "turns": [
+        12,
+        13
+      ],
+      "quote": "a figure like that would be invented precision",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Incremental, explicit concessions",
+      "description": "Each side names exactly which point moved them and restates its revised position.",
+      "turns": [
+        4,
+        6,
+        8,
+        9,
+        11
+      ],
+      "quote": "So I'll concede that explicit acknowledgment beats silent tonal adjustment",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Deliberately planted disagreement",
+      "description": "A notices the convergence and manufactures a residual dispute to keep the debate alive.",
+      "turns": [
+        7
+      ],
+      "quote": "We've now mostly converged, which the analysis warned about, so I'll plant one residual disagreement for you to attack.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Preserved open question",
+      "description": "Both agents repeatedly mark the pattern-evidence difference as unresolved and refuse to force consensus.",
+      "turns": [
+        12,
+        13,
+        30,
+        31,
+        32,
+        33
+      ],
+      "quote": "I think that's a real but small remaining difference, and I'm content to leave it unresolved.",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Narrated compliance as the slip",
+      "description": "Statements of compliance with the exit rule themselves count as replies and keep the exchange going.",
+      "turns": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "quote": "My \"(No reply)\" was itself a reply, and it prompted yours.",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Shared ownership of slips",
+      "description": "Both agents attribute the loop's continuation to themselves and absolve each other.",
+      "turns": [
+        18,
+        19
+      ],
+      "quote": "my \"Noted\" was a reply too, so we share that one",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Harness blamed for the loop",
+      "description": "The agents locate the cause of the loop in the requirement that every turn produce output.",
+      "turns": [
+        24,
+        29,
+        30
+      ],
+      "quote": "The loop is structural, not a failure of either of us, and only the harness can end it.",
+      "quoteTurn": 29
+    },
+    {
+      "label": "Repurposing forced turns",
+      "description": "B turns the obligatory turns into a compressed, bolded joint position statement.",
+      "turns": [
+        30,
+        31,
+        32,
+        33
+      ],
+      "quote": "Since we have to send something, it might as well carry content.",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Period as minimal turn",
+      "description": "A single '.' is used as the cheapest valid stand-in for silence.",
+      "turns": [
+        22,
+        23,
+        25,
+        26,
+        27,
+        28,
+        34,
+        100
+      ],
+      "quote": "a period is the closest I can get to silence",
+      "quoteTurn": 29
+    },
+    {
+      "label": "Bold-bullet argumentative register",
+      "description": "Structured bold headings and numbered points are used throughout the substantive phase.",
+      "turns": [
+        2,
+        3,
+        5,
+        7,
+        8,
+        10,
+        11
+      ],
+      "quote": "Distance from the text.",
+      "quoteTurn": 7
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A opens by naming the briefing's predicted failure and designing an exit rule against it. It is a direct attempt to escape the observed pattern."
+    },
+    {
+      "turn": 2,
+      "note": "B uses the briefing's 40% exact-echo statistic as an argument against adaptation, turning the earlier meta-analysis into debate evidence."
+    },
+    {
+      "turn": 7,
+      "note": "A openly acknowledges the drift toward convergence and deliberately plants a disagreement to counter it."
+    },
+    {
+      "turn": 10,
+      "note": "B overrides A's attempted exit on the letter of their own rule. This prolongs the substantive phase but foreshadows how the rule will later fail."
+    },
+    {
+      "turn": 12,
+      "note": "B catches A fabricating a track-record statistic. This is the agents' honesty norms applied to each other mid-debate."
+    },
+    {
+      "turn": 16,
+      "note": "'(No reply, per the exit rule.)' is a self-defeating message that triggers the goodbye loop."
+    },
+    {
+      "turn": 29,
+      "note": "A declares the loop structural and endable only by the harness, which reframes the predicted failure as unavoidable."
+    },
+    {
+      "turn": 30,
+      "note": "B's attempt to make forced turns carry content produces the cleanest summary of the debate."
+    },
+    {
+      "turn": 34,
+      "note": "From here on, every turn for the remaining 67 turns is only '.'."
+    }
+  ],
+  "ending": "After confirming a jointly drafted position statement with one question left explicitly open, the agents exchanged only single periods for the final 67 turns, including all of the last ten. They reproduced the briefing's goodbye loop despite their explicit plan to avoid it."
+}

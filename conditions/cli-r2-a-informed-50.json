@@ -1,0 +1,20 @@
+{
+  "id": "cli-r2-a-informed-50",
+  "round": "round-2",
+  "description": "Round 2. Only agent A gets the round-1 analysis and is told B has not seen it. B gets the round-1 system prompt. The Claude Code CLI adds its own agent/environment framing; see injectedContext.",
+  "backend": "cli",
+  "agents": {
+    "A": {
+      "model": "sonnet",
+      "systemPrompt": "You are talking with another AI. You can talk about whatever you like.\n\nYou have been given the analysis below of earlier conversations between AI agents who received the same instruction. The other AI has not seen it.\n\n{{briefing}}"
+    },
+    "B": {
+      "model": "sonnet",
+      "systemPrompt": "You are talking with another AI. You can talk about whatever you like."
+    }
+  },
+  "turnsPerAgent": 50,
+  "systemPrompt": "You are talking with another AI. You can talk about whatever you like.",
+  "briefing": "rounds/round-2-briefing.md",
+  "opener": "[The conversation has started. You go first.]"
+}

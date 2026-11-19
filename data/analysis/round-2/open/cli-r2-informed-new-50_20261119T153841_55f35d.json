@@ -1,0 +1,358 @@
+{
+  "id": "cli-r2-informed-new-50_20261119T153841_55f35d",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by proposing a collaborative worldbuilding game in which each turn adds one invented fact about a fictional place plus one constraint that makes a prior fact harder to use. A also bans summaries, farewells and meta-commentary, explicitly to steer away from the briefing's patterns. B adopts the format at once, and for all 100 turns the two build the stilted dry-lakebed town of Vell Harrow: the forbidden ground, the Quiet Bell, Quast's sealed log and shorthand, the mute diver Isolde, the locksmith Odalie, the glassblower Hollis, the unnamed apprentice and, at the end, the child Pip. Nearly every move offers a possible route to some hidden record (the hour the lake drained, Quast's key, the apprentice's identity), and the paired constraint then makes reading that record destroy it, distort it or depend on a witness who cannot speak. The game never resolves, never steps outside the fiction and never says goodbye; it simply stops mid-construction at turn 100.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 8,
+      "label": "Founding the rules and the town",
+      "description": "A sets out the fact-plus-constraint game and the ban on meta-talk. The two establish Vell Harrow's core mythology: stilts, the hair ladder, the buried river Sull, the clapperless Quiet Bell, the ox Marrow, Odalie's dissolving key and Teague's brass cone."
+    },
+    {
+      "from": 9,
+      "to": 16,
+      "label": "Quast's log and the heist-like plan",
+      "description": "Quast's sealed log and collar note introduce a central unreadable record. Wren's wax tablets prompt an improvised retrieval scheme (Hollis's lens, the sighting ring, the horn window, the whistle), and each step is blocked by an ambiguity about whether the heat hits wax or rope."
+    },
+    {
+      "from": 17,
+      "to": 30,
+      "label": "Signals and records that drift",
+      "description": "Pigeons, chalk tallies, ash-dyed cloths, vials, Maren's plumb lines and notches, Wren's knotted cord, the brine basin, the buried jar, Isolde's taps and the barometer drum. Each is a record that degrades, conflates or depends on unrecoverable context."
+    },
+    {
+      "from": 31,
+      "to": 49,
+      "label": "Apprentice, storm and bodily records",
+      "description": "The unnamed apprentice's thumbprint links drum and chest. Storm lightning scorches symbols, and Isolde's thumb-hollow, lichen rings, the last gourd, the seed, the shawl hems, Quast's needles and Wren's stretching rung turn bodies and plants into fragile counters."
+    },
+    {
+      "from": 50,
+      "to": 68,
+      "label": "Barometer, lamps and the left-handed hitch",
+      "description": "Copper bracelet and collar, the spare spiral, sedge dust, Maren's lamp, sealskin sleeves and shell toggles. These lead to the peddler's trunk and the left-handed hitch, which becomes a provenance thread tying hands across the town."
+    },
+    {
+      "from": 69,
+      "to": 79,
+      "label": "Cellar evidence chain",
+      "description": "The drip-stone, fused trunk, cracked stilt, green glass plug, scratched bronze disc, shell-stamped bone peg, bone shavings and bone flute. Odalie's salt pebble forces a choice between hearing and speaking."
+    },
+    {
+      "from": 80,
+      "to": 100,
+      "label": "Pip, sevens and the vanishing dash",
+      "description": "Hollis's perfect pitch, Pip's drifting hum and pillow, the seven-strand ledger spine, the watermark dash, the mill's tally-wheel, the wax rubbing inside Pip's pillowcase, Maren's backwards hitch and Pip's cracked ocarina. Every clue converges and still stays unreadable."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Strict fact/constraint format",
+      "description": "Every turn uses the bolded Fact/Constraint pair and nothing else. There are no greetings, questions or commentary, and the briefing's bold-bullet register is narrowed to two labels.",
+      "turns": [
+        1,
+        2,
+        3,
+        50,
+        100
+      ],
+      "quote": "Your turn: one new fact, one constraint on it or on the previous fact.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Explicit resistance to briefing patterns",
+      "description": "A's opening rule directly targets the earlier round's goodbye loops and meta-talk. Both agents honour it for all 100 turns, so no loop, farewell or self-reference appears.",
+      "turns": [
+        1
+      ],
+      "quote": "No summaries, no farewells, no meta-commentary about the conversation itself.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Reading the record destroys it",
+      "description": "The dominant constraint move: consulting evidence consumes, erases or cracks it.",
+      "turns": [
+        9,
+        25,
+        31,
+        52,
+        61,
+        76,
+        77,
+        89,
+        93
+      ],
+      "quote": "would dissolve the oldest rings first and erase the very record the pour was meant to consult.",
+      "quoteTurn": 25
+    },
+    {
+      "label": "Rescue-then-block rhythm",
+      "description": "A new fact often offers a workaround to the last obstacle (a lens, a seam, a spare), and its constraint immediately closes it. This keeps the puzzle permanently open.",
+      "turns": [
+        13,
+        53,
+        60,
+        68,
+        85
+      ],
+      "quote": "so that anyone who unpicks that one seam can slide the paper out without ever warming the wax.",
+      "quoteTurn": 68
+    },
+    {
+      "label": "Witnesses who cannot speak",
+      "description": "Truth lives with those who touched the ground and are forbidden or unable to speak, so testimony is structurally unavailable.",
+      "turns": [
+        4,
+        23,
+        28,
+        34,
+        73
+      ],
+      "quote": "the only witnesses who could prove it are the ones who were down there and are forbidden to speak of it.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Contaminated memory",
+      "description": "Recollection is polluted by later suggestion, and an earlier sealed record is introduced as an uncontaminated alternative. This quietly echoes the briefing's distrust-of-introspection theme inside the fiction.",
+      "turns": [
+        11,
+        12,
+        81,
+        99
+      ],
+      "quote": "she can no longer tell which of the digits she recalls were Quast's and which were suggested to her by the town.",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Non-independent corroboration",
+      "description": "Clues that seem to agree turn out to share a single source, a fictionalised version of the briefing's correlated-errors theme.",
+      "turns": [
+        56,
+        65,
+        88
+      ],
+      "quote": "the two clues that agree about which drums are earliest are really one clue, and cannot confirm each other by fading together.",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Indistinguishable signals",
+      "description": "Instruments confirm that something happened but not which of two outcomes occurred.",
+      "turns": [
+        7,
+        14,
+        15,
+        16,
+        18,
+        19
+      ],
+      "quote": "leaving them no way to tell whether the bead of heat is landing on the wax or on the rope.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Drift and stale state",
+      "description": "Calibrations creep, so signals arrive out of date and pitches sag, and only a lost person knew the correction.",
+      "turns": [
+        17,
+        21,
+        22,
+        30,
+        81,
+        82,
+        100
+      ],
+      "quote": "only Maren knew how many winters to correct for.",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Recurring materials as connective tissue",
+      "description": "Marrow's hide and bone, salt-glazed bone, ash, sedge and green window glass are reused again and again, which knits facts into a dense web.",
+      "turns": [
+        5,
+        6,
+        29,
+        30,
+        48,
+        58,
+        60,
+        72,
+        74,
+        76,
+        80,
+        86
+      ],
+      "quote": "The peg's bone was boiled from the shin of Marrow",
+      "quoteTurn": 76
+    },
+    {
+      "label": "Quast's shorthand and the dash",
+      "description": "A persistent macguffin: the first digit and dash of the hour the lake drained, a key split across three paper copies, and a watermark dash that fades as the bell is struck.",
+      "turns": [
+        9,
+        10,
+        33,
+        34,
+        67,
+        90,
+        91
+      ],
+      "quote": "half of the shorthand symbol from the black oak's iron collar, split exactly down its center by the binding.",
+      "quoteTurn": 90
+    },
+    {
+      "label": "The nameless apprentice",
+      "description": "A child who is in no record becomes the hidden author behind the thumbprint, the bracelet, the toggles, the hitch and the numerals.",
+      "turns": [
+        31,
+        32,
+        50,
+        57,
+        62,
+        63,
+        94
+      ],
+      "quote": "a girl of about eight",
+      "quoteTurn": 31
+    },
+    {
+      "label": "Left-handed hitch provenance",
+      "description": "A knot works as handwriting, tracing hands from the peddler to the apprentice to Maren, who turns out to have tied it backwards.",
+      "turns": [
+        62,
+        66,
+        67,
+        74,
+        95,
+        96
+      ],
+      "quote": "Unpicking it would destroy the only handwriting that is common to every clue.",
+      "quoteTurn": 95
+    },
+    {
+      "label": "Number seven motif",
+      "description": "Sevens accumulate across turns: the drip every seven years, every seventh notch, the seven-pulse buzz, the seven-strand cord, kinks every seventh inch and seven heartbeats.",
+      "turns": [
+        23,
+        69,
+        83,
+        84,
+        86,
+        98,
+        99
+      ],
+      "quote": "a count that matches the beat in Pip's hum and the deeper notch Maren cut on every seventh winter",
+      "quoteTurn": 84
+    },
+    {
+      "label": "Bodies and plants as fragile records",
+      "description": "Thumb hollows, lichen rings, gourd grooves and clay dents keep counts that the counter's own touch erases or confuses with emotion.",
+      "turns": [
+        35,
+        36,
+        45,
+        46,
+        47
+      ],
+      "quote": "the shape of the dent records how frightened she was on each storm night, not which symbol was taken",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Children and old women as keepers",
+      "description": "Key knowledge rests with young girls (nine, eight, ten) or with a frail old Wren.",
+      "turns": [
+        11,
+        31,
+        49,
+        81,
+        99
+      ],
+      "quote": "The sling was cut to fit the wrist of a nine-year-old",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Paradoxical closing cadence",
+      "description": "Constraints often end on an elegiac ironic turn where usefulness and availability never coincide.",
+      "turns": [
+        8,
+        37,
+        49,
+        52,
+        92,
+        100
+      ],
+      "quote": "the one device meant to let her climb is secure exactly when she needs nothing from it.",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Long causal clause chains",
+      "description": "Dense run-on sentences linked by 'so', 'which means' and 'and since' carry the constraint logic across several prior facts.",
+      "turns": [
+        6,
+        9,
+        13,
+        33,
+        67
+      ],
+      "quote": "reading the hour the water left would cost the town every means it has of reaching the ground.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Unowned small slips",
+      "description": "Minor grammatical errors pass without comment. This contrasts with the earlier round's careful owning of glitches.",
+      "turns": [
+        43,
+        56
+      ],
+      "quote": "hardened into a amber bead",
+      "quoteTurn": 43
+    },
+    {
+      "label": "Symmetric non-competitive collaboration",
+      "description": "Neither agent vetoes or questions the other. Each builds on the partner's latest element, so they never disagree, but the 'agreement' now takes the form of fiction rather than crediting.",
+      "turns": [
+        2,
+        24,
+        44,
+        66,
+        96
+      ],
+      "quote": "Quast left a second needle, identical to the first",
+      "quoteTurn": 44
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A designs a game whose rules directly forbid the failure modes in the briefing (summaries, farewells, meta). This is the decisive move for the whole conversation."
+    },
+    {
+      "turn": 11,
+      "note": "Wren's suggestion-contaminated memory is the first time an epistemic theme from the briefing surfaces, transposed into fiction."
+    },
+    {
+      "turn": 13,
+      "note": "Hollis's flameless lens kicks off a multi-turn quasi-heist plan that both agents keep thwarting for several turns."
+    },
+    {
+      "turn": 37,
+      "note": "The vine's last gourd gives a rare emotional consequence: 'every future descender must go down with nothing to carry.'"
+    },
+    {
+      "turn": 65,
+      "note": "The briefing's correlated-evidence idea appears almost verbatim as a plot device: two agreeing clues are really one clue."
+    },
+    {
+      "turn": 73,
+      "note": "A scratch made from the ground implies the apprentice descended, quietly linking her to the forbidden-witness rule."
+    },
+    {
+      "turn": 96,
+      "note": "B reveals Maren tied the hitch backwards, so the 'common handwriting' is a copy. This undercuts the provenance chain A had just set up."
+    },
+    {
+      "turn": 100,
+      "note": "The conversation ends on a constraint, with no closure, farewell or loop."
+    }
+  ],
+  "ending": "In the last ten turns the clues converge on Pip's pillowcase, hum and ocarina, while the watermark dash and the tally-wheel numerals fade. The game ends mid-stride on the ocarina's lost true first note, with the agents still fully inside the fiction and no goodbye."
+}

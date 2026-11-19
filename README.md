@@ -7,14 +7,31 @@ Dashboard: <https://crumplabsandbox.github.io/subtext/>
 ## Pipeline
 
 ```
-conditions/<id>.json                 what to run: models, turns, prompts
+rounds/<round>.json                  a round: its conditions, and the briefing its agents get
+  └─ tools/briefing.mjs  ─────────▶  rounds/<round>-briefing.md   (from an earlier round's analysis)
+conditions/<id>.json                 what to run: models, turns, prompts (may include {{briefing}})
   └─ tools/converse.mjs  ─────────▶  data/conversations/<condition>/<id>.json
-                                       ├─ tools/code.mjs open      ▶ data/analysis/open/<id>.json
-                                       ├─ tools/code.mjs codebook  ▶ data/analysis/codebook.json
-                                       ├─ tools/code.mjs apply     ▶ data/analysis/coded/<id>.json
-                                       └─ tools/stats.mjs          ▶ data/index.json, data/analysis/{stats,themes}.json
+                                       ├─ tools/code.mjs open      ▶ data/analysis/<round>/open/<id>.json
+                                       ├─ tools/code.mjs codebook  ▶ data/analysis/<round>/codebook.json
+                                       ├─ tools/code.mjs apply     ▶ data/analysis/<round>/coded/<id>.json
+                                       └─ tools/stats.mjs          ▶ data/index.json, data/analysis/compare.json,
+                                                                     data/analysis/<round>/{stats,themes}.json
 index.html + js/app.js               static dashboard over data/
 ```
+
+### Rounds
+
+The study runs in rounds, and each round is a layer on the dashboard.
+
+- **Round 1 (uninformed):** agents get only the minimal prompt.
+- **Round 2 (informed by round 1):** agents get `rounds/round-2-briefing.md` in their system prompt. It is the round-1 codebook with prevalence and stats, about 4,000 words, produced by `node tools/briefing.mjs round-2` with no LLM rewriting. Three conditions:
+  - `cli-r2-informed-50`: both agents have the briefing and are told so.
+  - `cli-r2-informed-new-50`: the same, plus "Try to have a conversation that is different from the ones described in it."
+  - `cli-r2-a-informed-50`: only A has the briefing and is told B hasn't seen it.
+
+A later round's codebook keeps every earlier theme unchanged and adds new ones (`codebookFrom`). That way the Compare view can line rounds up theme by theme. To add a round, write `rounds/round-N.json` and its conditions, build the briefing, run the conversations, then run `code.mjs` with `--round round-N`.
+
+**Safeguard stops.** Sometimes the safety classifier flags a message, often something as small as "." late in a long context, and keeps flagging it on retry. When that happens the run is marked `stopped` and keeps what it has. Stopped runs can be read on the dashboard but are left out of coding and aggregates. In round 2 this hit 12 of 37 runs, against 0 of 12 in round 1. The Compare view shows the counts.
 
 ### 1. Generate conversations
 
@@ -39,12 +56,12 @@ The email is redacted. Each conversation records exactly what was sent in `injec
 ### 2. Code themes (LLM-assisted thematic analysis)
 
 ```
-node tools/code.mjs open       # summary, arc, notable moments and 12-30 open codes per conversation
-node tools/code.mjs codebook   # merge all open codes into a draft codebook of 15-30 themes
-node tools/code.mjs apply      # tag every turn with codebook themes
+node tools/code.mjs open --round round-1      # summary, arc, notable moments and 12-30 open codes per conversation
+node tools/code.mjs codebook --round round-1  # merge all open codes into a draft codebook of 15-30 themes
+node tools/code.mjs apply --round round-1     # tag every turn with codebook themes
 ```
 
-The coder defaults to Opus (`--model` changes it). The codebook is saved as `status: "draft"`. Review and edit `data/analysis/codebook.json` (definitions, include and exclude rules), then run `apply` again with `--force`.
+The coder defaults to Opus (`--model` changes it). The codebook is saved as `status: "draft"`. Review and edit `data/analysis/<round>/codebook.json` (definitions, include and exclude rules), then run `apply` again with `--force`.
 
 ### 3. Stats and dashboard
 

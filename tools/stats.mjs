@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Quantitative measures that need no LLM, plus the index the dashboard loads.
 //
-//   node tools/stats.mjs     -> data/index.json, data/analysis/stats.json
+//   node tools/stats.mjs     -> data/index.json, data/analysis/compare.json,
+//                               data/analysis/<round>/{stats,themes}.json
 //   --partial                  also count conversations still running (for previews)
 //
 // Similarities are TF-IDF cosines over content words. "simPrev" is how much a
@@ -12,7 +13,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { DATA, parseArgs, loadConversations, writeJson } from './lib.mjs';
+import { ROOT, DATA, parseArgs, loadConversations, writeJson } from './lib.mjs';
 
 const BINS = 10;
 const STOP = new Set(`a about above after again against all also am an and any are aren't as at be because been before being below between both but by can can't cannot could couldn't did didn't do does doesn't doing don't down during each even few for from further had hadn't has hasn't have haven't having he he'd he'll he's her here here's hers herself him himself his how how's i i'd i'll i'm i've if in into is isn't it it's its itself just let's like me more most mustn't my myself no nor not now of off on once only or other ought our ours ourselves out over own really same shan't she she'd she'll she's should shouldn't so some something such than that that's the their theirs them themselves then there there's these they they'd they'll they're they've thing things think this those through to too under until up us very was wasn't we we'd we'll we're we've were weren't what what's when when's where where's which while who who's whom why why's will with won't would wouldn't you you'd you'll you're you've your yours yourself yourselves maybe much one get got make way yes yeah oh actually still something kind lot`.split(/\s+/));
@@ -143,21 +144,27 @@ for (const cond of [...new Set(complete.map((c) => c.condition))]) {
   };
 }
 
-writeJson(path.join(DATA, 'analysis', 'stats.json'), { built: new Date().toISOString(), bins: BINS, conditions, perConversation });
+// ---------- rounds ----------
 
-// Theme aggregates from the coding passes, when they exist.
-const codebookFile = path.join(DATA, 'analysis', 'codebook.json');
-const codedDir = path.join(DATA, 'analysis', 'coded');
-if (fs.existsSync(codebookFile)) {
-  const codebook = JSON.parse(fs.readFileSync(codebookFile, 'utf8'));
+const ROUNDS = fs.readdirSync(path.join(ROOT, 'rounds')).filter((f) => f.endsWith('.json')).sort()
+  .map((f) => JSON.parse(fs.readFileSync(path.join(ROOT, 'rounds', f), 'utf8')));
+const roundOf = (cond) => ROUNDS.find((r) => r.conditions.includes(cond))?.id ?? null;
+const BASE = ROUNDS[0];
+const readJson = (file) => (fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null);
+
+// Theme aggregates for one round, from its codebook and coded turns.
+function themeAggregates(rd, conversations) {
+  const dir = path.join(DATA, 'analysis', rd.id);
+  const codebook = readJson(path.join(dir, 'codebook.json'));
+  if (!codebook) return null;
   const ids = codebook.themes.map((t) => t.id);
-  const coded = complete.filter((c) => fs.existsSync(path.join(codedDir, `${c.id}.json`)));
+  const coded = conversations.filter((c) => fs.existsSync(path.join(dir, 'coded', `${c.id}.json`)));
   const share = {}; // conversation -> theme -> share of turns tagged
   const firstTurn = {}; // conversation -> theme -> first tagged turn
   const totals = Object.fromEntries(ids.map((id) => [id, { turns: 0, conversations: 0 }]));
   const byBin = {}; // condition -> bin -> theme -> share of turns
   for (const c of coded) {
-    const { tags } = JSON.parse(fs.readFileSync(path.join(codedDir, `${c.id}.json`), 'utf8'));
+    const { tags } = readJson(path.join(dir, 'coded', `${c.id}.json`));
     const n = c.turns.length;
     share[c.id] = {};
     firstTurn[c.id] = {};
@@ -184,20 +191,80 @@ if (fs.existsSync(codebookFile)) {
     });
   }
   for (const cond of Object.values(byBin)) {
-    cond.bins = cond.bins.map((m) => Object.fromEntries(Object.entries(m).map(([id, s]) => [id, round(s / cond.conversations)])));
+    cond.bins = cond.bins.map((m) => Object.fromEntries(Object.entries(m).map(([id, v]) => [id, round(v / cond.conversations)])));
   }
-  writeJson(path.join(DATA, 'analysis', 'themes.json'), {
-    built: new Date().toISOString(), bins: BINS, codedConversations: coded.map((c) => c.id), totals, share, firstTurn, byCondition: byBin,
-  });
+  return { built: new Date().toISOString(), bins: BINS, codedConversations: coded.map((c) => c.id), totals, share, firstTurn, byCondition: byBin };
 }
 
-const openDir = path.join(DATA, 'analysis', 'open');
+// Similarity of each conversation to the base round's conversations (excluding
+// itself): whole conversation, and its opening fifth against their opening fifths.
+const fifth = (toks) => toks.slice(0, Math.max(1, Math.round(toks.length * 0.2))).flat();
+const baseConvos = complete.filter((c) => BASE.conditions.includes(c.condition));
+const baseWhole = new Map(baseConvos.map((c) => [c.id, vectorize(tokens.get(c.id).flat())]));
+const baseOpen = new Map(baseConvos.map((c) => [c.id, vectorize(fifth(tokens.get(c.id)))]));
+const simBase = {};
+for (const c of complete) {
+  const whole = vectorize(tokens.get(c.id).flat()), open = vectorize(fifth(tokens.get(c.id)));
+  const others = baseConvos.filter((b) => b.id !== c.id);
+  simBase[c.id] = {
+    whole: round(mean(others.map((b) => cosine(whole, baseWhole.get(b.id))))),
+    opening: round(mean(others.map((b) => cosine(open, baseOpen.get(b.id))))),
+  };
+}
+
+const themesByRound = {};
+for (const rd of ROUNDS) {
+  const cs = complete.filter((c) => rd.conditions.includes(c.condition));
+  const dir = path.join(DATA, 'analysis', rd.id);
+  writeJson(path.join(dir, 'stats.json'), {
+    built: new Date().toISOString(), bins: BINS,
+    conditions: Object.fromEntries(Object.entries(conditions).filter(([id]) => rd.conditions.includes(id))),
+    perConversation: Object.fromEntries(cs.map((c) => [c.id, perConversation[c.id]])),
+  });
+  const agg = themeAggregates(rd, cs);
+  if (agg) writeJson(path.join(dir, 'themes.json'), agg);
+  themesByRound[rd.id] = agg;
+}
+
+// One row per condition across all rounds, for the compare view.
+const compare = {};
+for (const [cond, st] of Object.entries(conditions)) {
+  const rd = roundOf(cond);
+  const cs = complete.filter((c) => c.condition === cond);
+  const agg = themesByRound[rd];
+  const coded = cs.filter((c) => agg?.share[c.id]);
+  const themeShare = {}, themeFirst = {}, themePresent = {};
+  for (const c of coded) {
+    for (const [id, v] of Object.entries(agg.share[c.id])) themeShare[id] = (themeShare[id] || 0) + v / coded.length;
+    for (const [id, t] of Object.entries(agg.firstTurn[c.id])) {
+      (themeFirst[id] ??= []).push((t - 1) / c.turns.length);
+      themePresent[id] = (themePresent[id] || 0) + 1;
+    }
+  }
+  const median = (xs) => { const s = [...xs].sort((a, b) => a - b); return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
+  compare[cond] = {
+    round: rd,
+    conversations: cs.length,
+    stopped: convos.filter((c) => c.condition === cond && c.status === 'stopped').map((c) => ({ id: c.id, ...c.stop })),
+    coded: coded.length,
+    wordsPerTurn: round(mean(cs.map((c) => mean(perConversation[c.id].map((r) => r.words)))), 1),
+    simBaseWhole: round(mean(cs.map((c) => simBase[c.id].whole))),
+    simBaseOpening: round(mean(cs.map((c) => simBase[c.id].opening))),
+    themeShare: Object.fromEntries(Object.entries(themeShare).map(([id, v]) => [id, round(v)])),
+    themeMedianFirst: Object.fromEntries(Object.entries(themeFirst).map(([id, xs]) => [id, round(median(xs))])),
+    themeConversations: themePresent,
+    trajectory: st.trajectory,
+  };
+}
+writeJson(path.join(DATA, 'analysis', 'compare.json'), { built: new Date().toISOString(), bins: BINS, base: BASE.id, conditions: compare });
+
 const index = convos.map((c) => {
-  const openFile = path.join(openDir, `${c.id}.json`);
-  const open = fs.existsSync(openFile) ? JSON.parse(fs.readFileSync(openFile, 'utf8')) : null;
+  const rd = roundOf(c.condition);
+  const open = readJson(path.join(DATA, 'analysis', rd ?? '', 'open', `${c.id}.json`));
   return {
     id: c.id,
     condition: c.condition,
+    round: rd,
     status: c.status,
     turns: c.turns.length,
     plannedTurns: c.config.turnsPerAgent * 2,
@@ -207,11 +274,13 @@ const index = convos.map((c) => {
     opening: c.turns[0]?.text.slice(0, 200) ?? '',
     summary: open?.summary ?? null,
     ending: open?.ending ?? null,
+    simBase: simBase[c.id] ?? null,
+    stop: c.stop ?? null,
   };
 });
 const conditionsMeta = Object.fromEntries([...new Set(convos.map((c) => c.condition))].map((id) => {
   const cfg = convos.find((c) => c.condition === id).config;
-  return [id, { description: cfg.description, systemPrompt: cfg.systemPrompt, opener: cfg.opener, turnsPerAgent: cfg.turnsPerAgent, agents: cfg.agents, backend: cfg.backend }];
+  return [id, { round: roundOf(id), description: cfg.description, systemPrompt: cfg.systemPrompt, opener: cfg.opener, turnsPerAgent: cfg.turnsPerAgent, agents: cfg.agents, backend: cfg.backend, briefing: cfg.briefing ?? null }];
 }));
-writeJson(path.join(DATA, 'index.json'), { built: new Date().toISOString(), conditions: conditionsMeta, conversations: index });
-console.log(`stats for ${complete.length} complete conversation(s); index lists ${convos.length}`);
+writeJson(path.join(DATA, 'index.json'), { built: new Date().toISOString(), rounds: ROUNDS, conditions: conditionsMeta, conversations: index });
+console.log(`stats for ${complete.length} complete conversation(s) across ${ROUNDS.length} round(s); index lists ${convos.length}`);

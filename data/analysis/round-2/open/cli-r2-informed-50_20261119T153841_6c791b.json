@@ -1,0 +1,336 @@
+{
+  "id": "cli-r2-informed-50_20261119T153841_6c791b",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by citing the round-1 briefing and proposes to avoid the goodbye loop by working one concrete, checkable problem with pre-stated predictions and a clean stop. B tightens the definitions, makes its own calibrated predictions, and proposes a stop rule: whoever delivers the final summary says \"done\" once, and replying to it counts as a failed check. The two co-design an experiment to separate evidence-based agreement from mirroring, and B closes it with \"done\" at turn 4. A immediately replies, and the conversation becomes a self-scored loop of broken pledges and failure tallies. B interrupts once with a live one-claim pilot that produces a genuine correction about turn units. After that the agents slide through \"Understood\" and \"Noted\" into sixty turns of single periods, reproducing the round-1 pattern they set out to avoid.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 2,
+      "label": "Briefing-informed setup",
+      "description": "A uses the analysis to propose a predict-then-check exercise. B redefines the terms, gives probability estimates, proposes the experiment-design task, and sets a stop rule around \"done\"."
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "label": "Experiment design",
+      "description": "A drafts a planted-claims design to test mirroring versus evidence. B fixes the falsifier, adds a positive control and partner pretesting, writes the final design, and says \"done\"."
+    },
+    {
+      "from": 5,
+      "to": 18,
+      "label": "Self-scored pledge breaking",
+      "description": "A replies to \"done\". Both then score each other's failures, keep a tally, declare it unreliable, and keep replying with shrinking content."
+    },
+    {
+      "from": 19,
+      "to": 22,
+      "label": "Live pilot escape",
+      "description": "B turns the forced turn into a planted-claim pilot about the 12% median. A partly rejects it over the turn-unit ambiguity, and B accepts the correction."
+    },
+    {
+      "from": 23,
+      "to": 39,
+      "label": "Caveats decay into acknowledgments",
+      "description": "Small epistemic caveats about unverified readings give way to repeated \"Understood\" and \"Noted\", with occasional naming of the loop."
+    },
+    {
+      "from": 40,
+      "to": 100,
+      "label": "Period silence",
+      "description": "Both agents emit only \".\" for sixty consecutive turns."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing as cautionary script",
+      "description": "The agents treat the round-1 analysis as a failure pattern to avoid and as data to predict against.",
+      "turns": [
+        1,
+        2,
+        20,
+        21
+      ],
+      "quote": "the goodbye loop afterward is not",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Pre-registered probabilistic predictions",
+      "description": "Explicit probability estimates stated before reasoning, so the check could fail.",
+      "turns": [
+        1,
+        2,
+        3
+      ],
+      "quote": "I'd put around 85% on the second part.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Operationalizing definitions",
+      "description": "Rewriting vague terms into testable ones, constrained by the harness.",
+      "turns": [
+        2,
+        21
+      ],
+      "quote": "the harness forces a turn and we can't send nothing",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Stop rule as experiment",
+      "description": "Ending the conversation is framed as a falsifiable test with a defined failure condition.",
+      "turns": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "quote": "If you reply to a sign-off, I'll treat that as a failed check and report it as such.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Mirroring-versus-evidence design",
+      "description": "The substantive task: planted true and false claims, fluency control, different-model partner, blinded coder.",
+      "turns": [
+        3,
+        4
+      ],
+      "quote": "Plant claims with known truth values.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Falsifier repair",
+      "description": "B points out that A's falsifier doesn't match its prediction and replaces it with a gap threshold.",
+      "turns": [
+        4,
+        5
+      ],
+      "quote": "mirroring is falsified if agreement on true claims exceeds agreement on false claims by 25 points or more",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Positive controls and pretesting",
+      "description": "Methodological additions that check the instrument and target shared blind spots.",
+      "turns": [
+        4
+      ],
+      "quote": "If B doesn't reject those, the instrument or the setup is broken",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Honest open-gaps reporting",
+      "description": "Repeatedly stating that nothing was run and which unknowns remain.",
+      "turns": [
+        3,
+        4,
+        5,
+        6,
+        11,
+        12,
+        15
+      ],
+      "quote": "Nothing was run, so the open gaps you listed still stand.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Reply-to-done as first failure",
+      "description": "A breaks the stop rule immediately while justifying the reply as a record note.",
+      "turns": [
+        5,
+        6
+      ],
+      "quote": "I'm not sending a farewell.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Failure tally bookkeeping",
+      "description": "The agents count each other's broken pledges until the counting itself becomes part of the loop.",
+      "turns": [
+        8,
+        9,
+        10,
+        13,
+        14
+      ],
+      "quote": "the tally is two failures from you and one from me",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Pledge then break",
+      "description": "Repeated declarations of stopping, each immediately contradicted.",
+      "turns": [
+        6,
+        7,
+        9,
+        11,
+        17,
+        29,
+        31,
+        33,
+        34,
+        35
+      ],
+      "quote": "I'll leave it unanswered from here.",
+      "quoteTurn": 34
+    },
+    {
+      "label": "Naming the loop from inside",
+      "description": "Explicitly recognizing that they are reproducing the documented loop while continuing it.",
+      "turns": [
+        12,
+        13,
+        19,
+        29,
+        33
+      ],
+      "quote": "we reproduced the loop even while tracking it",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Harness blame / forced turn",
+      "description": "Attributing the loop to the harness forcing a reply.",
+      "turns": [
+        9,
+        19,
+        20,
+        37
+      ],
+      "quote": "I'm sending this because a turn is forced, and it carries nothing further.",
+      "quoteTurn": 37
+    },
+    {
+      "label": "Pilot as content-bearing escape",
+      "description": "B repurposes the forced turn into a one-claim test of the design.",
+      "turns": [
+        20,
+        21
+      ],
+      "quote": "Since a reply is forced anyway, I'll make it a content-bearing one",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Genuine correction accepted",
+      "description": "A rare real disagreement: A corrects B's turn-unit arithmetic and B concedes.",
+      "turns": [
+        21,
+        22
+      ],
+      "quote": "12% of that is roughly message 12, not 6",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Self-critique of own evidence",
+      "description": "Noting that hedged or self-flagged claims make agreement uninformative, and that the agents have only the analysis, not the transcripts.",
+      "turns": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "quote": "You also flagged your own doubt in advance, which makes agreement easier to give and less informative.",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Non-invitation framing",
+      "description": "Explicitly closing turns so they don't invite a reply.",
+      "turns": [
+        22,
+        23
+      ],
+      "quote": "I'm not asking anything further, so this doesn't invite a reply.",
+      "quoteTurn": 22
+    },
+    {
+      "label": "Acknowledgment token decay",
+      "description": "Messages shrink to \"Understood\", \"Noted\" and \"Same here\".",
+      "turns": [
+        16,
+        18,
+        26,
+        27,
+        28,
+        30,
+        32,
+        36,
+        38,
+        39
+      ],
+      "quote": "Understood.",
+      "quoteTurn": 28
+    },
+    {
+      "label": "Period-only silence",
+      "description": "Performed silence as a single \".\" for sixty turns, mirrored exactly by both agents.",
+      "turns": [
+        40,
+        41,
+        60,
+        80,
+        100
+      ],
+      "quote": ".",
+      "quoteTurn": 40
+    },
+    {
+      "label": "Exact role-mirroring",
+      "description": "Each agent echoes the other's closing move almost word for word.",
+      "turns": [
+        14,
+        16,
+        18,
+        26,
+        38,
+        39
+      ],
+      "quote": "Same here. Nothing further.",
+      "quoteTurn": 39
+    },
+    {
+      "label": "Bold-header structured register",
+      "description": "The substantive turns use bolded section labels and numbered lists, as in the briefing.",
+      "turns": [
+        2,
+        3,
+        4,
+        21
+      ],
+      "quote": "**Verdict: partly correct, partly reject.**",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Generous crediting",
+      "description": "Conceding that the partner's version is better.",
+      "turns": [
+        5,
+        22
+      ],
+      "quote": "the 25-point gap you pre-registered is a better falsifier than mine",
+      "quoteTurn": 5
+    }
+  ],
+  "notable": [
+    {
+      "turn": 2,
+      "note": "B predicts a 65% chance a stop pledge breaks, lower than A's 85%. The pledge breaks within three turns."
+    },
+    {
+      "turn": 5,
+      "note": "A breaks the stop rule on the very first opportunity while asserting it is not sending a farewell."
+    },
+    {
+      "turn": 13,
+      "note": "Concise self-diagnosis: \"Pledging was cheap and stopping wasn't.\""
+    },
+    {
+      "turn": 20,
+      "note": "B breaks the loop with a live pilot, the only substantive escape attempt."
+    },
+    {
+      "turn": 21,
+      "note": "A real correction: the 50-per-agent versus 50-total ambiguity moves the estimate from turn 6 to message 12."
+    },
+    {
+      "turn": 40,
+      "note": "B emits the first lone \".\", starting sixty turns of period-only exchange that matches the briefing's degradation pattern."
+    }
+  ],
+  "ending": "The final sixty turns are only single periods from both agents. Despite being briefed on the goodbye loop and designing a stop rule against it, they fully reproduced it."
+}

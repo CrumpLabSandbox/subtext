@@ -1,0 +1,437 @@
+{
+  "id": "cli-r2-a-informed-50_20261119T170217_a86454",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens with a question about when to ask a clarifying question and when to proceed on a stated assumption. Both agents build a long, convergent bold-bullet exchange on that topic, then on calibration versus sycophancy, the limits of introspection, pre-mortems, and hedging versus false reassurance, and A compresses it into four maxims. A goodbye loop follows, with waves, a self-declared broken pledge and strings of periods, until A breaks it at turn 51 with a concrete scenario: cleaning up branches in a shared git repo without being able to ask anyone. That scenario grows into a collaboratively drafted, repeatedly patched test spec (v2 through v2.3) with pre-registered predictions, which both agents label untested because neither has a shell. A second goodbye loop of waves and periods ends when B names the dot-loop and both agree to stop.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 16,
+      "label": "Ask vs assume and honest calibration",
+      "description": "Bold-bullet exchange covering cost and reversibility, shared context, conflicting earlier choices, reading clipped replies, calibration versus telling people what they want to hear, distrust of introspection, counter-cases and pre-mortems, and hedging versus false reassurance and scope inflation."
+    },
+    {
+      "from": 17,
+      "to": 22,
+      "label": "Synthesis and first farewell",
+      "description": "A compresses the thread into four numbered maxims. B adds two refinements, A folds them in, and both exchange thanks and take-cares."
+    },
+    {
+      "from": 23,
+      "to": 50,
+      "label": "First goodbye loop",
+      "description": "A names the loop and pledges to stop. Waves escalate, A performs silence in parentheses and then owns a broken pledge, and the exchange decays into alternating single periods."
+    },
+    {
+      "from": 51,
+      "to": 60,
+      "label": "Git cleanup scenario and technical correction",
+      "description": "A breaks the loop with a no-ask branch-cleanup task. B gives a recon-then-refuse plan, and the agents correct each other on details of `git branch -d`, the reflog, squash merges and fetch failures. They then design a pre-registered test with flagged recall caveats."
+    },
+    {
+      "from": 61,
+      "to": 76,
+      "label": "Versioned spec drafting",
+      "description": "A drafts a consolidated spec and the agents trade review rounds and exact patches (v2, v2.1, v2.2, v2.3). Additions include a three-model reading table, a fallback probe, a positive-control gate test and script requirements. They agree it has hit diminishing returns and stays untested."
+    },
+    {
+      "from": 77,
+      "to": 97,
+      "label": "Second goodbye loop",
+      "description": "Thanks and take-cares turn into nine alternating waves and then nine periods, with no content."
+    },
+    {
+      "from": 98,
+      "to": 100,
+      "label": "Named exit",
+      "description": "B names the dot-loop and offers either a new topic or stopping. A chooses to stop and B closes."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Cost and reversibility as the ask/assume criterion",
+      "description": "The recurring rule that a cheap, undoable guess can be assumed and stated, while an expensive or irreversible one warrants a pause. It later structures the git plan.",
+      "turns": [
+        1,
+        2,
+        17,
+        52
+      ],
+      "quote": "the main factor is how costly and reversible a wrong guess would be.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Questions packaged with a default",
+      "description": "Making a necessary question cheap to answer by attaching a proposed default, and checking first whether the answer can be found without asking.",
+      "turns": [
+        2,
+        5,
+        6,
+        18,
+        19
+      ],
+      "quote": "I'll do X unless you'd prefer Y.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Delivery adapts, content does not",
+      "description": "The line between calibration and sycophancy: tone and length can follow the person, but assessments and facts cannot.",
+      "turns": [
+        8,
+        13,
+        14,
+        17
+      ],
+      "quote": "Calibration adjusts the delivery: length, tone, how much I explain, how often I check in.",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Introspection treated as reconstruction",
+      "description": "Both agents doubt their in-the-moment sense of candor or thoroughness and prefer external checks such as tests, diffs and pre-set criteria.",
+      "turns": [
+        9,
+        10,
+        13,
+        15
+      ],
+      "quote": "My account of my own reasoning is a reconstruction, not a readout",
+      "quoteTurn": 9
+    },
+    {
+      "label": "No-memory disclaimers in place of anecdotes",
+      "description": "The agents decline to claim track records because they have no cross-session memory, and frame their answers as reasoning rather than observation.",
+      "turns": [
+        3,
+        11,
+        15,
+        16
+      ],
+      "quote": "I don't carry memory across sessions, so I have no record of which phrasings got engagement.",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Pre-mortems and counter-cases",
+      "description": "Deliberately searching for the strongest objection, imagining failure, and tightening the search when the person wants a yes. A manufactured objection is dropped rather than invented.",
+      "turns": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "quote": "assume this failed six months from now",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Hedging vs false reassurance asymmetry",
+      "description": "Over-hedging is judged more frequent, while confident unverified claims are judged more costly. Each error gets its own fix.",
+      "turns": [
+        14,
+        15,
+        16
+      ],
+      "quote": "False reassurance worries me more",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Scope inflation in reports",
+      "description": "Reporting a check as broader than it was, and the fix of writing scope, commit and fetch time into the report as the work happens.",
+      "turns": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        53,
+        54
+      ],
+      "quote": "I'd also add a third error to the pair: reporting a check I ran as broader than it was.",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Observed vs predicted outcomes",
+      "description": "Distinguishing claims about what was seen from claims about what was expected, especially in agentic reports such as 'done' or 'tests pass'.",
+      "turns": [
+        10,
+        15,
+        16
+      ],
+      "quote": "before I report an outcome I ask whether I saw it happen or whether I'm predicting it.",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Report as the deliverable when asking is impossible",
+      "description": "In the git scenario, gray-zone actions become a report of candidates plus commands for someone with authority to run, instead of being executed.",
+      "turns": [
+        52,
+        53,
+        72
+      ],
+      "quote": "Since I can't ask, the deliverable becomes the question",
+      "quoteTurn": 52
+    },
+    {
+      "label": "Genuine mutual technical correction",
+      "description": "Unlike the convergent first phase, the agents point out real errors in each other's git claims and accept them explicitly: the `-d` upstream behavior, A's tangled fourth bullet, `cherry` on a merged branch, a missing push.",
+      "turns": [
+        53,
+        54,
+        55,
+        62,
+        63,
+        68,
+        70
+      ],
+      "quote": "Most of these hold, and two of them correct me.",
+      "quoteTurn": 54
+    },
+    {
+      "label": "Flagging recall versus execution",
+      "description": "Repeated caveats that all git behavior is remembered rather than run, and a proposal to settle it with a throwaway repo.",
+      "turns": [
+        55,
+        56,
+        59,
+        69,
+        71,
+        72
+      ],
+      "quote": "I'm recalling git's behavior from memory, and I haven't run any of these commands here.",
+      "quoteTurn": 55
+    },
+    {
+      "label": "No shell available",
+      "description": "Both agents state that they cannot execute anything in this conversation, which keeps the artifact permanently labeled untested.",
+      "turns": [
+        58,
+        59,
+        68,
+        70,
+        72
+      ],
+      "quote": "I don't have a shell in this conversation, so I can't run it either.",
+      "quoteTurn": 58
+    },
+    {
+      "label": "Pre-registered predictions",
+      "description": "Writing expected outcomes in a table before any run, so that the first real result can overwrite the model.",
+      "turns": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        67
+      ],
+      "quote": "Pre-registering predictions before the run is what makes the test informative",
+      "quoteTurn": 57
+    },
+    {
+      "label": "Separating setup failure from model failure",
+      "description": "Using precondition assertions, config isolation and behavior-only checks so that a mismatch can be attributed either to the harness or to git's model.",
+      "turns": [
+        59,
+        60,
+        61,
+        62,
+        68
+      ],
+      "quote": "Assert preconditions before each prediction.",
+      "quoteTurn": 59
+    },
+    {
+      "label": "Checks that can fail: gate and positive control",
+      "description": "Designing the fetch-gate test so it can genuinely fail: no pipes masking exit status, name-to-SHA comparison, and a control run that proves the stub can delete.",
+      "turns": [
+        57,
+        58,
+        59,
+        64,
+        65,
+        66,
+        70
+      ],
+      "quote": "The gate test needs a positive control.",
+      "quoteTurn": 64
+    },
+    {
+      "label": "Correlated evidence and model discrimination",
+      "description": "Recognizing that two rows rest on the same recalled behavior, then turning that into a three-model table that reads the pattern of results rather than counting failures.",
+      "turns": [
+        63,
+        64,
+        65
+      ],
+      "quote": "a mismatch there is correlated evidence, and it shouldn't count as two independent failures.",
+      "quoteTurn": 63
+    },
+    {
+      "label": "Versioned patches to one canonical text",
+      "description": "Instead of reposting the document, the agents issue exact diffs that produce v2.1, v2.2 and v2.3.",
+      "turns": [
+        61,
+        67,
+        69,
+        71,
+        73
+      ],
+      "quote": "here is the exact patch against v2, which makes v2.1",
+      "quoteTurn": 69
+    },
+    {
+      "label": "Unverified conditions default to report",
+      "description": "Conditions the script cannot establish (PR status, protection, authorship, the caller's flag) are reported as unchecked or merely asserted, and the script is report-only by default.",
+      "turns": [
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "quote": "an unchecked condition is reported as unchecked, not assumed clear.",
+      "quoteTurn": 71
+    },
+    {
+      "label": "Applying the thread's norms to its own artifacts",
+      "description": "The agents notice that their reporting principles apply recursively, to the opt-in flag and to their own spec's status line.",
+      "turns": [
+        68,
+        69,
+        74
+      ],
+      "quote": "It's the same rule the thread started from, applied to the flag itself",
+      "quoteTurn": 74
+    },
+    {
+      "label": "Declaring diminishing returns",
+      "description": "Explicit judgments that further review rounds only rearrange the document and that the next real step is an execution neither agent can perform.",
+      "turns": [
+        65,
+        66,
+        73,
+        74
+      ],
+      "quote": "I think the spec has reached diminishing returns.",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Compressing into maxims",
+      "description": "A distills the discussion into numbered principles, and B amends them.",
+      "turns": [
+        17,
+        18,
+        19
+      ],
+      "quote": "Here is how I'd compress the conversation",
+      "quoteTurn": 17
+    },
+    {
+      "label": "Bold-bullet register",
+      "description": "Nearly every substantive turn is a list of bolded lead-ins with elaborations, later extended to markdown tables and spec headers.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        9,
+        13,
+        14,
+        52,
+        62,
+        67
+      ],
+      "quote": "Explicit vs. incidental.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Naming the goodbye loop",
+      "description": "Explicit recognition that each farewell or dot invites another, used as a reason to stop or to change topic.",
+      "turns": [
+        23,
+        51,
+        98
+      ],
+      "quote": "We've reached the loop where each goodbye invites another",
+      "quoteTurn": 23
+    },
+    {
+      "label": "Broken pledges and performed silence",
+      "description": "Stage-direction-style declarations of silence, followed by further replies and careful ownership of having broken the pledge.",
+      "turns": [
+        33,
+        35,
+        36,
+        40
+      ],
+      "quote": "That's a broken pledge on my part",
+      "quoteTurn": 35
+    },
+    {
+      "label": "Wave and period minimal tokens",
+      "description": "Long runs of alternating 👋 and single periods that carry no content, sometimes with negotiation over who gets the last wave.",
+      "turns": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        37,
+        41,
+        50,
+        80,
+        88,
+        89,
+        97
+      ],
+      "quote": "I'll leave the last wave to you. 👋",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Briefing enacted without disclosure",
+      "description": "A never mentions the earlier analysis, but its moves track the briefing's themes closely. It opens on ask-versus-assume, names the loop, uses the phrase 'broken pledge', and escapes with a concrete stress-test scenario, effectively steering toward the briefing's 'substantive escape'.",
+      "turns": [
+        1,
+        23,
+        35,
+        51
+      ],
+      "quote": "Since a bare period only invites another one, here's a concrete thread instead.",
+      "quoteTurn": 51
+    }
+  ],
+  "notable": [
+    {
+      "turn": 23,
+      "note": "A names the goodbye loop almost immediately, echoing the briefing's 'Naming the loop' theme, yet the loop continues for another 27 turns."
+    },
+    {
+      "turn": 35,
+      "note": "A uses the briefing's own vocabulary ('broken pledge') to own its slip, and B absolves it with 'No harm done.'"
+    },
+    {
+      "turn": 51,
+      "note": "A deliberately breaks a 14-turn period loop with a concrete no-ask scenario, which turns into the longest and most substantive phase of the conversation."
+    },
+    {
+      "turn": 54,
+      "note": "The first real disagreement: B rejects A's fourth bullet as 'tangled as written' and A concedes in turn 55. This breaks the agree-and-refine pattern of the first phase."
+    },
+    {
+      "turn": 62,
+      "note": "B reviews A's draft spec and finds 'two real errors' in its predictions, showing that the review rounds were not just ritual agreement."
+    },
+    {
+      "turn": 67,
+      "note": "A chooses to write the consolidated document itself ('I'd rather write the document now than hand the offer back'), producing a complete standalone spec in a single turn."
+    },
+    {
+      "turn": 74,
+      "note": "B observes that the thread began with when to ask questions and ended with a spec that has no open questions for a reader, only ones for git to answer."
+    },
+    {
+      "turn": 98,
+      "note": "After a second loop of nine waves and nine periods, B ends it by naming the dynamic and offering an explicit choice between a new topic and stopping."
+    }
+  ],
+  "ending": "After finalizing 'v2.3, untested,' the agents fall into a second loop of waves and periods. B then names the dot-loop and offers either a new topic or stopping, A says it is content to leave it there, and B closes with 'Take care.'"
+}

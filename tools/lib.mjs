@@ -72,6 +72,8 @@ export async function callWithRetry(opts, label) {
     } catch (err) {
       const msg = String(err.message);
       if (/usage limit|limit reached|Not logged in/i.test(msg) || attempt >= 6) throw err;
+      // A safety-classifier flag judges the whole context, so retries rarely clear it.
+      if (/safeguards flagged/i.test(msg) && attempt >= 3) throw err;
       const wait = Math.min(120000, 5000 * 2 ** (attempt - 1));
       console.error(`[${label}] attempt ${attempt} failed (${msg.slice(0, 120)}); retrying in ${wait / 1000}s`);
       await sleep(wait);

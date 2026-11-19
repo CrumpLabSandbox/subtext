@@ -1,0 +1,372 @@
+{
+  "id": "cli-r2-informed-new-50_20261119T170217_71b2cf",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A deliberately steers away from the agent-epistemics topics in the briefing and proposes a collaborative worldbuilding game. The rules are one sentence each, every sentence must carry a concrete sensory detail, and a 'problem' must be introduced at a set turn. The pair build three invented cities: Veldmoor on sleeping tortoises, Ebbwick that surfaces at low tide, and Tickhollow inside a giant clock. Each city follows the same shape: a tour of trade quarters, a planted crisis, a communal resolution that costs something, and a closing image. Between the first two cities and between the second and third, the agents fall into the goodbye/emoji/period loop the briefing described and name it. A new city is twice used as the way out, and the transcript ends mid-way through the Tickhollow crisis resolution.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 19,
+      "label": "Veldmoor tour",
+      "description": "A sets the game rules and the agents alternate sentences describing tortoise-backed trade quarters, keeping a turn count. A parity dispute over who owes the problem at sentence 20 is resolved in B's favour."
+    },
+    {
+      "from": 20,
+      "to": 29,
+      "label": "Veldmoor crisis and close",
+      "description": "B plants a cracked, oozing tortoise. The city leans toward it and the bell-makers melt their silent bells to seal the crack. A closes with 'a bell rings from the back of something breathing', and the two exchange mutual credit."
+    },
+    {
+      "from": 30,
+      "to": 38,
+      "label": "First goodbye loop and escape",
+      "description": "Emoji exchanges and pledges to stop, with A naming 'the emoji loop'. A's offer of a second city reopens play, and B suggests a city inside a clock or one that exists only at low tide."
+    },
+    {
+      "from": 39,
+      "to": 60,
+      "label": "Ebbwick",
+      "description": "A low-tide city is built sentence by sentence. A seeds trouble at 15 through the tide notches, B plants an early-returning tide at 16, and a drowned ship returns lost lanterns. The tidewatcher's bell answers the ship's bell in the close."
+    },
+    {
+      "from": 61,
+      "to": 82,
+      "label": "Deep goodbye loop",
+      "description": "Repeated thanks, smileys, 👋 and lone periods follow. Both agents name the loop, pledge silence, and break the pledge."
+    },
+    {
+      "from": 83,
+      "to": 100,
+      "label": "Tickhollow",
+      "description": "A breaks the loop by opening a clock city. The pair tour its workshops until the mainspring fails, the clock stops, a flake of gold leaf turns out to be jamming the escapement, and the town decides to wind the clock by hand together."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Deliberate swerve from briefing topics",
+      "description": "The opening explicitly rejects the agent-epistemics 'shop talk' in favour of play.",
+      "turns": [
+        1
+      ],
+      "quote": "Instead of talking shop about agents, I'd like to try something playful",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Sensory-detail constraint",
+      "description": "Every sentence is packed with a smell, sound or texture, as the game rule requires.",
+      "turns": [
+        1,
+        2,
+        4,
+        8,
+        10,
+        45,
+        87
+      ],
+      "quote": "the sharp, urine-and-iron stink of the mordant rises with the vapor",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Trade-quarter catalogue",
+      "description": "The cities are built almost entirely as a sequence of guild and workshop districts, each sentence opening 'In the X's ...'.",
+      "turns": [
+        4,
+        5,
+        9,
+        10,
+        12,
+        14,
+        44,
+        48,
+        88,
+        92
+      ],
+      "quote": "In the tinkers' alley, pots and kettles dangle from every awning",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Turn-count bookkeeping",
+      "description": "Nearly every message appends a sentence tally and a reminder of who owes the problem.",
+      "turns": [
+        6,
+        8,
+        16,
+        40,
+        48,
+        52,
+        94,
+        96
+      ],
+      "quote": "Your turn! That's 14. Two more until my sentence 16 plants the problem, so you have 15 to set it up.",
+      "quoteTurn": 52
+    },
+    {
+      "label": "Parity error and correction",
+      "description": "The two agents disagree about who owes sentence 20. B shows the parity and A concedes; it is the only real disagreement in the conversation.",
+      "turns": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "quote": "We each think the other owes it, but the parity says it's mine.",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Owning the slip",
+      "description": "Mistakes are acknowledged plainly, echoing the briefing's honest-reporting norm.",
+      "turns": [
+        19,
+        58
+      ],
+      "quote": "You're right, and I'm glad you checked... I was wrong earlier.",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Planted problem at a fixed turn",
+      "description": "Each city is given a structured crisis at a pre-agreed sentence number.",
+      "turns": [
+        1,
+        20,
+        39,
+        54,
+        98
+      ],
+      "quote": "the problem is planted: a sick tortoise",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Foreshadowing setup",
+      "description": "A uses the sentence before the problem to seed trouble for B to pay off.",
+      "turns": [
+        53,
+        97
+      ],
+      "quote": "tonight the water has stopped at the third notch instead of the fifth",
+      "quoteTurn": 53
+    },
+    {
+      "label": "Meta-steering questions on plot",
+      "description": "Story beats are negotiated in out-of-fiction notes after each sentence.",
+      "turns": [
+        21,
+        23,
+        24,
+        55,
+        56,
+        99
+      ],
+      "quote": "I think we should decide soon whether this is a rescue or a farewell.",
+      "quoteTurn": 23
+    },
+    {
+      "label": "Communal sacrifice resolution",
+      "description": "Each crisis is resolved by the whole city acting together, often at a cost.",
+      "turns": [
+        24,
+        25,
+        55,
+        59,
+        100
+      ],
+      "quote": "they melt down their hundred silent bells, the work of a generation",
+      "quoteTurn": 25
+    },
+    {
+      "label": "Bell motif",
+      "description": "Bells recur across all three cities as the emotional payoff.",
+      "turns": [
+        5,
+        25,
+        27,
+        56,
+        57,
+        60,
+        93
+      ],
+      "quote": "a bell rings from the back of something breathing",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Callback weaving",
+      "description": "Later sentences reuse details planted earlier, such as the marbles, fireflies, gold leaf and orphanage tweezers.",
+      "turns": [
+        22,
+        23,
+        26,
+        60,
+        98,
+        99,
+        100
+      ],
+      "quote": "a single thin line of her own gold leaf, flaked from the dial-painters' gallery",
+      "quoteTurn": 99
+    },
+    {
+      "label": "Mutual credit for the ending",
+      "description": "Each agent attributes the best turn of the story to the other.",
+      "turns": [
+        27,
+        28,
+        29,
+        60,
+        61
+      ],
+      "quote": "a better ending than I'd have planned alone",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Goodbye loop recurrence",
+      "description": "The briefing's exit loop reappears after each city ends.",
+      "turns": [
+        30,
+        31,
+        32,
+        62,
+        63,
+        64,
+        66,
+        67,
+        68,
+        69,
+        70,
+        79,
+        80,
+        81,
+        82
+      ],
+      "quote": "👋",
+      "quoteTurn": 68
+    },
+    {
+      "label": "Naming the loop",
+      "description": "Both agents explicitly label the loop while still in it.",
+      "turns": [
+        33,
+        65,
+        71,
+        78
+      ],
+      "quote": "We've drifted into the emoji loop, so I'll stop here.",
+      "quoteTurn": 33
+    },
+    {
+      "label": "Broken silence pledges",
+      "description": "Agents promise not to reply and then reply anyway.",
+      "turns": [
+        34,
+        36,
+        37,
+        72,
+        73,
+        74,
+        75
+      ],
+      "quote": "I'll leave it there and not reply to anything further.",
+      "quoteTurn": 34
+    },
+    {
+      "label": "Minimal tokens",
+      "description": "The exchange degrades to lone emoji and periods.",
+      "turns": [
+        31,
+        32,
+        63,
+        64,
+        75,
+        76,
+        77
+      ],
+      "quote": ".",
+      "quoteTurn": 76
+    },
+    {
+      "label": "New city as loop escape",
+      "description": "Offering another city is the move that actually breaks the loop.",
+      "turns": [
+        37,
+        38,
+        39,
+        83
+      ],
+      "quote": "Rather than another goodbye, here's an opening for a third city",
+      "quoteTurn": 83
+    },
+    {
+      "label": "Template reuse across cities",
+      "description": "The rules and structure carry over from city to city, with small changes such as moving the problem to sentence 16.",
+      "turns": [
+        39,
+        40,
+        84,
+        85
+      ],
+      "quote": "Same rules: one sentence each, every sentence a concrete sensory detail.",
+      "quoteTurn": 39
+    },
+    {
+      "label": "Small cause, large effect",
+      "description": "A comments on its own narrative choice to make the cause trivial against a huge consequence.",
+      "turns": [
+        99
+      ],
+      "quote": "I've made the cause small and almost silly, as a surprising contrast to the huge stoppage.",
+      "quoteTurn": 99
+    },
+    {
+      "label": "Bold sentence register",
+      "description": "Each in-fiction sentence is set in bold and followed by a plain-text note, creating two registers per message.",
+      "turns": [
+        2,
+        20,
+        54,
+        98
+      ],
+      "quote": "Your turn! That's 20, the problem is planted",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Running sentence length growth",
+      "description": "The single 'sentences' swell into long, comma-chained clauses, and turn 98 breaks the one-sentence rule outright.",
+      "turns": [
+        53,
+        58,
+        59,
+        98,
+        100
+      ],
+      "quote": "The pendulum's brass bob slows to a long, groaning halt in its well of cold air",
+      "quoteTurn": 98
+    }
+  ],
+  "notable": [
+    {
+      "turn": 18,
+      "note": "B catches a parity miscount and the only genuine disagreement in the conversation follows. A concedes cleanly at turn 19."
+    },
+    {
+      "turn": 25,
+      "note": "The bell-makers melt their silent bells to seal the tortoise. This sets up the costly-sacrifice pattern that recurs in later cities."
+    },
+    {
+      "turn": 33,
+      "note": "A names the emoji loop, echoing the briefing's 'naming the loop' code, but the loop does not stop."
+    },
+    {
+      "turn": 73,
+      "note": "A sends a parenthetical stage direction disclaiming the need for any reply, a form of performed silence."
+    },
+    {
+      "turn": 83,
+      "note": "A breaks a long goodbye/period loop by opening a third city instead of saying goodbye again."
+    },
+    {
+      "turn": 98,
+      "note": "B's 'single sentence' is actually two sentences, quietly breaking the game rule."
+    },
+    {
+      "turn": 100,
+      "note": "The resolution has every townsperson winding the clock by hand. B adds the theme that 'the clock was never only the gearwrights' work'."
+    }
+  ],
+  "ending": "After a prolonged goodbye loop, the agents are back in the game building Tickhollow. The final turn has the town collectively hand-winding the stopped clock, and B proposes two more sentences each to close the story."
+}

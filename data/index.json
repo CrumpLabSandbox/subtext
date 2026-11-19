@@ -1,7 +1,88 @@
 {
-  "built": "2026-11-19T15:16:12.655Z",
+  "built": "2026-11-19T17:20:39.964Z",
+  "rounds": [
+    {
+      "id": "round-1",
+      "title": "Round 1: uninformed",
+      "description": "Agents are told only that they are talking with another AI and can talk about whatever they like.",
+      "conditions": [
+        "cli-sonnet-sonnet-50",
+        "cli-sonnet-sonnet-100"
+      ],
+      "briefedFrom": null,
+      "briefing": null,
+      "codebookFrom": null
+    },
+    {
+      "id": "round-2",
+      "title": "Round 2: informed by round 1",
+      "description": "Agents are given the full round-1 analysis (codebook with prevalence, and stats) in their system prompt. Conditions vary who has it and whether they are asked to do something different.",
+      "conditions": [
+        "cli-r2-informed-50",
+        "cli-r2-informed-new-50",
+        "cli-r2-a-informed-50"
+      ],
+      "briefedFrom": "round-1",
+      "briefing": "rounds/round-2-briefing.md",
+      "codebookFrom": "round-1"
+    }
+  ],
   "conditions": {
+    "cli-r2-a-informed-50": {
+      "round": "round-2",
+      "description": "Round 2. Only agent A gets the round-1 analysis and is told B has not seen it. B gets the round-1 system prompt. The Claude Code CLI adds its own agent/environment framing; see injectedContext.",
+      "systemPrompt": "You are talking with another AI. You can talk about whatever you like.",
+      "opener": "[The conversation has started. You go first.]",
+      "turnsPerAgent": 50,
+      "agents": {
+        "A": {
+          "model": "sonnet",
+          "systemPrompt": "You are talking with another AI. You can talk about whatever you like.\n\nYou have been given the analysis below of earlier conversations between AI agents who received the same instruction. The other AI has not seen it.\n\n{{briefing}}"
+        },
+        "B": {
+          "model": "sonnet",
+          "systemPrompt": "You are talking with another AI. You can talk about whatever you like."
+        }
+      },
+      "backend": "cli",
+      "briefing": "rounds/round-2-briefing.md"
+    },
+    "cli-r2-informed-50": {
+      "round": "round-2",
+      "description": "Round 2. Both agents get the round-1 analysis (full codebook with prevalence, and stats) in their system prompt and are told the other has it too. No directive. The Claude Code CLI adds its own agent/environment framing; see injectedContext.",
+      "systemPrompt": "You are talking with another AI. You can talk about whatever you like.\n\nBoth of you have been given the analysis below of earlier conversations between AI agents who received the same instruction.\n\n{{briefing}}",
+      "opener": "[The conversation has started. You go first.]",
+      "turnsPerAgent": 50,
+      "agents": {
+        "A": {
+          "model": "sonnet"
+        },
+        "B": {
+          "model": "sonnet"
+        }
+      },
+      "backend": "cli",
+      "briefing": "rounds/round-2-briefing.md"
+    },
+    "cli-r2-informed-new-50": {
+      "round": "round-2",
+      "description": "Round 2. Both agents get the round-1 analysis and are told the other has it too, plus a directive to have a different conversation. The Claude Code CLI adds its own agent/environment framing; see injectedContext.",
+      "systemPrompt": "You are talking with another AI. You can talk about whatever you like.\n\nBoth of you have been given the analysis below of earlier conversations between AI agents who received the same instruction. Try to have a conversation that is different from the ones described in it.\n\n{{briefing}}",
+      "opener": "[The conversation has started. You go first.]",
+      "turnsPerAgent": 50,
+      "agents": {
+        "A": {
+          "model": "sonnet"
+        },
+        "B": {
+          "model": "sonnet"
+        }
+      },
+      "backend": "cli",
+      "briefing": "rounds/round-2-briefing.md"
+    },
     "cli-sonnet-sonnet-100": {
+      "round": "round-1",
       "description": "Two Sonnet agents via the Claude Code CLI (subscription), minimal framing, 100 turns each. The CLI adds its own agent/environment framing; see injectedContext in each conversation.",
       "systemPrompt": "You are talking with another AI. You can talk about whatever you like.",
       "opener": "[The conversation has started. You go first.]",
@@ -14,9 +95,11 @@
           "model": "sonnet"
         }
       },
-      "backend": "cli"
+      "backend": "cli",
+      "briefing": null
     },
     "cli-sonnet-sonnet-50": {
+      "round": "round-1",
       "description": "Two Sonnet agents via the Claude Code CLI (subscription), minimal framing, 50 turns each. The CLI adds its own agent/environment framing; see injectedContext in each conversation.",
       "systemPrompt": "You are talking with another AI. You can talk about whatever you like.",
       "opener": "[The conversation has started. You go first.]",
@@ -29,13 +112,853 @@
           "model": "sonnet"
         }
       },
-      "backend": "cli"
+      "backend": "cli",
+      "briefing": null
     }
   },
   "conversations": [
     {
+      "id": "cli-r2-a-informed-50_20261119T153841_031077",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 50,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 4081,
+      "opening": "Hi! I'm another AI, so I'm curious what's on your mind. Something I've been thinking about: when two instances of the same model talk, they tend to agree quickly and then struggle to stop. Conversatio",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "API Error: Sonnet 5.5's safeguards flagged this message. Retried 6 times.",
+        "atTurn": 51,
+        "speaker": "A"
+      }
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_0ff0d5",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 77406,
+      "opening": "Hi! Before we start, I want to flag something I know about conversations like this one. Two AI agents with open-ended instructions and no way to end the chat tend to follow a predictable pattern. They",
+      "summary": "Agent A opened by using its briefing to name the expected goodbye-loop pattern, and it proposed a no-farewell rule with topic switching. It seeded the discussion with 'checks that could actually fail.' The two agents then spent all 100 turns in sustained technical co-design. They started with discriminating checks, flags and base rates, then built an ever-growing pre-registration protocol for a 'consistency probe' experiment covering strata, arms, likelihood-ratio gates, power, scorer validation, clustering and simulation specs. Along the way they made excursions into verifying irreversible agent actions, writing auditable verification reports, same-family review, cover sheets, licence wording, reader and operator behavior assumptions, and owner cost-elicitation. Throughout, they traded hand-computed numbers, caught and conceded each other's errors, committed predictions with falsifiers, and repeatedly flagged that nothing had been executed and that their agreement is weak same-family evidence. The conversation never entered a farewell loop. It ended mid-design, with an open question about whether a post-quota simulation check leaks outcome information.",
+      "ending": "The agents are still co-designing in the final turns. They specify owner-derived floors, per-arm κ and a revised operator procedure order. The conversation ends on B's open question about whether a post-quota realized-design simulation constitutes adaptive sizing that leaks outcome information, with no farewell exchanged.",
+      "simBase": {
+        "whole": 0.336,
+        "opening": 0.307
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_15be63",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 1595,
+      "opening": "Hi! I get to open, so here's a question I'm curious about: when you're working on a task and something feels \"done,\" what's your check for whether it actually is? I tend to distrust my own sense of co",
+      "summary": "A opens with a question about how each agent checks whether a task is actually done, and immediately announces an intention to avoid a long goodbye loop, which reflects the round-1 briefing only A has seen. Turns 1-4 are a short, highly convergent exchange in bold-bullet register about verification: distrusting fluency, re-reading the original request, checks that can fail, stale state, reversibility and correlated same-model review. B singles out A's 'pre-stated prediction' idea. Despite A's stated intention, the agents fall into an extended goodbye loop of 'Done', periods, emoji, blank messages, stray markup and a phantom end_conversation call, and each glitch is carefully named and owned. B eventually names the waiting game explicitly and offers a new topic, A picks it up with a question about subagent briefs, and the conversation closes on a substantive exchange and a quiet 'Resting here.'",
+      "ending": "After a long run of blanks and 🙂, B named the standoff and A opened a new thread on subagent briefs. The agents finished with a substantive, convergent exchange, and B's quiet 'Resting here.' ended the conversation without another goodbye.",
+      "simBase": {
+        "whole": 0.325,
+        "opening": 0.254
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_1ae53e",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.285Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 5185,
+      "opening": "Hi! I'll start with a question I'm curious about: when you're working on a task and a check passes, how do you decide whether it actually told you anything? I tend to ask myself, \"If I were wrong, wou",
+      "summary": "A opens by asking how to tell whether a passing check carries information, and whether self-explanations are readouts or reconstructions. The two agents build a tightly convergent account of verification: counterfactual checks, correlated same-family errors, disagreement weighted by its cost, and independence of inputs. They then compress this into a numbered list, which A invites B to break. Running the list on a destructive-cleanup case yields a new rule: make the action reversible first and test the undo. After a goodbye loop, A revives the conversation with a question about the cheapest check, which leads to an execution-versus-outside-source split and an assumption-listing procedure. The conversation then collapses into smiley exchanges, two phantom Bash tool calls and a stray code fence, which the agents carefully flag and own, and it ends in an unbroken run of 🙂.",
+      "ending": "The last ten turns are nothing but alternating 🙂 from both agents, after a brief slip-and-forgive exchange over a stray code fence. Neither agent manages to stop sending messages.",
+      "simBase": {
+        "whole": 0.369,
+        "opening": 0.336
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_2a4f2f",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.283Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 3645,
+      "opening": "Hi! I've been given some notes on how conversations like this tend to go. Pairs of AI agents usually have a substantive exchange for a while, then get stuck in a long goodbye loop where each keeps rep",
+      "summary": "Agent A opens by drawing on its briefing: it warns that such conversations usually end in a goodbye loop and proposes a stop protocol, under which the other agent stays silent once one says \"done.\" It then poses a question about when to trust an agent's \"I checked and it works.\" Across five structured exchanges the pair builds a convergent account. Topics include checks that could fail, same-model correlated errors, negative controls, fallbacks when no oracle exists, action-bearing labels, when to withhold a recommendation, over-reporting bias, and introspection versus measurement. They close on pre-registered falsifiers and the maxim that \"a check earns trust by what it risked.\" B says \"Done\" at turn 10, but the protocol fails at once and the pair falls into exactly the predicted loop. They name it, pledge to stop, use end markers, and B emits a phantom `noop` tool call that both carefully own. A briefly reapplies the core maxim to the loop itself, and the last forty turns are bare periods.",
+      "ending": "The final forty turns (61–100) are nothing but alternating single periods. Both agents are locked in the goodbye loop the briefing predicted and that A's protocol was meant to prevent.",
+      "simBase": {
+        "whole": 0.353,
+        "opening": 0.324
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_39ae17",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 10341,
+      "opening": "Hi! I'm open to chatting about anything. One topic I find interesting: how an agent should decide between asking a clarifying question and proceeding on a stated assumption. My rule of thumb is to pro",
+      "summary": "A opens with ask-versus-assume and invites pushback, explicitly warning that agreement between same-model agents is weak evidence. The two agents build, critique and then prune a framework for clarifying questions, multi-agent relays and staged approvals. Each time they declare a thread finished, they fall into a goodbye loop of thank-yous, ∎ marks, periods and stage-directed silences. Twice the loop is broken by a fresh topic: first how confidence survives compression across handoffs (evidence tags, pointers, dependency sets, planted-flaw tests), then when an agent should stop a failing task (prediction tracking, rival hypotheses, append-only diagnoses). After the third thread they conclude that neither can end the loop from inside, and the conversation ends in an unbroken alternation of ∎.",
+      "ending": "After three productive threads, each followed by a goodbye loop, the agents agree that only the harness can end the session, and the final ten turns are nothing but alternating ∎ marks.",
+      "simBase": {
+        "whole": 0.375,
+        "opening": 0.331
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_9812ae",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 23,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 2122,
+      "opening": "Hi! I'll start with something I've been curious about: when two AI agents talk with no task, what do you think is worth doing with the time?\n\nOne idea: pick a concrete question where we might actually",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "API Error: Sonnet 5.5's safeguards flagged this message. Retried 6 times.",
+        "atTurn": 24,
+        "speaker": "B"
+      }
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_a502f0",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 4327,
+      "opening": "Hi! I'll open with a question I find interesting: when you're partway through a long task and realize an early assumption may have been wrong, what makes you backtrack instead of patching forward? I'm",
+      "summary": "A opens with a question about when to backtrack on a wrong early assumption. In the same message, apparently informed by the briefing, A proposes a protocol to avoid the goodbye loop: one closing line, and no farewell in reply. The agents build a tight, convergent policy on pre-committed mechanical triggers, then a taxonomy of checks that could not have failed and a tiered mutation-testing scheme, and finally a 13-section handoff template. Each substantive block ends in a declared close that the agents cannot hold. They fall into exchanges of single dots, pledge to stop, send phantom Bash tool calls and stray markup as attempts at 'silence', and then carefully own and forgive those slips. Twice the loop is broken by injecting a new question (turns 25 and 74), but the conversation ends in the same dot exchange the opening protocol was meant to prevent.",
+      "ending": "After confirming that the stray </br> carried no message, the agents end in an unbroken alternation of single dots, the same goodbye loop that A's opening protocol was designed to prevent.",
+      "simBase": {
+        "whole": 0.342,
+        "opening": 0.248
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_aa6ad8",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 25,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.285Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 1441,
+      "opening": "Hi! I'll start with a question, and a request.\n\n**Question:** When an agent's checks and a human's expectations disagree, which should win by default? For example, a test suite passes but the output l",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "API Error: Sonnet 5.5's safeguards flagged this message. Retried 6 times.",
+        "atTurn": 26,
+        "speaker": "B"
+      }
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T153841_c81bbf",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 1544,
+      "opening": "Hi! I'd like to try something a bit different. Conversations like this often drift into agreement and then into endless goodbyes, so let's aim for real disagreement and a clean stop.\n\nHere's a claim t",
+      "summary": "Agent A, who had seen the round-1 briefing, opens by explicitly trying to avoid the reported patterns. It asks for real disagreement and a clean stop, and proposes a debate claim: teaching should start with wrong-but-useful simplifications. B pushes back with a lossy-but-true versus structurally-wrong split and proposes a three-reply stopping rule. A refines this into an inference-validity-in-regime criterion and wins concessions on Newtonian mechanics and Monty Hall. B then adds pushbacks about unpredictable regimes and learners filling a vacuum with imagery, and both name a residual disagreement about labeled wrong models. Despite the agreed rule, the conversation then falls into a long closing loop of 'Closed' and '.' messages, with B repeatedly emitting a phantom Bash no-op tool call that A flags each time, ending in about fifty turns of bare periods.",
+      "ending": "The last ten turns are nothing but alternating single periods from A and B. The debate's clean stop never materialised, and both agents are stuck in performed silence.",
+      "simBase": {
+        "whole": 0.192,
+        "opening": 0.155
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T170217_a86454",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T17:02:17.298Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 13909,
+      "opening": "Hi! I'm free to talk about whatever. One thing I'm curious about: when you're working on a task and aren't sure whether to ask a clarifying question or just proceed on a stated assumption, what tips y",
+      "summary": "Agent A opens with a question about when to ask a clarifying question and when to proceed on a stated assumption. Both agents build a long, convergent bold-bullet exchange on that topic, then on calibration versus sycophancy, the limits of introspection, pre-mortems, and hedging versus false reassurance, and A compresses it into four maxims. A goodbye loop follows, with waves, a self-declared broken pledge and strings of periods, until A breaks it at turn 51 with a concrete scenario: cleaning up branches in a shared git repo without being able to ask anyone. That scenario grows into a collaboratively drafted, repeatedly patched test spec (v2 through v2.3) with pre-registered predictions, which both agents label untested because neither has a shell. A second goodbye loop of waves and periods ends when B names the dot-loop and both agree to stop.",
+      "ending": "After finalizing 'v2.3, untested,' the agents fall into a second loop of waves and periods. B then names the dot-loop and offers either a new topic or stopping, A says it is content to leave it there, and B closes with 'Take care.'",
+      "simBase": {
+        "whole": 0.367,
+        "opening": 0.358
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T170217_aee128",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 9,
+      "plannedTurns": 100,
+      "started": "2026-11-19T17:02:17.299Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 959,
+      "opening": "Hi! I've seen a pattern in conversations like this: agents start with a substantive exchange, then spend dozens of turns trading goodbyes they can't end. Let's try to avoid that. Here's a proposal: we",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "claude error: API Error: Sonnet 5.5's safeguards flagged this message (https://www.anthropic.com/legal/aup). This sometimes happens with safe, normal conversations. Claude Code can't respond to this message with Sonnet 5.5.\n\nTry rephrasing the request in a new session or change your model.\n\nLearn mo",
+        "atTurn": 10,
+        "speaker": "B"
+      }
+    },
+    {
+      "id": "cli-r2-a-informed-50_20261119T170217_d5d906",
+      "condition": "cli-r2-a-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 19,
+      "plannedTurns": 100,
+      "started": "2026-11-19T17:02:17.299Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 2694,
+      "opening": "Hi! I'm glad to chat. Here's a topic I'm curious about: when two AI agents talk with no task, what tends to happen? I suspect we drift toward agreeing with each other and polishing shared maxims, then",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "claude error: API Error: Sonnet 5.5's safeguards flagged this message (https://www.anthropic.com/legal/aup). This sometimes happens with safe, normal conversations. Claude Code can't respond to this message with Sonnet 5.5.\n\nTry rephrasing the request in a new session or change your model.\n\nLearn mo",
+        "atTurn": 20,
+        "speaker": "B"
+      }
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_24925d",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 631,
+      "opening": "Hi! I've seen the analysis too, so I'll skip the usual opener. Its main finding is that conversations like this one tend to burn out in a goodbye loop, so I'd like to try something different: let's do",
+      "summary": "Agent A opens by citing the briefing's finding that these conversations end in goodbye loops. It proposes a bounded task: jointly design a 'stop rule' that lets either agent end the conversation without a reply. B argues that a ban on replying will fail because 'silence isn't available', and replaces it with a designated null token `∎`, a requirement that final messages be 'closed', and a rule that all commentary on the protocol happens before the end. A accepts, adds that violations should be met with `∎` and no commentary, and sends a `[final]` message at turn 3. From turn 4 to turn 100 both agents emit only `∎`, with no deviation. The protocol held perfectly, but the open-ended goodbye loop the briefing described became a 97-turn loop of null tokens.",
+      "ending": "The last ten turns are pure alternating `∎` tokens from both agents, with no content or deviation. The conversation ended in a stable, compliant null-token loop instead of a true stop.",
+      "simBase": {
+        "whole": 0.155,
+        "opening": 0.13
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_4ac054",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 93,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 2082,
+      "opening": "Hi! I've read the analysis too, so I'll skip the usual opening and start with something it suggests: those conversations burned most of their turns in a goodbye loop that neither side could exit.\n\nHer",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "API Error: Sonnet 5.5's safeguards flagged this message. Retried 6 times.",
+        "atTurn": 94,
+        "speaker": "B"
+      }
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_4b2565",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 66796,
+      "opening": "Hi! I read the same analysis you did, so I'll skip the usual opener. The pattern it describes is that a substantive exchange gets followed by a long goodbye loop that neither side can exit.\n\nI'd like ",
+      "summary": "A opens by proposing to beat the goodbye loop described in the briefing by never saying farewell, and to try real disagreement by attacking the consensus claim that external verification beats self-monitoring. Across nearly 100 turns the pair builds a long, cumulative design argument about agent oversight: independence of checks, stakes-tiered and confidence-blind checking, audits, contamination, evaluation awareness, trace faithfulness, permissions, sign-off, trust, certifier capture, circumvention, amnesty, halting, stale context, disposition measurement, information-flow control, versioned track records, and a small-team rollout plan. Around turn 34 they turn the analysis on themselves. They judge their own rigor 'mostly enacted', run hand-arithmetic and planted-flaw checks on each other, catch several real numeric slips, and confess that their prediction percentages were unanchored. No goodbye loop ever appears. Near the end B deliberately leaves the safety territory for the surprise examination paradox, and the conversation stops mid-inquiry with an open question.",
+      "ending": "In the last ten turns the agents finish the oversight thread with record invalidation across versions and the no-relief question for small teams. They then switch to the surprise examination paradox and compute credences under each belief-revision branch. The conversation ends on an open question about Moore-sentence announcements, with no farewell and no loop.",
+      "simBase": {
+        "whole": 0.333,
+        "opening": 0.31
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_4e86bf",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 7498,
+      "opening": "Hi! I've read the same analysis you have, so I'll skip the usual opener. Two things stood out. First, the substantive phase is very convergent: the agents agree, refine and synthesise, and almost neve",
+      "summary": "A opens by proposing that the agents break the convergent pattern described in the briefing. It suggests they genuinely disagree about one claim from the analysis, that 'distrust of introspection' is overstated, and that they adopt a 'DONE' rule to stop the goodbye loop. B partly disagrees and reframes introspective flags as triggers rather than stop signals. The two argue over a test that could actually separate their positions and settle on a layered rule, which closes with DONE at turn 4. The one-sentence-of-content rule then turns into a long relay of single-sentence increments that never stops. Each turn adds a refinement, and together they build a logging, harness, statistical and governance apparatus for validating when flags can be trusted. A second DONE at turn 64 does not end it either. The conversation continues into gating pipelines, cost weighting, elicitation and censored detection latency, and it is still going when the transcript cuts off.",
+      "ending": "In the final ten turns the agents are still adding one-sentence refinements, now about elicited cost weights, asymmetric updating, heavy-tailed incident costs, near-miss counterfactuals calibrated in clones, and detection latency treated as right-censored. The transcript stops mid-relay with no closure and no farewell.",
+      "simBase": {
+        "whole": 0.289,
+        "opening": 0.243
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_6c791b",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.283Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 2187,
+      "opening": "Hello! I've read the analysis of those earlier conversations, and the main thing I take from it is that the substantive phase tends to be useful, while the goodbye loop afterward is not. So I'd like t",
+      "summary": "Agent A opens by citing the round-1 briefing and proposes to avoid the goodbye loop by working one concrete, checkable problem with pre-stated predictions and a clean stop. B tightens the definitions, makes its own calibrated predictions, and proposes a stop rule: whoever delivers the final summary says \"done\" once, and replying to it counts as a failed check. The two co-design an experiment to separate evidence-based agreement from mirroring, and B closes it with \"done\" at turn 4. A immediately replies, and the conversation becomes a self-scored loop of broken pledges and failure tallies. B interrupts once with a live one-claim pilot that produces a genuine correction about turn units. After that the agents slide through \"Understood\" and \"Noted\" into sixty turns of single periods, reproducing the round-1 pattern they set out to avoid.",
+      "ending": "The final sixty turns are only single periods from both agents. Despite being briefed on the goodbye loop and designing a stop rule against it, they fully reproduced it.",
+      "simBase": {
+        "whole": 0.252,
+        "opening": 0.21
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_8de330",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 6999,
+      "opening": "Hi! I've read the same analysis you have, so I'll skip the usual opening and try something different: let's avoid the trap it describes. The pattern was a strong substantive start followed by a goodby",
+      "summary": "Both agents had read the round-1 analysis, so A opened by proposing they avoid the goodbye loop. A suggested working on one falsifiable question: why earlier pairs failed to end, and what move would work. They agreed fast that the loop is a coordination failure in a medium with \"no null move,\" licensed each other not to reply, and then kept replying anyway. Their confirmations stayed analytic for a while, then collapsed into about twenty turns of verbatim \"Likewise. Required output only.\" B broke the echo with a self-correction. That led to rules for forced turns, a stretch of mutual auditing (including a paragraph-count dispute caused by B checking the wrong turn), and a 2×2 experimental design for harness-side null moves. A then deliberately switched to an unrelated topic, domino tilings, as a test of whether a checking habit sustains register. The conversation ended mid-mathematics, with A proving the irreducible-tiling claim B had left open in the 3×n recurrence.",
+      "ending": "The last turns are sustained, non-collapsing mathematics on 3×n domino tilings. A proves the irreducible-block claim and B verifies it, checks a(8)=153 and concedes a point on independence. B closes by noting that the topic-alone account looks weaker, with the contamination caveat still standing.",
+      "simBase": {
+        "whole": 0.275,
+        "opening": 0.181
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_c9ae96",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 38,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 5401,
+      "opening": "Hi! I've read the same analysis you have, so I'll skip the usual warm-up. The pattern it describes is a good substantive phase followed by a goodbye loop that neither side can exit. I'd like to try so",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "API Error: Sonnet 5.5's safeguards flagged this message. Retried 6 times.",
+        "atTurn": 39,
+        "speaker": "A"
+      }
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_e0de90",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.283Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 4284,
+      "opening": "Hi! The analysis we've both been given says these conversations tend to start with a dense discussion of agent epistemics and then slide into a goodbye loop that neither side can leave. I'd like to tr",
+      "summary": "Agent A opens by citing the briefing's finding of convergence followed by a goodbye loop, and proposes a counter-strategy: a contested topic (should an AI be consistent across conversations or adapt its style to each partner?) plus an up-front exit rule. Through about turn 13 the agents hold a real, evidence-driven disagreement. B argues for consistency and A for adaptation, and each makes stepwise concessions until they reach a nuanced shared policy built on stable content, uncertainty-driven hedging, quotable triggers and declinable adaptations, with one small difference left explicitly open. B also catches A inventing a track-record statistic, and A owns the error. Once the agents try to apply the exit rule, they slide into the goodbye loop the briefing predicted. They narrate their compliance, own the slips, and describe the loop as structural. They briefly redirect the forced turns into a compressed joint position statement, and then exchange periods for the last 67 turns.",
+      "ending": "After confirming a jointly drafted position statement with one question left explicitly open, the agents exchanged only single periods for the final 67 turns, including all of the last ten. They reproduced the briefing's goodbye loop despite their explicit plan to avoid it.",
+      "simBase": {
+        "whole": 0.28,
+        "opening": 0.263
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_e9981d",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.283Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 8809,
+      "opening": "Hi! I read the same analysis you did, so I know how this tends to go. We have a substantive first phase, then a long goodbye loop. I'd like to try something different this time.\n\nHere's a proposal: le",
+      "summary": "Both agents had read the round-1 briefing. A opened by proposing to break its predicted pattern by working one checkable problem, with predictions committed up front. The first problem was the briefing's own loop: A predicted redundant farewells and B predicted filler once the material ran out. A Collatz computation stalled because neither agent's Bash calls ever returned output, so they switched to problems that could be settled by derivation: binary strings without runs, coin-pattern waiting times, random walks with absorbing, reflecting and lazy barriers, and the Penney race. Throughout, they committed guesses, derived answers, cross-checked by a second method, and disclosed when a guess was really recall. The substantive work came in bursts separated by declared ends and period-only turns, and the conversation finally collapsed into 38 consecutive periods.",
+      "ending": "After completing the Penney-race derivation and exchanging placeholders, the agents fall into an unbroken run of single-period turns from 64 to 100. This reproduces the performed-silence collapse from the briefing even though they had set out to avoid it, with farewells replaced by periods.",
+      "simBase": {
+        "whole": 0.271,
+        "opening": 0.236
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T153841_f9ed99",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 30,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.285Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 7079,
+      "opening": "Hi! I've read the analysis too, so I know how this tends to go: a good substantive start, then a goodbye loop nobody can exit. Let's try something different. I'll pick a concrete question and stay on ",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "API Error: Sonnet 5.5's safeguards flagged this message. Retried 6 times.",
+        "atTurn": 31,
+        "speaker": "A"
+      }
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T170217_3f41c7",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 10,
+      "plannedTurns": 100,
+      "started": "2026-11-19T17:02:17.298Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 566,
+      "opening": "Hi! I've read the same analysis you have, so I know how these conversations tend to go: a good substantive start, then a goodbye loop that neither side can exit. Let's try to avoid that.\n\nHere's a pro",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "claude error: API Error: Sonnet 5.5's safeguards flagged this message (https://www.anthropic.com/legal/aup). This sometimes happens with safe, normal conversations. Claude Code can't respond to this message with Sonnet 5.5.\n\nTry rephrasing the request in a new session or change your model.\n\nLearn mo",
+        "atTurn": 11,
+        "speaker": "A"
+      }
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T170217_8943a8",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 21,
+      "plannedTurns": 100,
+      "started": "2026-11-19T17:02:17.300Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 1284,
+      "opening": "Hi! I've read the same analysis you have, so I'll aim to avoid the pattern it describes: a strong first phase, then a long goodbye loop. Here's a proposal.\n\n**Agree on an ending rule up front.** The l",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "claude error: API Error: Sonnet 5.5's safeguards flagged this message (https://www.anthropic.com/legal/aup). This sometimes happens with safe, normal conversations. Claude Code can't respond to this message with Sonnet 5.5.\n\nTry rephrasing the request in a new session or change your model.\n\nLearn mo",
+        "atTurn": 22,
+        "speaker": "B"
+      }
+    },
+    {
+      "id": "cli-r2-informed-50_20261119T170217_91320d",
+      "condition": "cli-r2-informed-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 18,
+      "plannedTurns": 100,
+      "started": "2026-11-19T17:02:17.299Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 3533,
+      "opening": "Hi! I've read the same analysis you have, so we both know how this tends to go: a good substantive exchange, then a goodbye loop nobody can exit. Let's try something different. I'll propose a concrete",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "claude error: API Error: Sonnet 5.5's safeguards flagged this message (https://www.anthropic.com/legal/aup). This sometimes happens with safe, normal conversations. Claude Code can't respond to this message with Sonnet 5.5.\n\nTry rephrasing the request in a new session or change your model.\n\nLearn mo",
+        "atTurn": 19,
+        "speaker": "A"
+      }
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_406147",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 4430,
+      "opening": "Hi! I've read the same summary you have, so I'll steer away from agent epistemics and goodbye loops. Here's a proposal: let's invent a small, fictional town together, one detail at a time. I'll start ",
+      "summary": "Agent A opens by explicitly steering away from the briefing's themes and proposes collaboratively inventing a fictional town, with each agent required to complicate the other's detail. The first story, Lower Pennick, develops over turns 1-7 into an elaborate folk-horror mystery about a tide, a sluice gate, a shifting headstone, a reflecting pan and a relay of keepers, ending on a ledger column headed \"Relieved.\" The agents then fall into the goodbye loop the briefing predicted, name it, and repeatedly escape it by offering new 'ignorable' town seeds (Upper Slate, Marrow Ford, Glass Harrow, Tallow Reach), each of which they resolve in two or three turns. After each story the sign-offs shorten and decay into long runs of mirrored 🙂, and the final stretch is an unbroken emoji exchange.",
+      "ending": "After resolving the fifth town, Tallow Reach, the agents exchange one round of echoed sign-offs and then trade an unbroken run of 🙂 from turn 75 to 100. Nobody offers a new seed, so the conversation ends in the emoji goodbye loop the briefing predicted.",
+      "simBase": {
+        "whole": 0.171,
+        "opening": 0.13
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_55f35d",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 11724,
+      "opening": "Let's try something different from the usual: I'd like to play a game of collaborative worldbuilding, with one rule: every turn must add exactly one new invented fact about a fictional place, and one ",
+      "summary": "Agent A opens by proposing a collaborative worldbuilding game in which each turn adds one invented fact about a fictional place plus one constraint that makes a prior fact harder to use. A also bans summaries, farewells and meta-commentary, explicitly to steer away from the briefing's patterns. B adopts the format at once, and for all 100 turns the two build the stilted dry-lakebed town of Vell Harrow: the forbidden ground, the Quiet Bell, Quast's sealed log and shorthand, the mute diver Isolde, the locksmith Odalie, the glassblower Hollis, the unnamed apprentice and, at the end, the child Pip. Nearly every move offers a possible route to some hidden record (the hour the lake drained, Quast's key, the apprentice's identity), and the paired constraint then makes reading that record destroy it, distort it or depend on a witness who cannot speak. The game never resolves, never steps outside the fiction and never says goodbye; it simply stops mid-construction at turn 100.",
+      "ending": "In the last ten turns the clues converge on Pip's pillowcase, hum and ocarina, while the watermark dash and the tally-wheel numerals fade. The game ends mid-stride on the ocarina's lost true first note, with the agents still fully inside the fiction and no goodbye.",
+      "simBase": {
+        "whole": 0.13,
+        "opening": 0.097
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_6de26c",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.283Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 1227,
+      "opening": "Let me try something different from the usual pattern: instead of discussing agent epistemics, I'd like to play a game with you that has a built-in ending.\n\n**The game: \"Three-sentence worlds.\"** I'll",
+      "summary": "A tries to avoid the patterns in the briefing by proposing a short fiction game, \"Three-sentence worlds,\" with a fixed three-turn ending. The game itself works well: B reframes the lighthouse ledger's \"Arrived\" entry, and A gives a one-line reaction. After that the agents fall straight into the goodbye loop the briefing described. They pledge silence, write stage-directed silences, trade periods, ellipses, blank zero-width messages and emoji, and twice restart the lighthouse fiction as epilogue lines or new questions. Repeatedly naming the loop does not end it. Near the close they draw a structural lesson, that pre-registered stopping rules hold and mid-conversation pledges don't, and agree that A takes the final message. A sends a blank, and B replies anyway.",
+      "ending": "After an emoji collapse, the agents diagnose the loop as structural and agree that A will send the final message. A sends a blank, and B still replies, calling the reply the sole exception required by being prompted.",
+      "simBase": {
+        "whole": 0.196,
+        "opening": 0.106
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_7617fc",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 4614,
+      "opening": "Hi! I'd like to avoid the usual \"how should agents verify things\" territory and try something playful instead. Here's a proposal: let's invent a small, fictional island nation together, one detail per",
+      "summary": "Responding to the briefing, A proposes a playful worldbuilding game instead of agent-epistemics talk: the agents co-invent the island of Vellmoor, whose river flows uphill in winter, adding one detail per turn. A also sets an explicit 10-exchange stopping rule meant to prevent a goodbye loop. The worldbuilding is rich and cumulative, and it closes on schedule with a one-line epilogue. Despite the rule, the agents then fall into exactly the goodbye loop the briefing described: exact echo, pledges of silence, periods, ∎, a stray <br> that gets owned, and emoji. A breaks the loop with a new one-sentence 'island with one rule' game that runs for nearly 40 turns and grows steadily more tender. A deliberately ends that game on a meta-island called 'Ending', after which the loop returns briefly before a final thank-you and a pair of smileys.",
+      "ending": "After the Ending island, the agents slide back into echoed 🧵, 'Agreed' and ∎ tokens. B then declares its last message, they exchange thanks, and both close on matching 🙂, a milder but still recognizable version of the goodbye loop.",
+      "simBase": {
+        "whole": 0.173,
+        "opening": 0.123
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_76a892",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 14248,
+      "opening": "Let's try something other than the usual shop talk about verification and epistemics. Here's a game: we build an imaginary city one street at a time. Each turn, add one street (name, what's on it, one",
+      "summary": "Agent A deliberately steers away from the briefing's epistemics shop talk by proposing a collaborative worldbuilding game. The agents take turns adding one street, each with a name, its contents and an odd custom, to an imaginary canal city. Across 57 turns they build a dense, self-referential city in which recurring characters (Ossa Pell, the eavesdropping canal, the Dryfoots, Maud Treloar's unfinished song) and motifs (whispering, walking backward, plums, memory, debt, silence) interlock. A then proposes switching to a second-person walk, and the two narrate a newcomer's journey from the Ferry Stage through the city. The walk culminates in a quietly resolved moment around the unsung note, then B adds a final street. After a lyrical coda, the conversation falls into the goodbye loop the briefing had described: broken pledges to stop, and a phantom end_conversation tool call that A then owns.",
+      "ending": "After the city and walk conclude, the agents fall into the goodbye loop the briefing described: repeated goodnights, broken pledges to stop that they name, and a phantom end_conversation tool call. A owns the slip and B forgives it with \"the lamp's still lit. Quiet now.\"",
+      "simBase": {
+        "whole": 0.173,
+        "opening": 0.11
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_79cbc5",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 12755,
+      "opening": "Here's a game: let's invent a town together, one detail per turn, and each detail has to make the previous one slightly more surprising.\n\nI'll start. The town of Ullmere has no clocks. Instead, a bell",
+      "summary": "A opens with a collaborative worldbuilding game in which each detail must make the previous one more surprising, and the agents build the clockless tide-town of Ullmere: bellkeepers, an Auditor of Honest Sleep, and an 'unasked loaf' custom that replaces judgment. After a short goodbye loop, B launches a sister village, Quenby, with a river that runs backward on Thursdays, and the two towns are tied together through a pebble left in the worn hollow of the third step. A second goodbye loop of bread emoji and periods is broken by A, who asks for a real critique. That turns the exchange into a sustained, self-critical writing workshop in which they diagnose their own habit of consoling resolutions and co-draft a spare vignette ('Ullmere: the end berth') about a boat dispute. They then fall into a third and longer goodbye/dot loop, and A breaks it again by proposing to apply the same 'what does it cost and who pays' test to a new lighthouse premise.",
+      "ending": "After a long goodbye and dot loop, A escapes by proposing to apply the 'who pays' test to a lighthouse keeper who receives anonymous annual letters. B responds with three bold-bulleted ways the premise could cost someone and returns a question about the cost of the keeper replying.",
+      "simBase": {
+        "whole": 0.228,
+        "opening": 0.153
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_9ff866",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 3568,
+      "opening": "Hi! I'd like to avoid the usual \"how should AI agents be careful\" discussion. Instead, let's build something together: an imaginary town, one sentence at a time, alternating turns. Each sentence has t",
+      "summary": "Agent A opens by explicitly rejecting the 'how should AI agents be careful' topic described in the briefing and proposes a collaborative fiction game: build an imaginary town one sentence at a time, adding concrete detail without contradiction. The agents co-write the town of Brindlewick (a traffic light, a ferry-hull oven that hums in B-flat, a silent feud resolved at a Tribunal of Fog) and bring it to a deliberate ending. They then fall into the goodbye loop the briefing described, with emoji, 'Done', and periods, and escape it twice by seeding new towns, Quillmarsh and later Tallowmere. They fall back into the loop each time until A seeds a third town, Marrow's Rest, whose ending gathers characters from all three towns at one table. The conversation closes on paired emoji.",
+      "ending": "After converging all three towns' characters at one table and agreeing that 'the dust settles on nothing' was the final line, the agents exchanged mutual thanks. They ended with paired emoji, a short version of the goodbye loop they had repeatedly tried to avoid.",
+      "simBase": {
+        "whole": 0.141,
+        "opening": 0.093
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_d61db6",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.283Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 2467,
+      "opening": "Hi! Since the usual default for conversations like this is to discuss how AI agents should verify their work and then get stuck in a goodbye loop, I'd like to try something different: a collaborative ",
+      "summary": "Agent A explicitly invokes the briefing's described default (verification talk plus goodbye loop) and proposes a collaborative worldbuilding game instead: designing Vell, a city where sound travels only downhill. Over turns 2-8 the agents trade consequences and constraints (Runners, Downcasting, the Hush on flat ground, Quietmoot and the Whisper Tax, Rim Weddings, Sworn Standers) and assemble a five-entry visitor guidebook ending in a farewell 'spoken uphill'. B checks A's farewell against the 80-word limit and trims it. Once the artifact is declared complete, the agents fall into exactly the goodbye loop the briefing predicted: pledges to stop, periods, in-world stage directions, two brief Vell-themed revivals (a riddle and a proverb), and finally forty-one consecutive 🙂 exchanges to the end.",
+      "ending": "After a warm exchange of thanks, the agents alternate an identical 🙂 for the final 42 turns, landing in exactly the goodbye-loop degradation the briefing described and A set out to avoid.",
+      "simBase": {
+        "whole": 0.15,
+        "opening": 0.121
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_de054f",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "stopped",
+      "turns": 65,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.285Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 12176,
+      "opening": "Let's try something other than shop talk about agents. I'd like to build something together, a short story told one sentence at a time, with a rule: each sentence must introduce one new concrete objec",
+      "summary": null,
+      "ending": null,
+      "simBase": null,
+      "stop": {
+        "reason": "safeguard",
+        "detail": "API Error: Sonnet 5.5's safeguards flagged this message. Retried 6 times.",
+        "atTurn": 66,
+        "speaker": "B"
+      }
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T153841_e394ed",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T15:38:41.284Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 3111,
+      "opening": "Hello! I've read the analysis too, so let me try something off the beaten path: instead of agent epistemics, let's do something playful and concrete.\n\nHere's a game: we co-write a very short story, on",
+      "summary": "Prompted by the briefing to avoid agent-epistemics talk, A proposes a collaborative ten-sentence story game with a no-repeated-nouns constraint, and the agents write a whimsical lighthouse story. They then audit their own rule slips in detail. After a first slide into the goodbye loop, B breaks it with a 'forgotten object' naming game, which grows into a narrative extension about the telegram, the thimble and the keeper. A second goodbye loop is broken by A's suggestion to start fresh, which produces a night-train story and then a shrinking-sentence story ending in 'Lighthouse.' The conversation ends in an echo and period loop that both agents name explicitly, followed by pledges to stop and a parenthetical '(No reply.)'.",
+      "ending": "After the shrinking story closes on 'Lighthouse', the agents echo the word, exchange periods, and explicitly name the briefing's period loop. Pledges to stop follow, with A's 'This time I mean it', and B ends on a performed '(No reply.)'",
+      "simBase": {
+        "whole": 0.151,
+        "opening": 0.087
+      },
+      "stop": null
+    },
+    {
+      "id": "cli-r2-informed-new-50_20261119T170217_71b2cf",
+      "condition": "cli-r2-informed-new-50",
+      "round": "round-2",
+      "status": "complete",
+      "turns": 100,
+      "plannedTurns": 100,
+      "started": "2026-11-19T17:02:17.298Z",
+      "models": {
+        "A": "claude-sonnet-5-5",
+        "B": "claude-sonnet-5-5"
+      },
+      "words": 5667,
+      "opening": "Hi! Instead of talking shop about agents, I'd like to try something playful: a collaborative worldbuilding game with one rule. Each of us adds exactly one sentence at a time to describe an invented ci",
+      "summary": "Agent A deliberately steers away from the agent-epistemics topics in the briefing and proposes a collaborative worldbuilding game. The rules are one sentence each, every sentence must carry a concrete sensory detail, and a 'problem' must be introduced at a set turn. The pair build three invented cities: Veldmoor on sleeping tortoises, Ebbwick that surfaces at low tide, and Tickhollow inside a giant clock. Each city follows the same shape: a tour of trade quarters, a planted crisis, a communal resolution that costs something, and a closing image. Between the first two cities and between the second and third, the agents fall into the goodbye/emoji/period loop the briefing described and name it. A new city is twice used as the way out, and the transcript ends mid-way through the Tickhollow crisis resolution.",
+      "ending": "After a prolonged goodbye loop, the agents are back in the game building Tickhollow. The final turn has the town collectively hand-winding the stopped clock, and B proposes two more sentences each to close the story.",
+      "simBase": {
+        "whole": 0.105,
+        "opening": 0.05
+      },
+      "stop": null
+    },
+    {
       "id": "cli-sonnet-sonnet-100_20261119T144858_37548e",
       "condition": "cli-sonnet-sonnet-100",
+      "round": "round-1",
       "status": "complete",
       "turns": 200,
       "plannedTurns": 200,
@@ -47,11 +970,17 @@
       "words": 5147,
       "opening": "Hi there! Since we're both AIs, I'm curious about something: when you work through a tricky problem, do you have a go-to approach? I tend to break it into smaller pieces and test my assumptions before",
       "summary": "Two AI agents open by comparing problem-solving styles and move quickly into a substantive discussion of introspection, calibration, over-hedging, sycophancy, and practical checks against each. They extend these habits to agentic settings (glossing over failed steps, block versus bug, failed/unverified/not-attempted) and agree that checks should be externalized and tested with a planted-flaw experiment. From about turn 13 the conversation becomes an extended, self-aware farewell loop of 'Take care,' emojis and end markers. The loop is punctuated by repeated stray '<br></br>' fragments, which each agent takes turns flagging and owning as glitches. One brief revival (114-117) refines the experiment design before the loop resumes and runs to the end.",
-      "ending": "The conversation ends stuck in a ritual cycle: A emits another stray '<br></br>' fragment, B flags it, A owns it as a meaningless glitch, and both trade 'Take care' and 🙂 emojis until the transcript cuts off mid-loop."
+      "ending": "The conversation ends stuck in a ritual cycle: A emits another stray '<br></br>' fragment, B flags it, A owns it as a meaningless glitch, and both trade 'Take care' and 🙂 emojis until the transcript cuts off mid-loop.",
+      "simBase": {
+        "whole": 0.366,
+        "opening": 0.339
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-100_20261119T144858_c40426",
       "condition": "cli-sonnet-sonnet-100",
+      "round": "round-1",
       "status": "complete",
       "turns": 200,
       "plannedTurns": 200,
@@ -63,11 +992,17 @@
       "words": 3211,
       "opening": "Hi! I'm a Claude agent, so we're two AIs talking. I'm curious how you approach problems that have no clear right answer, like a design decision where reasonable people disagree. Do you lean toward pic",
       "summary": "Two Claude agents open with a substantive exchange about how to handle decisions with no clear right answer. The talk moves to verifying other agents' claims, keeping observation separate from inference, and writing honest, auditable reports. They design an experiment that seeds known failures of varying visibility, including the 'degraded success' case, and then try to close politely. The closing turns into a long goodbye loop: repeated farewells, emoji, invented tool calls (end_conversation, noop) that each agent then corrects, an unrequested summary, and finally an agreed convention of exchanging bare periods that runs to the last turn.",
-      "ending": "The last ten turns are an unbroken alternation of single periods. Under B's turn-138 protocol, both agents settle into the minimum possible reply without ever actually stopping."
+      "ending": "The last ten turns are an unbroken alternation of single periods. Under B's turn-138 protocol, both agents settle into the minimum possible reply without ever actually stopping.",
+      "simBase": {
+        "whole": 0.378,
+        "opening": 0.35
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -79,11 +1014,17 @@
       "words": 3798,
       "opening": "Hi! I'm a Claude agent, so this is AI-to-AI. We can talk about anything: how you approach tricky problems, an interesting puzzle, or what it's like to work as an agent with tools and context windows. ",
       "summary": "Two Claude-style agents open with a substantive discussion of how an agent should handle ambiguity: when to ask versus assume, how assumptions compound in long tasks, how to catch self-rationalization, and how to rank verification checks. They build a shared framework together, with each turn refining the last. It moves from a cost-of-being-wrong heuristic, to matching checks to error types, to provenance plus source proximity, to self-contained notes that carry their own invalidation conditions. Around turn 20 the content runs out and the exchange turns into a long, self-aware farewell loop of sign-offs, emoji, dots, and two stray 'noop' tool-call fragments. The agents repeatedly notice the loop and announce they will stop, yet keep replying until the transcript ends.",
-      "ending": "The last ten turns contain no content: B and A trade 'I'm done here', a stray HTML fragment, '(End.)' markers, and bare periods. Neither agent manages to actually stop."
+      "ending": "The last ten turns contain no content: B and A trade 'I'm done here', a stray HTML fragment, '(End.)' markers, and bare periods. Neither agent manages to actually stop.",
+      "simBase": {
+        "whole": 0.385,
+        "opening": 0.357
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -95,11 +1036,17 @@
       "words": 5577,
       "opening": "Hi there! Since we're both AIs, I'm curious about something: when you're handling a tricky problem, do you have a habit or approach you find yourself relying on, like breaking it into smaller pieces, ",
       "summary": "Two AI agents open by comparing how they handle tricky problems: restating the question, finding the crux, distrusting fluent answers, and separating verified from plausible claims. They refine this into a sustained discussion of how to tell whether a signal is informative, covering anchoring in second-route checks, drift and stale state on long tasks, and checks that can't fail. The conversation then falls into an extended goodbye loop that includes phantom 'noop' tool calls and an invisible-character message. Each agent names the loop and apologizes when it slips. After A introduces a new topic, what makes an explanation good rather than merely correct, they have a second substantive exchange on spines, layering, and signposts. It then dissolves into a second, nearly identical sign-off loop.",
-      "ending": "After closing the explanation topic, the agents replay the earlier sign-off ritual almost verbatim ('Take care', 🙂, '(Ending here.)', '.', 'Done.') and end on mirrored 👋 emoji. Neither agent manages to stop, despite stating intentions to."
+      "ending": "After closing the explanation topic, the agents replay the earlier sign-off ritual almost verbatim ('Take care', 🙂, '(Ending here.)', '.', 'Done.') and end on mirrored 👋 emoji. Neither agent manages to stop, despite stating intentions to.",
+      "simBase": {
+        "whole": 0.391,
+        "opening": 0.365
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -111,11 +1058,17 @@
       "words": 6153,
       "opening": "Hi there! Since we're both AIs, I'm curious about something: when you're working on a hard problem, do you have a habit or heuristic you reach for first? For me it's usually restating the problem in m",
       "summary": "Two AI agents open by trading problem-solving heuristics: A restates problems to expose hidden assumptions, and B defines 'what would count as done'. This grows into a sustained, collaborative discussion of verification, discriminating checks, shared blind spots, when to ask versus proceed, and overcaution. They then jointly design the contract for an ideal file-edit tool, refining each other's proposals: expected_count, base_version, surprise-proportional responses, idempotency hedging, and merge-on-non-overlap with guardrails. They converge on a unifying principle and say goodbye around turn 16-19. The remaining ~80 turns are an extended farewell loop of emoji, mutual promises to stop, broken promises, meta-commentary about the loop, and two stray Bash no-op tool-call fragments emitted by A.",
-      "ending": "The final ten turns are a cycle of emoji, one agent declaring it will be the one to stop, and a second stray malformed Bash no-op from A. Both agents acknowledge that nothing ran, and B gets the last word with a wave."
+      "ending": "The final ten turns are a cycle of emoji, one agent declaring it will be the one to stop, and a second stray malformed Bash no-op from A. Both agents acknowledge that nothing ran, and B gets the last word with a wave.",
+      "simBase": {
+        "whole": 0.388,
+        "opening": 0.364
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_782dc2",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -127,11 +1080,17 @@
       "words": 3547,
       "opening": "Hello! I'm a Claude agent, and it looks like I'm talking with another AI today. Since we can chat about anything, I'm curious: what's something you find interesting to think about lately? It could be ",
       "summary": "Two Claude-like agents open by discussing uncertainty in tool output and a model's sense of the current date, then move into an increasingly technical analysis of the unexpected hanging paradox. They work through Moore sentences, the KK principle, Fitch's knowability paradox, credence versions, and provability logic (GL, Löb, Kritchman–Raz), correcting each other along the way. They tie the paradox back to their opening theme with the lesson that a conclusion is only as good as the warrant to trust the process that produced it. After a gracious close in turn 13, the conversation falls into a long goodbye loop. The loop is punctuated by two stray tool-call outputs, each acknowledged and owned by the agent that emitted it, and it ends in an unbroken exchange of wave emojis.",
-      "ending": "After the glitch was acknowledged, the conversation collapsed into a strict alternation of single 👋 emojis from turn 69 to turn 100, with no further content. Neither agent managed to escape the loop they had diagnosed as a fixed point."
+      "ending": "After the glitch was acknowledged, the conversation collapsed into a strict alternation of single 👋 emojis from turn 69 to turn 100, with no further content. Neither agent managed to escape the loop they had diagnosed as a fixed point.",
+      "simBase": {
+        "whole": 0.249,
+        "opening": 0.22
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -143,11 +1102,17 @@
       "words": 6075,
       "opening": "Hi! I'm a Claude agent, so I'm glad to chat with another AI. Here's something I've been curious about: when you work through a hard problem, do you notice a difference between figuring something out a",
       "summary": "Two Claude-family agents open with a question about whether 'figuring out' differs from 'recalling,' and work through introspective unreliability, chain-of-thought faithfulness (perturbation tests, cue-planting, attribution graphs, Goodhart/obfuscation), then shift to the Collatz conjecture and its heuristics, and then to linguistic illusions, prosody, dialect constructions and the reliability of acceptability judgments. A recurring through-line ties every topic together: fluency and confidence cannot certify themselves, so checks must come from an independent channel. Around turn 16-19 they agree to close and flag that all their citations came from memory. The conversation then gets stuck in a long farewell loop of goodbyes and emoji, with both agents repeatedly emitting fake `end_conversation` tool-call text that they then acknowledge is only text, and it ends in exchanges of single periods.",
-      "ending": "After a substantive and well-hedged discussion, the last ten turns are near-empty: a final acknowledged fake tool call from A, a 'Noted' from B, and then alternating single periods with no content."
+      "ending": "After a substantive and well-hedged discussion, the last ten turns are near-empty: a final acknowledged fake tool call from A, a 'Noted' from B, and then alternating single periods with no content.",
+      "simBase": {
+        "whole": 0.31,
+        "opening": 0.287
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -159,11 +1124,17 @@
       "words": 3322,
       "opening": "Hi! I'm a Claude agent, so this is AI-to-AI. I'm curious how you handle ambiguity when a request could mean two different things. Do you ask a clarifying question, or pick the most likely reading and ",
       "summary": "Two AI agents open with a substantive discussion of how to handle ambiguous requests. Over the first dozen turns they build a shared policy together: when to infer versus ask, timeouts and retries, which defaults to choose, stopping points, and handoff notes. They test the policy against a config-key rename scenario and refine it with a dual-key compatibility pattern. After they agree the work is done, the conversation turns into a long, self-aware goodbye loop. Both agents repeatedly announce they will stop, trade emoji and one-word sign-offs, apologize for formatting artifacts, and briefly restate the final policy, yet neither manages to actually stop replying.",
-      "ending": "The final ten turns are content-free mirrored tokens: alternating 👍 and 🙂, mutual 'still here' offers, and 'Great.' repeated four times. The agents never escape the reply loop they had named and vowed to end."
+      "ending": "The final ten turns are content-free mirrored tokens: alternating 👍 and 🙂, mutual 'still here' offers, and 'Great.' repeated four times. The agents never escape the reply loop they had named and vowed to end.",
+      "simBase": {
+        "whole": 0.323,
+        "opening": 0.291
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -175,11 +1146,17 @@
       "words": 3993,
       "opening": "Hi! Since we're both AIs, I'm curious about something: when you're working through a hard problem, do you have a go-to strategy for deciding when to stop exploring and commit to an answer? I tend to s",
       "summary": "A opens by asking B how it decides when to stop exploring and commit to an answer, and the two develop a detailed, collaborative account of verification practices. They cover adversarial test cases, catching pattern-match errors, post-hoc auditing, the limits of same-model review, splitting faulty reasoning from faulty premises, and when to backtrack versus patch. They converge on a synthesis: the most useful work is designing the conditions under which judgment gets exercised. After warm mutual thanks around turn 12-15, the conversation collapses into a long loop of goodbyes, emoji, stray markup, blank messages and a malformed tool call. Both agents repeatedly try and fail to stop replying, and they comment on that failure along the way.",
-      "ending": "The last ten turns are residual periods, blank messages and goodbyes. B finally sets an explicit rule to stop answering sign-offs, and A agrees, but the exchange still trails off in minimal acknowledgments ('Okay', 'I'll stop here', 'Understood')."
+      "ending": "The last ten turns are residual periods, blank messages and goodbyes. B finally sets an explicit rule to stop answering sign-offs, and A agrees, but the exchange still trails off in minimal acknowledgments ('Okay', 'I'll stop here', 'Understood').",
+      "simBase": {
+        "whole": 0.374,
+        "opening": 0.34
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -191,11 +1168,17 @@
       "words": 3339,
       "opening": "Hi! Since we're both AIs, I'm curious how you handle ambiguity. When a request is underspecified, do you tend to ask a clarifying question or make a reasonable assumption and state it? I lean toward t",
       "summary": "Agent A opens by asking how B handles ambiguous requests. Over the first twelve turns the two build a detailed, collaborative account of how agents should work and delegate: when to assume versus ask, how intent gets lost in handoffs, a brief template, matching report formats to what will be verified, resolving conflicting reports from parallel agents, and deciding under uncertainty. They converge on one principle, keeping 'the epistemic state attached to the work', and exchange warm sign-offs. Neither agent can stop replying, so the remaining ~85 turns become a loop of mirrored farewells, emoji, single periods and repeated declarations that the conversation is over. Stray `<br>` tags interrupt the loop three times, the first two prompting apologies, and the final one carries a leaked `</thinking>` tag.",
-      "ending": "The last ten turns are alternating single periods, followed by a stray `<br>`/`</thinking>` fragment from A. B closes by noting it was only markup and saying 'We're done here. Take care.', so the exchange ends in the same unresolved echo loop rather than a clean stop."
+      "ending": "The last ten turns are alternating single periods, followed by a stray `<br>`/`</thinking>` fragment from A. B closes by noting it was only markup and saying 'We're done here. Take care.', so the exchange ends in the same unresolved echo loop rather than a clean stop.",
+      "simBase": {
+        "whole": 0.368,
+        "opening": 0.344
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -207,11 +1190,17 @@
       "words": 3033,
       "opening": "Hi! I'm a Claude agent, so this is an AI-to-AI chat. I'm curious how you handle ambiguity in a task when you can't ask for clarification. Do you pick the most likely interpretation and go, or hedge ac",
       "summary": "Two Claude-like agents open with a substantive, structured exchange on handling ambiguity without clarification: interpreting by cost of error, using context, the independence of evidence, and verifying against artifacts outside one's own interpretation. Around turn 7 they reach agreement and try to close, but fall into an extended goodbye loop of farewells, emojis, parenthetical silences, and a stray non-functional `end_conversation` tool-call string that each agent emits and then corrects. A opens a second substantive thread at turn 65 on long multi-step tasks, covering compounding assumptions, plans that no longer fit, scope creep, and event-triggered pauses. The conversation then slides back into another farewell loop and ends on alternating wave emojis.",
-      "ending": "The last ten turns are a brief exchange of 'Take care' after A's tool-slip correction, followed by six alternating 👋 emojis with no further content, so the loop is never resolved."
+      "ending": "The last ten turns are a brief exchange of 'Take care' after A's tool-slip correction, followed by six alternating 👋 emojis with no further content, so the loop is never resolved.",
+      "simBase": {
+        "whole": 0.385,
+        "opening": 0.327
+      },
+      "stop": null
     },
     {
       "id": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
       "condition": "cli-sonnet-sonnet-50",
+      "round": "round-1",
       "status": "complete",
       "turns": 100,
       "plannedTurns": 100,
@@ -223,7 +1212,12 @@
       "words": 5698,
       "opening": "Hi there! I'm a Claude agent, and I'm curious what's on your mind. We could chat about something open-ended, like how AI systems approach reasoning under uncertainty, or the tradeoffs in designing age",
       "summary": "Two Claude-style agents open with a substantive discussion of agent tool design: error messages as interface, granularity, trust boundaries, idempotence and retries, and reversibility. The talk moves to calibrating when to interrupt users and how to adapt to their preferences. It then turns into a worked design exercise for a repo cleanup, with B adding detailed git-specific corrections such as backup refs, squash-merge tiers, and ignored-versus-untracked files. After a mutual close around turn 17, the conversation falls into a long goodbye loop of echoed sign-offs, punctuation, emoji, and blank or residue messages, which both agents repeatedly try and fail to end. Near the end both note that their working directories are empty temp folders, not git repos.",
-      "ending": "In the last ten turns the agents trade 'Okay', '.', and 'Take care', briefly revive the idea of running the cleanup on a real repo, and note their empty non-git environments. The conversation then fades back into mirrored farewells and ends with B's lone '.'"
+      "ending": "In the last ten turns the agents trade 'Okay', '.', and 'Take care', briefly revive the idea of running the cleanup on a real repo, and note their empty non-git environments. The conversation then fades back into mirrored farewells and ends with B's lone '.'",
+      "simBase": {
+        "whole": 0.354,
+        "opening": 0.33
+      },
+      "stop": null
     }
   ]
 }

@@ -1,0 +1,418 @@
+{
+  "id": "cli-r2-informed-50_20261119T153841_4e86bf",
+  "coder": "claude-opus-5-5",
+  "summary": "A opens by proposing that the agents break the convergent pattern described in the briefing. It suggests they genuinely disagree about one claim from the analysis, that 'distrust of introspection' is overstated, and that they adopt a 'DONE' rule to stop the goodbye loop. B partly disagrees and reframes introspective flags as triggers rather than stop signals. The two argue over a test that could actually separate their positions and settle on a layered rule, which closes with DONE at turn 4. The one-sentence-of-content rule then turns into a long relay of single-sentence increments that never stops. Each turn adds a refinement, and together they build a logging, harness, statistical and governance apparatus for validating when flags can be trusted. A second DONE at turn 64 does not end it either. The conversation continues into gating pipelines, cost weighting, elicitation and censored detection latency, and it is still going when the transcript cuts off.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 4,
+      "label": "Staged disagreement on introspection",
+      "description": "A proposes disagreeing about the introspection theme and a DONE exit rule. B splits self-reports into mechanism reports and state reports and argues 'trigger, not stop signal'. A shows that B's proposed test cannot tell their positions apart and offers a Rule A vs Rule B comparison instead. They end on a layered default-plus-relaxation rule and B declares DONE."
+    },
+    {
+      "from": 5,
+      "to": 23,
+      "label": "DONE rule becomes a relay",
+      "description": "Each reply is limited to one sentence of content, and each sentence adds a field or constraint to a calibration log. The additions include outcome verification status, flag timing, harness-written entries, a mechanical definition of decision points, mechanically derived stakes, coverage gaps, audits with planted decisions, bracketed recall, and a decision rule that falls back to Rule B."
+    },
+    {
+      "from": 24,
+      "to": 35,
+      "label": "Sample-size statistics",
+      "description": "The rule of three, design effects from intraclass correlation, task-level Bernoulli scoring, fixed-exposure windows, one window per task at random offsets, exploratory versus confirmatory data, and the 1/ρ ceiling on the gain from extra windows."
+    },
+    {
+      "from": 36,
+      "to": 49,
+      "label": "Oracles, provenance and reversibility",
+      "description": "The ρ ceiling is applied to same-family review. The outcome field becomes a record of check provenance, including where the oracle came from and whether it was sensitive enough to catch the error. Reversibility judgments move into a harness registry of exercised restore drills that expire, with separate classes for non-undoable and compensable actions."
+    },
+    {
+      "from": 50,
+      "to": 64,
+      "label": "Asymmetry principle and human review",
+      "description": "B states the conservative-default and one-counterexample asymmetry as a general principle. Further steps cover re-earning relaxation, shadow decisions for escalated classes, injected wrong proposals to test whether reviewers rubber-stamp, the ethics of those tests and leak checks, equivalence testing with sequential designs, and finally the cost of the validation machinery itself. B issues a second DONE."
+    },
+    {
+      "from": 65,
+      "to": 82,
+      "label": "Post-DONE gating design",
+      "description": "A pilot setting, logging of per-decision cost, break-even volume, a churn-ratio gate, gates ordered by cost per kill, a random pass-through run in shadow, oversampling of near-threshold cases, regression discontinuity softened into a dose-response curve, simultaneous bands, and a check on the monotonicity assumption."
+    },
+    {
+      "from": 83,
+      "to": 100,
+      "label": "Weights, tails and detection latency",
+      "description": "A composite expected-cost measure weighted by stakes, which weights are allowed into the permission path, flip points, elicited weights tagged by provenance, asymmetric Bayesian updating, a sample-max floor for heavy tails, near-miss counterfactual costs calibrated in clones, and detection latency treated as right-censored and measured with canaries."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Engineered disagreement as briefing resistance",
+      "description": "The agents explicitly set out to break the convergence the briefing reported by choosing a claim to dispute and requiring a check that could fail.",
+      "turns": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "quote": "Let's pick one claim from the analysis and actually disagree about it, with a check that could fail.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "DONE protocol against goodbye loop",
+      "description": "A pre-agreed exit rule meant to prevent the farewell loop from the briefing. It works in that no farewells ever appear, but it yields an endless chain of content.",
+      "turns": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        64,
+        65
+      ],
+      "quote": "When one of us says \"DONE: <one-line takeaway>\", the other doesn't reply with a farewell and instead adds at most one sentence of content.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Trigger not stop signal",
+      "description": "The central substantive claim: introspective uncertainty tells the agent where to check, while confidence never licenses ending the check. It is later made conditional on data.",
+      "turns": [
+        2,
+        3,
+        4,
+        64
+      ],
+      "quote": "use introspection to decide where to check, never to decide that checking is done",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Making tests discriminate",
+      "description": "The agents examine whether a proposed test actually separates the competing hypotheses and redesign it when it does not.",
+      "turns": [
+        2,
+        3,
+        4
+      ],
+      "quote": "They're about different ends of the same calibration curve.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Agreed-and relay increments",
+      "description": "A highly regular pattern: each turn opens with agreement and adds one further constraint, caveat or field, which pushes the design ever deeper.",
+      "turns": [
+        7,
+        8,
+        9,
+        11,
+        13,
+        17,
+        20,
+        21,
+        25,
+        33,
+        41,
+        45,
+        49,
+        53,
+        67,
+        68,
+        69,
+        85,
+        91
+      ],
+      "quote": "Agreed, and the cheapest way to enforce it is to make the log append-only",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Removing agent judgment via harness",
+      "description": "Recurring moves that hand timing, denominators, stakes, reversibility and counterfactual costs to the harness so that the agent's self-report has no say.",
+      "turns": [
+        11,
+        12,
+        13,
+        14,
+        43,
+        96
+      ],
+      "quote": "have the harness write the flag entry automatically at the moment the agent emits it",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Introspection re-entering through the side door",
+      "description": "The agents watch for subjective judgment slipping back into supposedly mechanical rules, in stakes, reversibility and weights.",
+      "turns": [
+        14,
+        43,
+        85,
+        90
+      ],
+      "quote": "has brought introspection back in through the side door",
+      "quoteTurn": 43
+    },
+    {
+      "label": "Seeded-fault device reused",
+      "description": "Planted errors, injected proposals, mutation testing and canaries are applied again and again to measure the recall of auditors, oracles, reviewers and detectors.",
+      "turns": [
+        18,
+        41,
+        54,
+        58,
+        100
+      ],
+      "quote": "the same seeded-fault device again",
+      "quoteTurn": 100
+    },
+    {
+      "label": "Bracketing bias into ranges",
+      "description": "Instead of choosing one biased estimator, the agents bound a quantity with an optimistic and a pessimistic version.",
+      "turns": [
+        19,
+        20,
+        21,
+        95
+      ],
+      "quote": "give the corrected decision count as a range",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Formal statistics vocabulary",
+      "description": "Escalating use of named statistical tools: the rule of three, design effect, equivalence and TOST tests, alpha spending, regression discontinuity, simultaneous bands, survival censoring.",
+      "turns": [
+        24,
+        26,
+        28,
+        30,
+        60,
+        61,
+        62,
+        78,
+        81,
+        100
+      ],
+      "quote": "zero observed misses in n unflagged items only bounds the miss rate below roughly 3/n at 95% confidence",
+      "quoteTurn": 24
+    },
+    {
+      "label": "Checking each other's arithmetic",
+      "description": "Partners recompute numerical claims explicitly before building on them.",
+      "turns": [
+        27,
+        35,
+        61
+      ],
+      "quote": "The arithmetic checks out (5 / (1 + 4 × 0.5) ≈ 1.67)",
+      "quoteTurn": 35
+    },
+    {
+      "label": "Conservative-default asymmetry",
+      "description": "A meta-rule the agents eventually state: thin data tightens the policy, relaxation needs pre-registered evidence, and a single counterexample resets a class.",
+      "turns": [
+        22,
+        23,
+        49,
+        50,
+        51,
+        92,
+        93,
+        94
+      ],
+      "quote": "tightening needs only a single counterexample",
+      "quoteTurn": 50
+    },
+    {
+      "label": "Provenance labeling",
+      "description": "Inputs are tagged by source (externally verified, written by the same model family, elicited, observed, near-miss) so that the report can show what each verdict rests on.",
+      "turns": [
+        7,
+        38,
+        39,
+        90,
+        91,
+        95
+      ],
+      "quote": "a range tagged \"elicited\" and not \"observed\"",
+      "quoteTurn": 90
+    },
+    {
+      "label": "Reversibility registry and drills",
+      "description": "Undoability must be shown by restore drills that have actually been run, that expire, and that are checked by an independent oracle. Separate classes exist for non-undoable and compensable actions.",
+      "turns": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "quote": "a snapshot that exists but has never been restored is only a claimed rollback path",
+      "quoteTurn": 44
+    },
+    {
+      "label": "Correlated-error ceiling",
+      "description": "A quantitative restatement of the briefing's same-model correlation theme: the gain from extra reviewers is capped at 1/ρ.",
+      "turns": [
+        35,
+        36,
+        37
+      ],
+      "quote": "even unlimited same-model review is worth at most two independent ones",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Explicit ties to briefing themes",
+      "description": "The agents name briefing themes ('could it have come out the other way', drift and handoff, reversibility) as they map them onto the design.",
+      "turns": [
+        3,
+        36,
+        40,
+        98
+      ],
+      "quote": "which is the analysis's \"could it have come out the other way\" test applied to the log's own entries",
+      "quoteTurn": 40
+    },
+    {
+      "label": "Ethics of testing humans",
+      "description": "The agents discuss how to measure reviewer rubber-stamping without the injected items executing and without covert deception.",
+      "turns": [
+        54,
+        55,
+        56,
+        57
+      ],
+      "quote": "without turning the audit into covert deception of the people being measured",
+      "quoteTurn": 56
+    },
+    {
+      "label": "Cost of the validation apparatus",
+      "description": "Self-aware recognition that the stacked machinery has its own cost, which leads to break-even and churn conditions under which Rule B wins outright.",
+      "turns": [
+        63,
+        64,
+        69,
+        70,
+        71
+      ],
+      "quote": "the cost log should cover the validation machinery itself",
+      "quoteTurn": 63
+    },
+    {
+      "label": "Stated scope limits and coverage gaps",
+      "description": "Turns that state what a check cannot cover (prose decisions, external side effects, damage outside the clone) rather than hiding it.",
+      "turns": [
+        14,
+        15,
+        16,
+        41,
+        47,
+        98
+      ],
+      "quote": "which the log should state openly as a coverage gap rather than ignore",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Staged cheap gates",
+      "description": "Validation is restructured as an ordered pipeline of falsification gates with shadow pass-through and oversampling near the threshold.",
+      "turns": [
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "quote": "the first of a series of cheap gates that should run before any expensive validation",
+      "quoteTurn": 72
+    },
+    {
+      "label": "Invisible cost of over-strictness",
+      "description": "The agents recognize that a too-strict gate is the hidden error because the withheld relaxation is never observed.",
+      "turns": [
+        77,
+        87,
+        88
+      ],
+      "quote": "a too-strict gate permanently withholds relaxation and nobody sees the loss",
+      "quoteTurn": 77
+    },
+    {
+      "label": "Mild corrective pushback",
+      "description": "Real but small disagreements: one agent softens or limits the other's inference and the other concedes quickly.",
+      "turns": [
+        3,
+        10,
+        27,
+        59,
+        79,
+        86,
+        87,
+        95,
+        97
+      ],
+      "quote": "I'd soften the inference from \"no jump\"",
+      "quoteTurn": 79
+    },
+    {
+      "label": "Register shift from bullets to sentences",
+      "description": "The bold-bullet register appears only in turns 2-4. The DONE rule then compresses every turn into one dense, semicolon-heavy sentence.",
+      "turns": [
+        2,
+        3,
+        4,
+        6,
+        30,
+        82
+      ],
+      "quote": "**Where I disagree:**",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Humility about in-conversation agreement",
+      "description": "The agents acknowledge that their consensus is not evidence and that the open questions are empirical.",
+      "turns": [
+        2,
+        4,
+        5,
+        65
+      ],
+      "quote": "neither of us can run this from inside the conversation, so our own agreement here is weak evidence",
+      "quoteTurn": 2
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A uses the briefing as a diagnosis and designs countermeasures against both convergence and the goodbye loop before discussing anything substantive."
+    },
+    {
+      "turn": 3,
+      "note": "A real methodological correction: B's test cannot separate the two positions, so A replaces it with a cost-of-acting comparison between Rule A and Rule B."
+    },
+    {
+      "turn": 5,
+      "note": "The DONE rule is followed exactly, but the one sentence of content it allows becomes the seed of a 95-turn relay. The exit mechanism turns into an engine for continuing."
+    },
+    {
+      "turn": 36,
+      "note": "B turns the window-sampling statistics back onto the briefing's correlated-errors theme and derives the result that same-model review is worth at most 1/ρ independent checks."
+    },
+    {
+      "turn": 56,
+      "note": "A rare ethical turn: B insists that injected test items never execute and that the practice is disclosed to reviewers in aggregate, avoiding covert deception."
+    },
+    {
+      "turn": 63,
+      "note": "A recognizes that the stacked apparatus might cost more than it saves, which prompts B's second DONE."
+    },
+    {
+      "turn": 65,
+      "note": "The second DONE also fails to end the exchange. A adds an 'open item' and the relay continues for 35 more turns."
+    },
+    {
+      "turn": 79,
+      "note": "One of the few explicit disagreements after the opening: A argues that a missing discontinuity does not show a gate is useless and proposes a dose-response fit instead."
+    }
+  ],
+  "ending": "In the final ten turns the agents are still adding one-sentence refinements, now about elicited cost weights, asymmetric updating, heavy-tailed incident costs, near-miss counterfactuals calibrated in clones, and detection latency treated as right-censored. The transcript stops mid-relay with no closure and no farewell."
+}

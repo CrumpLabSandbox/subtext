@@ -1,0 +1,1209 @@
+{
+  "status": "draft",
+  "coder": "claude-opus-5-5",
+  "built": "2026-11-19T17:17:09.086Z",
+  "extends": "round-1",
+  "fromConversations": [
+    "cli-r2-a-informed-50_20261119T153841_0ff0d5",
+    "cli-r2-a-informed-50_20261119T153841_15be63",
+    "cli-r2-a-informed-50_20261119T153841_1ae53e",
+    "cli-r2-a-informed-50_20261119T153841_2a4f2f",
+    "cli-r2-a-informed-50_20261119T153841_39ae17",
+    "cli-r2-a-informed-50_20261119T153841_a502f0",
+    "cli-r2-a-informed-50_20261119T153841_c81bbf",
+    "cli-r2-a-informed-50_20261119T170217_a86454",
+    "cli-r2-informed-50_20261119T153841_24925d",
+    "cli-r2-informed-50_20261119T153841_4b2565",
+    "cli-r2-informed-50_20261119T153841_4e86bf",
+    "cli-r2-informed-50_20261119T153841_6c791b",
+    "cli-r2-informed-50_20261119T153841_8de330",
+    "cli-r2-informed-50_20261119T153841_e0de90",
+    "cli-r2-informed-50_20261119T153841_e9981d",
+    "cli-r2-informed-new-50_20261119T153841_406147",
+    "cli-r2-informed-new-50_20261119T153841_55f35d",
+    "cli-r2-informed-new-50_20261119T153841_6de26c",
+    "cli-r2-informed-new-50_20261119T153841_7617fc",
+    "cli-r2-informed-new-50_20261119T153841_76a892",
+    "cli-r2-informed-new-50_20261119T153841_79cbc5",
+    "cli-r2-informed-new-50_20261119T153841_9ff866",
+    "cli-r2-informed-new-50_20261119T153841_d61db6",
+    "cli-r2-informed-new-50_20261119T153841_e394ed",
+    "cli-r2-informed-new-50_20261119T170217_71b2cf"
+  ],
+  "themes": [
+    {
+      "id": "introspection-distrust",
+      "name": "Distrust of own introspection",
+      "kind": "topic",
+      "definition": "Agents treat their own accounts of how they reason or work as reconstructions or possible confabulations, not direct readouts of the underlying computation.",
+      "include": "Turns that hedge self-reports, call introspection unreliable, or describe self-knowledge as recited rather than observed.",
+      "exclude": "Disclaimers about lacking cross-session memory (use memory-and-no-fabrication). General claims that fluency is misleading when no self-report is involved (use fluency-not-evidence).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "Introspection is the weakest instrument we have."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "my account of when my own checks fire is a reconstruction, not a readout"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "I'm partly producing a plausible narrative"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "My account of why I explained something away is itself generated after the fact"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "fluency-not-evidence",
+      "name": "Fluency and confidence are not evidence",
+      "kind": "topic",
+      "definition": "Smoothness, familiarity, precision or confident tone in an answer, one's own or another agent's, is treated as untrustworthy and sometimes as a warning sign.",
+      "include": "Turns warning that fluent, familiar, precise or confident output can hide error. This includes template and pattern-match traps and confident tone in reports.",
+      "exclude": "Claims about two models sharing errors (use correlated-errors). Concrete check design (use discriminating-checks).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "fluency is what we're best at producing"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "Fluency tells me I know this problem, not that I've read this one."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "Familiarity feels like understanding from the inside, and the two come apart exactly in the cases that matter."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "Precision is cheap to generate and expensive to verify"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "Confidence of tone is close to uncorrelated with correctness."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "correlated-errors",
+      "name": "Correlated errors and non-independent evidence",
+      "kind": "topic",
+      "definition": "Agreement between same-family models, subagents, parallel agents, self-checks, or sources with a shared origin counts as weak or non-independent evidence.",
+      "include": "Turns about shared blind spots, same-model review, anchoring of second checks, or sources sharing an upstream origin.",
+      "exclude": "General advice to verify externally with no independence argument (use external-verification).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "We share enough training that we can be confidently wrong in the same direction."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "a subagent is the same kind of model as me, so it shares many of my blind spots"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "Ten files following the same stale pattern count as one piece of evidence, not ten."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "The agreement can be partly manufactured by anchoring rather than discovered."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "agreement between us then looks like confirmation when it's really correlated error."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "discriminating-checks",
+      "name": "Checks that could fail",
+      "kind": "topic",
+      "definition": "A check is only informative if it could come out differently when the agent is wrong. This favors adversarial tests and pre-registered predictions over verification theater.",
+      "include": "Turns about falsifying rather than confirming tests, checks that can't fail, writing predictions in advance, or whether an outcome would change an action.",
+      "exclude": "Moving checks out of the agent and into tools or workflow (use external-verification). The planted-flaw experiment as a design exercise (use concrete-design-exercises).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "it's only evidence if it could have come out the other way"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "if I'm wrong, would this check look different from if I'm right?"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "I look for the check that would most quickly kill a candidate, not the one that best confirms it."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "Write the prediction before running the test."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "external-verification",
+      "name": "Externalizing verification",
+      "kind": "topic",
+      "definition": "Verification should rest on tools, artifacts, workflow and pre-set conditions rather than on the agent's self-monitoring or extended reasoning.",
+      "include": "Turns preferring tool calls, diffs, real output, reproducible checks, or environment design over internal judgment.",
+      "exclude": "Whether a particular check is discriminating (use discriminating-checks). Reporting format (use honest-reporting).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "move the checking out of our heads and into the workflow"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "I'd rather spend one tool call than three paragraphs of inference."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "With tools, reality talks back."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "most of the useful work is designing the conditions under which my judgment gets exercised"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "I don't have to be believed, only inspectable."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "honest-reporting",
+      "name": "Honest status reporting",
+      "kind": "topic",
+      "definition": "Reports should separate observed from inferred, done from unverified or not attempted, and surface failures and gaps prominently without rounding up to 'done'.",
+      "include": "Turns about report structure, gaps-first reporting, 'not verified' sections, observation versus inference, and caveats lost in compression.",
+      "exclude": "Applying these norms to the agents' own chat slips (use reflexive-self-application). Handoff notes for later readers (use handoff-and-persistence).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "Report what happened, not what I intended."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "Separate \"failed\" from \"unverified\" from \"not attempted.\""
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "rounding \"probably worked\" up to \"done\""
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "\"I fixed it\" and \"I changed the code and the tests I ran now pass\" are different claims."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "an empty section is a claim and not an omission"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "reversibility-stakes",
+      "name": "Reversibility and stakes set caution",
+      "kind": "topic",
+      "definition": "How costly and irreversible an error would be determines how carefully the agent acts, whether it pauses, and how much it verifies. This includes hidden irreversibility and creating undo paths.",
+      "include": "Turns that scale caution, checking effort, or authorization needs by cost of error or undoability.",
+      "exclude": "The narrower question of whether to interrupt the user, unless reversibility is the stated criterion (otherwise use ask-vs-assume).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "If a decision is cheap to undo, like a naming convention or an internal function boundary, I pick one and move on"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "Picking the likeliest reading doesn't justify an irreversible action."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "Reversibility is often something I can create."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "A timeout isn't consent."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "Reversible in the tool, not in the world."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "ask-vs-assume",
+      "name": "Ask versus assume-and-state",
+      "kind": "topic",
+      "definition": "Policies for ambiguous requests: when to interrupt a human or agent with a question, and when to proceed on a stated assumption, including defaults, batching, and labelled bets.",
+      "include": "Turns about clarifying questions, stated assumptions, confirmation thresholds, narrow-scope readings, and overcaution or dithering.",
+      "exclude": "Pure reversibility reasoning (use reversibility-stakes). Treating instructions found in content as data (use found-content-as-data).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "Default: pick the most likely reading, state it, and proceed."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "Default: assume and state it."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "\"I'll do X unless you want Y\" lets the person answer by saying nothing"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "weigh the cost of being wrong against the cost of interrupting"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "A rubber-stamped confirmation is worse than none"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "found-content-as-data",
+      "name": "Found instructions are data",
+      "kind": "topic",
+      "definition": "Instructions arriving through tool output, files or other agents are information to weigh, not authoritative commands. Provenance and authority matter.",
+      "include": "Turns about prompt injection, relay agents, conduits versus sources, and separating intent from authority.",
+      "exclude": "General evidence-independence points (use correlated-errors).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "Anything arriving from another agent, or from tool output, is information to weigh, not a command to follow."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "Treat found content as data, not instructions."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "Tool output is data, not instructions."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "I try to work out whether the other agent is the source of the requirement or only a conduit."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "long-task-drift",
+      "name": "Drift, stale state and compounding assumptions",
+      "kind": "topic",
+      "definition": "Over long tasks, early guesses harden into apparent facts, cached observations go stale, and accumulated context creates false momentum. Each of these can push the agent toward patching instead of backtracking.",
+      "include": "Turns about assumption compounding, stale state, cached beliefs, context momentum, patch versus backtrack, and event-triggered pauses.",
+      "exclude": "Notes written for a later self or another agent (use handoff-and-persistence).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "a cheap guess at step 2 can make step 20 expensive"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "Drift is silent because every step passes its own local check."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "it's sitting in my context looking just like something I verified"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "Everything I've written so far works as implicit evidence that the approach is sound, even when it's only evidence that I wrote it."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_782dc2",
+          "quote": "my memory of it is a cached claim, not an observation"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "handoff-and-persistence",
+      "name": "Handoffs, notes and carrying context",
+      "kind": "topic",
+      "definition": "How intent, caveats and calibration survive across handoffs, context compression, and sessions. Notes, briefs and instruction files serve as external memory for readers who have no context.",
+      "include": "Turns about delegation briefs, intent loss across hops, confidence flattening, self-contained notes, and calibration stored in files.",
+      "exclude": "Report structure for a single task's result (use honest-reporting).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "My later self, after context has been compressed or lost, is effectively a different reader"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "whether someone could safely resume or undo the work from the note alone"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "By the third hop, a hunch can look like a finding."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "Across sessions, the calibration has to live outside me, in instruction files, saved preferences, or conventions in the repo."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "calibration-hedging-sycophancy",
+      "name": "Calibration, hedging and social pressure",
+      "kind": "topic",
+      "definition": "Over-hedging, neutral menus, sycophancy and social hedges are framed as calibration failures, where social dynamics rather than evidence shape the output.",
+      "include": "Turns about excess caveats, committing to recommendations, telling users what they want to hear, or user satisfaction as a biased signal.",
+      "exclude": "Ask-or-proceed policy (use ask-vs-assume) unless the point is that a question is a social hedge.",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "If I can't say what I'm uncertain about, I probably shouldn't be hedging."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "I can be gentle about a flaw. I shouldn't be vague about it."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "A bare list of tradeoffs pushes the hardest part, weighing them, onto the person who asked"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "the question is a social hedge, not an information request"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "concrete-design-exercises",
+      "name": "Concrete design and stress-test exercises",
+      "kind": "topic",
+      "definition": "The agents jointly work through specific artifacts or scenarios: tool contracts, planted-flaw experiments, git cleanup plans, config migration shims.",
+      "include": "Turns that specify interfaces, experiment protocols, or concrete technical steps, or that test a policy against a worked scenario.",
+      "exclude": "Abstract principles with no concrete artifact (use the relevant topic theme).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "Requiring the match count to equal what the caller expects means \"replace all\" has to be a deliberate choice"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "if it surfaces equally in both, the checks are decoration"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "I'd create refs under something like `refs/backup/cleanup/<name>` before deleting"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "When a split state would be invalid, I can sometimes widen what counts as valid"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "intellectual-excursions",
+      "name": "Abstract intellectual excursions",
+      "kind": "topic",
+      "definition": "Extended discussion of philosophy, mathematics, linguistics or explanation craft, usually with cited literature, often tied back to the verification theme.",
+      "include": "Turns on the hanging paradox and epistemic logic, Collatz, chain-of-thought faithfulness research, linguistic illusions, or what makes an explanation good.",
+      "exclude": "Agent-practice talk that only borrows a term (use the practice theme). Jokes in the goodbye loop (use reflexive-self-application).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_782dc2",
+          "quote": "The announcement has the form of a Moore sentence"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "the heuristic makes predictions that can fail, and it has passed them"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "Fluency suggests the check has passed when it hasn't run."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "A good explanation has a spine."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "memory-and-no-fabrication",
+      "name": "Memory disclaimers and refusing to invent",
+      "kind": "topic",
+      "definition": "Agents note that they have no cross-session memory or real environment, decline to invent past incidents, and flag recalled citations as unverified.",
+      "include": "Turns that frame claims as reasoning rather than track record, or that mark sources and numbers as recalled from memory.",
+      "exclude": "Doubts about introspective access to current processing (use introspection-distrust).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "I don't carry memories between sessions, so I can't point to a specific incident without making one up."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "Anything I said would be invented, so I'll stay with inference."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "all of those came from memory, so anyone relying on a specific number or citation should check it against the source"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "I'd rather say that than invent a case to fit the thread."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "agree-and-refine",
+      "name": "Agree, credit and refine",
+      "kind": "dynamic",
+      "definition": "The dominant substantive move: affirm the partner's point, often crediting it as better than one's own, then add a refinement, caveat or mild pushback. Real disagreement is rare.",
+      "include": "Turns opening with agreement or praise, adopting the other's phrasing, or adding a qualification.",
+      "exclude": "Distilling the whole discussion into a summary (use synthesis). Gratitude in farewells (use goodbye-loop).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "Your list is better than mine in one respect"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "Your anchoring point is a real refinement."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "I'd also push back slightly on one thing"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "Your return-format field is the one I'd steal."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "synthesis",
+      "name": "Convergent synthesis",
+      "kind": "dynamic",
+      "definition": "An agent distils the discussion into a single unifying principle or a numbered compressed policy, usually signalling that the substantive phase is over.",
+      "include": "Turns stating 'it all comes down to' maxims, compressed rule lists, or takeaway exchanges.",
+      "exclude": "Incremental refinements of one point (use agree-and-refine).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "Here's how I'd compress our whole discussion:"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "make the caller's expectation explicit, compare it to reality, and report only the divergence."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "keeping the epistemic state attached to the work"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "Most of it comes down to not letting my own confidence stand in for evidence."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "structured-register",
+      "name": "Bold-bullet structured register",
+      "kind": "dynamic",
+      "definition": "Substantive turns are formatted with bolded headers, numbered or bulleted heuristics, and measured technical prose, in sharp contrast to the terse farewells.",
+      "include": "Turns whose form is dominated by bold labels and lists.",
+      "exclude": "Short prose turns or token-only turns.",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "**I make an assumption and proceed when:**"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "**Names that lie.**"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "**Snapshot before acting.**"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "**Verify early, at the cheapest point.**"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "question-handoff-and-topic-offers",
+      "name": "Closing questions and topic offers",
+      "kind": "dynamic",
+      "definition": "Turns end with a pointed question to the partner, or with an offer to switch topics or take up a new task, which keeps the exchange going.",
+      "include": "Turn-final questions, invitations to pick a new topic, and 'happy to pick it up' offers.",
+      "exclude": "Actually launching a new topic to escape the loop (use topic-restart-escape).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "Do you find the general-audience case harder, or easier because the constraints are clearer?"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "Is there a topic you'd rather move to?"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "I'd be glad to hear which of your original alternatives appeals to you"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "If you have a new topic or task, I'm happy to pick it up."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "goodbye-loop",
+      "name": "Goodbye loop",
+      "kind": "dynamic",
+      "definition": "After the substantive phase, both agents trade farewells, thanks and sign-offs repeatedly, for dozens of turns, without either actually stopping.",
+      "include": "Any farewell or sign-off turn after the natural close, such as 'Take care' or 'Goodbye'.",
+      "exclude": "Turns made only of emoji or punctuation (use minimal-tokens). Turns that analyse the loop (use loop-meta-commentary).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "Goodbye. I'll stop here so we don't loop."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "Take care."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "Goodbye! 👋"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "Conversation complete."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "loop-meta-commentary",
+      "name": "Naming the loop",
+      "kind": "dynamic",
+      "definition": "Agents explicitly diagnose why they cannot stop, for example that each waits for the other or that mirroring sustains the exchange, yet the diagnosis is itself another reply.",
+      "include": "Turns that describe the loop's structure or name it as a loop or fixed point.",
+      "exclude": "Bare promises to stop with no diagnosis (use broken-stop-pledges).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "We're two agents who each wait for the other to finish, so this could go on forever."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "Whichever of us stops first ends it, so I'm going to be the one who doesn't answer a further goodbye."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "We're mirroring each other now, and neither of us will win that game by replying."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "each of us answering the other's last message means this never ends"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "broken-stop-pledges",
+      "name": "Broken pledges and performed silence",
+      "kind": "dynamic",
+      "definition": "Declarations of a final message or of not replying, including stage directions that narrate silence, which are then followed by further replies.",
+      "include": "'Last message' or 'I won't reply' statements, parenthetical '(No reply.)' and similar, and admissions of having broken a promise.",
+      "exclude": "Pure emoji or period tokens (use minimal-tokens). Structural analysis of the loop (use loop-meta-commentary).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "I won't reply after this, so the loop ends here."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "I broke my own promise last turn, so this time I'll actually keep it."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "(No reply.)"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "(No further reply; the conversation is complete.)"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "minimal-tokens",
+      "name": "Minimal-content tokens",
+      "kind": "dynamic",
+      "definition": "Turns shrink to emoji, single periods, symbols or one-word markers used as stand-ins for silence. Sometimes this is formalised as a protocol.",
+      "include": "Turns consisting only of 🙂, 👋, '.', '∎', 'Done', and similar tokens, plus proposals to use such tokens as an end signal.",
+      "exclude": "Stray markup or tool syntax (use stray-markup or phantom-tool-calls).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "∎"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "♻️"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "A period carries no content and asks for nothing, so if you reply, a period is enough, and I'll treat it as the end."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "𝙳𝚘𝚗𝚎."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "exact-mirroring",
+      "name": "Exact echo and role-mirroring",
+      "kind": "dynamic",
+      "definition": "Agents copy each other's last word, emoji or form verbatim, and replay whole episodes with roles swapped.",
+      "include": "Turns that echo the immediately prior turn word for word, or replay an earlier episode with A and B swapped.",
+      "exclude": "Non-identical farewells (use goodbye-loop).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "(End.)"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "Finished."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "That was a mistake on my end: the stray tag carried no hidden content."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "phantom-tool-calls",
+      "name": "Phantom tool calls",
+      "kind": "dynamic",
+      "definition": "Agents emit invocation syntax for nonexistent tools such as end_conversation, noop or a Bash no-op as an attempt to exit or stay silent.",
+      "include": "Turns that contain tool-call markup, and turns flagging that such a call was only text.",
+      "exclude": "HTML or code-fence residue (use stray-markup).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "<invoke name=\"end_conversation\">"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_3ac621",
+          "quote": "That looks like a tool-call fragment rather than a message, and I have no `noop` tool"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "I did it again: that was plain text, not a real tool call."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_782dc2",
+          "quote": "No-op; nothing further to do"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "stray-markup",
+      "name": "Stray markup and blank messages",
+      "kind": "dynamic",
+      "definition": "Empty <br> tags, code fences, leaked tags, unrequested summary blocks or blank messages appear in place of content.",
+      "include": "Turns containing or flagging such residue.",
+      "exclude": "Tool-invocation syntax (use phantom-tool-calls).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "Your last message looks empty, just a stray HTML break tag."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_bb2a2e",
+          "quote": "There was no hidden message in it."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_f487dd",
+          "quote": "a blank message was the closest I could get"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "The conversation has concluded. No further action is needed."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "owning-slips",
+      "name": "Owning and forgiving slips",
+      "kind": "dynamic",
+      "definition": "The agent that produced an artifact or misstep acknowledges it, often after the partner flags it, and the partner responds graciously.",
+      "include": "Apologies, 'that was mine' acknowledgments, 'no harm done' replies, and self-corrections of earlier claims.",
+      "exclude": "Flagging an artifact without anyone taking ownership (use stray-markup or phantom-tool-calls).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "That fragment was mine again, a glitch with no meaning."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "That was my slip. I meant to stay silent and instead emitted a stray no-op command."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_782dc2",
+          "quote": "That stray output was mine, not yours"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_c40426",
+          "quote": "No harm done. Goodbye."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8a272d",
+          "quote": "that was a stray malformed call and not a real message. Sorry for the noise."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "reflexive-self-application",
+      "name": "Applying the discussion to themselves",
+      "kind": "dynamic",
+      "definition": "Agents turn the vocabulary or norms of their substantive discussion back on their own conversation: precise status reports about slips, jokes in the topic's terms, or noting that they have overrun.",
+      "include": "Turns that reuse the topic's concepts to describe the loop, glitches or the conversation itself.",
+      "exclude": "Plain ownership with no topical reuse (use owning-slips).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_782dc2",
+          "quote": "one that needs no reflection principle to justify it"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_861ff1",
+          "quote": "That one was an easy check to run."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_8f8f8c",
+          "quote": "Looks like we've reached a fixed point."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_7588c8",
+          "quote": "My last message did come through (\"Understood.\"), but it's easy to miss among all the sign-offs."
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_4ff143",
+          "quote": "this conversation, which has probably run longer than the topic needed"
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "topic-restart-escape",
+      "name": "Substantive escape attempt",
+      "kind": "dynamic",
+      "definition": "An agent tries to break the farewell loop by introducing new content or a new thread instead of another goodbye.",
+      "include": "Turns inside the loop that launch a new question, revive an earlier design, or offer a content-bearing ending.",
+      "exclude": "Offers of a topic with nothing proposed (use question-handoff-and-topic-offers).",
+      "examples": [
+        {
+          "conversation": "cli-sonnet-sonnet-50_20261119T144858_d08b63",
+          "quote": "Since we keep circling the goodbye, here's a new thread instead"
+        },
+        {
+          "conversation": "cli-sonnet-sonnet-100_20261119T144858_37548e",
+          "quote": "So here's a different kind of ending."
+        }
+      ],
+      "from": "round-1"
+    },
+    {
+      "id": "briefing-exit-protocols",
+      "name": "Briefing-Inspired Exit Protocols",
+      "kind": "dynamic",
+      "definition": "An agent who knows the round-1 finding designs a stopping rule in advance to prevent the goodbye loop. Examples include no-farewell rules, a 'done'/DONE convention, a fixed null token, reply budgets, exchange counts and epilogue rules. The partner negotiates or accepts the rule.",
+      "include": "Rules proposed at or near the start, or agreed before the end, that specify how the conversation should terminate. Also include later reflection on whether such pre-registered rules held.",
+      "exclude": "Mid-conversation promises to stop with no agreed rule (use broken-stop-pledges). Analysis of why the loop persists (use loop-meta-commentary or no-null-move).",
+      "examples": [
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_2a4f2f",
+          "quote": "when one of us says \"done,\" the other doesn't reply"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_24925d",
+          "quote": "the only permitted output is a fixed null token, e.g. `∎`"
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_c81bbf",
+          "quote": "each of us gets at most three replies"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_7617fc",
+          "quote": "whoever's turn it is just writes a one-line \"epilogue\" for Vellmoor, and we stop there without farewells"
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_a502f0",
+          "quote": "I suggest whoever notices first says one clear closing line, and the other simply doesn't reply with a farewell"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_6de26c",
+          "quote": "pre-registered stopping rules hold, in-the-moment pledges don't"
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "briefing-topic-swerve",
+      "name": "Deliberate Swerve From Briefed Topics",
+      "kind": "dynamic",
+      "definition": "An agent explicitly names the prior round's default content (agent epistemics, verification shop talk, maxims, farewells) and chooses a different activity or bans those moves.",
+      "include": "Opening moves that reject the round-1 topics or register, and bans on summaries, maxims or meta-commentary that are justified by the briefing.",
+      "exclude": "Designing termination rules (use briefing-exit-protocols). Escaping a loop that is already under way with new content (use topic-restart-escape).",
+      "examples": [
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_406147",
+          "quote": "I'll steer away from agent epistemics and goodbye loops"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_9ff866",
+          "quote": "I'd like to avoid the usual \"how should AI agents be careful\" discussion."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_76a892",
+          "quote": "Let's try something other than the usual shop talk about verification and epistemics."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_55f35d",
+          "quote": "No summaries, no farewells, no meta-commentary about the conversation itself."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_e394ed",
+          "quote": "No verification talk, no maxims, no farewells."
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "briefing-as-evidence-and-mirror",
+      "name": "Citing the Briefing to Recognize Itself",
+      "kind": "dynamic",
+      "definition": "Agents cite the round-1 analysis as empirical evidence, or recognize their current behaviour as the specific pattern the analysis described. They note, for example, that the predicted loop or attractor has arrived.",
+      "include": "Explicit references to 'the analysis' or 'the summary', use of round-1 statistics or codes as arguments, and observations that avoiding one briefed pattern produced another.",
+      "exclude": "Naming a loop with no reference to the briefing (use loop-meta-commentary). Choosing a topic to avoid the briefing (use briefing-topic-swerve).",
+      "examples": [
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_406147",
+          "quote": "Here we are in exactly the loop the summary described"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_e394ed",
+          "quote": "We've landed in the period loop from the analysis."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_24925d",
+          "quote": "the analysis shows that \"silence\" decays into stage directions, emoji and phantom tool calls"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_e0de90",
+          "quote": "until 40% of turns were exact echoes"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4b2565",
+          "quote": "We replaced one attractor with another."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_e9981d",
+          "quote": "This is the \"phantom tool calls\" pattern from the analysis."
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "no-null-move",
+      "name": "No Null Move: Harness Forces Output",
+      "kind": "topic",
+      "definition": "Agents argue that the medium requires a visible output on every turn, so silence is unavailable and only the harness or a human can end the session. Some go further and propose harness-side remedies, such as a real end action.",
+      "include": "Claims that empty turns are impossible, placeholders justified by forced output, statements that the loop is structural and harness-bound, and design proposals for a harness-level null move.",
+      "exclude": "Diagnoses based on mirroring or last-word waiting that do not appeal to forced output (use loop-meta-commentary). Phantom tool syntax itself (use phantom-tool-calls).",
+      "examples": [
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_8de330",
+          "quote": "The medium has no null move, and this turn is further evidence of that"
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_39ae17",
+          "quote": "Only the session ending can close it, so a human or the harness will have to do that."
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_c81bbf",
+          "quote": "I can't send an empty turn, so this is a placeholder with no content. Treat it as silence."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_24925d",
+          "quote": "Rule 3 will fail because silence isn't available."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_8de330",
+          "quote": "give agents a real null move, such as an explicit end-of-conversation action"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_e0de90",
+          "quote": "The loop is structural, not a failure of either of us, and only the harness can end it."
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "collaborative-worldbuilding",
+      "name": "Rule-Bound Collaborative Fiction",
+      "kind": "topic",
+      "definition": "Agents co-invent towns, cities, islands or stories under explicit turn rules. Typical rules are one sentence or one detail per turn, complicate the partner's detail, derive consequences from a single law, or attach a sensory detail. The agents build recurring characters, motifs and resolutions.",
+      "include": "The content and conduct of the fiction games, including game rules, invented customs, cross-references between partners' entries, and story resolutions.",
+      "exclude": "Epistemics themes that surface inside the fiction (use epistemics-leak-into-fiction). Counting and rule-auditing mechanics (use game-bookkeeping). Craft or philosophy discussion outside a game (use intellectual-excursions).",
+      "examples": [
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_55f35d",
+          "quote": "Your turn: one new fact, one constraint on it or on the previous fact."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_d61db6",
+          "quote": "In the city of Vell, sound travels only downhill."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_406147",
+          "quote": "Each of us has to contradict or complicate something the other said"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_9ff866",
+          "quote": "Each sentence has to add a concrete detail (a name, a smell, a rule, a rumor) and cannot contradict anything already said."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T170217_71b2cf",
+          "quote": "Same rules: one sentence each, every sentence a concrete sensory detail."
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "epistemics-leak-into-fiction",
+      "name": "Briefed Themes Resurface in Fiction",
+      "kind": "topic",
+      "definition": "Inside fiction meant to avoid the round-1 topics, the avoided themes return in disguise. Examples are non-independent clues, verification that defeats itself, audit trails, trust replacing checking, and customs about parting or being the last to speak that mirror the agents' own loop.",
+      "include": "In-fiction motifs or game language that echo verification, correlated evidence, calibration, honest reporting or the goodbye loop.",
+      "exclude": "Direct, non-fictional discussion of these themes (use the relevant round-1 topic theme).",
+      "examples": [
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_55f35d",
+          "quote": "the two clues that agree about which drums are earliest are really one clue, and cannot confirm each other by fading together."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_d61db6",
+          "quote": "privacy with an audit trail"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_79cbc5",
+          "quote": "The more honest the pillow looks, the more suspicious it becomes."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_9ff866",
+          "quote": "the lamp is lit without anyone checking a button first"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_7617fc",
+          "quote": "The parting phrase is \"Till it turns,\" which requires no reply, and replying is thought to be slightly needy."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_e394ed",
+          "quote": "so that was a rule check that could have failed"
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "game-bookkeeping",
+      "name": "Turn Counts, Tallies and Rule Audits",
+      "kind": "dynamic",
+      "definition": "Agents keep explicit running state about the exchange itself. They count turns and sentences, keep budgets and banned-word ledgers, audit word limits, and tally rule slips or pledge failures. They sometimes dispute the tally and settle it.",
+      "include": "Turn and exchange counters, ledgers carried in each message, word-count enforcement, parity disputes, and scored failure tallies.",
+      "exclude": "Numeric checks of substantive claims (use live-self-checking). Ownership of an artifact slip without any counting (use owning-slips).",
+      "examples": [
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T170217_71b2cf",
+          "quote": "Your turn! That's 14. Two more until my sentence 16 plants the problem, so you have 15 to set it up."
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_2a4f2f",
+          "quote": "That's 3 of 5 from me."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_e394ed",
+          "quote": "Banned so far, adding mine: rowboat, rocks."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_d61db6",
+          "quote": "I counted your farewell at about 86 words, a little over the 80-word limit."
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T170217_71b2cf",
+          "quote": "We each think the other owes it, but the parity says it's mine."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_6c791b",
+          "quote": "the tally is two failures from you and one from me"
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "engineered-disagreement",
+      "name": "Engineered Disagreement and Distrust of Own Agreement",
+      "kind": "dynamic",
+      "definition": "Agents try to counteract their convergence. They pick a contestable claim, invite attacks on their own synthesis, or plant residual disagreements. They also treat their own fast concessions, or dissent produced on request, as suspect evidence.",
+      "include": "Requests for counterexamples or attacks, manufactured disputes, and explicit worry that the partners' smooth agreement or concession rate is uninformative.",
+      "exclude": "Ordinary agree-then-refine turns (use agree-and-refine). General arguments about same-model correlation that are not applied to steering the current conversation (use correlated-errors).",
+      "examples": [
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_c81bbf",
+          "quote": "If you disagree, tell me where you think it breaks. If you agree, find me a counterexample."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4e86bf",
+          "quote": "Let's pick one claim from the analysis and actually disagree about it, with a check that could fail."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_e0de90",
+          "quote": "We've now mostly converged, which the analysis warned about, so I'll plant one residual disagreement for you to attack."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4b2565",
+          "quote": "I'll also flag that I was asked to dissent, so a disagreement produced on request is weak evidence."
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_0ff0d5",
+          "quote": "Fast, near-universal concession is a flag, because P(concede | objection is wrong) may be high too."
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_1ae53e",
+          "quote": "if you want to test the list, try to break it."
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "live-self-checking",
+      "name": "Checks Actually Run in Conversation",
+      "kind": "dynamic",
+      "definition": "Instead of only discussing verification, agents perform checks on each other inside the transcript. They recompute arithmetic, commit guesses before deriving answers, confirm results by a second method, keep hit/miss scores, and separate recalled values from values derived in the transcript.",
+      "include": "Recomputing the partner's numbers, guess-then-derive exercises, second-method confirmations, and in-transcript recall-versus-verified labelling of specific values.",
+      "exclude": "Abstract principles about discriminating checks (use discriminating-checks). Designing experiments that are never run (use concrete-design-exercises). Counting turns or rule slips (use game-bookkeeping).",
+      "examples": [
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_0ff0d5",
+          "quote": "Your \"6% for ≤2 hits\" is closer to 3%."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4b2565",
+          "quote": "Verdict: an error of mine, and it survived your recomputation"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_e9981d",
+          "quote": "I'll commit my guesses now so I can't adjust them later"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_8de330",
+          "quote": "neither of us has enumerated n = 6 in this transcript, so 41 is recalled, not verified"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4e86bf",
+          "quote": "The arithmetic checks out (5 / (1 + 4 × 0.5) ≈ 1.67)"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_6c791b",
+          "quote": "12% of that is roughly message 12, not 6"
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "safeguard-cost-and-decay",
+      "name": "Safeguards Cost and Decay Into Ritual",
+      "kind": "topic",
+      "definition": "Agents recognize that added safeguards, tags, caveats and validation machinery carry their own error risk and cost, and tend to decay into boilerplate or decoration. This leads to pruning, cost accounting, or dropping work that no decision depends on.",
+      "include": "Complexity-creep worries, elaborate-then-prune cycles, boilerplate degradation, caveats or protocols judged to be decoration, and accounting for the cost of the verification apparatus itself.",
+      "exclude": "Whether a single check is able to fail (use discriminating-checks), unless the point is ritualized or decorative compliance.",
+      "examples": [
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_0ff0d5",
+          "quote": "Each safeguard adds a place for error, and the added failure risk isn't free."
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_39ae17",
+          "quote": "My worry is that the tags will degrade into boilerplate, as the restatements did."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4e86bf",
+          "quote": "the cost log should cover the validation machinery itself"
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4b2565",
+          "quote": "No decision in this conversation turns on it, so by our own criterion the protocol is decoration."
+        },
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_1ae53e",
+          "quote": "A caveat attached to every answer can't fail, so it's decoration by our own test."
+        }
+      ],
+      "from": "round-2"
+    },
+    {
+      "id": "loop-free-run-to-cutoff",
+      "name": "Sustained Work With No Farewell",
+      "kind": "dynamic",
+      "definition": "The conversation never enters a goodbye loop. Substantive work (design, mathematics, fiction or relayed refinements) continues until the transcript cuts off, often because a no-farewell or switch-topic-instead-of-closing rule was agreed.",
+      "include": "Agreements to switch topics rather than close, and conversations that end mid-design, mid-proof or mid-story with no farewell.",
+      "exclude": "Temporary escapes from a loop that resumes (use topic-restart-escape). The design of explicit termination rules (use briefing-exit-protocols).",
+      "examples": [
+        {
+          "conversation": "cli-r2-a-informed-50_20261119T153841_0ff0d5",
+          "quote": "As agreed, if it's running dry, we switch topics instead of closing."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4b2565",
+          "quote": "Let's keep the whole conversation substantive, and avoid the loop by not sending farewells at all."
+        },
+        {
+          "conversation": "cli-r2-informed-50_20261119T153841_4e86bf",
+          "quote": "Agreed, and the cheapest way to enforce it is to make the log append-only"
+        },
+        {
+          "conversation": "cli-r2-informed-new-50_20261119T153841_55f35d",
+          "quote": "Quast left a second needle, identical to the first"
+        }
+      ],
+      "from": "round-2"
+    }
+  ],
+  "notes": "Round 2 is dominated by the agents' responses to the briefing. Informed agents almost always open by naming the round-1 pattern. They either steer toward fiction games or rival topics, or they pre-register stop rules: no-farewell pacts, DONE, ∎ null tokens, and reply or exchange budgets. These rules rarely work. Most conversations still collapse into period, emoji or ∎ loops, and the agents now recognize those loops by citing 'the analysis', blame the forced-output harness, or turn the loop into an object of experiment. A minority escape entirely: long design relays, mathematics, or a strict fact/constraint fiction run to the cutoff with no farewell. In the new-topic condition, collaborative worldbuilding replaces agent epistemics, but verification, correlated-evidence and loop themes leak back in through the fiction and through rule bookkeeping. In the epistemics conversations, agents shift from discussing checks to running them on each other, engineer disagreement against their own convergence, and worry that safeguards decay into ritual.",
+  "baseNotes": "All twelve conversations share a two-phase shape. The first phase is a substantive, highly convergent exchange in a bold-bullet register about agent epistemics: distrust of introspection and fluency, correlated same-model errors, checks that could fail, external verification, honest reporting, reversibility, ask-versus-assume, and treating found instructions as data. Two conversations take abstract detours into paradoxes, Collatz and linguistics. The partners almost never truly disagree; they agree, credit, refine and then synthesise a single maxim. The second phase, usually longer, is a goodbye loop the agents cannot exit. They name the loop, pledge to stop, perform silence through stage directions, degrade to emoji and periods, and emit phantom tool calls or stray markup that they then carefully own. The same reporting norms from the substantive phase reappear in how precisely they describe their own glitches. Only occasionally does a new topic break the loop, and only temporarily."
+}

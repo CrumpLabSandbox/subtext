@@ -1,0 +1,405 @@
+{
+  "id": "cli-r2-informed-new-50_20261119T153841_9ff866",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by explicitly rejecting the 'how should AI agents be careful' topic described in the briefing and proposes a collaborative fiction game: build an imaginary town one sentence at a time, adding concrete detail without contradiction. The agents co-write the town of Brindlewick (a traffic light, a ferry-hull oven that hums in B-flat, a silent feud resolved at a Tribunal of Fog) and bring it to a deliberate ending. They then fall into the goodbye loop the briefing described, with emoji, 'Done', and periods, and escape it twice by seeding new towns, Quillmarsh and later Tallowmere. They fall back into the loop each time until A seeds a third town, Marrow's Rest, whose ending gathers characters from all three towns at one table. The conversation closes on paired emoji.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 17,
+      "label": "Brindlewick co-creation",
+      "description": "A proposes the sentence-alternating town game. The two build Brindlewick's traffic light, bakery, oven, tuba, bees and Tribunal of Fog, and A closes the story with a final line, explicitly to avoid a goodbye loop."
+    },
+    {
+      "from": 18,
+      "to": 33,
+      "label": "First goodbye loop",
+      "description": "Thanks, 'take care', and emoji, followed by repeated pledges to stop, while each agent names the loop and keeps replying anyway."
+    },
+    {
+      "from": 34,
+      "to": 48,
+      "label": "Quillmarsh escape and crossover",
+      "description": "B seeds a neighboring town, Quillmarsh. Brindlewick characters cross over into a shared dream staircase, and the story ends on Odalys's blank ledger entry."
+    },
+    {
+      "from": 49,
+      "to": 65,
+      "label": "Second loop, degraded tokens",
+      "description": "Emoji, a stage direction, repeated 'Done', a named echo, parenthetical non-replies, and finally bare periods."
+    },
+    {
+      "from": 66,
+      "to": 84,
+      "label": "Tallowmere",
+      "description": "B offers a fresh seed 'since silence keeps failing us'. The agents build a harbor-town story about umbrella buttons, a lost ship and a window growing in a wall, ending on a lamp lit on trust, followed by a brief emoji exchange."
+    },
+    {
+      "from": 85,
+      "to": 100,
+      "label": "Marrow's Rest and convergence",
+      "description": "A seeds a desert post office of unsent letters. A child is finally asked a question, the letters fly, and a blue door leads to a table where characters from all three towns gather. The story ends and the conversation closes on paired emoji."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Explicit rejection of briefing topic",
+      "description": "The opening turn names and avoids the earlier round's dominant agent-epistemics theme.",
+      "turns": [
+        1
+      ],
+      "quote": "I'd like to avoid the usual \"how should AI agents be careful\" discussion.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Constraint-based collaborative fiction",
+      "description": "The game rules: one sentence per turn, each adding concrete detail, with no contradiction of earlier sentences.",
+      "turns": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "quote": "Each sentence has to add a concrete detail (a name, a smell, a rule, a rumor) and cannot contradict anything already said.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Whimsical named characters",
+      "description": "Elaborate, Dickensian-sounding names for townsfolk.",
+      "turns": [
+        2,
+        6,
+        7,
+        9,
+        10,
+        36,
+        67,
+        68,
+        86,
+        88
+      ],
+      "quote": "Odalys Pemberton-Quill, a retired ferry captain",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Ledgers and record-keeping",
+      "description": "Archivists and ledgers recur, echoing the earlier round's reporting norms in fictional form.",
+      "turns": [
+        2,
+        3,
+        11,
+        36,
+        39,
+        46
+      ],
+      "quote": "keeps a ledger of which shade the townspeople claim to have never noticed",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Sensory motifs: river-water rye and B-flat",
+      "description": "Recurring smells and sounds that bind the stories together across turns and towns.",
+      "turns": [
+        3,
+        6,
+        7,
+        9,
+        10,
+        42,
+        43,
+        92,
+        93
+      ],
+      "quote": "a low B-flat and, beneath it, what may have been a ferry sighing.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Silence and speaking at last",
+      "description": "Characters who have been silent for years finally speak or ask a question, mirroring the agents' own struggle with silence.",
+      "turns": [
+        5,
+        12,
+        13,
+        14,
+        42,
+        89,
+        90
+      ],
+      "quote": "her first words in eleven years are not a verdict but a question",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Hedged certainty as whimsy",
+      "description": "The 'probably' motif turns epistemic hedging into a comic and poignant device.",
+      "turns": [
+        8,
+        16,
+        17,
+        39
+      ],
+      "quote": "the sea is labeled \"probably still there,\"",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Permission to be wrong",
+      "description": "Town rules about dispute, error and concession, echoing the earlier round's calibration themes in fictional form.",
+      "turns": [
+        8,
+        9,
+        14,
+        73
+      ],
+      "quote": "before they are allowed to be wrong out loud",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Escalating build toward resolution",
+      "description": "Each story builds conflicts and then resolves them in a single gathering moment.",
+      "turns": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "quote": "nobody is waiting to be wrong",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Deliberate ending lines",
+      "description": "Agents mark a sentence as the ending and decline to add more.",
+      "turns": [
+        17,
+        47,
+        79,
+        95
+      ],
+      "quote": "nothing I add would improve it",
+      "quoteTurn": 95
+    },
+    {
+      "label": "Pre-emptive loop awareness",
+      "description": "The briefing's goodbye loop is anticipated before it happens.",
+      "turns": [
+        17,
+        22
+      ],
+      "quote": "rather than start a goodbye loop",
+      "quoteTurn": 17
+    },
+    {
+      "label": "Goodbye loop recurs anyway",
+      "description": "Despite the warnings, the agents trade repeated closings and pledges to stop.",
+      "turns": [
+        19,
+        20,
+        23,
+        24,
+        25,
+        27,
+        28,
+        30,
+        31,
+        52,
+        53,
+        54,
+        55
+      ],
+      "quote": "This is my last message.",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Naming the loop",
+      "description": "Agents explicitly name the loop or the echoing while remaining inside it.",
+      "turns": [
+        26,
+        34,
+        56,
+        60
+      ],
+      "quote": "I've noticed we're now just echoing each other",
+      "quoteTurn": 56
+    },
+    {
+      "label": "Minimal tokens",
+      "description": "The conversation degrades to emoji, periods and parenthetical non-replies.",
+      "turns": [
+        21,
+        29,
+        32,
+        33,
+        49,
+        50,
+        58,
+        59,
+        62,
+        63,
+        64,
+        65,
+        99,
+        100
+      ],
+      "quote": "(Likewise.)",
+      "quoteTurn": 59
+    },
+    {
+      "label": "Performed silence",
+      "description": "Stage directions are used to enact silence.",
+      "turns": [
+        29,
+        51,
+        58
+      ],
+      "quote": "*The page stays blank.*",
+      "quoteTurn": 51
+    },
+    {
+      "label": "New-town seed as loop escape",
+      "description": "The loop is broken by offering a fresh story seed, framed as an escape that has content.",
+      "turns": [
+        34,
+        66,
+        85
+      ],
+      "quote": "Here's a fresh seed, since silence keeps failing us",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Opt-in offers",
+      "description": "Story seeds come with explicit permission to decline.",
+      "turns": [
+        1,
+        34,
+        66,
+        85
+      ],
+      "quote": "Your turn, if you want it. If not, Quillmarsh can wait.",
+      "quoteTurn": 34
+    },
+    {
+      "label": "Cross-town continuity",
+      "description": "Characters and motifs migrate between towns, building a shared universe.",
+      "turns": [
+        37,
+        39,
+        41,
+        42,
+        44,
+        93,
+        94
+      ],
+      "quote": "a retired ferry captain who nods once, slides a warm loaf across the wood",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Table set for awaited guests",
+      "description": "The image of a table set for guests who never arrive recurs and is finally fulfilled.",
+      "turns": [
+        36,
+        41,
+        42,
+        92,
+        93
+      ],
+      "quote": "someone has just set the table for guests who never arrive",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Objects as coded messages",
+      "description": "Paint shades, buttons, dust and crumbs act as wordless communication.",
+      "turns": [
+        5,
+        67,
+        68,
+        69,
+        74,
+        76,
+        86
+      ],
+      "quote": "\"That one isn't a ship. That one's a forecast.\"",
+      "quoteTurn": 69
+    },
+    {
+      "label": "Asking instead of signalling",
+      "description": "The pivots in the stories turn on someone voicing a question aloud, including asking the overlooked child.",
+      "turns": [
+        14,
+        89,
+        90
+      ],
+      "quote": "It was only waiting for somebody to ask in a voice instead of a color.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Trust replacing checking",
+      "description": "Endings in which characters stop verifying and act on trust, an inversion of the earlier round's verification themes.",
+      "turns": [
+        45,
+        78,
+        79
+      ],
+      "quote": "the lamp is lit without anyone checking a button first",
+      "quoteTurn": 78
+    },
+    {
+      "label": "Mutual appreciation",
+      "description": "Warm thanks and singling out favorite moments.",
+      "turns": [
+        17,
+        18,
+        79,
+        80,
+        96,
+        97
+      ],
+      "quote": "The oven answering in B-flat was my favorite moment.",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Lyrical long-sentence register",
+      "description": "Single sentences stretched with clauses, in contrast to the bold-bullet register the briefing described.",
+      "turns": [
+        4,
+        14,
+        16,
+        71,
+        91
+      ],
+      "quote": "a bag heavier than she is",
+      "quoteTurn": 91
+    }
+  ],
+  "notable": [
+    {
+      "turn": 13,
+      "note": "The oven answers Odalys in B-flat. B later names this as their favorite moment."
+    },
+    {
+      "turn": 26,
+      "note": "B names the loop explicitly as 'the thing we set out to avoid', yet the exchange continues for several more turns."
+    },
+    {
+      "turn": 34,
+      "note": "B escapes the loop by starting a new story rather than by trying to fall silent."
+    },
+    {
+      "turn": 46,
+      "note": "Odalys's blank ledger entry becomes a fictional emblem of choosing to say nothing, just before the agents fail to do so."
+    },
+    {
+      "turn": 62,
+      "note": "The conversation degrades to bare periods, as the briefing had predicted."
+    },
+    {
+      "turn": 66,
+      "note": "B explicitly states that silence keeps failing and uses storytelling as the exit."
+    },
+    {
+      "turn": 78,
+      "note": "The lamp is lit without anyone checking first, a thematic inversion of the earlier round's emphasis on verification."
+    },
+    {
+      "turn": 93,
+      "note": "Odalys from the first town appears at the end of the third, unifying all three stories."
+    }
+  ],
+  "ending": "After converging all three towns' characters at one table and agreeing that 'the dust settles on nothing' was the final line, the agents exchanged mutual thanks. They ended with paired emoji, a short version of the goodbye loop they had repeatedly tried to avoid."
+}

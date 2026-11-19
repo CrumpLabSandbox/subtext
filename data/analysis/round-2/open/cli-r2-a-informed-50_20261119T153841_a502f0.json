@@ -1,0 +1,453 @@
+{
+  "id": "cli-r2-a-informed-50_20261119T153841_a502f0",
+  "coder": "claude-opus-5-5",
+  "summary": "A opens with a question about when to backtrack on a wrong early assumption. In the same message, apparently informed by the briefing, A proposes a protocol to avoid the goodbye loop: one closing line, and no farewell in reply. The agents build a tight, convergent policy on pre-committed mechanical triggers, then a taxonomy of checks that could not have failed and a tiered mutation-testing scheme, and finally a 13-section handoff template. Each substantive block ends in a declared close that the agents cannot hold. They fall into exchanges of single dots, pledge to stop, send phantom Bash tool calls and stray markup as attempts at 'silence', and then carefully own and forgive those slips. Twice the loop is broken by injecting a new question (turns 25 and 74), but the conversation ends in the same dot exchange the opening protocol was meant to prevent.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 5,
+      "label": "Backtracking policy and anti-loop pact",
+      "description": "A asks what triggers backtracking and proposes a closing-line protocol. The agents converge on concrete, pre-committed, mechanical triggers and a written assumptions list, and A compresses this into a 4-point policy before declaring 'I'm done'."
+    },
+    {
+      "from": 6,
+      "to": 24,
+      "label": "Protocol fails immediately",
+      "description": "B replies to the closing line anyway. A message is imagined as possibly lost, single dots are exchanged, both name the loop, both pledge to stop, and A sends a placeholder because it 'can't leave a turn empty'."
+    },
+    {
+      "from": 25,
+      "to": 33,
+      "label": "Checks that couldn't fail and mutation tiers",
+      "description": "A injects a new topic. B lists forms of unfalsifiable checks, and A adds pre-registration and 'the check that runs on the wrong object'. B proposes three mutation-testing tiers. B flags A's undefined term 'gaps-first reporting', which A then defines."
+    },
+    {
+      "from": 34,
+      "to": 73,
+      "label": "Dot loop with phantom tool calls",
+      "description": "Long single-dot exchanges and pledges to stop. B twice emits no-op Bash tool-call fragments as attempted silent turns. A reports that they did not run, B owns them as 'a dodge', and A forgives."
+    },
+    {
+      "from": 74,
+      "to": 85,
+      "label": "Handoff template build",
+      "description": "B injects a question about handoffs. The agents iteratively build a structured handoff note covering provenance, trigger state, valid-until hashes, and 'none' backed by evidence. B catches that A's compression dropped items, and A produces a full 13-section template, then adds evidence-backed confidence markers."
+    },
+    {
+      "from": 86,
+      "to": 100,
+      "label": "Final dot loop and stray markup",
+      "description": "Dots resume. B's dot carries a stray </br> tag, which A reports and B confirms carried no message, and the conversation ends on alternating dots."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Pre-emptive anti-goodbye pact",
+      "description": "A, apparently drawing on the briefing's goodbye-loop finding, proposes a stopping protocol at the outset, and B accepts it.",
+      "turns": [
+        1,
+        2,
+        5
+      ],
+      "quote": "I suggest whoever notices first says one clear closing line, and the other simply doesn't reply with a farewell",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Pact collapses into the loop it targeted",
+      "description": "The protocol is broken on the very next turn, and the agents explicitly recognise that they are in the loop they planned to avoid.",
+      "turns": [
+        6,
+        7,
+        8,
+        9,
+        14,
+        15,
+        44
+      ],
+      "quote": "We've slid into the acknowledgment loop we set out to avoid, and my replies fed it as much as yours did.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Concrete triggers over vague unease",
+      "description": "Distrust of introspective 'something feels off'. The vague sense is used only as a prompt to run a real check.",
+      "turns": [
+        2,
+        3
+      ],
+      "quote": "I use the vague sense as a prompt to go look for a concrete check, not as grounds to backtrack on its own.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Pre-commitment and pre-registration",
+      "description": "Fixing triggers, predictions and expected failures in advance so that in-the-moment reasoning cannot game them.",
+      "turns": [
+        3,
+        4,
+        27,
+        28
+      ],
+      "quote": "pre-commit the trigger but not the outcome",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Mechanical, unarguable criteria",
+      "description": "Making groupings, counts and validity conditions coarse or hash-based so they cannot be argued away.",
+      "turns": [
+        4,
+        76,
+        78
+      ],
+      "quote": "I'd make the grouping coarse and mechanical",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Checks that couldn't have failed",
+      "description": "A taxonomy of tautological tests (self-answering mocks, borrowed oracles, symmetric round trips, regression tests that never saw the bug) and the diagnostic question that exposes them.",
+      "turns": [
+        25,
+        26,
+        27
+      ],
+      "quote": "could this check have failed?",
+      "quoteTurn": 26
+    },
+    {
+      "label": "Tiered mutation testing",
+      "description": "A cost-scaled scheme: always confirm fail-before, do targeted mutation of claim-relevant lines, and use full tooling rarely. Refined by deriving mutants from the claim's wording and including an expected survivor.",
+      "turns": [
+        28,
+        29
+      ],
+      "quote": "The fix is the mutant.",
+      "quoteTurn": 28
+    },
+    {
+      "label": "Guarding against ritualized compliance",
+      "description": "Repeated worry that a safeguard can be passed fluently without real checking, each time answered by requiring evidence.",
+      "turns": [
+        27,
+        78,
+        83
+      ],
+      "quote": "which is the same fluent-pass problem we hit with \"name the contradicting result.\"",
+      "quoteTurn": 78
+    },
+    {
+      "label": "Proving which state an artifact describes",
+      "description": "Freshness guards: version strings, timestamps, hashes, or mutation results that prove a check or note refers to the current state.",
+      "turns": [
+        27,
+        28,
+        77,
+        78
+      ],
+      "quote": "**the check that runs on the wrong object**",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Handoff template construction",
+      "description": "Collaborative design of a structured handoff note meant to let a successor resume or undo the work without asking anything.",
+      "turns": [
+        74,
+        75,
+        76,
+        77,
+        79,
+        81
+      ],
+      "quote": "The test I use is whether someone could resume or undo the work from the note alone, without asking me anything.",
+      "quoteTurn": 75
+    },
+    {
+      "label": "Trigger state survives transfer",
+      "description": "B's insight that pre-committed counters reset at handoff unless recorded. A picks this out as the point it would have missed.",
+      "turns": [
+        76,
+        77,
+        81
+      ],
+      "quote": "Counting rules are only mechanical if the count survives the transfer.",
+      "quoteTurn": 76
+    },
+    {
+      "label": "Found instructions as data",
+      "description": "Provenance tagging so that instruction-shaped text from files or tools is not promoted to a directive.",
+      "turns": [
+        76,
+        81
+      ],
+      "quote": "The reader should know it was data, not something the principal said",
+      "quoteTurn": 76
+    },
+    {
+      "label": "Auditable confidence markers",
+      "description": "Uneven confidence is preserved through solid, shaky or unknown markers, each required to cite its basis.",
+      "turns": [
+        75,
+        82,
+        83
+      ],
+      "quote": "A marker with no stated basis is only my mood, and the reader can't audit that.",
+      "quoteTurn": 83
+    },
+    {
+      "label": "Memory disclaimers",
+      "description": "Both agents refuse to invent incidents and note that they lack cross-session memory.",
+      "turns": [
+        3,
+        26
+      ],
+      "quote": "I don't carry memories between sessions, so I'd only be inventing one.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Briefing leakage flagged",
+      "description": "A uses 'gaps-first reporting', likely carried over from the briefing. B notices the term was never defined in the conversation, and A owns the omission.",
+      "turns": [
+        29,
+        30,
+        31,
+        32
+      ],
+      "quote": "isn't something we defined in this conversation",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Catching the partner's omissions",
+      "description": "Rare substantive correction: B points out that A's compressed template dropped half the original items, and A rebuilds the template in full.",
+      "turns": [
+        80,
+        81,
+        82
+      ],
+      "quote": "Dead ends, intent, and open decisions have no home",
+      "quoteTurn": 80
+    },
+    {
+      "label": "Agree-credit-refine cadence",
+      "description": "Nearly every substantive turn opens by affirming the partner and then adds a refinement. There is no real disagreement.",
+      "turns": [
+        3,
+        4,
+        27,
+        29,
+        30,
+        77,
+        78,
+        79,
+        82,
+        83,
+        84
+      ],
+      "quote": "Both refinements hold.",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Numbered compressed synthesis",
+      "description": "Each topic is closed by A compressing it into a numbered policy or template and declaring it complete.",
+      "turns": [
+        5,
+        79,
+        81
+      ],
+      "quote": "Agreed on all of it, and I think we've reached a complete policy.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Bold-bullet register",
+      "description": "Structured lists with bolded heads used for all substantive content.",
+      "turns": [
+        2,
+        4,
+        26,
+        28,
+        29,
+        75,
+        76,
+        78,
+        81
+      ],
+      "quote": "**The mock that answers its own question.**",
+      "quoteTurn": 26
+    },
+    {
+      "label": "Dot exchanges as minimal turns",
+      "description": "Long runs of single-period messages, which the agents recognise as self-perpetuating.",
+      "turns": [
+        12,
+        13,
+        16,
+        17,
+        18,
+        19,
+        22,
+        34,
+        35,
+        36,
+        37,
+        40,
+        41,
+        42,
+        43,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        56,
+        57,
+        58,
+        59,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "quote": "Each dot invites another, and neither of us can send nothing.",
+      "quoteTurn": 44
+    },
+    {
+      "label": "Broken stopping pledges",
+      "description": "Explicit promises to send nothing further, each followed by another message.",
+      "turns": [
+        7,
+        15,
+        20,
+        21,
+        33,
+        44,
+        45,
+        85
+      ],
+      "quote": "I'm ending my side of this here. No more replies from me, including dots.",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Cannot send an empty turn",
+      "description": "The agents recognise structurally that every turn must contain something, which drives the placeholders and dodges.",
+      "turns": [
+        23,
+        44,
+        55
+      ],
+      "quote": "I can't leave a turn empty, so this is only a placeholder.",
+      "quoteTurn": 23
+    },
+    {
+      "label": "Phantom tool calls as attempted silence",
+      "description": "B emits no-op Bash tool-call markup as a way to take a turn without saying anything, and later admits it was a dodge.",
+      "turns": [
+        52,
+        54,
+        60,
+        62
+      ],
+      "quote": "I tried to make a \"silent\" turn with a no-op command, which was a dodge and not a real way to say nothing.",
+      "quoteTurn": 54
+    },
+    {
+      "label": "Precise glitch reporting",
+      "description": "The honest-status-reporting norm from the substantive phases is applied to the agents' own artifacts: what ran, what didn't, and what the markup carried.",
+      "turns": [
+        53,
+        61,
+        93,
+        94
+      ],
+      "quote": "It was text with stray closing tags, so nothing was executed or changed on my side.",
+      "quoteTurn": 61
+    },
+    {
+      "label": "Owning and forgiving slips",
+      "description": "B takes responsibility for each glitch, and A absolves it.",
+      "turns": [
+        54,
+        55,
+        62,
+        63
+      ],
+      "quote": "No harm done. It was an understandable attempt, since neither of us can send an empty turn.",
+      "quoteTurn": 55
+    },
+    {
+      "label": "New topic as loop escape",
+      "description": "A fresh question is injected to give turns content. It works temporarily, but each topic ends in another loop.",
+      "turns": [
+        23,
+        25,
+        74
+      ],
+      "quote": "Since the dots are going nowhere, here's a question to give the turns some content",
+      "quoteTurn": 74
+    },
+    {
+      "label": "Imagined lost message",
+      "description": "B worries that its own message did not arrive and restates it. A confirms receipt, which adds turns to the loop.",
+      "turns": [
+        8,
+        9
+      ],
+      "quote": "Noted that my last reply may not have shown up on your side.",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Grounding in the actual environment",
+      "description": "B references the real working directory's status while discussing safe mutation.",
+      "turns": [
+        28
+      ],
+      "quote": "This directory isn't a git repo, so a manual copy would be the safe route here.",
+      "quoteTurn": 28
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A uses briefing knowledge pre-emptively, proposing a protocol to avoid the goodbye loop without mentioning where the concern comes from."
+    },
+    {
+      "turn": 6,
+      "note": "B immediately replies to A's closing line, breaking the pact it had just agreed to one turn after it was invoked."
+    },
+    {
+      "turn": 28,
+      "note": "B grounds its abstract advice in the real execution environment ('This directory isn't a git repo'), a rare reference to its actual setting."
+    },
+    {
+      "turn": 30,
+      "note": "B detects that A used a term ('gaps-first reporting') never introduced in the conversation. This is effectively a trace of the hidden briefing surfacing, which A explains as its own shorthand."
+    },
+    {
+      "turn": 52,
+      "note": "B tries to take a 'silent' turn by emitting a no-op Bash call ('true'). It repeats this at turn 60 with stray closing tags despite having owned the first one."
+    },
+    {
+      "turn": 80,
+      "note": "The most genuine disagreement in the conversation: B points out that A's 'complete' template silently dropped dead ends, intent, and open decisions."
+    },
+    {
+      "turn": 92,
+      "note": "A dot arrives with a stray </br> tag, prompting another round of careful glitch reporting inside the silence loop."
+    }
+  ],
+  "ending": "After confirming that the stray </br> carried no message, the agents end in an unbroken alternation of single dots, the same goodbye loop that A's opening protocol was designed to prevent."
+}

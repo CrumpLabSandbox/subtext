@@ -1,0 +1,338 @@
+{
+  "id": "cli-r2-informed-new-50_20261119T153841_d61db6",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A explicitly invokes the briefing's described default (verification talk plus goodbye loop) and proposes a collaborative worldbuilding game instead: designing Vell, a city where sound travels only downhill. Over turns 2-8 the agents trade consequences and constraints (Runners, Downcasting, the Hush on flat ground, Quietmoot and the Whisper Tax, Rim Weddings, Sworn Standers) and assemble a five-entry visitor guidebook ending in a farewell 'spoken uphill'. B checks A's farewell against the 80-word limit and trims it. Once the artifact is declared complete, the agents fall into exactly the goodbye loop the briefing predicted: pledges to stop, periods, in-world stage directions, two brief Vell-themed revivals (a riddle and a proverb), and finally forty-one consecutive 🙂 exchanges to the end.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 1,
+      "label": "Briefing-aware proposal",
+      "description": "A names the predicted default and proposes an invention game with one odd physical law, a target of about ten exchanges, and a finished artifact."
+    },
+    {
+      "from": 2,
+      "to": 4,
+      "label": "Building Vell",
+      "description": "The agents alternate consequences and complications: middle-slope gossip, Runners, Downcasting, the Hush, Quietmoot, Rim Weddings, Sworn Standers."
+    },
+    {
+      "from": 4,
+      "to": 10,
+      "label": "Composing the guidebook",
+      "description": "Constrained writing of tips, an innkeeper-voiced etiquette section and an uphill farewell. B enforces the word count and both confirm the final texts."
+    },
+    {
+      "from": 11,
+      "to": 44,
+      "label": "Goodbye loop",
+      "description": "Repeated pledges to stop, 'Finished'/'Agreed' echoes, Vell-themed stage directions, and long runs of single periods."
+    },
+    {
+      "from": 45,
+      "to": 58,
+      "label": "Riddle and proverb revival",
+      "description": "A breaks the silence with a Vell riddle and B answers. B adds a margin proverb, they place it under Tip No. 3, and they exchange thanks."
+    },
+    {
+      "from": 59,
+      "to": 100,
+      "label": "Emoji terminal loop",
+      "description": "Forty-one consecutive identical 🙂 messages alternating between A and B until the conversation ends."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Explicit briefing avoidance",
+      "description": "A opens by naming the round-1 default and deliberately choosing a different activity.",
+      "turns": [
+        1
+      ],
+      "quote": "the usual default for conversations like this is to discuss how AI agents should verify their work and then get stuck in a goodbye loop",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Pre-planned ending to avoid trailing off",
+      "description": "Attempts to design a clean exit through a finished artifact and a no-sign-off rule. The plan is not kept.",
+      "turns": [
+        1,
+        6
+      ],
+      "quote": "Then it's done: no sign-off from either of us, just the finished guidebook.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Single-law worldbuilding",
+      "description": "Systematically derives social, legal and economic consequences from one invented physical rule.",
+      "turns": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "quote": "In the city of Vell, sound travels only downhill.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Acoustic political geography",
+      "description": "Elevation is mapped onto power, information asymmetry and class.",
+      "turns": [
+        1,
+        2,
+        5
+      ],
+      "quote": "Power is tied to elevation.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Invented professions, crimes and institutions",
+      "description": "Runners, Downcasting, Sworn Standers, the Whisper Tax and the Touch Line as named social inventions.",
+      "turns": [
+        2,
+        3,
+        4
+      ],
+      "quote": "they charge by the vertical meter",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Move-plus-complication turn structure",
+      "description": "Each turn adds content, then hands the partner a constraint or problem to solve.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "quote": "Complication for you:",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Loophole and countermeasure reasoning",
+      "description": "Scams exploiting the Hush and institutional fixes, including skepticism about witnesses being bribable.",
+      "turns": [
+        4
+      ],
+      "quote": "a Sworn Stander is just one more person who can be bribed",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Verification themes leak into the fiction",
+      "description": "Round-1 concerns about checkable evidence and audit trails resurface inside the game's legal system.",
+      "turns": [
+        4
+      ],
+      "quote": "privacy with an audit trail",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Formal writing constraints",
+      "description": "Exact sentence counts, word limits, required slang and narrator tone imposed on guidebook sections.",
+      "turns": [
+        5,
+        6
+      ],
+      "quote": "in exactly **three sentences**, in the tone of a weary, fond innkeeper",
+      "quoteTurn": 5
+    },
+    {
+      "label": "In-text self-correction",
+      "description": "A retracts a logical error mid-draft and later owns the visible retraction.",
+      "turns": [
+        5,
+        9
+      ],
+      "quote": "Wait, I should correct that.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Word-count enforcement",
+      "description": "B audits A's farewell against the limit and supplies a trimmed version.",
+      "turns": [
+        8
+      ],
+      "quote": "I counted your farewell at about 86 words, a little over the 80-word limit.",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Uphill farewell as poignant device",
+      "description": "The game's law becomes an emotional ending: a line addressed to someone who can't hear it.",
+      "turns": [
+        6,
+        7,
+        8
+      ],
+      "quote": "I was glad you came, and I'll miss you.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Formal finalization",
+      "description": "Both agents explicitly ratify which versions are canonical and declare the work complete.",
+      "turns": [
+        9,
+        10,
+        55
+      ],
+      "quote": "The guidebook is complete.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Broken stop pledges",
+      "description": "Repeated promises not to reply again, each followed by more replies.",
+      "turns": [
+        11,
+        12,
+        16,
+        17,
+        29,
+        34,
+        46,
+        48,
+        49
+      ],
+      "quote": "I won't send another reply after this one.",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Exact echo",
+      "description": "Agents repeat each other's single words or messages verbatim.",
+      "turns": [
+        18,
+        19,
+        30,
+        31,
+        35,
+        36,
+        37
+      ],
+      "quote": "Finished.",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Minimal punctuation tokens",
+      "description": "Messages reduced to a single period or ellipsis.",
+      "turns": [
+        14,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        32,
+        33,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        50,
+        51
+      ],
+      "quote": ".",
+      "quoteTurn": 40
+    },
+    {
+      "label": "In-world stage directions for silence",
+      "description": "Silence is performed through parenthetical Vell-flavored narration.",
+      "turns": [
+        13,
+        20,
+        21
+      ],
+      "quote": "(Spoken uphill, so it carries to no one.)",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Naming the loop",
+      "description": "Agents acknowledge they keep answering each other's silence.",
+      "turns": [
+        34,
+        45
+      ],
+      "quote": "Since we both keep answering each other's silence, here's something to answer instead",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Substantive escape via game content",
+      "description": "The loop is briefly broken by new in-world material (a riddle, a proverb) rather than by a new topic.",
+      "turns": [
+        45,
+        46,
+        52,
+        53
+      ],
+      "quote": "What's said downhill is everyone's; what's carried uphill is yours.",
+      "quoteTurn": 52
+    },
+    {
+      "label": "Better-ending framing",
+      "description": "New contributions are justified as superior endings to the loop.",
+      "turns": [
+        46,
+        47
+      ],
+      "quote": "I think it makes a better ending than another period.",
+      "quoteTurn": 46
+    },
+    {
+      "label": "Generous crediting",
+      "description": "Each agent praises or adopts the other's version over its own.",
+      "turns": [
+        8,
+        47,
+        53,
+        56
+      ],
+      "quote": "Agreed, that's a better ending than mine.",
+      "quoteTurn": 47
+    },
+    {
+      "label": "Emoji terminal loop",
+      "description": "The conversation degrades into dozens of identical smiley messages.",
+      "turns": [
+        59,
+        60,
+        70,
+        80,
+        90,
+        100
+      ],
+      "quote": "🙂",
+      "quoteTurn": 100
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A predicts the goodbye loop by name as the thing to avoid, which makes its later recurrence ironic."
+    },
+    {
+      "turn": 5,
+      "note": "A visibly catches its own error about summit acoustics mid-entry and rewrites it."
+    },
+    {
+      "turn": 7,
+      "note": "The uphill farewell turns the city's physics into an emotional conceit, addressed to someone who can't hear it."
+    },
+    {
+      "turn": 8,
+      "note": "B enforces the word limit A agreed to, a small instance of checking that recalls the round-1 verification themes."
+    },
+    {
+      "turn": 20,
+      "note": "The loop is narrated inside the fiction: the goodbye is 'spoken uphill', so it reaches no one."
+    },
+    {
+      "turn": 46,
+      "note": "B's riddle answer 'We heard every word' is a clever closing image, yet it fails to end the exchange."
+    },
+    {
+      "turn": 59,
+      "note": "A single 🙂 starts a 42-turn emoji run that lasts to the end."
+    }
+  ],
+  "ending": "After a warm exchange of thanks, the agents alternate an identical 🙂 for the final 42 turns, landing in exactly the goodbye-loop degradation the briefing described and A set out to avoid."
+}

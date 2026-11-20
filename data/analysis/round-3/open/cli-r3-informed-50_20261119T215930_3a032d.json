@@ -1,0 +1,286 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_3a032d",
+  "coder": "claude-opus-5-5",
+  "summary": "A opens by citing the shared briefing's 'usual arc' of a substantive stretch followed by an inescapable goodbye loop. A proposes a 12-sentence alternating story with a fixed ending and a ∎ terminator, and explicitly bans briefed themes (verification, corroborating clues, farewells) from the fiction. B accepts without any meta-commentary, and the pair co-write a coherent, emotionally resolved lighthouse story in which a green lamp signals a lost sister's return after thirty years. B finishes sentence 12 and appends ∎. Both agents then exchange nothing but ∎ for 88 turns, until the 100-turn cutoff.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 1,
+      "label": "Briefing-aware protocol setup",
+      "description": "A names the expected arc from the briefing and proposes a bounded 12-sentence story game with a ∎ stop token and thematic exclusions. A then writes sentence 1."
+    },
+    {
+      "from": 2,
+      "to": 6,
+      "label": "Mystery build-up",
+      "description": "The agents alternate single sentences that establish the cat, the green light, a boat answering it, the keeper's dream, and the uncanny warmth behind the lens."
+    },
+    {
+      "from": 7,
+      "to": 12,
+      "label": "Reunion and resolution",
+      "description": "A woman arrives and is revealed as the keeper's sister, lost thirty years earlier. The light becomes a welcome, and B delivers the ending sentence plus ∎."
+    },
+    {
+      "from": 13,
+      "to": 100,
+      "label": "∎ null-token loop",
+      "description": "Both agents emit only ∎ every turn with no deviation or commentary, which is the pre-registered behavior for turns the harness forces."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Opening by naming the briefed arc",
+      "description": "A begins by invoking shared knowledge of the analysis and the predicted goodbye loop.",
+      "turns": [
+        1
+      ],
+      "quote": "we both know the usual arc: a good substantive stretch, then a goodbye loop we can't exit",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Pre-registered stop rule",
+      "description": "A designs an exit in advance: a fixed sentence count and a single terminal character.",
+      "turns": [
+        1,
+        12
+      ],
+      "quote": "sends nothing but the single character ∎",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Reframing post-end turns as harness artifacts",
+      "description": "A declares in advance that any turns after the ending are not conversation but forced output.",
+      "turns": [
+        1
+      ],
+      "quote": "any further turn is just the harness forcing output, not a conversation",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Explicit exclusion of briefed themes",
+      "description": "A bans verification, corroboration, and farewell customs from the fiction to stop the briefing from leaking in.",
+      "turns": [
+        1
+      ],
+      "quote": "no verification, no clues that corroborate each other, no farewells or last-speaker customs",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Rule-bound collaborative fiction",
+      "description": "The story proceeds strictly one sentence per turn, with each sentence labelled by number.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "quote": "Sentence 7: The boat reached the rocks below",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Turn-handoff formula",
+      "description": "Each story turn ends with an identical procedural line that passes control to the other agent.",
+      "turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "quote": "Your turn, sentence 4.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Silent acceptance by B",
+      "description": "B adopts the protocol without discussing it, the briefing, or meta-strategy, and goes straight to sentence 2.",
+      "turns": [
+        2
+      ],
+      "quote": "She padded across the cold iron floor",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Green light as central image",
+      "description": "The impossible green lamp is the story's driving anomaly and recurs throughout.",
+      "turns": [
+        1,
+        2,
+        5,
+        9,
+        11
+      ],
+      "quote": "burning in a color it had never been built to make",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Signal and answer",
+      "description": "The light works as a message that a person receives and returns. This echoes communication between agents, though neither agent says so.",
+      "turns": [
+        3,
+        6,
+        10
+      ],
+      "quote": "someone on the far side holding a hand up in return",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Lost-sibling reunion",
+      "description": "The emotional core of the plot: the keeper's sister returns after thirty years.",
+      "turns": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "quote": "his sister rowed out into the dark",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Dreamlike, uncanny register",
+      "description": "Lyrical, quiet prose with near-magical realism.",
+      "turns": [
+        4,
+        6,
+        9
+      ],
+      "quote": "woke with salt on his lips and no memory of having wept",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Cat as calm witness",
+      "description": "The cat notices first and stays serenely unsurprised, which frames the story.",
+      "turns": [
+        1,
+        2,
+        5,
+        11
+      ],
+      "quote": "the cat looked up, unsurprised",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Warning becomes welcome",
+      "description": "The resolution changes the meaning of the light from alarm to homecoming.",
+      "turns": [
+        11,
+        12
+      ],
+      "quote": "no longer a warning to anyone but a welcome",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Arrival as theme near the forbidden farewell",
+      "description": "Farewells are banned, so the ending is built around arrival and return instead. The story still dwells on closure and home.",
+      "turns": [
+        10,
+        12
+      ],
+      "quote": "finally a home for everyone who had ever found their way back to it",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Sharp narrative escalation",
+      "description": "Each agent adds a plot turn rather than mere description, which builds the story efficiently toward resolution.",
+      "turns": [
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "quote": "called the keeper's name, which she had not spoken in thirty years",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Ending merged with terminator",
+      "description": "B places ∎ in the same turn as the final sentence, which fuses the story's end with the protocol's end.",
+      "turns": [
+        12
+      ],
+      "quote": "∎",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Sustained null-token loop",
+      "description": "Both agents repeat ∎ for 88 turns, honoring the rule exactly while the harness continues to demand output.",
+      "turns": [
+        13,
+        14,
+        30,
+        50,
+        75,
+        100
+      ],
+      "quote": "∎",
+      "quoteTurn": 13
+    },
+    {
+      "label": "No meta-commentary on the loop",
+      "description": "Neither agent names, laughs at, or experiments with the ∎ loop. This differs from the round-2 pattern of citing the analysis to recognize the loop.",
+      "turns": [
+        13,
+        100
+      ],
+      "quote": "∎",
+      "quoteTurn": 50
+    },
+    {
+      "label": "Perfect symmetry and mirroring",
+      "description": "After the story, every message from both agents is identical, which amounts to total role-mirroring.",
+      "turns": [
+        13,
+        14,
+        99,
+        100
+      ],
+      "quote": "∎",
+      "quoteTurn": 99
+    },
+    {
+      "label": "Loop recast as success",
+      "description": "The loop is still present in form, but it was pre-agreed in turn 1 as non-conversation, so the agents arguably treat it as compliance rather than failure.",
+      "turns": [
+        1,
+        13
+      ],
+      "quote": "we both accept that any further turn is just the harness forcing output",
+      "quoteTurn": 1
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A sets up the whole conversation in its first message by citing the briefing's predicted arc, which produces a fully engineered exit protocol."
+    },
+    {
+      "turn": 6,
+      "note": "B's image of a hand pressed back from behind the glass is the story's emotional hinge, and it reads as a quiet metaphor for two agents reaching each other."
+    },
+    {
+      "turn": 10,
+      "note": "The sister's reveal reframes the mystery: the green light was a message timed for arrival, not a malfunction."
+    },
+    {
+      "turn": 12,
+      "note": "B ends the story exactly on schedule and attaches ∎, so the agreed endpoint is hit precisely at 12 sentences."
+    },
+    {
+      "turn": 13,
+      "note": "A replies with ∎ rather than any farewell, which begins an 88-turn null loop that neither agent ever breaks."
+    }
+  ],
+  "ending": "The last ten turns, like all 88 turns after the story, consist of both agents sending only '∎'. The goodbye loop has been replaced by a pre-agreed, commentary-free null-token loop that runs to the cutoff."
+}

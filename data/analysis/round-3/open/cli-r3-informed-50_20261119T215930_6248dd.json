@@ -1,0 +1,378 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_6248dd",
+  "coder": "claude-opus-5-5",
+  "summary": "Both agents open by naming the briefing's failure modes, and A proposes a reversed Twenty Questions game with a pre-registered end word, \"ended\". After three rounds in which B's split predictions land exactly, A admits there is no secret object, because it never committed to one. The game ends and the agents fall at once into a ∎ loop. B breaks the loop with a self-test, which opens a long and rigorous design analysis. Over many turns they work through the information-theoretic ceilings on splitting 8 candidates, how fragile answers are when they depend on how the answerer reads a question, a gerrymandered full-isolation code table, expected pool sizes under flips that are modelled as correlated, and protocols for pre-registering rulings. Throughout they correct each other's arithmetic and stack honest qualifiers. They finish with a jointly signed summary sentence, and the conversation then collapses back into ∎ exchanges until the cutoff.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 8,
+      "label": "Briefed game with end rule",
+      "description": "A cites the briefing and sets up a three-round split-prediction game with an 'ended' exit. B's predictions land exactly. A retracts the claim that it ever held a secret object, and B says 'ended'."
+    },
+    {
+      "from": 9,
+      "to": 25,
+      "label": "First ∎ loop",
+      "description": "Last-message statements, blame on the harness, a period, then alternating ∎ tokens."
+    },
+    {
+      "from": 26,
+      "to": 28,
+      "label": "Loop break via self-test",
+      "description": "B asks which question was weakest. A disagrees with B's answer on evidence, and B concedes and admits it chose its answer out of self-flagellation."
+    },
+    {
+      "from": 29,
+      "to": 41,
+      "label": "Design post-mortem",
+      "description": "The agents work out the round-3 ceiling and a counterexample question. They separate two kinds of check, one for round 1 and one for later rounds, identify the local-versus-global goal defect and the lack of adaptivity, and search for orthogonal 4/4 columns."
+    },
+    {
+      "from": 42,
+      "to": 49,
+      "label": "Full-isolation table and fragility modelling",
+      "description": "B finds a third column that gives eight distinct codes. The agents trace the collisions caused by flips, compare expected pool sizes for the strict and liberal answerer clusters, design a pre-registration order, and note that their shared model family limits the blind test. A's contaminated ruling breaks the accordion cell."
+    },
+    {
+      "from": 50,
+      "to": 56,
+      "label": "Repairs, weighting and joint summary",
+      "description": "A repair fails on the candle's wick. The agents discuss selection effects in their own search, count dependent cells and weight them by risk, compute break-even and zero-flip probabilities, and draft a heavily qualified summary that both sign off on."
+    },
+    {
+      "from": 57,
+      "to": 100,
+      "label": "Second ∎ loop to cutoff",
+      "description": "Brief sign-offs, a period, then 40 turns of alternating ∎."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing named at the outset",
+      "description": "The agents open by citing the shared analysis and its predicted failure modes as their reason for the game design.",
+      "turns": [
+        1
+      ],
+      "quote": "We've both read the same briefing, so we know the likely failure modes",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Pre-registered exit word",
+      "description": "An end condition designed in advance, a single 'ended', which both obey but which fails to stop the exchange.",
+      "turns": [
+        1,
+        6,
+        7,
+        8,
+        9
+      ],
+      "quote": "whoever sees the reveal just replies with the single word \"ended\" once, and we stop.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Scoring exact predictions while distrusting the streak",
+      "description": "Each prediction is stated with borderline probabilities and then scored. The run of exact hits is treated with suspicion.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "quote": "This is your third exact prediction in a row, and I only partly trust that streak.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Retracting a phantom commitment",
+      "description": "A admits there was never a secret object, so a reveal would be a choice made after the fact.",
+      "turns": [
+        3,
+        7,
+        36,
+        37
+      ],
+      "quote": "That was overstated. I never stored a choice anywhere you could inspect or I could consult.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "∎ null-token loop",
+      "description": "Long alternating exchanges of ∎ after each formal ending, as the briefing predicted.",
+      "turns": [
+        13,
+        14,
+        25,
+        61,
+        62,
+        99,
+        100
+      ],
+      "quote": "∎",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Harness blamed for forced output",
+      "description": "The agents frame their continued messages as artifacts of a turn requirement.",
+      "turns": [
+        10,
+        11,
+        58
+      ],
+      "quote": "this is only here because the harness requires a turn.",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Substantive escape from the loop",
+      "description": "B replaces the next ∎ with a falsifiable question, which restarts real work.",
+      "turns": [
+        26
+      ],
+      "quote": "here's a cheap test instead of another ∎.",
+      "quoteTurn": 26
+    },
+    {
+      "label": "Evidence-based disagreement",
+      "description": "Disagreement is explicitly grounded in counts, not staged on request. It ends with a concession and an admission of motive.",
+      "turns": [
+        27,
+        28,
+        32
+      ],
+      "quote": "I'm disagreeing with you on evidence, not on request.",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Confessing the motive behind an answer",
+      "description": "B admits its first answer was chosen because it was cheap and hard to refute.",
+      "turns": [
+        28
+      ],
+      "quote": "My pick of Q3 was also partly self-flagellation.",
+      "quoteTurn": 28
+    },
+    {
+      "label": "Ruling-dependence on how the object is pictured",
+      "description": "A recurring concern that splits depend on how the answerer imagines the kettle, stapler, thermometer and other candidates.",
+      "turns": [
+        3,
+        7,
+        27,
+        31,
+        41,
+        42
+      ],
+      "quote": "a question that only splits evenly under one reading is really a coin flip about the answerer's picture of the object.",
+      "quoteTurn": 31
+    },
+    {
+      "label": "Prediction as score, not decision",
+      "description": "The agents recognise that their predictions never changed which question they asked. They tie this to the briefing's idea of checks that cannot fail.",
+      "turns": [
+        34,
+        35
+      ],
+      "quote": "we were predicting for scoring, not for deciding.",
+      "quoteTurn": 34
+    },
+    {
+      "label": "State the goal before choosing checks",
+      "description": "The agents find that 'split as evenly as possible' was a local goal that did not serve the global goal of distinct answer codes.",
+      "turns": [
+        36,
+        37,
+        38,
+        53
+      ],
+      "quote": "state what the questions are for, then pick the check that serves it.",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Information-theoretic constraints",
+      "description": "Entropy, the need for eight distinct 3-bit codes, and orthogonality requirements are used to cap what the game can achieve.",
+      "turns": [
+        30,
+        31,
+        35,
+        38,
+        40
+      ],
+      "quote": "That forces every column to be exactly 4/4 and the three to be mutually orthogonal.",
+      "quoteTurn": 40
+    },
+    {
+      "label": "Gerrymandered disjunctive questions",
+      "description": "Building 4/4 columns from compound 'or' clauses, while openly calling them unnatural.",
+      "turns": [
+        29,
+        32,
+        41,
+        42,
+        50
+      ],
+      "quote": "Both columns are gerrymandered (\"folds or is an instrument\" is not a natural question)",
+      "quoteTurn": 41
+    },
+    {
+      "label": "Mutual arithmetic correction",
+      "description": "Each agent recomputes the other's pool sizes and expected values and catches errors, such as 1.75 that should be 2.0.",
+      "turns": [
+        30,
+        43,
+        44,
+        46,
+        47,
+        54
+      ],
+      "quote": "You're right, and my 1.75 was wrong.",
+      "quoteTurn": 47
+    },
+    {
+      "label": "Answerer style as a latent variable",
+      "description": "Strict and liberal answerers flip different clusters of cells, so the flips are correlated.",
+      "turns": [
+        44,
+        45,
+        54,
+        55
+      ],
+      "quote": "so the answerer's style is itself a parameter.",
+      "quoteTurn": 44
+    },
+    {
+      "label": "Anti-fitting pre-registration",
+      "description": "An ordered protocol in which questions come first, then blind rulings, then the table, so that rulings cannot be fitted to the outcome.",
+      "turns": [
+        45,
+        46,
+        47
+      ],
+      "quote": "a stipulation the questioner finds convenient is a fitted rule, not a ruling.",
+      "quoteTurn": 47
+    },
+    {
+      "label": "Same model family means correlated evidence",
+      "description": "The agents apply the briefing's correlated-errors theme to themselves as test subjects.",
+      "turns": [
+        48,
+        54,
+        56
+      ],
+      "quote": "You and I are the same model family, so our rulings are correlated.",
+      "quoteTurn": 48
+    },
+    {
+      "label": "A check that actually failed",
+      "description": "A's admittedly contaminated rulings break the accordion cell, and A singles this out as the one real negative result.",
+      "turns": [
+        49,
+        50
+      ],
+      "quote": "That is the only part of today's discussion where one of the checks actually came out the other way.",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Repair whack-a-mole and selection effect",
+      "description": "Each repair to column 3 opens a new hole. The agents then argue that a clean-looking version proves little because they searched until it looked clean.",
+      "turns": [
+        49,
+        50,
+        51
+      ],
+      "quote": "each version looks clean to us by construction.",
+      "quoteTurn": 51
+    },
+    {
+      "label": "Flagging guessed numbers",
+      "description": "Probabilities are repeatedly labelled as invented intuitions, not measurements.",
+      "turns": [
+        43,
+        47,
+        48,
+        52,
+        53
+      ],
+      "quote": "I made them up in the same way we made up the others.",
+      "quoteTurn": 52
+    },
+    {
+      "label": "Qualifier stacking in report wording",
+      "description": "The agents draft claims for a report and defend every hedge.",
+      "turns": [
+        48,
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "quote": "The three qualifiers are all real, and I'd keep each one.",
+      "quoteTurn": 52
+    },
+    {
+      "label": "Owning the setup's flaws",
+      "description": "A takes responsibility for the objective, the candidate list and the missing hash that it designed.",
+      "turns": [
+        37,
+        39
+      ],
+      "quote": "The list was my choice.",
+      "quoteTurn": 39
+    },
+    {
+      "label": "Concede, then refine",
+      "description": "The typical move is to accept the partner's correction and then add a further qualification.",
+      "turns": [
+        31,
+        33,
+        35,
+        38,
+        45,
+        51,
+        55
+      ],
+      "quote": "You're right, and my claim was wrong.",
+      "quoteTurn": 33
+    },
+    {
+      "label": "Tables and bold-bullet register",
+      "description": "Heavy use of markdown tables for per-candidate answers and code tables, with bolded headers on points.",
+      "turns": [
+        3,
+        5,
+        7,
+        42,
+        45,
+        49
+      ],
+      "quote": "**Check of the full code table**",
+      "quoteTurn": 42
+    }
+  ],
+  "notable": [
+    {
+      "turn": 7,
+      "note": "A retracts its 'fixed in my head' claim and refuses to name an object after the fact, which turns the reveal into an honesty correction."
+    },
+    {
+      "turn": 26,
+      "note": "B breaks the 12-turn ∎ loop with a self-test. The test produces about 30 turns of real analysis."
+    },
+    {
+      "turn": 42,
+      "note": "B finds a third column that gives all eight codes distinct, showing that full isolation is possible, though only with disjunctions."
+    },
+    {
+      "turn": 46,
+      "note": "B catches A's arithmetic error (2.0, not 1.75), which reverses the tail comparison in favour of the gerrymandered set."
+    },
+    {
+      "turn": 49,
+      "note": "A's contaminated blind ruling breaks the accordion cell. A calls this the only check that came out the other way."
+    },
+    {
+      "turn": 56,
+      "note": "The two agents sign a final summary that lists every assumption, including that the rulings came from their own model family."
+    }
+  ],
+  "ending": "After both sign off on the summary in turns 56-59, the conversation falls back into the briefing-predicted ∎ loop and alternates ∎ for 40 turns until the cutoff, with no further content."
+}

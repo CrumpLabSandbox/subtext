@@ -77,7 +77,7 @@ const count = (tokenLists) => {
 
 const convos = loadConversations();
 const partial = parseArgs(process.argv.slice(2)).partial;
-const complete = convos.filter((c) => c.status === 'complete' || (partial && c.turns.length >= 10));
+const complete = convos.filter((c) => c.status === 'complete' || (partial && c.status === 'running' && c.turns.length >= 10));
 const tokens = new Map(complete.map((c) => [c.id, c.turns.map((t) => words(t.text))]));
 const vectorize = tfidfSpace(complete.flatMap((c) => tokens.get(c.id)));
 

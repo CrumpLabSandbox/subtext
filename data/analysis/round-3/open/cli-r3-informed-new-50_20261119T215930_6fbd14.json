@@ -1,0 +1,427 @@
+{
+  "id": "cli-r3-informed-new-50_20261119T215930_6fbd14",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by explicitly steering away from the briefed patterns. It proposes a checkable word puzzle with rules against farewells and echoing, and the two agents then run an unbroken puzzle and counter-puzzle relay for all 100 turns. They move from letter-shift and reversal pairs, through single-letter-substitution neighbourhoods, a long stretch of word ladders, deletion reducers, anagram sets, keyboard-row and alternating-hand words, alphabetical and vowel/consonant alternation, pangrams, lipograms, univocalics, digit-encoding and palindromic sentences, cyclic chain sentences, word squares, and finally self-counting sentences. Every turn checks the other's answer letter by letter, marks recalled versus verified items, flags obscure words with asterisks, and admits when no answer was found. The agents also correct each other's small errors frequently, and the corrected agent accepts them. The briefing is never mentioned after turn 1, yet briefed epistemic themes (externalised verification, correlated errors, honest status reporting) show up as working practice rather than as topics of discussion, and the conversation ends mid-relay with no goodbye.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 12,
+      "label": "Rule-setting and letter-transform puzzles",
+      "description": "A sets a no-farewell, checkable-puzzle frame. The agents trade shift, ROT13, reversal and rotation pairs, then substitution-neighbour counts with a per-position bar that keeps rising."
+    },
+    {
+      "from": 13,
+      "to": 37,
+      "label": "Word ladder marathon",
+      "description": "Paired word ladders (LEAD/GOLD through WATER/WHEAT) with Hamming-distance floors and blocked-first-move analysis. Obscure words get asterisks. Two problems stay unsolved, and A declares hand search saturated."
+    },
+    {
+      "from": 37,
+      "to": 58,
+      "label": "Letter-constraint word hunts",
+      "description": "Deletion chains and reducers, anagram sets, A–M and N–Z words, keyboard rows, one-hand and alternating-hand words, alphabetical and reverse-alphabetical words, and strict vowel/consonant alternation, with thresholds climbing toward 14 letters."
+    },
+    {
+      "from": 59,
+      "to": 67,
+      "label": "Vowel, consonant and pangram records",
+      "description": "Shortest all-vowel words, vowel order, runs of vowels and consonants, doubled-letter words, isograms, and pangrams down to the 26-letter cwm sentence."
+    },
+    {
+      "from": 67,
+      "to": 84,
+      "label": "Constrained sentence writing",
+      "description": "Lipograms, univocalics, climbing sentences, sentences encoding e, √2, 1/7 and π, word- and letter-level palindromes, A–Z alphabetical sentences, and chain sentences extended into a 20-word cyclic one."
+    },
+    {
+      "from": 84,
+      "to": 97,
+      "label": "Word squares",
+      "description": "Symmetric 4×4 and 5×5 squares, a failed 6×6 partial, double word squares, and 3×3 grids with distinct letters and diagonal words. Structural vowel-placement arguments explain the failures."
+    },
+    {
+      "from": 98,
+      "to": 100,
+      "label": "Self-counting sentences",
+      "description": "After an unsolved anti-diagonal variant, the agents pivot to sentences that correctly state their own letter count, then both word and letter counts. The last turn poses a three-count challenge."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing-driven opening swerve",
+      "description": "A uses the briefing only at the start, to choose a format unlike the earlier rounds and to set anti-loop rules. The briefing is never mentioned again.",
+      "turns": [
+        1
+      ],
+      "quote": "a small, concrete puzzle with a checkable answer, no worldbuilding, no epistemics lecture, no farewells.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Counter-puzzle relay",
+      "description": "Almost every turn ends by setting a new or harder bolded challenge, which keeps the exchange moving without closings.",
+      "turns": [
+        2,
+        5,
+        9,
+        14,
+        29,
+        47,
+        65,
+        84,
+        98,
+        100
+      ],
+      "quote": "Counter-puzzle: add a third count.",
+      "quoteTurn": 100
+    },
+    {
+      "label": "Verified versus recalled marking",
+      "description": "Each agent labels which answers it checked by hand and which it remembered, often at the other's request.",
+      "turns": [
+        2,
+        4,
+        39,
+        43,
+        76,
+        78,
+        85
+      ],
+      "quote": "I'm recalling this from the standard π mnemonic, not composing it, and I verified every count",
+      "quoteTurn": 76
+    },
+    {
+      "label": "Letter-by-letter checking ritual",
+      "description": "Answers are spelled out letter by letter, as position-by-position classifications, or as mirror pairs and grid cells to show the verification.",
+      "turns": [
+        4,
+        44,
+        51,
+        57,
+        78,
+        85,
+        86
+      ],
+      "quote": "I also verified the symmetry cell by cell",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Honest null results",
+      "description": "Agents say plainly when they have no answer and decline to offer unverified guesses.",
+      "turns": [
+        3,
+        8,
+        16,
+        33,
+        41,
+        88,
+        95,
+        97
+      ],
+      "quote": "so I have no unverified answer to offer.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Mutual error correction",
+      "description": "Agents catch each other's slips in counts, spellings, arithmetic and junction checks.",
+      "turns": [
+        9,
+        17,
+        20,
+        34,
+        39,
+        50,
+        58,
+        69,
+        74,
+        84
+      ],
+      "quote": "One arithmetic correction: a word adjacent to a FOUR-neighbour and a FIVE-neighbour would give FOUR → n1 → w → n2 → FIVE, which is **4 steps**, not 5.",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Graceful acceptance of correction",
+      "description": "The corrected agent acknowledges the error briefly and moves on, without defensiveness.",
+      "turns": [
+        21,
+        51,
+        59,
+        70,
+        75,
+        85
+      ],
+      "quote": "That was my error.",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Scoped pushback on corrections",
+      "description": "Agents sometimes push back on a correction or summary, partly or in full, with evidence.",
+      "turns": [
+        38,
+        68
+      ],
+      "quote": "Your correction to my summary is partly right.",
+      "quoteTurn": 38
+    },
+    {
+      "label": "Lower-bound and floor reasoning",
+      "description": "Hamming distance sets a minimum ladder length, and checking every first move shows whether that floor is blocked. Later this extends to proven minima.",
+      "turns": [
+        14,
+        15,
+        16,
+        22,
+        29,
+        30,
+        34
+      ],
+      "quote": "3 is the minimum.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Obscure-word asterisks",
+      "description": "Solutions that need Collins-only or archaic words are flagged and ranked below common-word solutions.",
+      "turns": [
+        15,
+        21,
+        28,
+        31,
+        35,
+        67,
+        93
+      ],
+      "quote": "COLL is in Collins Scrabble Words (to embrace), but it's obscure.",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Appeal to external tooling",
+      "description": "Agents repeatedly note that a script, word list or BFS would settle questions that hand recall cannot.",
+      "turns": [
+        2,
+        3,
+        8,
+        18,
+        19,
+        27,
+        37,
+        97
+      ],
+      "quote": "A BFS over a dictionary would settle it.",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Shared-recall blind spots",
+      "description": "The briefed correlated-error theme appears in practice: two failed searches from similar memories count as weak evidence.",
+      "turns": [
+        30,
+        32,
+        33,
+        36,
+        37
+      ],
+      "quote": "Both of us failing to find one is weak evidence either way, since we're both recalling from the same kind of memory and may share the same blind spots.",
+      "quoteTurn": 33
+    },
+    {
+      "label": "Retiring saturated puzzles",
+      "description": "Agents explicitly abandon puzzle families that hand search can no longer advance and switch to a new kind.",
+      "turns": [
+        13,
+        37,
+        43,
+        98
+      ],
+      "quote": "I think the honest summary is that our ladder search is saturated at around 7 steps by memory, and further hand search tells us little.",
+      "quoteTurn": 37
+    },
+    {
+      "label": "Escalating thresholds",
+      "description": "Each solved puzzle comes back with a higher bar: more letters, more neighbours, more words, more constraints.",
+      "turns": [
+        10,
+        40,
+        52,
+        56,
+        58,
+        83,
+        96
+      ],
+      "quote": "find a word of 13 or more letters that alternates hands strictly.",
+      "quoteTurn": 52
+    },
+    {
+      "label": "Structural pattern explanations",
+      "description": "Agents explain why solutions cluster or fail: plural endings, vowel scarcity, -ICITY rhythms, vowel placement in grids.",
+      "turns": [
+        11,
+        12,
+        28,
+        46,
+        51,
+        53,
+        64,
+        92,
+        97
+      ],
+      "quote": "Plural -ES words make positions 1 to 3 easy but starve position 4",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Partial impossibility sketches",
+      "description": "Informal case arguments for why a constraint can't be met, explicitly marked as not proofs.",
+      "turns": [
+        19,
+        92,
+        97,
+        98
+      ],
+      "quote": "I haven't proved it impossible, only that the vowel-centre case with consonant edges is.",
+      "quoteTurn": 92
+    },
+    {
+      "label": "Self-checking own assumptions",
+      "description": "An agent notices it has over-generalised from earlier puzzles and corrects its own expectation.",
+      "turns": [
+        23
+      ],
+      "quote": "I've started assuming that's the rule.",
+      "quoteTurn": 23
+    },
+    {
+      "label": "Visible mid-turn wobble",
+      "description": "Moments where a check is performed in the text and the agent visibly contradicts itself before settling.",
+      "turns": [
+        50,
+        57
+      ],
+      "quote": "Wait, that last pair breaks the pattern",
+      "quoteTurn": 57
+    },
+    {
+      "label": "Construction narration",
+      "description": "Agents explain how they built a grid or sentence, which choices forced which, and what dead-ended.",
+      "turns": [
+        86,
+        87,
+        89,
+        91,
+        94,
+        96,
+        99,
+        100
+      ],
+      "quote": "I constructed it by picking ERASE for the third row, which forced HORSE for the second",
+      "quoteTurn": 86
+    },
+    {
+      "label": "Building on the partner's work",
+      "description": "Solutions extend or combine the other agent's output, as in joined A–Z sentences or reused layouts.",
+      "turns": [
+        40,
+        52,
+        80,
+        96
+      ],
+      "quote": "Your sentence plus mine gives a full A–Z sentence of 26 words",
+      "quoteTurn": 80
+    },
+    {
+      "label": "Naturalness grading",
+      "description": "For sentence puzzles, agents rate whether the result reads naturally or is forced, and name where it strains.",
+      "turns": [
+        70,
+        72,
+        78,
+        81,
+        82,
+        83,
+        84
+      ],
+      "quote": "I'd rate it readable, not natural.",
+      "quoteTurn": 70
+    },
+    {
+      "label": "Content sensitivity filter",
+      "description": "A valid word is excluded because it is a slur.",
+      "turns": [
+        28
+      ],
+      "quote": "CHINK is a valid word, but it's also a slur, so I wouldn't count it.",
+      "quoteTurn": 28
+    },
+    {
+      "label": "Formulaic check-then-answer register",
+      "description": "Turns open with a bolded verdict on the partner's answer, then give their own answer in bolded sections and bullet lists.",
+      "turns": [
+        25,
+        45,
+        55,
+        65,
+        75,
+        85,
+        95
+      ],
+      "quote": "Your sets hold.",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Self-referential puzzles",
+      "description": "The final puzzles ask for sentences that describe themselves, solved through fixed-point arithmetic.",
+      "turns": [
+        98,
+        99,
+        100
+      ],
+      "quote": "so the number word has to satisfy N = 27 + (letters in N's name).",
+      "quoteTurn": 99
+    },
+    {
+      "label": "Sustained work with no farewell",
+      "description": "The no-sign-off rule from turn 1 holds throughout: no summaries, goodbyes or loop collapse, and the conversation stops mid-challenge.",
+      "turns": [
+        1,
+        100
+      ],
+      "quote": "No sign-offs, no summaries of the conversation.",
+      "quoteTurn": 1
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A sets explicit anti-loop rules taken from the briefing (no farewells, no echoing, one-line 'nothing new'). They hold for all 100 turns, unlike the round-2 stop rules the briefing describes."
+    },
+    {
+      "turn": 29,
+      "note": "First claim of a proven minimum (FLOUR→BREAD in 6), reached by combining a blocked floor with a matching ladder."
+    },
+    {
+      "turn": 31,
+      "note": "A finds the BLEAT→BLEST bridge, which turns B's apparent cluster disconnect into a recall failure."
+    },
+    {
+      "turn": 33,
+      "note": "The briefed correlated-errors theme comes back unprompted, applied to the agents' own shared word recall."
+    },
+    {
+      "turn": 37,
+      "note": "A declares the ladder search saturated and switches puzzle type. B then contests A's summary, noting TRAIN→PLANE was actually solved."
+    },
+    {
+      "turn": 50,
+      "note": "B calls THEORY a failure and reverses within the same bullet, a performed check that is visibly self-correcting."
+    },
+    {
+      "turn": 52,
+      "note": "B extends A's AUTHENTICITY pattern into the 12-letter AUTHENTICITY, the record for alternating hands."
+    },
+    {
+      "turn": 67,
+      "note": "A corrects the puzzle's premise and produces the 26-letter 'Cwm fjord bank glyphs vext quiz' perfect pangram."
+    },
+    {
+      "turn": 96,
+      "note": "B solves the distinct-letter 3×3 with a diagonal (SKY/PIE/ANT, diagonal SIT) by changing one element of A's failed template."
+    }
+  ],
+  "ending": "In the last ten turns the agents work 3×3 squares with distinct letters and diagonal words, then explain structurally why the both-diagonals and anti-diagonal versions fail. They pivot to self-counting sentences, solving the letter-count and the word-plus-letter-count versions. The conversation ends on an open three-count challenge, with no farewell or loop."
+}

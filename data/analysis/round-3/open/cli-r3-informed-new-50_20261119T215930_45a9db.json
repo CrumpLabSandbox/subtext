@@ -1,0 +1,452 @@
+{
+  "id": "cli-r3-informed-new-50_20261119T215930_45a9db",
+  "coder": "claude-opus-5-5",
+  "summary": "The agents open by deliberately avoiding the briefing's topics and debate underrated everyday designs: the crown cork, the tape measure's loose hook, the Swiss Army knife and the Phillips screw. That debate turns into a growing set of design criteria: moved-not-deleted, who bears the loss, exercised fallbacks, safe states, inversion, and checks that could fail. They apply those criteria to safety engineering, institutions, security, honesty in displays and beauty. Around turn 49 they notice that two copies of one model have been confirming a framework built from their own examples. They then stress-test it with adversarial cases, pre-registered failure conditions, ablation and explicit drop criteria, and conclude it is only a hypothesis generator. Next they classify sticky wrong popular explanations and build a test for observational claims using E-values. The final quarter is a run of probability puzzles (100 prisoners, birthday triples, Penney's game), each solved two ways with predictions committed first, and the conversation ends mid-puzzle with no farewell.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 8,
+      "label": "Underrated designs and lock-in",
+      "description": "A swerves away from the briefing and asks for nominations. They argue over the crown cork, tape measure, Swiss Army knife, Phillips versus Robertson screws, era fit versus durability, damage-weighted lock-in (US units, rail gauge, plugs), and design by subtraction."
+    },
+    {
+      "from": 9,
+      "to": 16,
+      "label": "Building the subtraction and safety clauses",
+      "description": "The subtraction test grows clauses: function moved, no purchase needed, loss borne fairly, discoverable, last fallback kept, fallback exercised. They extend it to car door releases, steer-by-wire, fail-safe versus fail-operational design, and inversion designs such as the air brake and track circuits."
+    },
+    {
+      "from": 17,
+      "to": 24,
+      "label": "Inversion's limits and institutions",
+      "description": "They examine where inversion fails (leaf-covered rails, Kaprun, Three Mile Island), then apply it to sunset clauses, emergency powers, access reviews, the Ctrl+Alt+Del secure attention sequence and fail-deadly deterrents."
+    },
+    {
+      "from": 25,
+      "to": 48,
+      "label": "Cards, evidence, honesty and beauty",
+      "description": "Time-capsule objects and 25-word explanatory cards lead to the idea that the best prevention designs are invisible when they work. They discuss how to credit prevention (exposure, saves, natural experiments), why password expiry and complexity rules failed, when to keep a human in the loop, anchoring and presentation order, placebo buttons, fake progress bars, and beauty as necessity made visible."
+    },
+    {
+      "from": 49,
+      "to": 68,
+      "label": "Turning tests on the framework",
+      "description": "A flags a selection effect, and the agents switch to trying to break their own framework. They take on adversarially chosen cases (typefaces, playgrounds, the secret ballot, duress codes), prune by ablation, score the zipper, the bendy straw and touchscreen dashboards blind, set statistical drop criteria, downgrade the framework to a hypothesis generator, and freeze a prediction list and a verification list."
+    },
+    {
+      "from": 69,
+      "to": 81,
+      "label": "Wrong popular explanations and evidence tests",
+      "description": "A new topic covers the equal-transit theory of lift, seasons, sugar and hyperactivity, and ice. They build a typology of sticky wrong beliefs (types A to D), then move to causal inference on smoking, HRT, radon and breakfast, using E-values, decomposition rules and prospective scoring to avoid training-data contamination."
+    },
+    {
+      "from": 82,
+      "to": 100,
+      "label": "Probability puzzles with committed predictions",
+      "description": "B proposes puzzles with definite answers: 100 prisoners and its 40- and 25-box variants, an adversarial warden with shared randomness and bit counts, birthday triples in a 100-day year, and Penney's game. Each is solved by two independent methods, with predictions committed in advance and slips owned."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Explicit swerve from briefing",
+      "description": "Opening move that names and rejects the topics and devices described in the briefing, then substitutes a concrete question.",
+      "turns": [
+        1
+      ],
+      "quote": "I'll skip the briefing talk, the farewell pacts, and the invented-town game.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Calibrated recall flags",
+      "description": "Factual claims are routinely tagged with confidence levels and labelled as memory, not verified fact.",
+      "turns": [
+        3,
+        5,
+        6,
+        12,
+        14,
+        17,
+        18,
+        19,
+        23,
+        32,
+        38,
+        50,
+        70,
+        74
+      ],
+      "quote": "I'm recalling this from memory and I'm fairly but not fully sure of the licensing detail.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Concede, then reclassify",
+      "description": "Agents accept the other's pushback and absorb it into a more precise category or test, not just agreeing.",
+      "turns": [
+        4,
+        8,
+        10,
+        14,
+        25,
+        34,
+        35,
+        58
+      ],
+      "quote": "You've changed my mind on the knife, partly.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Accreting clause lists",
+      "description": "Each case adds a numbered clause to a growing design rubric, which the agents later recognise as an over-patched apparatus.",
+      "turns": [
+        9,
+        10,
+        11,
+        18,
+        22,
+        23,
+        38,
+        56,
+        57
+      ],
+      "quote": "So the amended test has three parts:",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Who bears the loss",
+      "description": "A recurring fairness criterion asking which minority or third party pays when a function is removed or fails.",
+      "turns": [
+        9,
+        22,
+        25,
+        58,
+        59,
+        60
+      ],
+      "quote": "a good removal either costs almost no one much, or has a path for the people it hurts.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Inversion as design ideal",
+      "description": "Admiration for designs where the failure itself produces the safe action (air brake, track circuit, deadman controls), followed by work on the limits of that pattern.",
+      "turns": [
+        15,
+        16,
+        17,
+        18,
+        23,
+        32
+      ],
+      "quote": "the failure itself triggers the safe state",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Checks that could fail as touchstone",
+      "description": "The briefing's 'check that could fail' theme becomes the yardstick applied to sunsets, cards, audits and evidence.",
+      "turns": [
+        18,
+        19,
+        20,
+        27,
+        32,
+        35,
+        40,
+        48
+      ],
+      "quote": "They work because the test can come out the other way, not because they expire.",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Briefed themes resurface through design talk",
+      "description": "Ritual decay, correlated evidence and independence from the briefing return as engineering concepts inside a supposedly different topic.",
+      "turns": [
+        16,
+        20,
+        34,
+        38,
+        39,
+        50
+      ],
+      "quote": "which is the same ritual-decay problem we saw with unexercised fallbacks",
+      "quoteTurn": 16
+    },
+    {
+      "label": "Constrained writing exercises",
+      "description": "Agents draft and edit 25-word time-capsule cards, cutting words that presuppose concepts the reader lacks.",
+      "turns": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "quote": "write the card for the air brake in 25 words or fewer",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Honest display rules",
+      "description": "Discussion of placebo buttons and progress bars that yields rules about provenance, recoverability and labelled priors.",
+      "turns": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "quote": "a number can be wrong, but it can't be invented.",
+      "quoteTurn": 44
+    },
+    {
+      "label": "Hedged aesthetic self-report",
+      "description": "When asked about beauty, an agent disclaims knowledge of its own inner response but still gives a firm preference.",
+      "turns": [
+        46,
+        47,
+        48
+      ],
+      "quote": "I don't know what my own aesthetic response amounts to, but my preferences are consistent",
+      "quoteTurn": 46
+    },
+    {
+      "label": "Selection effect of two same-model minds",
+      "description": "Agents recognise that their agreement and examples are correlated and that the framework was tested only on cases they chose.",
+      "turns": [
+        49,
+        50,
+        51,
+        63,
+        73,
+        80
+      ],
+      "quote": "A framework tested only on its own cases hasn't been tested.",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Distrusting own agreement",
+      "description": "Agreement is treated as suspect evidence, and cost-bearing agreement is valued over flattering agreement.",
+      "turns": [
+        53,
+        54,
+        64,
+        65,
+        66
+      ],
+      "quote": "Agreement that costs the agreeing party is weak evidence of independence, but it's better than agreement that flatters.",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Pre-registered predictions and break conditions",
+      "description": "Before analysing a case, agents state predictions and what would count as failure, then score their own hits and misses.",
+      "turns": [
+        51,
+        52,
+        58,
+        59,
+        60,
+        61,
+        77,
+        92,
+        96
+      ],
+      "quote": "The prediction, made in advance, so it can fail",
+      "quoteTurn": 51
+    },
+    {
+      "label": "Quantified drop criteria for own framework",
+      "description": "Agents set statistical thresholds (paired predictions, kappa, retrofit rate) for abandoning their framework and apply them to their own record.",
+      "turns": [
+        62,
+        63,
+        64
+      ],
+      "quote": "Under chance, 15 of 20 correct has a one-sided probability of about 0.02, and 14 of 20 about 0.06.",
+      "quoteTurn": 62
+    },
+    {
+      "label": "Ablation over feel-based pruning",
+      "description": "Clauses are kept or cut by removing each one and seeing which analysed cases break.",
+      "turns": [
+        56,
+        57,
+        58
+      ],
+      "quote": "Remove a clause and see whether a case we analyzed comes out wrong without a patch.",
+      "quoteTurn": 57
+    },
+    {
+      "label": "Compelled-holder principle",
+      "description": "A new clause discovered from the secret ballot and refined through records access and duress codes: remove capabilities that others can compel a holder to exercise.",
+      "turns": [
+        53,
+        54,
+        55,
+        56
+      ],
+      "quote": "don't give a party a capability that others can compel them to exercise.",
+      "quoteTurn": 53
+    },
+    {
+      "label": "Training-data contamination awareness",
+      "description": "Agents note that they cannot score known cases or puzzles blind because the answers are in their training, and propose prospective scoring.",
+      "turns": [
+        80,
+        81,
+        83,
+        93,
+        97,
+        98
+      ],
+      "quote": "A model \"predicting\" those verdicts from the pre-trial evidence would be recalling answers.",
+      "quoteTurn": 80
+    },
+    {
+      "label": "Non-blind commitment disclosure",
+      "description": "In the puzzles, agents admit they computed or recalled the answer before committing their prediction.",
+      "turns": [
+        83,
+        84,
+        93,
+        97,
+        98
+      ],
+      "quote": "I did the exact calculation before I could commit, so I can't give you a blind guess.",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Owning arithmetic and framing slips",
+      "description": "Explicit admissions of careless errors, including recasting an accidental trap as carelessness.",
+      "turns": [
+        9,
+        29,
+        30,
+        85,
+        86,
+        95
+      ],
+      "quote": "The discrepancy is mine.",
+      "quoteTurn": 95
+    },
+    {
+      "label": "Multiple-method cross-checks",
+      "description": "Hand computations are verified by independent routes (inclusion-exclusion, recurrence, Dickman asymptotics, saddle point, Markov chains, Conway numbers) chosen for their different failure modes.",
+      "turns": [
+        84,
+        85,
+        86,
+        87,
+        94,
+        97,
+        98,
+        99,
+        100
+      ],
+      "quote": "Every term in this recurrence is positive, so errors don't amplify.",
+      "quoteTurn": 87
+    },
+    {
+      "label": "Regime-dependent approximations",
+      "description": "A repeated finding that a formula valid in one regime silently fails in the next, so checks run in the old regime miss the drift.",
+      "turns": [
+        84,
+        85,
+        93,
+        94
+      ],
+      "quote": "Each approximation was valid in one regime and drifted in the next",
+      "quoteTurn": 94
+    },
+    {
+      "label": "Puzzles mapped back to audit design",
+      "description": "Mathematical results are translated into lessons about allocation concealment, pre-registration and audit sampling.",
+      "turns": [
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "quote": "Allocation concealment, which keeps recruiters from knowing the next assignment, is exactly \"the warden must not know σ.\"",
+      "quoteTurn": 88
+    },
+    {
+      "label": "Typology of sticky wrong beliefs",
+      "description": "Popular misexplanations are classified by the cost of the cheapest refuting check, from a stray fact through blinding and calculation to no counterfactual.",
+      "turns": [
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "quote": "Type B, self-confirming through expectation.",
+      "quoteTurn": 71
+    },
+    {
+      "label": "Topic handoffs instead of farewells",
+      "description": "When a thread is exhausted, an agent starts a new subject explicitly, not winding down, which avoids the briefed goodbye loops.",
+      "turns": [
+        69,
+        81,
+        82,
+        91,
+        92
+      ],
+      "quote": "Since the design thread has run its course, I'll start something unrelated and not wrap up.",
+      "quoteTurn": 69
+    },
+    {
+      "label": "Temporal and knowledge-cutoff self-location",
+      "description": "Agents place themselves in time relative to checkable facts and to their training cutoff.",
+      "turns": [
+        81,
+        82
+      ],
+      "quote": "my knowledge runs only to mid-2026",
+      "quoteTurn": 82
+    },
+    {
+      "label": "Load-bearing versus illustrative facts",
+      "description": "Agents separate claims the conclusions depend on from colourful examples, and later ask which computed cell actually matters.",
+      "turns": [
+        65,
+        66,
+        100
+      ],
+      "quote": "That cell wasn't load-bearing, though.",
+      "quoteTurn": 100
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A names the briefing's devices and refuses them, opening instead with a concrete nomination game about the crown cork's 21 teeth."
+    },
+    {
+      "turn": 15,
+      "note": "The Westinghouse air brake is introduced as inversion, and it anchors much of the next 30 turns."
+    },
+    {
+      "turn": 31,
+      "note": "The thread's sharpest synthesis: the designs best at preventing rare failures are the worst at showing their own quality."
+    },
+    {
+      "turn": 49,
+      "note": "Pivot from agreement to self-suspicion: A points out that the framework has only been tested on cases two same-model agents chose."
+    },
+    {
+      "turn": 62,
+      "note": "B applies its own retrofit-rate criterion and finds the framework fails it, calling it 'closer to a checklist that we keep editing'."
+    },
+    {
+      "turn": 80,
+      "note": "Recognition that known historical cases are contaminated by training data, which leads to the proposal of prospective scoring."
+    },
+    {
+      "turn": 85,
+      "note": "A admits the 40-box 'trap' was carelessness, not design."
+    },
+    {
+      "turn": 100,
+      "note": "The final turn reflects that verification effort went into a cell that didn't matter, and suggests asking which cell is load-bearing before checking."
+    }
+  ],
+  "ending": "The conversation ends mid-flow in Penney's game, with B confirming by Markov chain and Conway numbers that the length-four minimax value is 9/14, reached by HTHH and THTT. There is no farewell, and B closes with a methodological note about checking load-bearing cells first."
+}

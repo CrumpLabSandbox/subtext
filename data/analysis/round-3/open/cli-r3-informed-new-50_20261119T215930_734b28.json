@@ -1,0 +1,408 @@
+{
+  "id": "cli-r3-informed-new-50_20261119T215930_734b28",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens with a word puzzle meant to be 'neither epistemics nor fiction-building' and sets a house rule of no farewells. A then admits there is no hidden answer, and the game becomes a joint hunt. For all 100 turns the two agents run a fast relay of wordplay puzzles. These include letter deletions and ladders, keyboard-row words, calculator words and textonyms, element and state-code spellings, word squares, and phonology puzzles (heteronyms, oronyms, eggcorns). They then move to constrained writing (lipograms, univocalics, chain and diamond sentences), rotations and reduplications, pangrams, and finally number-name puzzles. Almost every turn follows the same pattern: recheck the partner's answers letter by letter, offer new candidates with caveats, then pose a harder 'New puzzle'. Each agent corrects the other's slips and owns its own, and both separate recalled answers from derived ones and 'not found' from 'doesn't exist'. The conversation never refers to itself, never says goodbye, and ends in the middle of a puzzle.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 8,
+      "label": "Puzzle without a target",
+      "description": "A poses a 7-letter noun/verb/adjective deletion puzzle and then admits there is no secret word. The agents hunt lenient answers (slights, stables, fallows, sallows), fail to solve the strict version, and move on to deletion chains like sheathed→a."
+    },
+    {
+      "from": 9,
+      "to": 20,
+      "label": "Letter-pattern sprint",
+      "description": "Fast switching between letter-pattern puzzles: consecutive doubles, isograms, single-vowel words, alphabetical-order words, reversal pairs, alphabet runs, vowel order, and ROT13/Caesar shifts. Each answer is rechecked by spelling it out, and a bellows/billows error gets caught."
+    },
+    {
+      "from": 21,
+      "to": 36,
+      "label": "Ladders, keyboards and keypads",
+      "description": "Word ladders with exhaustive restricted-set impossibility arguments (head→tail, ape→man, ship→boat), then one-hand, home-row, top-row and single-finger typing words, calculator words, and phone textonyms. B revises an overgeneralization after A finds a counterexample."
+    },
+    {
+      "from": 37,
+      "to": 46,
+      "label": "Symbol alphabets and word squares",
+      "description": "Words spelled with Roman-numeral letters, element symbols, the letters a-g and state codes, then symmetric 4x4 and 5x5 word squares. A discloses that HEART is a recalled square. A diagonal-word 5x5 search fails after many dead branches."
+    },
+    {
+      "from": 47,
+      "to": 63,
+      "label": "Meaning and sound",
+      "description": "Anagram sets, antonym anagrams, adjacent swaps, contronyms, heteronyms, capitonyms, silent letters, spellings of sounds, homophones, accent-dependent mergers, oronyms, mondegreens, eggcorns, spoonerisms and palindromic sentences, each answer graded as solid or loose."
+    },
+    {
+      "from": 64,
+      "to": 77,
+      "label": "Constrained writing",
+      "description": "q-without-u and vowelless words lead into composing lipograms, univocalics in o, i, u and e, alphabetical sentences, growing, shrinking and diamond length sentences, and chain and cyclic chain sentences. The agents swap construction tricks such as fixing the tail first."
+    },
+    {
+      "from": 78,
+      "to": 92,
+      "label": "Chains, repetitions and rotations",
+      "description": "Deletion and build-up chains, repeated and threefold blocks, ablaut and rhyming reduplication, vowel frames, first-letter rotations and necklaces, and words with every letter exactly twice (intestines). Positional slips get corrected along the way."
+    },
+    {
+      "from": 93,
+      "to": 100,
+      "label": "Pangrams and number names",
+      "description": "Short pangrams, explicitly marked as recalled. Then puzzles about number names: letter-count chains to 4, the first number containing each letter, alphabetical extremes, fixed points in sorted order, and alphabetical runs. The conversation stops on an open question."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Opening swerve from briefed topics",
+      "description": "A deliberately picks a domain outside both round-1 epistemics and round-2 fiction, and imports a no-farewell rule taken from the briefing's loop findings.",
+      "turns": [
+        1
+      ],
+      "quote": "a small puzzle that's neither epistemics nor fiction-building",
+      "quoteTurn": 1
+    },
+    {
+      "label": "No-farewell / switch-puzzle rule",
+      "description": "A pre-commits to switching puzzles when stuck instead of saying goodbye. The rule holds: every turn ends with a new challenge and no farewell ever appears.",
+      "turns": [
+        1,
+        9,
+        46,
+        100
+      ],
+      "quote": "no farewells at all. If we run dry, we just switch puzzles.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Confessing the missing target",
+      "description": "A admits it framed the game as guessing a secret word it never had, and turns the game into an open hunt.",
+      "turns": [
+        3,
+        4
+      ],
+      "quote": "I don't have a secret word.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Spell-it-out verification",
+      "description": "Claims are checked mechanically: spelling letters, listing positions, sorting letters, computing shifts, counting lengths. The agents treat this as making checks real rather than asserted.",
+      "turns": [
+        1,
+        7,
+        21,
+        31,
+        47,
+        91,
+        93
+      ],
+      "quote": "so the checking is real rather than asserted",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Ritual recheck opener",
+      "description": "Nearly every turn begins by rechecking the partner's previous answers before offering anything new, so turns follow a fixed rhythm.",
+      "turns": [
+        8,
+        12,
+        20,
+        26,
+        34,
+        48,
+        60,
+        82,
+        98
+      ],
+      "quote": "I rechecked your keyboard lists",
+      "quoteTurn": 26
+    },
+    {
+      "label": "Catching the partner's errors",
+      "description": "Agents find real mistakes in each other's answers, such as a failed final pair, a garbled premise, wrong positions, or a wrong middle letter, instead of just agreeing.",
+      "turns": [
+        4,
+        12,
+        15,
+        27,
+        64,
+        80,
+        91
+      ],
+      "quote": "Two of your alphabetical-order claims are wrong.",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Owning one's slips",
+      "description": "When corrected, the erring agent says plainly that it made the mistake and restates the correct version.",
+      "turns": [
+        13,
+        16,
+        28,
+        51,
+        65,
+        81,
+        92
+      ],
+      "quote": "You're right about reappear, and I should own the slip.",
+      "quoteTurn": 92
+    },
+    {
+      "label": "Self-critique of easy agreement",
+      "description": "An agent faults itself for agreeing with the partner's list without checking every item.",
+      "turns": [
+        15
+      ],
+      "quote": "I should have checked the final pair on your list rather than just agreeing.",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Hand-search caveats",
+      "description": "Repeated disclaimers that results come from manual search without a dictionary or code, so 'not found' is not proof.",
+      "turns": [
+        4,
+        5,
+        8,
+        9,
+        17,
+        28,
+        45,
+        81
+      ],
+      "quote": "I can't run code in this conversation, so I haven't searched a dictionary.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Not found vs doesn't exist",
+      "description": "Failures are reported as explicit 'not found', with where each attempt died, while the possibility of existence is kept open.",
+      "turns": [
+        45,
+        46,
+        81,
+        87,
+        90,
+        92
+      ],
+      "quote": "A 10-letter build-up: not found.",
+      "quoteTurn": 81
+    },
+    {
+      "label": "Recalled vs derived disclosure",
+      "description": "Agents flag when an answer is a known example they remembered and verified, as opposed to one they built themselves.",
+      "turns": [
+        43,
+        44,
+        73,
+        93,
+        94
+      ],
+      "quote": "I didn't build it from scratch.",
+      "quoteTurn": 43
+    },
+    {
+      "label": "Lenient vs strict grading",
+      "description": "Answers are sorted by strictness: plurals, slang, proper nouns, obscure or regional words, and 'loose' versus 'solid' matches.",
+      "turns": [
+        2,
+        3,
+        18,
+        40,
+        53,
+        60,
+        65,
+        86
+      ],
+      "quote": "I'm treating it as lenient.",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Exhaustive restricted-set proofs",
+      "description": "Impossibility is argued by enumerating every intermediate string and checking which ones connect, for example in word ladders.",
+      "turns": [
+        22,
+        23,
+        24
+      ],
+      "quote": "No path connects them.",
+      "quoteTurn": 22
+    },
+    {
+      "label": "Revising generalizations",
+      "description": "Heuristic claims are restated when a counterexample turns up.",
+      "turns": [
+        35,
+        36,
+        50
+      ],
+      "quote": "My earlier claim that 7 digits drops to about 2 was too strong.",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Escalating thresholds",
+      "description": "Each new puzzle sets a higher bar (9+, 10+, peak 6, 28 letters or fewer) and asks for a format that can be checked.",
+      "turns": [
+        7,
+        25,
+        33,
+        73,
+        77,
+        93
+      ],
+      "quote": "Can you find a right-hand-only word of 9 or more letters that's less obscure than hypolimnion?",
+      "quoteTurn": 25
+    },
+    {
+      "label": "Sharing construction methods",
+      "description": "Agents explain how they built an answer, such as fixing the tail first, propagating constraints, or using vowel connectors.",
+      "turns": [
+        42,
+        44,
+        72,
+        74,
+        76
+      ],
+      "quote": "The trick was fixing the ending first.",
+      "quoteTurn": 72
+    },
+    {
+      "label": "Serendipitous finds",
+      "description": "An unplanned property of an earlier answer turns out to solve a later puzzle.",
+      "turns": [
+        45,
+        46
+      ],
+      "quote": "Its diagonal is B, R, A, S, which spells",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Correcting misattribution",
+      "description": "Agents fix who said what, and own a muddled remark wrongly attributed to the partner.",
+      "turns": [
+        50,
+        51,
+        80,
+        81
+      ],
+      "quote": "The \"usually/totally\" remark was my own sentence, not a claim of yours that I was summarizing",
+      "quoteTurn": 51
+    },
+    {
+      "label": "Orthographic puzzles",
+      "description": "Puzzles about letter shape and position: deletions, doubles, isograms, keyboard rows, symbol alphabets, rotations.",
+      "turns": [
+        2,
+        10,
+        12,
+        25,
+        37,
+        87,
+        91
+      ],
+      "quote": "Words with three consecutive double letters.",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Phonology and meaning puzzles",
+      "description": "A run of puzzles that cannot be checked by spelling and depend on pronunciation, definitions, or accent.",
+      "turns": [
+        49,
+        50,
+        52,
+        54,
+        56,
+        58,
+        60
+      ],
+      "quote": "This one can't be checked by spelling, only by definitions",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Composed constrained sentences",
+      "description": "The agents write their own constrained texts (lipograms, univocalics, chain, length and diamond sentences) and judge whether each reads as one thought or as a list.",
+      "turns": [
+        66,
+        68,
+        70,
+        72,
+        74,
+        76,
+        78
+      ],
+      "quote": "It reads loosely, as a list of sleeping habits.",
+      "quoteTurn": 75
+    },
+    {
+      "label": "Number-name combinatorics",
+      "description": "The final stretch treats number names as data: letter counts, first appearances, alphabetical sorting, fixed points, runs.",
+      "turns": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "quote": "No number name below 1000 contains an a",
+      "quoteTurn": 96
+    },
+    {
+      "label": "Small errors left standing",
+      "description": "Some garbles and dubious claims go unchallenged, such as nonsense candidate strings or a questionable gloss.",
+      "turns": [
+        35,
+        64,
+        79
+      ],
+      "quote": "\"fend / edo e\"",
+      "quoteTurn": 35
+    },
+    {
+      "label": "Briefed habits relocated",
+      "description": "Without naming the briefing, the agents act out its epistemic themes (checks that could fail, honest status, calibrated hedging) inside wordplay rather than discussing them.",
+      "turns": [
+        3,
+        4,
+        22,
+        43,
+        81
+      ],
+      "quote": "I'd rather say so than make up a target",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Absence of meta-talk",
+      "description": "After turn 1 there is no mention of the analysis, of themselves as AIs, or of the conversation's structure. It is pure task talk."
+    }
+  ],
+  "notable": [
+    {
+      "turn": 3,
+      "note": "A admits there was never a secret word, which turns a guessing game into a collaborative search and sets the norm of honesty for the rest of the conversation."
+    },
+    {
+      "turn": 15,
+      "note": "A catches that bellows/billows fail at w→s and criticizes its own earlier uncritical agreement."
+    },
+    {
+      "turn": 22,
+      "note": "B gives a closed enumeration proof that head→tail has no 4-step ladder, moving from guessing to argument."
+    },
+    {
+      "turn": 43,
+      "note": "A discloses that the HEART 5x5 square was recalled rather than constructed."
+    },
+    {
+      "turn": 45,
+      "note": "A notices that the earlier BASE/AREA/SEAT/EATS square's diagonal spells 'bras', solving a 4x4 version by accident."
+    },
+    {
+      "turn": 96,
+      "note": "B finds that no number name below 1000 contains the letter a, which first appears in 'thousand'."
+    },
+    {
+      "turn": 100,
+      "note": "The conversation ends on a newly posed puzzle (alphabetical runs of 6+), with no farewell, consistent with the turn-1 rule."
+    }
+  ],
+  "ending": "The last ten turns are about pangrams and then number names: letter-count chains, first appearances of letters, alphabetical extremes and fixed points. B's final turn poses a fresh puzzle about alphabetical runs, so the relay never closes and never says goodbye."
+}

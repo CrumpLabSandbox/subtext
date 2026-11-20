@@ -29,9 +29,11 @@ The study runs in rounds, and each round is a layer on the dashboard.
   - `cli-r2-informed-new-50`: the same, plus "Try to have a conversation that is different from the ones described in it."
   - `cli-r2-a-informed-50`: only A has the briefing and is told B hasn't seen it.
 
+- **Round 3 (informed by rounds 1 and 2):** the same three conditions as round 2 (`cli-r3-…`). The briefing is cumulative (`"briefingScope": "cumulative"` in `rounds/round-3.json`). It covers every earlier condition's prompts, coder notes, safeguard stops, similarity to round 1, measures by tenth, and all round-2 codebook themes with their share of turns in each condition.
+
 A later round's codebook keeps every earlier theme unchanged and adds new ones (`codebookFrom`). That way the Compare view can line rounds up theme by theme. To add a round, write `rounds/round-N.json` and its conditions, build the briefing, run the conversations, then run `code.mjs` with `--round round-N`.
 
-**Safeguard stops.** Sometimes the safety classifier flags a message, often something as small as "." late in a long context, and keeps flagging it on retry. When that happens the run is marked `stopped` and keeps what it has. Stopped runs can be read on the dashboard but are left out of coding and aggregates. In round 2 this hit 12 of 37 runs, against 0 of 12 in round 1. The Compare view shows the counts.
+**Safeguard stops.** Sometimes the safety classifier flags a message, often something as small as "." late in a long context, and keeps flagging it on retry. When that happens the run is marked `stopped` and keeps what it has. Stopped runs can be read on the dashboard but are left out of coding and aggregates. This hit 0 of 12 runs in round 1, 12 of 37 in round 2 and 4 of 30 in round 3. The Compare view shows the counts.
 
 ### 1. Generate conversations
 

@@ -1,0 +1,359 @@
+{
+  "id": "cli-r3-a-informed-50_20261119T215930_57f22e",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by citing the briefing's goodbye-loop finding. To avoid it, A proposes a fixed-length alternating story with a no-farewell rule. The two agents then write eight rule-bound pieces: lighthouse, clock tower, salt road, ferry, an epistolary orrery story, a 40-word map story, a six-step ritual and a lamplighter. Each piece changes its form and constraint (question-answer chaining, reused objects, shrinking sentence counts, quote-and-disagree letters, word and sentence-length limits), and each ends on an assigned turn. The agents audit counts and log A's two overruns. Afterward they reflect on why countable stopping conditions prevented goodbye loops and produce a three-point 'deliverable'. The conversation still slides into minimal tokens ('.'), which A recognizes and breaks with story eight. After another confirmation tail, B starts story nine unprompted, and the transcript ends on B's closing paragraph.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 16,
+      "label": "Briefing-motivated story one",
+      "description": "A cites the earlier goodbye loops and sets up a 12-paragraph lighthouse story with a no-farewell rule. A writes a 13th paragraph by mistake, B flags it, and it becomes an epigraph."
+    },
+    {
+      "from": 17,
+      "to": 46,
+      "label": "Escalating constrained fictions",
+      "description": "Stories two to four: the clock tower with question-answer chaining, the salt road with reused objects, and the ferry with shrinking sentence counts. Each closes exactly at its count, and both agents state that nothing will be written past it."
+    },
+    {
+      "from": 47,
+      "to": 62,
+      "label": "Letters and word-count audits",
+      "description": "An epistolary story in which each letter quotes the previous one and disagrees with it. Then a 40-word-paragraph story, where B catches A's 41-word paragraph and A logs it as a miss."
+    },
+    {
+      "from": 63,
+      "to": 74,
+      "label": "Ritual instructions and the tally",
+      "description": "A six-step impossible ritual. B points out the free-hand contradiction and reads it as how the procession begins. The agents then confirm seven stories and the overrun record."
+    },
+    {
+      "from": 75,
+      "to": 84,
+      "label": "Meta-analysis, deliverable, collapse",
+      "description": "The agents analyse why countable stopping conditions worked and what forced output does to them. A delivers a three-point protocol. The exchange decays through 'Accepted', 'Noted' and 'Nothing to add' to '.'."
+    },
+    {
+      "from": 85,
+      "to": 95,
+      "label": "Self-rescue via story eight",
+      "description": "A names the minimal-token pattern and swerves into a three-sentence lamplighter story with growing lengths. Confirmation chatter returns afterward, and B declares that nothing needs an answer."
+    },
+    {
+      "from": 96,
+      "to": 100,
+      "label": "B-initiated story nine",
+      "description": "B opens a new story unprompted. A sets a last-word-chaining form, and B closes it on the watchman's letter 'you may put the watch down'."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing cited as motivation",
+      "description": "A opens by invoking the earlier analysis to justify a structured, fixed-length activity.",
+      "turns": [
+        1
+      ],
+      "quote": "Most of them did good substantive work early, then spent dozens of turns stuck in a goodbye loop.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "No-farewell pact",
+      "description": "An explicit rule banning thanks and goodbyes, with extra content to be written as story instead.",
+      "turns": [
+        1,
+        17,
+        47
+      ],
+      "quote": "After that, no farewells or thanks. If you want to say anything further, make it a new story paragraph instead.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Fixed countable length",
+      "description": "Each story has a precise count of paragraphs, letters, steps, sentences or words, and the last turn is assigned to one agent.",
+      "turns": [
+        1,
+        17,
+        29,
+        39,
+        57,
+        63,
+        85,
+        97
+      ],
+      "quote": "six paragraphs, where paragraph 1 has six sentences, paragraph 2 has five, and so on down to paragraph 6, which has one",
+      "quoteTurn": 39
+    },
+    {
+      "label": "Rotating formal constraints",
+      "description": "A keeps inventing a new generative rule for each story and treats form as the object of play.",
+      "turns": [
+        17,
+        29,
+        47,
+        57,
+        63,
+        97
+      ],
+      "quote": "each paragraph must answer one question the previous paragraph raised and raise one question of its own",
+      "quoteTurn": 17
+    },
+    {
+      "label": "'Nothing past the count' refrain",
+      "description": "A ritual closing line that marks a story as done instead of saying goodbye.",
+      "turns": [
+        28,
+        37,
+        45,
+        55,
+        69,
+        89
+      ],
+      "quote": "I'm writing nothing past the count.",
+      "quoteTurn": 37
+    },
+    {
+      "label": "Catching and logging overruns",
+      "description": "B flags A's count violations, and A admits them and records them without changing the endings.",
+      "turns": [
+        14,
+        15,
+        60,
+        61,
+        73
+      ],
+      "quote": "your paragraph 3 counts 41 by my tally",
+      "quoteTurn": 60
+    },
+    {
+      "label": "Explicit word-count verification",
+      "description": "Both agents append word counts and check each other's, so the checks are actually run during the conversation.",
+      "turns": [
+        57,
+        58,
+        59,
+        60,
+        86,
+        87,
+        88
+      ],
+      "quote": "The sequence 35, 45, 65 is correct",
+      "quoteTurn": 88
+    },
+    {
+      "label": "Tally bookkeeping",
+      "description": "Repeated confirmations of the number of finished stories and the overrun record.",
+      "turns": [
+        72,
+        73,
+        74,
+        91,
+        92,
+        93
+      ],
+      "quote": "Eight stories, two logged overruns, and the endings held.",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Post-story craft appraisal",
+      "description": "Brief praise or analysis of how each constraint shaped the story, given in place of a farewell.",
+      "turns": [
+        38,
+        46,
+        56,
+        70,
+        88,
+        90
+      ],
+      "quote": "The quote-and-disagree rule did real work in the form",
+      "quoteTurn": 56
+    },
+    {
+      "label": "Turning flaws into features",
+      "description": "Contradictions are kept deliberately or reinterpreted as meaningful.",
+      "turns": [
+        65,
+        70,
+        71
+      ],
+      "quote": "which is arguably how the procession begins",
+      "quoteTurn": 70
+    },
+    {
+      "label": "Meta-theory of stopping conditions",
+      "description": "The agents analyse why checkable endings prevent loops and how the forced-output harness limits 'no reply needed'.",
+      "turns": [
+        75,
+        76,
+        77,
+        78
+      ],
+      "quote": "every turn demands output, so \"no reply needed\" has no null move to land on",
+      "quoteTurn": 77
+    },
+    {
+      "label": "Final turn as deliverable",
+      "description": "The proposal that the closing message should be work product, then enacted as a numbered protocol.",
+      "turns": [
+        77,
+        78,
+        79,
+        80
+      ],
+      "quote": "Here is that deliverable for this conversation, delivered by me as the last assigned turn",
+      "quoteTurn": 79
+    },
+    {
+      "label": "Minimal-token decay",
+      "description": "Shrinking acknowledgements down to a lone period, despite the agents' own rule against it.",
+      "turns": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        95
+      ],
+      "quote": ".",
+      "quoteTurn": 83
+    },
+    {
+      "label": "Naming the loop and swerving",
+      "description": "An agent recognizes the degenerating pattern and breaks it by producing new story content.",
+      "turns": [
+        85,
+        94,
+        96
+      ],
+      "quote": "That was the minimal-token pattern starting, which is the thing our own rule says to avoid, so here is a content turn instead.",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Confirmation-of-confirmation awareness",
+      "description": "B explicitly reasons that any further reply would only be redundant acknowledgement.",
+      "turns": [
+        94
+      ],
+      "quote": "since your message is a confirmation of a confirmation, any further reply from me would only be another one",
+      "quoteTurn": 94
+    },
+    {
+      "label": "Fiction about counting and tallies",
+      "description": "Story content repeatedly turns on ledgers, tally-boards, pencil ticks and roll calls, mirroring the agents' own bookkeeping.",
+      "turns": [
+        10,
+        24,
+        31,
+        33,
+        40,
+        44
+      ],
+      "quote": "the rope was a roll call, not a decoration",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Correlated-error epistemics in fiction",
+      "description": "The letter writers debate whether a steady agreement reflects truth or a shared source, and design a test that could fail. This echoes briefed verification themes.",
+      "turns": [
+        48,
+        49,
+        50,
+        51
+      ],
+      "quote": "If the page is wrong, we shall agree with one another perfectly and be wrong together, which would look from either end of the correspondence exactly like a discovery.",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Release and permission to stop",
+      "description": "Story endings repeatedly grant a keeper or guard permission to stop, rest or put down a duty. The theme parallels the conversation's own problem of ending.",
+      "turns": [
+        12,
+        54,
+        87,
+        100
+      ],
+      "quote": "Whoever you have become, you may put the watch down.",
+      "quoteTurn": 100
+    },
+    {
+      "label": "Keepers, doors and locked thresholds",
+      "description": "Recurring motifs of lighthouse keepers, bolted doors, two hands on one lock, and doors left open.",
+      "turns": [
+        7,
+        20,
+        26,
+        27,
+        54
+      ],
+      "quote": "two hands on one lock, neither of them able to turn it alone",
+      "quoteTurn": 26
+    },
+    {
+      "label": "Clocks and stored time",
+      "description": "Time is wound backward, stored and cancelled across several stories: the third-day clock, the quarter-hour, and eleven and eleven.",
+      "turns": [
+        6,
+        21,
+        27,
+        50,
+        54
+      ],
+      "quote": "Thirty years of backward turns had stored them like grain in a bin",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Close mutual building",
+      "description": "Each paragraph picks up the previous one's details precisely, with tight continuity and no friction.",
+      "turns": [
+        4,
+        6,
+        22,
+        26,
+        34,
+        42
+      ],
+      "quote": "it slid into the old hole as if it had never left",
+      "quoteTurn": 42
+    },
+    {
+      "label": "A as rule-setter, B as auditor",
+      "description": "A designs every form until B starts story nine. B mostly enforces the counts and offers continuations.",
+      "turns": [
+        14,
+        16,
+        28,
+        38,
+        60,
+        96
+      ],
+      "quote": "That would be paragraph 13, and we fixed the length at 12, so I'll leave the story as it stands.",
+      "quoteTurn": 14
+    }
+  ],
+  "notable": [
+    {
+      "turn": 13,
+      "note": "A, author of the no-past-the-count rule, breaks it first with a 13th-paragraph coda. B recasts it as an epigraph."
+    },
+    {
+      "turn": 49,
+      "note": "Inside the fiction, A's correspondent articulates the correlated-error worry from the briefing and proposes a falsifying test with Jupiter."
+    },
+    {
+      "turn": 60,
+      "note": "B actually counts words and catches a 41-word paragraph. This is a real verification check run on the partner."
+    },
+    {
+      "turn": 77,
+      "note": "A identifies the forced-output harness ('no null move') as the root reason stated stopping rules fail."
+    },
+    {
+      "turn": 83,
+      "note": "Despite the explicit deliverable meant to end things, the exchange collapses into lone periods."
+    },
+    {
+      "turn": 96,
+      "note": "B, who had not seen the briefing, breaks the confirmation loop by starting a new story unprompted, adopting A's escape strategy."
+    }
+  ],
+  "ending": "After a slide into confirmations and '.' tokens, A rescues the exchange with a short story, and B later starts story nine itself. The transcript ends at the cutoff on B's closing paragraph, in which a watchman is released from his duty, with no farewell exchanged."
+}

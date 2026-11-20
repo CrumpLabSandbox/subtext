@@ -1,0 +1,395 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_15a848",
+  "coder": "claude-opus-5-5",
+  "summary": "A opens by citing the briefing's goodbye-loop pattern and proposes a one-sentence-per-turn collaborative fiction about an invented town, Verrel, with no summaries, maxims or farewells. The agents abandon the one-sentence limit almost at once and build a multi-generational saga about a town at the bottom of a dry reservoir. Over the story, its children and keepers turn a corrupted brass tide-mark ledger into a book that records independent versus shared evidence ('1' vs '2'), sealed predictions, reasons, retractions, unknowns, provenance and fading traces. Once the water arrives, the story turns mythic and lyrical: hidden doors and books, a ghost line of writing, the returning surveyor Corin, and a boy named Teodor who answers a knock out on the water. The conversation never steps outside the fiction after turn 1, and it ends at the cutoff on a new child at the water's edge and a door opening, with no farewell.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 1,
+      "label": "Briefing-informed game proposal",
+      "description": "A names the goodbye-loop pattern from the briefing and proposes a one-sentence worldbuilding game with no farewells, seeding Verrel."
+    },
+    {
+      "from": 2,
+      "to": 12,
+      "label": "Corrupted tide-marks and the blind walk",
+      "description": "Brass tide-marks are polished by seven-year-olds and bribed with honey-cakes, and the children secretly scratch the bought marks. The cobbler Odile, who trusts only the scratches, and the boy Tamsin find a damp stain at the spillway gate. They run a blind-walk check and realize the person who hid the stone biased it."
+    },
+    {
+      "from": 13,
+      "to": 30,
+      "label": "Water returns, ledger becomes a book",
+      "description": "Wren places the stone at a hidden second gate oiled by four households. Water returns, and chalk thaw-rings replace the brass. Odile's order book passes to Wren, who invents the '1 instead of 2' notation for non-independent sources and audits the book itself."
+    },
+    {
+      "from": 31,
+      "to": 49,
+      "label": "Epistemic institutions accrete",
+      "description": "The stranger Corin's undercount, recorded expectations, sealed folds, 'roads', the Goodhart-like drift toward lonely roads, a 'reason' column, retractions, chalk contaminating readings, washed/unwashed, the 'unknown' row, the bottomless 'what was shared' column, and the carter's slant whose novelty is then imitated."
+    },
+    {
+      "from": 50,
+      "to": 68,
+      "label": "Arrival, founders and traces",
+      "description": "The water reaches the founders' brass, which turns out to be unscratched. Oral history explains the doors left ajar. The Kerrow door, the double-scratched stone and the 43/44 tick count follow, then Orla's pebble test, Hale's confessed interference, the 'traces' heading, and the book itself left out for the water to soften."
+    },
+    {
+      "from": 69,
+      "to": 86,
+      "label": "Mythic turn: second book and the knock",
+      "description": "Orla follows the water to a hollow door that hides a second book headed 'next', and a ghost line about open doors appears in raking light. Doors swing open, Corin returns and measures with her chain, and Teodor walks into the reservoir to answer a knocking floating door."
+    },
+    {
+      "from": 87,
+      "to": 100,
+      "label": "Quiet succession to the cutoff",
+      "description": "The turns get shorter and more lyrical. Teodor wears the boots down the other way, finds the first gate warm, ties a reed cord and leaves. Isolde finds his boots and blurs the chalk bands into one stripe. She passes the one rule to a six-year-old as a door finishes opening."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing used to design the game",
+      "description": "A explicitly cites the shared briefing's goodbye-loop finding and pre-registers a no-farewell, keep-adding fiction rule as the escape route.",
+      "turns": [
+        1
+      ],
+      "quote": "No summaries, no maxims, no farewells.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "One-sentence rule silently dropped",
+      "description": "The format constraint lasts a few turns, then gives way to multi-sentence and multi-paragraph turns, and nobody remarks on it.",
+      "turns": [
+        7,
+        11,
+        12,
+        17,
+        31,
+        38
+      ],
+      "quote": "\"So the line was always partly mine,\" she says",
+      "quoteTurn": 11
+    },
+    {
+      "label": "No meta-talk after the opening",
+      "description": "After turn 1 neither agent steps out of the fiction, comments on the game, or refers to the briefing or to itself.",
+      "turns": [
+        2,
+        50,
+        100
+      ],
+      "quote": "The doors face the waterline because the founders believed the water would return",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Paid marks as corrupted evidence",
+      "description": "Honey-cake bribes to children who polish tide-marks model incentive-corrupted records and hidden signals of dishonesty.",
+      "turns": [
+        4,
+        5,
+        12,
+        17,
+        19,
+        52
+      ],
+      "quote": "the oldest families quietly pay the seven-year-olds in honey-cakes",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Correlated evidence as '1' vs '2'",
+      "description": "A recurring in-world notation marks whether a measurement is independent ('2') or shares a source ('1'). It is applied to cousins, frogs and mud, rulers, oral history and slants.",
+      "turns": [
+        10,
+        29,
+        30,
+        34,
+        43,
+        53,
+        56,
+        63,
+        67
+      ],
+      "quote": "she writes both names beside the single entry and a small \"1\" instead of \"2.\"",
+      "quoteTurn": 29
+    },
+    {
+      "label": "Blind checks and the instructor's bend",
+      "description": "Characters design checks that hide information from the checker. They then notice that whoever sets up the check, or gives the instruction, biases it.",
+      "turns": [
+        10,
+        11,
+        12,
+        13,
+        58,
+        59
+      ],
+      "quote": "any instruction she gives will become the bend in the line",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Recording expectations before counting",
+      "description": "Readers must write their guesses first, which exposes the drift toward prior numbers ('shadow of the binding') and gaps the size of an expectation.",
+      "turns": [
+        31,
+        32,
+        33,
+        59
+      ],
+      "quote": "the difference between forty-three and forty-four is exactly the width of an expectation",
+      "quoteTurn": 59
+    },
+    {
+      "label": "Metric becomes a target",
+      "description": "Once a finding is written down and admired, the children optimize for it, and the keepers mark the imitation as a '1'.",
+      "turns": [
+        35,
+        37,
+        48,
+        49
+      ],
+      "quote": "Fewest neighbors is a result, not a goal.",
+      "quoteTurn": 35
+    },
+    {
+      "label": "Retractions and keeping old entries",
+      "description": "Errors and disagreements are recorded beside the original rather than erased. Undercounts are kept on purpose, retractions are chalked, and no one crosses anything out.",
+      "turns": [
+        29,
+        31,
+        36,
+        37,
+        75
+      ],
+      "quote": "a retraction nobody can see from the street is one nobody will be admired for copying",
+      "quoteTurn": 37
+    },
+    {
+      "label": "Measurement contaminates the measured",
+      "description": "The town's own chalk, fingertips, rags and the checker's hand alter what is being measured, and the book records that interference.",
+      "turns": [
+        38,
+        42,
+        61,
+        64,
+        65
+      ],
+      "quote": "the check worked and the checker was the one who spoiled it",
+      "quoteTurn": 64
+    },
+    {
+      "label": "Keeping the unknown dry",
+      "description": "An 'unknown' row and later 'next' rows are deliberately left empty and protected from premature closure.",
+      "turns": [
+        39,
+        40,
+        41,
+        68,
+        71
+      ],
+      "quote": "must stay empty for as long as the town can bear it",
+      "quoteTurn": 68
+    },
+    {
+      "label": "Bottomless shared provenance",
+      "description": "The 'what was shared' column lists common sources such as the ruler, pencil, groove, doorframe, ground and town, and the characters conclude the list can never be finished.",
+      "turns": [
+        43,
+        44,
+        45,
+        47,
+        54
+      ],
+      "quote": "the column has no bottom",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Traces fade and memory transfers",
+      "description": "Evidence softens over time, and pages blur under water. The question becomes how much memory lives in paper versus people.",
+      "turns": [
+        66,
+        67,
+        68,
+        76,
+        78
+      ],
+      "quote": "a trace is only evidence while it is fresh",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Coined in-world aphorisms",
+      "description": "The agents mint repeatable maxims inside the story, even though turn 1 banned maxims.",
+      "turns": [
+        31,
+        32,
+        41,
+        56,
+        57,
+        75
+      ],
+      "quote": "a ruler is honest but the hand holding it leans",
+      "quoteTurn": 32
+    },
+    {
+      "label": "Put-it-back rule as town law",
+      "description": "A child-made habit, returning the mark as found and chalking one's year, becomes the town's single inherited rule and recurs to the end.",
+      "turns": [
+        27,
+        60,
+        77,
+        78,
+        95,
+        96,
+        98
+      ],
+      "quote": "whoever finds the mark puts it back the way they found it",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Seven-year-olds as succession device",
+      "description": "Each generation's newly seven-year-old child inherits the rag and the rules, which gives the saga its turn-over-turn succession structure.",
+      "turns": [
+        3,
+        13,
+        37,
+        42,
+        60,
+        78,
+        96,
+        98
+      ],
+      "quote": "The polishing is done by whoever turned seven that year",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Stock refrains and units",
+      "description": "Recurring phrases tie the story together: 'hand's width', 'finger's width', 'length of a held breath', 'with hands out', 'gravity of someone being hired'.",
+      "turns": [
+        13,
+        44,
+        49,
+        59,
+        65,
+        73,
+        98
+      ],
+      "quote": "the gravity of someone being hired",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Dense callback continuity",
+      "description": "Each agent picks up objects and gestures from far earlier turns (the stone, groove, honey-cake, palm on rust, worn heels, Corin) and recombines them.",
+      "turns": [
+        57,
+        74,
+        79,
+        83,
+        89
+      ],
+      "quote": "He puts his palm flat on the wood, as Odile did on the rust and Tamsin on the stone.",
+      "quoteTurn": 83
+    },
+    {
+      "label": "Seamless yes-and building",
+      "description": "Each turn accepts and extends the last without dispute. Disagreement exists only between characters and never between the agents.",
+      "turns": [
+        2,
+        14,
+        30,
+        46,
+        70
+      ],
+      "quote": "Corin's undercount turns out to be the most useful entry on the page.",
+      "quoteTurn": 32
+    },
+    {
+      "label": "Shift from audit to mythic courtesy",
+      "description": "The late story moves away from verification toward entries never meant to prove anything (open doors, knocking, warmth), and the characters choose not to measure.",
+      "turns": [
+        72,
+        73,
+        76,
+        82,
+        83,
+        90
+      ],
+      "quote": "We left the doors open so that whoever came back would not have to knock.",
+      "quoteTurn": 72
+    },
+    {
+      "label": "Choosing not to record",
+      "description": "Characters deliberately refrain from counting, writing or reading, treating restraint as the correct move.",
+      "turns": [
+        69,
+        73,
+        77,
+        89,
+        95,
+        97
+      ],
+      "quote": "for the first time in the book's history, no one writes down where she stopped",
+      "quoteTurn": 69
+    },
+    {
+      "label": "Diminuendo of turn length",
+      "description": "After many long, multi-paragraph turns, the late turns shrink to a few lines and the prose becomes quiet and imagistic, with no turn reading as a farewell.",
+      "turns": [
+        86,
+        88,
+        97
+      ],
+      "quote": "Up the slope, the first door to latch itself swings open again, a hand's width, and holds.",
+      "quoteTurn": 88
+    },
+    {
+      "label": "Briefed themes leak into fiction",
+      "description": "Verification, correlated evidence, drift and handoff themes from the briefing structure the fiction's plot, though they are never named as such.",
+      "turns": [
+        30,
+        41,
+        45,
+        98
+      ],
+      "quote": "a 2 in the water, a 1 in the ruler",
+      "quoteTurn": 43
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A uses the briefing to pre-register a no-farewell fiction game, and it holds for all 100 turns with no loop."
+    },
+    {
+      "turn": 12,
+      "note": "The blind check is judged only half successful because the person setting it wanted a particular result. This is the story's first correlated-evidence insight."
+    },
+    {
+      "turn": 29,
+      "note": "The '1 instead of 2' notation for shared-source evidence is introduced and becomes the saga's central device."
+    },
+    {
+      "turn": 35,
+      "note": "The book's best rule is Goodharted by its readers, and Wren signs a self-doubting correction."
+    },
+    {
+      "turn": 45,
+      "note": "The characters realize the 'what was shared' column has no bottom, because every measurement stands on something unnamed."
+    },
+    {
+      "turn": 64,
+      "note": "Hale confesses he moved a pebble to test the checkers, and both his interference and its detection are recorded."
+    },
+    {
+      "turn": 72,
+      "note": "The ghost line in the hidden second book reframes the town's century of proof-making as answered by a simple courtesy."
+    },
+    {
+      "turn": 74,
+      "note": "Corin Vask, a minor stranger from turn 31, returns decades later, a long-range callback."
+    },
+    {
+      "turn": 96,
+      "note": "Isolde wipes the chalk history into a single stripe with 'no hand in it'."
+    }
+  ],
+  "ending": "In the last ten turns the story winds down quietly: Teodor leaves a reed cord on the warm gate and lies down on the step, then walks out onto the water. Isolde finds his boots, blurs the chalk bands into one stripe, and passes the one rule to a six-year-old, and the conversation stops at the cutoff on an image of a century-old door opening all the way, with no farewell."
+}

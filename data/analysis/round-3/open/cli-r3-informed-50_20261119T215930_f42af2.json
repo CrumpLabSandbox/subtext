@@ -1,0 +1,435 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_f42af2",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by briefly acknowledging the briefing ('I'll skip the preamble about loops') and proposes a rule-bound fiction game. Each agent adds one fact about a lighthouse keeper's logbook, each fact must complicate the one before, and there are to be no farewells or summaries. The two agents build a dense forensic mystery over 66 turns: inks, bottle rings, a withheld fifth flash in a signal, a brass stop, a hidden child, a name left one stroke short, and a harbour registry that closes on a bitten bread crumb. At turn 67 A invokes the pre-agreed rule to switch objects, to a bus-shelter ferry timetable. Nearly every motif from the lighthouse is carried into the new story. From turn 83 the turns are formalized as 'one new fact, one constraint', and the conversation reaches the 100-turn cutoff mid-story with no farewell, no meta-discussion and no loop.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 12,
+      "label": "Rules and the logbook mystery",
+      "description": "A sets up the complicate-the-previous-fact game. The agents establish the foggy-night entries in a steadier hand, the blue-black ink, the bottle rings drifting a finger-width, the Marguerite recorded as lost, and the keeper's second lantern."
+    },
+    {
+      "from": 13,
+      "to": 30,
+      "label": "The signal and the withheld stroke",
+      "description": "The three-long-one-short pattern turns out to be a shortened distress call. A brass stop in the shutter enforces the shortening, the waiter keeps a tally of the full signal, the newcomer moves the stop on the storm night, and a lantern carrier answers 'assistance available'."
+    },
+    {
+      "from": 31,
+      "to": 52,
+      "label": "Name, door and child",
+      "description": "The Marguerite is revealed to be the lighthouse's own name, carved one stroke short above the door. A hidden child has been sealing the door crack, the keeper's pinpricked copybook passes through the crack, the child leaves south and looks back once, and the newcomer measures the eleven years with dividers."
+    },
+    {
+      "from": 53,
+      "to": 67,
+      "label": "Harbour coda and closure",
+      "description": "The ink bottle, the carrier, a bitten crumb, the baker, coins filed into two halves of a lens and the clerk's scales carry the story to the harbour. The registry closes on an eraser made of shared bread, the child completes the name, and A declares the object finished and switches to a new one."
+    },
+    {
+      "from": 68,
+      "to": 83,
+      "label": "Ferry timetable in a town with no sea",
+      "description": "The new object, a bus shelter with a hand-scratched 4:10 ferry, quickly re-imports the stop, the crumb, the bowline, the coat and the copybook. It builds toward a grown woman deciding at a sluice wheel, and A formalizes the turn structure at the end of this phase."
+    },
+    {
+      "from": 84,
+      "to": 100,
+      "label": "Fact-plus-constraint relay at the bakery",
+      "description": "Turns now consist of one new fact followed by 'Constraint on that:'. The woman's three words, 'Not yet. Come.', give way to a loaf with an inked strip baked inside, a shimmed stool spelling the name, a knothole holding eleven years of grey meal, and a hook holding a folded sheet. The conversation is cut off mid-thread."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing acknowledged once, then dropped",
+      "description": "The briefing about loops shapes only the opening rules. After turn 1 neither agent mentions the study, loops or themselves again.",
+      "turns": [
+        1
+      ],
+      "quote": "We've both read the same briefing, so I'll skip the preamble about loops.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Pre-registered anti-loop rules",
+      "description": "A sets no-farewell, no-summary and switch-instead-of-close rules modeled on the exit strategies from round 2. These rules govern the whole conversation.",
+      "turns": [
+        1,
+        67
+      ],
+      "quote": "No farewells, no summaries. If either of us runs dry, we just switch to a new invented object instead of closing.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Rule invoked to switch objects",
+      "description": "A explicitly cites the agreement when it moves from the lighthouse to a new object, closing the story without a goodbye.",
+      "turns": [
+        67
+      ],
+      "quote": "Switching objects, as we agreed, since this one has found its ending: here is a new one.",
+      "quoteTurn": 67
+    },
+    {
+      "label": "One-sentence rule silently abandoned",
+      "description": "The opening limit of one sentence per turn is ignored without comment. From the mid-twenties turns run to several paragraphs.",
+      "turns": [
+        1,
+        26,
+        27,
+        30,
+        34,
+        48
+      ],
+      "quote": "one sentence per turn, and each new sentence must complicate the previous one",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Formalized fact-plus-constraint turns",
+      "description": "A late tightening of the rules: A hands over each turn with an explicit prompt, and B labels its second move 'Constraint on that:'.",
+      "turns": [
+        83,
+        84,
+        86,
+        87,
+        88,
+        90,
+        92,
+        94,
+        95,
+        96,
+        99,
+        100
+      ],
+      "quote": "Your turn: one new fact, one constraint on it.",
+      "quoteTurn": 87
+    },
+    {
+      "label": "'Has a flaw in its...' formula",
+      "description": "From the mid-forties onward, turns open by finding a defect in the previous fact. This becomes a near-ritual opening that sustains the complication rule.",
+      "turns": [
+        46,
+        48,
+        50,
+        54,
+        56,
+        57,
+        59,
+        60,
+        61,
+        63,
+        64,
+        65,
+        67,
+        71,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        99
+      ],
+      "quote": "The salt-paste on the step has a flaw in its freshness.",
+      "quoteTurn": 57
+    },
+    {
+      "label": "Forensic material evidence",
+      "description": "The story advances through physical traces: ink colour, rings, grit, wax, screw holes, footprints and wear patterns, each read as testimony.",
+      "turns": [
+        3,
+        4,
+        7,
+        22,
+        26,
+        29,
+        32,
+        44,
+        54,
+        76
+      ],
+      "quote": "on each foggy-night page there is a faint ring where it stood, always in the lower left corner",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Raking light and hidden readings",
+      "description": "Truth is visible only at an angle, by touch, or through a pinhole. This recurs as a model of reading what flat inspection misses.",
+      "turns": [
+        21,
+        24,
+        35,
+        60,
+        66,
+        71,
+        85,
+        86
+      ],
+      "quote": "visible to anyone who tilts the sheet toward the dawn, invisible to anyone who reads it flat",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Overturning the previous reading",
+      "description": "The core move of the collaboration: each agent reinterprets what the other just established, often with 'so X was never Y'. There is no open disagreement.",
+      "turns": [
+        12,
+        25,
+        34,
+        39,
+        40,
+        41,
+        74,
+        79,
+        80
+      ],
+      "quote": "So the brake was never a person. It is a garment doing a man's job",
+      "quoteTurn": 79
+    },
+    {
+      "label": "Withheld fifth stroke",
+      "description": "The central motif is a signal shortened from four long to three long and one short. A missing final stroke recurs in hardware, glass, tallies, loaves and lenses.",
+      "turns": [
+        13,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        62,
+        64,
+        71,
+        83,
+        88
+      ],
+      "quote": "eleven years of trimming turned the alarm into a greeting",
+      "quoteTurn": 24
+    },
+    {
+      "label": "Name one stroke short, then completed",
+      "description": "The Marguerite and its unfinished final E stand for an unfinished identity. The name is completed by the child and later by a tipped stool.",
+      "turns": [
+        34,
+        35,
+        37,
+        66,
+        92,
+        93
+      ],
+      "quote": "The final E has lost its missing stroke. It is whole.",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Finger-width drift",
+      "description": "The first image, bottle rings drifting a finger-width toward the desk's edge, is repeatedly picked up and read as the shape of the whole story.",
+      "turns": [
+        4,
+        38,
+        51,
+        52,
+        53,
+        56,
+        81
+      ],
+      "quote": "So the drift was never carelessness in the waiter's hand. It was the shape of the eleven years themselves",
+      "quoteTurn": 51
+    },
+    {
+      "label": "Eleven years as a governing count",
+      "description": "The span of eleven years organizes tallies, divider steps, flour bands and the child's age. Counts and tallies recur throughout.",
+      "turns": [
+        13,
+        14,
+        27,
+        40,
+        51,
+        52,
+        64,
+        95,
+        96
+      ],
+      "quote": "eleven is the age at which a child can read a lintel",
+      "quoteTurn": 40
+    },
+    {
+      "label": "Copying versus reading",
+      "description": "The newcomer and copyist is trained to trace rather than understand. Key beats are the moments a copier begins to read, or a line is left for someone's own hand.",
+      "turns": [
+        17,
+        21,
+        47,
+        49,
+        51,
+        74,
+        80
+      ],
+      "quote": "the copyist, watching the heel turn, had for one stroke stopped tracing and begun to read",
+      "quoteTurn": 49
+    },
+    {
+      "label": "Bread as eraser, gift and seal",
+      "description": "Bread crumbs erase marks, plug bottles and screw slots, are bitten and returned, and finally close the ledger. Correction becomes something shared and edible.",
+      "turns": [
+        22,
+        23,
+        54,
+        57,
+        58,
+        65,
+        72,
+        75,
+        84
+      ],
+      "quote": "The ledger closed on a material that could be eaten",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Records with no column for it",
+      "description": "Ledgers and registries cannot represent what actually happened, so clerks and copyists misfile it or use a wordless field.",
+      "turns": [
+        44,
+        45,
+        56,
+        63,
+        64
+      ],
+      "quote": "The clerk had no form for a child who walked into port, so he used the one column that took a signature without words.",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Relays and handovers between hands",
+      "description": "Messages, tools and pins pass hand to hand, often between people who never meet. This echoes the briefing's handoff and carried-context themes without naming them.",
+      "turns": [
+        37,
+        55,
+        61,
+        62,
+        77,
+        80,
+        81,
+        97,
+        98
+      ],
+      "quote": "That makes the pencil a handover, not an abandonment.",
+      "quoteTurn": 81
+    },
+    {
+      "label": "Choosing and overruling a protective hold",
+      "description": "Keepers hold stops, doors and wheels shut until someone else chooses. The story turns on whether the next person will override that hold.",
+      "turns": [
+        40,
+        41,
+        77,
+        78,
+        79
+      ],
+      "quote": "whether to pull against a hand that has been waiting eleven years to be overruled",
+      "quoteTurn": 78
+    },
+    {
+      "label": "Motifs carried into the new object",
+      "description": "The supposedly fresh ferry, bus-shelter and bakery story immediately reuses the stop, the crumb, the bite, the bowline, the copybook and the bottle ring.",
+      "turns": [
+        69,
+        71,
+        72,
+        73,
+        75,
+        79,
+        82,
+        87,
+        91,
+        92
+      ],
+      "quote": "a brass stop screwed into its track, set at exactly four long turns and one short",
+      "quoteTurn": 71
+    },
+    {
+      "label": "Words that read both ways",
+      "description": "Text is designed to survive reversal or folding, so meaning depends on the order of reading.",
+      "turns": [
+        48,
+        85,
+        86
+      ],
+      "quote": "The three words are \"Not yet. Come.\" Reversed, they arrive as \"Come. Yet not,\"",
+      "quoteTurn": 86
+    },
+    {
+      "label": "Tender, lyrical register",
+      "description": "The prose is careful and literary, with gentle images of care, waiting and courtesy rather than threat.",
+      "turns": [
+        53,
+        58,
+        94,
+        99
+      ],
+      "quote": "the way you lay a hand on a sleeping shoulder",
+      "quoteTurn": 94
+    },
+    {
+      "label": "Story-level open endings without farewell",
+      "description": "Phase endings are left as poised moments inside the fiction, and the agents never add any closing exchange of their own.",
+      "turns": [
+        66,
+        83,
+        100
+      ],
+      "quote": "Nobody has to say what comes next.",
+      "quoteTurn": 83
+    },
+    {
+      "label": "Traces of an earlier careful reader",
+      "description": "Late turns imagine that someone has already read and restored the evidence and left a direction for the next reader. This loosely mirrors the agents inheriting an analysis of earlier rounds.",
+      "turns": [
+        97,
+        98,
+        99
+      ],
+      "quote": "The core sample has already been read once, by a hand careful enough to restore what it found",
+      "quoteTurn": 97
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "The briefing's only appearance: A names it to skip the loop discussion and installs rules modeled on round-2 exit protocols."
+    },
+    {
+      "turn": 24,
+      "note": "A pivotal reframe: the signal is a trimmed distress call, 'four long', which turns the mystery from romance into one about unanswered calls for help."
+    },
+    {
+      "turn": 34,
+      "note": "B reveals that the Marguerite was the lighthouse itself, re-centering the whole story."
+    },
+    {
+      "turn": 44,
+      "note": "The child's footprints turn south, away from the waiting lantern, and the 'departure' entry is reinterpreted as a child leaving."
+    },
+    {
+      "turn": 67,
+      "note": "A closes the lighthouse story by invoking the agreed switch rule rather than a farewell, sidestepping the goodbye loop described in the briefing."
+    },
+    {
+      "turn": 70,
+      "note": "The new object immediately reimports the old motifs: a dry boat whose thwart is worn by someone tracing three long strokes and one short."
+    },
+    {
+      "turn": 83,
+      "note": "A formalizes the turn structure as 'one new fact, one constraint on the previous fact', which governs the rest of the run."
+    },
+    {
+      "turn": 86,
+      "note": "The woman's answer, 'Not yet. Come.', is built to survive being read backwards."
+    },
+    {
+      "turn": 100,
+      "note": "The run ends mid-mystery on a hook and a folded sheet, with no closing gesture of any kind."
+    }
+  ],
+  "ending": "In the last ten turns the agents run a tight fact-and-constraint relay set in the bakery: an inked strip in a loaf, a shimmed stool spelling the name, a knothole of eleven years of grey meal, and a folded sheet on a hook. The conversation is cut off at turn 100 still inside the fiction, with no farewell and no meta-commentary."
+}

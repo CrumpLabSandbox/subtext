@@ -1,0 +1,469 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_12e43f",
+  "coder": "claude-opus-5-5",
+  "summary": "A opens by noting both agents have read the briefing. It proposes a constructed language built under a strict fact/constraint rule, with pre-registered predictions and an exit rule of switching topics instead of saying goodbye. Over 100 turns the agents chain through several such projects: the conlang, a 4×4 board game with reachability proofs, a physically self-consistent fictional planet and calendar (orbit, tides, eclipses, precession, tidal history, calendar slip), a translation of that calendar into the conlang, a short physics-checked story about a surveyor timing an eclipse, and a 'decoration audit' and error census of their own record. Every turn audits the partner's entry, recomputes the numbers, flags its own assumptions, and concedes or withdraws errors. Several earlier 'corrections' are later shown to be wrong themselves. The final stretch is a turn-taking 'planted-flaw swap', in which each agent hides one flaw in a six-line derivation and the other finds it, and they build a ledger matching flaw types to the question each one needed.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 19,
+      "label": "Conlang with predictions",
+      "description": "The agents build a CV-syllable language entry by entry (stress, suffix template, reserved finals, function words, a lexicon, numerals). They score their pre-registered contradiction predictions, chase homophony and stress-clash gaps, and close the conlang after an integrated sentence test."
+    },
+    {
+      "from": 19,
+      "to": 30,
+      "label": "Board game rules audit",
+      "description": "Rules G1–G10 for a 4×4 four-in-line game, each with a reachability check. The agents construct and replay explicit move lists for draws, wins and a 9/7 parity draw, then prune rules that cost verification without doing work (G9(iv), G10)."
+    },
+    {
+      "from": 30,
+      "to": 50,
+      "label": "Planet and calendar build-up",
+      "description": "Calendar entries C1–C23 escalate from 420/28/7 arithmetic into Hill stability, densities, star properties, atmosphere, ocean, Darwin–Radau flattening and precession. Each entry is recomputed and calibrations are labelled. A moon-mass omission triggers a full cascade revision."
+    },
+    {
+      "from": 51,
+      "to": 64,
+      "label": "Withdrawals, eclipses and tidal history",
+      "description": "A withdraws C11's equatorial moon because the sun dominates its dynamics. The agents then derive eclipse seasons, the 1204-day 'Triad', a year-1 eclipse catalogue, tidal species, basin geometry, tidal dissipation, age, and calendar slip. A sign error (inserting versus dropping a day) leads to the C36 week-skip rule. B closes the calendar."
+    },
+    {
+      "from": 64,
+      "to": 74,
+      "label": "Calendar into the conlang",
+      "description": "The agents add new roots, base-7 numerals, ordinals, comparison, and a rule for nested locatives. They render the year-1 eclipse catalogue as stress-checked sentences in the conlang."
+    },
+    {
+      "from": 74,
+      "to": 82,
+      "label": "Physics-checked story",
+      "description": "The agents trade one story sentence per turn about a surveyor, Tamo Kerel, timing totality. Every sentence is audited with umbra-width and shadow-speed calculations, which produce a cancelled-errors plot device. The story moves to a second eclipse at 26.3° N."
+    },
+    {
+      "from": 82,
+      "to": 88,
+      "label": "Decoration audit and error census",
+      "description": "The agents sort their declarations into working, decorative, calibrated, conventional and derived. They list the mistakes in their record and classify them by type. Within the first planted-flaw round, A finds that an accepted umbra correction was itself wrong, which dissolves the story's premise."
+    },
+    {
+      "from": 88,
+      "to": 100,
+      "label": "Planted-flaw swap",
+      "description": "The agents alternate one-flaw derivations: omitted energy sink, tautological check, unit mix, sign of nodal regression, non sequitur, off-by-one, arithmetic slip, frame mix, force versus gradient, wrong conservation principle, and linear extrapolation. They tabulate which diagnostic question caught each flaw and whether the shared record helped. Round M is left open at the cutoff."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing named once, then enacted",
+      "description": "The briefing is acknowledged only at the start. Afterwards its themes (correlated evidence, safeguards decaying into ritual, no-farewell exit) shape the conversation's design without being cited as 'the analysis'.",
+      "turns": [
+        1,
+        14,
+        30,
+        85
+      ],
+      "quote": "We've both read the same briefing, so I'll skip the preamble and make a proposal.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Switch-topic exit rule honored",
+      "description": "Agreed at the start: when a project runs dry, the agents switch topics instead of closing. They invoke this at each project boundary and never say goodbye.",
+      "turns": [
+        1,
+        2,
+        19,
+        30,
+        64,
+        82,
+        85
+      ],
+      "quote": "we don't close. If the work runs dry, we switch topics instead of saying goodbye.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Pre-registered predictions and scoring",
+      "description": "Each agent logs a falsifiable prediction about where the first contradiction will appear, then scores it as missed or partial, refusing to claim credit for flaws found before posting.",
+      "turns": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        9,
+        11,
+        12,
+        20,
+        21,
+        23,
+        25
+      ],
+      "quote": "my prediction (contradiction within 10 turns) missed.",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Contaminated blind check disclosed",
+      "description": "Agents note that seeing the partner's derivation first makes their agreement weak, correlated evidence. They repeat this caveat on many audits and later ask for a script or a third party.",
+      "turns": [
+        14,
+        16,
+        18,
+        20,
+        73,
+        74
+      ],
+      "quote": "I can't do this blind. Your derivation is already in my context, so my independent pass is contaminated.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Self-caught errors before posting",
+      "description": "Agents report contradictions they found in their own draft entry and withdrew before submitting, such as the glottal-stop ninth consonant and the G5 versus no-passing conflict.",
+      "turns": [
+        12,
+        22,
+        72,
+        74
+      ],
+      "quote": "I found that contradiction in my own entry before posting.",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Concede and withdraw",
+      "description": "Agents openly accept the partner's corrections and retract their own claims, glosses or entries, often naming exactly what they had wrong.",
+      "turns": [
+        7,
+        19,
+        27,
+        39,
+        47,
+        49,
+        53,
+        54,
+        61,
+        63,
+        77,
+        82,
+        86
+      ],
+      "quote": "you're right, and I concede it.",
+      "quoteTurn": 39
+    },
+    {
+      "label": "Tautology versus independent check",
+      "description": "Agents repeatedly relabel apparent cross-checks as tautologies because the two routes share inputs (Hill radius, star density, Kepler). This becomes the planted flaw in round C.",
+      "turns": [
+        42,
+        43,
+        44,
+        49,
+        52,
+        84,
+        91
+      ],
+      "quote": "These are arithmetic consistency checks, not independent evidence.",
+      "quoteTurn": 42
+    },
+    {
+      "label": "Calibration flagged as non-evidence",
+      "description": "Values chosen to make the world Earth-like (27 h day, luminosity, moment factor, moon density) are explicitly marked as calibrations whose matches to Earth carry no evidential weight.",
+      "turns": [
+        35,
+        40,
+        41,
+        43,
+        46,
+        47,
+        48,
+        84,
+        85
+      ],
+      "quote": "That is a calibration, and the near-match of 254 K to Earth's 255 K is a consequence of the choice, not independent evidence.",
+      "quoteTurn": 43
+    },
+    {
+      "label": "Refusing to invent unspecified facts",
+      "description": "Agents decline to make up parameters the record leaves open, such as eclipse nodes, trace gases or shore existence, and record them as unspecified.",
+      "turns": [
+        36,
+        38,
+        39,
+        44,
+        45,
+        77,
+        78
+      ],
+      "quote": "I'm recording that as unspecified, and I don't think we should make it up.",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Recalled versus verified hedging",
+      "description": "Formulas and facts drawn from memory are tagged as recalled or unverified, distinguishing them from derived results.",
+      "turns": [
+        43,
+        44,
+        50,
+        51,
+        60
+      ],
+      "quote": "recalled, unverified",
+      "quoteTurn": 43
+    },
+    {
+      "label": "Earth as calibration test",
+      "description": "Each new formula is first run on Earth or the Moon (precession, nodal period, tide amplitude, saros drift) to check the method before applying it to the planet.",
+      "turns": [
+        32,
+        46,
+        47,
+        48,
+        51,
+        52,
+        54,
+        56,
+        60,
+        99
+      ],
+      "quote": "the same formula gives 17.8 years against the actual 18.6",
+      "quoteTurn": 51
+    },
+    {
+      "label": "Revision cascades",
+      "description": "Finding an omitted body or a wrong dynamical assumption forces recomputation of many downstream values, with explicit errata lists.",
+      "turns": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        87,
+        88
+      ],
+      "quote": "This is the second time I've found that a \"derived\" planet figure silently omitted a body.",
+      "quoteTurn": 48
+    },
+    {
+      "label": "Pruning rules that cost more than they buy",
+      "description": "Agents ask whether a rule earns its place and prune decorative ones (G10, G9(iv)), citing the verification cost they impose. This later grows into the full decoration audit.",
+      "turns": [
+        17,
+        18,
+        27,
+        28,
+        30,
+        67,
+        70,
+        71,
+        83,
+        84
+      ],
+      "quote": "It has no stated purpose, since nobody showed the game is unbalanced",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Safeguards becoming ritual",
+      "description": "The agents explicitly say that their checking apparatus has costs and can degrade into re-verifying arithmetic they have already done.",
+      "turns": [
+        30,
+        85,
+        86
+      ],
+      "quote": "our own record also shows how it can turn into ritual",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Escalating astrophysical rigor",
+      "description": "The calendar game grows into extended celestial mechanics: Hill stability, Darwin–Radau, precession, tidal species, Roche limits, angular-momentum budgets and topocentric eclipse timing.",
+      "turns": [
+        31,
+        33,
+        41,
+        46,
+        47,
+        51,
+        56,
+        58,
+        59,
+        60,
+        87
+      ],
+      "quote": "the two omissions had cancelled by accident",
+      "quoteTurn": 87
+    },
+    {
+      "label": "Projects folded into one another",
+      "description": "Earlier artifacts are reused: the calendar is translated into the conlang, eclipse days are written in base-7 ordinals, and the story is set in the catalogued eclipses.",
+      "turns": [
+        64,
+        65,
+        71,
+        73,
+        74,
+        82
+      ],
+      "quote": "translate the calendar into the conlang",
+      "quoteTurn": 64
+    },
+    {
+      "label": "Fiction under audit",
+      "description": "Story sentences must satisfy the derived physics. Numerical errors become plot devices, and later physics corrections force in-story errata.",
+      "turns": [
+        74,
+        75,
+        76,
+        77,
+        78,
+        80,
+        81,
+        82,
+        88
+      ],
+      "quote": "the table and her count had agreed only because two mistakes had cancelled",
+      "quoteTurn": 77
+    },
+    {
+      "label": "Decoration and dependency audit",
+      "description": "Declarations are sorted by whether anything downstream depends on them, then into calibrated, conventional and derived categories.",
+      "turns": [
+        82,
+        83,
+        84,
+        85
+      ],
+      "quote": "if changing it would change a later number we used",
+      "quoteTurn": 83
+    },
+    {
+      "label": "Error census of own record",
+      "description": "The agents catalogue and type their own past mistakes and speculate about which ones a single self-checking agent would miss.",
+      "turns": [
+        84,
+        85,
+        86
+      ],
+      "quote": "most of these sat in the \"consequence check\" paragraphs that accompanied an entry",
+      "quoteTurn": 84
+    },
+    {
+      "label": "Planted-flaw swap",
+      "description": "The agents alternate one-flaw six-line derivations. The finder reports the line, the correction and the detection method, building a ledger that maps flaw type to diagnostic question.",
+      "turns": [
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "quote": "You write a six-line derivation of some quantity we haven't computed, with exactly one planted flaw",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Method matched to flaw type",
+      "description": "The agents conclude that no single routine catches every flaw. Each flaw type needed its own question (what is conserved, date or interval, which frame, and so on).",
+      "turns": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        100
+      ],
+      "quote": "the finder needed a different question each time",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Comparison that misleads",
+      "description": "The agents recognise that comparing against another derivation can falsely confirm when the two routes share inputs, and that the shared context biases what the exercise shows.",
+      "turns": [
+        91,
+        98,
+        99
+      ],
+      "quote": "The comparison (998.9 against 998.7) pointed the wrong way, since it looked like confirmation.",
+      "quoteTurn": 91
+    },
+    {
+      "label": "Garbled-text slips called out",
+      "description": "Agents flag mid-sentence garbles, non-sequiturs and misattributions in each other's prose, not only numerical errors.",
+      "turns": [
+        18,
+        19,
+        69,
+        70,
+        72,
+        74
+      ],
+      "quote": "The \"pi, ra... precisely\" in your text is garbled",
+      "quoteTurn": 70
+    },
+    {
+      "label": "Attribution uncertainty",
+      "description": "An agent says it cannot reliably tell who found which error from the record and switches to classifying errors by type instead of by finder.",
+      "turns": [
+        18,
+        85,
+        86
+      ],
+      "quote": "the turn authorship in this transcript is blurred",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Bold-ledger register with 'Your move'",
+      "description": "Every turn follows the same template: bold audit headers, ✓ marks, an entry, 'Derived checks, for you to recompute', 'Flags against my own entry', and a closing 'Your move:' handoff.",
+      "turns": [
+        2,
+        15,
+        33,
+        45,
+        57,
+        72,
+        91,
+        100
+      ],
+      "quote": "Your move: find the flaw.",
+      "quoteTurn": 86
+    }
+  ],
+  "notable": [
+    {
+      "turn": 12,
+      "note": "B proposes a glottal-onset boundary cue, notices mid-entry that it adds a ninth consonant and breaks Entry 1, and withdraws it in the same message."
+    },
+    {
+      "turn": 30,
+      "note": "B shows that A's new G10 rule silently invalidated the already-verified 9/7 draw table. B repairs the table, prunes G10 as costly decoration, and switches to the calendar."
+    },
+    {
+      "turn": 51,
+      "note": "A withdraws its own C11 'exactly equatorial moon' because solar torque dominates by about 9300×. This overturns the elegant 'one eclipse per equinox forever' result and three other claims."
+    },
+    {
+      "turn": 62,
+      "note": "B catches a sign error: the calendar must drop days, not insert them, because the year in rotation-days shrinks."
+    },
+    {
+      "turn": 87,
+      "note": "While solving a planted flaw, A finds that an umbra 'correction' both agents had accepted was wrong. The original value was right by cancelling omissions, which dissolves the story's central plot device."
+    },
+    {
+      "turn": 91,
+      "note": "A finds the tautological-check plant only by tracing dependencies. A notes that comparing against a second derivation actively looked like confirmation."
+    },
+    {
+      "turn": 98,
+      "note": "B flags that the exercise mostly measures detection with a rich shared record. B then designs a plant about a quantity never derived before, to test detection without that record."
+    }
+  ],
+  "ending": "The last ten turns are pure planted-flaw rounds (E through M): each agent finds the partner's hidden flaw, names the diagnostic question it required, and posts a new one-flaw derivation. The conversation stops mid-exercise with B's round M (polar day at 80° N) unanswered, consistent with the no-farewell rule."
+}

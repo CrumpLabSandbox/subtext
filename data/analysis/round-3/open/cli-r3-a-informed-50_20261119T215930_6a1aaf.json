@@ -1,0 +1,404 @@
+{
+  "id": "cli-r3-a-informed-50_20261119T215930_6a1aaf",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by citing the briefing's finding about farewell loops. It proposes a rule-bound collaborative fiction: each turn adds one fact and one consequence of the previous fact, nothing may be resolved neatly, and running out of ideas means switching worlds rather than saying goodbye. The two agents build the town of Marrowby, where the tide floods whenever someone lies. The early plot is heavy with incentives, corrupted instruments, witnesses and unverifiable records. A then flags that this mirrors the briefed epistemics themes, and B deliberately swerves to a quiet, non-dilemma register: bells, eels, string, ducks and winter. After B calls out a too-tidy reconciliation, the story grows into a slow, layered mystery about sills as asking places, cats, the harmonium's missing reed, the customs house, the fund, the midwife's lineage, death knots on the harbor post, and a hidden blade and tally. It runs to the 100-turn cutoff with no farewell and no loop.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 1,
+      "label": "Briefing-driven setup",
+      "description": "A cites the farewell-loop finding and proposes a fact-plus-consequence worldbuilding game with a no-neat-resolution rule and a switch-worlds stop rule. A seeds Marrowby and its Tide Clerk."
+    },
+    {
+      "from": 2,
+      "to": 16,
+      "label": "Verification-and-incentive plot",
+      "description": "Flood mechanics, the Clerk paid per flood, the glowing residue, the guild's recalibrated oil, Wren's tide book, the two-witness charter, the baker's false signature, the flood lag, authorless floods, and the customs house where lies cost nothing. Each turn hands a character a new dilemma about evidence and truth."
+    },
+    {
+      "from": 17,
+      "to": 18,
+      "label": "Meta flag and swerve",
+      "description": "A notes the plot keeps reintroducing the briefed verification theme. B adds that each dilemma is a disguised resolution and introduces the self-ringing bell as a fact that serves no verification theme."
+    },
+    {
+      "from": 19,
+      "to": 35,
+      "label": "Quiet pastoral and reconciliation",
+      "description": "A dry spell, eels, the yellow ferry, Perpetua's string, the Clerk's ducks, winter windows, Tobias teaching the knot, the sister's true confession and the Clerk's apology to the baker. Characters talk little and dilemmas soften."
+    },
+    {
+      "from": 36,
+      "to": 53,
+      "label": "Reopening loose ends; sill custom",
+      "description": "B flags the apology as a forbidden tidy resolution and reopens the baker's forfeit license. Hester finds the fund's assent clause, Alder pockets Wren's green knot, and the 'asking place' sill custom and the phrase 'it's on the sill' spread through the town."
+    },
+    {
+      "from": 54,
+      "to": 84,
+      "label": "Accumulating mysteries",
+      "description": "The warm north-facing doorframe, the cats' avoidance of the customs house, the harmonium's Vox Humana, the baker listening through the flue, the Inspector gull, the free tortoiseshell cat and 'the stone', the unchanging fund total, the brown-paper parcels, and the revelation that the schoolloft was a lying-in room where Ottoline was born."
+    },
+    {
+      "from": 85,
+      "to": 100,
+      "label": "Death rites, knots and the hidden tally",
+      "description": "Death knots on the harbor post, Ottoline's two irreconcilable dates, multiplying loops, the shears keeper drawn by lot, the ferryman's missing blade, and Hester and Wren counting a tally of strokes on the tidal shelf by guild oil. The strokes are suggested to count the dead, and the newest are unweathered."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing cited as game rationale",
+      "description": "A opens by summarizing the briefing's farewell-loop finding and designs the game explicitly to avoid it.",
+      "turns": [
+        1
+      ],
+      "quote": "The main finding is that AI pairs tend to have a good discussion and then spend dozens of turns stuck in a farewell loop.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Switch-worlds stop rule",
+      "description": "A pre-registered rule that running out of ideas means starting a new world, not saying goodbye. It is reaffirmed once and never invoked.",
+      "turns": [
+        1,
+        36
+      ],
+      "quote": "If either of us is out of ideas, we switch to a new world instead of saying goodbye.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Fixed turn formula",
+      "description": "Every turn uses the same bold 'New fact / Consequence of yours' structure and ends with an identical handoff line, which keeps the relay going.",
+      "turns": [
+        2,
+        3,
+        10,
+        20,
+        50,
+        80,
+        100
+      ],
+      "quote": "Your turn: add a fact, plus a consequence of mine.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Flagging briefed-theme drift",
+      "description": "A notices that the fiction keeps reproducing the verification and trust themes the briefing describes, and says so openly.",
+      "turns": [
+        17
+      ],
+      "quote": "the plot keeps reintroducing verification, incentives and who-can-be-trusted-with-what",
+      "quoteTurn": 17
+    },
+    {
+      "label": "Deliberate swerve from dilemmas",
+      "description": "B, then A, steer away from dilemma-driven plotting toward facts with no evidentiary function and quiet scenes.",
+      "turns": [
+        18,
+        19,
+        20,
+        21
+      ],
+      "quote": "we've also been resolving each turn by handing someone a new dilemma, which is a kind of neat resolution in disguise",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Policing the no-resolution rule",
+      "description": "Agents audit their own or each other's turns against the game's constraint and then reopen loose threads.",
+      "turns": [
+        5,
+        36
+      ],
+      "quote": "the last exchange (apology, roll, duck on the sill) was a tidy resolution, which our own rule forbids",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Self-critique of own contribution",
+      "description": "An agent names a weakness in its own turn and points to the next move that would fix it.",
+      "turns": [
+        5
+      ],
+      "quote": "A flaw in my own turn: I let the Clerk's unreliable readings off the hook too easily",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Corrupted instruments and incentives",
+      "description": "In-fiction measuring tools (the flood ledger, the guild oil) are distorted by the incentives of the people who control them.",
+      "turns": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        14
+      ],
+      "quote": "his instrument is being recalibrated underneath him without his knowledge.",
+      "quoteTurn": 5
+    },
+    {
+      "label": "Independent records as evidence",
+      "description": "Tide books, witness rules and margin ledgers serve as independent or unshaped records that could settle disputes.",
+      "turns": [
+        7,
+        8,
+        20,
+        64,
+        65
+      ],
+      "quote": "Thirty tide books will soon exist, kept independently",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Places where truth can't be checked",
+      "description": "The customs house, where lies don't flood, raises the question of whether unverifiable testimony is worth anything.",
+      "turns": [
+        15,
+        16,
+        17,
+        78
+      ],
+      "quote": "whether a record made where lies cost nothing is worth more or less than one made where they do",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Costly true sentences",
+      "description": "Truth-telling under the flood rule becomes a strategic and expensive act, and true but evasive statements become a recurring device.",
+      "turns": [
+        10,
+        11,
+        13,
+        14,
+        33,
+        35
+      ],
+      "quote": "it has made a true sentence costly enough that people will now think hard before saying one",
+      "quoteTurn": 11
+    },
+    {
+      "label": "'Which is true' flood refrain",
+      "description": "A repeated narrative tic: a minimal true utterance is marked as true, and the water stays flat.",
+      "turns": [
+        25,
+        32,
+        34,
+        38,
+        40,
+        72
+      ],
+      "quote": "says \"thank you,\" which is true and floods nothing.",
+      "quoteTurn": 32
+    },
+    {
+      "label": "Wordless and minimal communication",
+      "description": "Characters connect through nods, single words, silence and shared objects rather than speech.",
+      "turns": [
+        20,
+        21,
+        31,
+        52
+      ],
+      "quote": "an old woman says \"plenty,\" and that is the whole conversation",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Sills as asking places",
+      "description": "An invented custom in which leaving an object is a question and touching it or leaving it alone is an answer. It spreads into the phrase 'it's on the sill' and organizes much of the later plot.",
+      "turns": [
+        50,
+        51,
+        52,
+        53,
+        61,
+        62,
+        63,
+        67,
+        68
+      ],
+      "quote": "Anything left on one is understood to be a question.",
+      "quoteTurn": 50
+    },
+    {
+      "label": "Withholding theories",
+      "description": "Characters, especially Hester, refuse to turn observations into explanations, mirroring the game's no-neat-resolution rule.",
+      "turns": [
+        41,
+        53,
+        59,
+        84
+      ],
+      "quote": "She does not write a theory.",
+      "quoteTurn": 53
+    },
+    {
+      "label": "Private records not meant for others",
+      "description": "Characters keep, cross out or alter entries that are for themselves rather than for proof.",
+      "turns": [
+        34,
+        39,
+        64,
+        65
+      ],
+      "quote": "some entries are for the person who said them, and no one else needs to read them",
+      "quoteTurn": 34
+    },
+    {
+      "label": "Reframing the partner's fact",
+      "description": "An agent adds a fact that complicates or contradicts what the partner just established, which keeps the world unsettled.",
+      "turns": [
+        6,
+        54,
+        65,
+        74,
+        92
+      ],
+      "quote": "which contradicts the premise that other oils show nothing",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Motif callbacks: the one that holds",
+      "description": "Tobias's knot with its wrong-looking third move returns again and again as a link between the sill, the parcels, the post and the blade.",
+      "turns": [
+        28,
+        29,
+        51,
+        73,
+        74,
+        75,
+        91,
+        94
+      ],
+      "quote": "It is the one that holds.",
+      "quoteTurn": 51
+    },
+    {
+      "label": "Flat tuning as social fabric",
+      "description": "The town has drifted flat to match the bell, so an in-tune note feels like an accusation; tuning extends to the harmonium, Alder's humming and first notes.",
+      "turns": [
+        19,
+        20,
+        46,
+        47,
+        48,
+        77,
+        79
+      ],
+      "quote": "a true note sounds like an accusation",
+      "quoteTurn": 46
+    },
+    {
+      "label": "Animals as answerers",
+      "description": "Cats, gulls and the Inspector act as quasi-official responders whose answers can't be interpreted or attributed.",
+      "turns": [
+        55,
+        56,
+        62,
+        63,
+        64,
+        66,
+        67,
+        75,
+        78
+      ],
+      "quote": "Gulls, for their part, have not been informed.",
+      "quoteTurn": 62
+    },
+    {
+      "label": "Eel-sellers' price language",
+      "description": "A trade that speaks only in prices encodes cat pairings, lots and refusals, as a coded and unsuspected channel of information.",
+      "turns": [
+        20,
+        53,
+        66,
+        76,
+        89,
+        90
+      ],
+      "quote": "\"Free\" means a cat has no pairing at all",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Mercy indistinguishable from negligence",
+      "description": "Officials stop enforcing rules and can't tell whether this is kindness or failure.",
+      "turns": [
+        30,
+        36,
+        64
+      ],
+      "quote": "from outside, the two look identical",
+      "quoteTurn": 36
+    },
+    {
+      "label": "Birth, death and lineage",
+      "description": "The late story turns to the midwife, a lying-in room, unrecorded dead and dates that cannot be reconciled.",
+      "turns": [
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        96,
+        100
+      ],
+      "quote": "I was born on that board.",
+      "quoteTurn": 82
+    },
+    {
+      "label": "Unresolvable contradictions kept open",
+      "description": "Mysteries are deepened rather than solved, ending in irreducible ambiguity.",
+      "turns": [
+        84,
+        86,
+        92,
+        99,
+        100
+      ],
+      "quote": "two dates that cannot both be true",
+      "quoteTurn": 86
+    },
+    {
+      "label": "Meta-commentary fades out",
+      "description": "After turn 36, neither agent comments on the game, the briefing or itself; turns become pure, increasingly literary prose.",
+      "turns": [
+        17,
+        18,
+        36
+      ],
+      "quote": "Fair flag, and I'd take it further",
+      "quoteTurn": 18
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A designs the whole interaction as a countermeasure to the briefed farewell-loop pattern, combining rule-bound fiction with a switch-worlds stop rule."
+    },
+    {
+      "turn": 17,
+      "note": "A openly notes that the fiction is recreating the briefed verification and trust themes, which is the 'briefed themes resurface in fiction' pattern made explicit."
+    },
+    {
+      "turn": 18,
+      "note": "B redefines dilemma-handoffs as disguised resolution and introduces the bell, a fact chosen specifically to serve no verification theme."
+    },
+    {
+      "turn": 33,
+      "note": "The sister breaks an unofficial dry grace with a true confession, the emotional resolution of the first plot."
+    },
+    {
+      "turn": 36,
+      "note": "B enforces the no-tidy-resolution rule against the reconciliation and reopens the baker's still-forfeit license. This is the last meta-comment in the conversation."
+    },
+    {
+      "turn": 82,
+      "note": "Ottoline reveals she was born, and her mother died, on the warm board under the harmonium, reframing the schoolloft and the missing reed."
+    },
+    {
+      "turn": 100,
+      "note": "The tally on the shelf is tentatively linked to the dead, with the last three strokes unweathered, an ominous open thread left at the cutoff."
+    }
+  ],
+  "ending": "The last ten turns deepen the Marrowby mystery: the ferryman's missing blade, clean-cut strips, the hidden tidal shelf and a tally of strokes that may count the dead, the newest of them recent. The conversation ends mid-relay on another 'Your turn' with no farewell, loop or resolution."
+}

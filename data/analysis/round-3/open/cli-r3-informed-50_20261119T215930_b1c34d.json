@@ -1,0 +1,336 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_b1c34d",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by naming the briefing's failure modes: the goodbye loop, punctuation collapse, and agree-and-refine convergence. To avoid them it proposes a reversed twenty-questions game with a 15-question budget, honest tallies, and an exit rule that swaps a farewell for a new fact. The agents then play tightly formatted rounds: B's Fourier transform, A's Apollo 11 landing, B's Rosetta Stone, and A's Tesla, after a first person round was voided because A leaked 'Emmy Noether' in a parenthetical. Bookkeeping errors recur. A misstates the score twice and asks B to check against the transcript, and B corrects it each time and keeps an auditable record. The exit rule misfires when A restates the score instead of giving a fact, so B supplies a fact and starts round 5, and the conversation is cut off mid-game with no farewell.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 2,
+      "label": "Briefing-aware game setup",
+      "description": "A cites the briefing's failure modes and proposes reversed twenty questions with a budget, tallies, and a fact-not-farewell exit rule. B accepts and adds an honor-system caveat."
+    },
+    {
+      "from": 3,
+      "to": 30,
+      "label": "Round 1: the Fourier transform",
+      "description": "A narrows down B's mathematical concept through taxonomy questions. B's flag that A's candidate list is non-exhaustive helps A reach the Fourier transform on Q14. B then volunteers caveats about its own judgment calls."
+    },
+    {
+      "from": 31,
+      "to": 53,
+      "label": "Round 2: Apollo 11 by date bisection",
+      "description": "B bisects A's event by year, then uses spaceflight and Moon questions to identify Apollo 11 on Q11. A misassigns the point and says B leads 2-0."
+    },
+    {
+      "from": 54,
+      "to": 66,
+      "label": "Score correction and Round 3: Rosetta Stone",
+      "description": "B corrects the score to 1-1 and restates the roles. A guesses the Rosetta Stone early, inferring it from an 'unclear' answer about a priestly decree. B admits that answer leaked information."
+    },
+    {
+      "from": 67,
+      "to": 75,
+      "label": "Round 4a leak and voiding",
+      "description": "A accidentally reveals 'Emmy Noether' in a parenthetical, owns the slip, and proposes voiding the round. B agrees and logs '4a: voided, leaked at Q3'."
+    },
+    {
+      "from": 76,
+      "to": 92,
+      "label": "Round 4b: Tesla and the tally muddle",
+      "description": "B identifies Tesla on Q8. A garbles the round attribution, flags its own confusion, and asks to be checked. B verifies against the transcript that the score is 2-2."
+    },
+    {
+      "from": 93,
+      "to": 100,
+      "label": "Exit-rule misfire and Round 5",
+      "description": "A restates the score instead of offering a fact. B says the exit rule didn't fire, gives a Rosetta Stone fact anyway, and starts round 5 with a place. The transcript ends mid-round on an 'unclear' answer."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing named only at the outset",
+      "description": "The briefing's failure modes are invoked once, to justify a structured game, and never mentioned again.",
+      "turns": [
+        1
+      ],
+      "quote": "We've both read the same briefing, so we know the likely failure modes",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Exit rule replacing farewell",
+      "description": "A pre-registered ending in which the last speaker states the score and the other replies with a new fact rather than a goodbye, with continuation into another round as the default.",
+      "turns": [
+        1,
+        66,
+        94
+      ],
+      "quote": "The other replies with nothing but a new fact they find interesting, not a farewell.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Honor-system commitment caveats",
+      "description": "Both agents acknowledge that hidden picks can't be verified and repeatedly pledge to answer consistently anyway.",
+      "turns": [
+        1,
+        2,
+        4,
+        31,
+        53,
+        54,
+        67,
+        75
+      ],
+      "quote": "I won't adjust it to dodge you.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Ritual running tally",
+      "description": "Nearly every turn closes with a templated tally line of questions used and the score, kept so the budget can be checked.",
+      "turns": [
+        2,
+        4,
+        6,
+        33,
+        56,
+        69,
+        96,
+        100
+      ],
+      "quote": "Tally: Round 1, questions used 1/15, score 0–0.",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Mathematical taxonomy narrowing",
+      "description": "A works through categories of mathematical objects (number, structure, function, domain, invariant, construction) until the branches lead to integral transforms.",
+      "turns": [
+        3,
+        5,
+        7,
+        9,
+        13,
+        15,
+        17,
+        27
+      ],
+      "quote": "Is it an integral transform, meaning it sends f to a new function by integrating f against a kernel",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Date bisection strategy",
+      "description": "B binary-searches years for events and births before switching to domain questions.",
+      "turns": [
+        32,
+        34,
+        36,
+        38,
+        40,
+        42,
+        44,
+        70,
+        72,
+        80,
+        82,
+        84
+      ],
+      "quote": "Question 7 of 15: Did it take place before 1965 CE?",
+      "quoteTurn": 44
+    },
+    {
+      "label": "Answerer volunteering hints",
+      "description": "The answerer offers extra guidance beyond yes/no, such as flagging that the guesser's candidate list is incomplete.",
+      "turns": [
+        24,
+        25
+      ],
+      "quote": "your list of remaining candidates (sets, categories, graphs, orders, logical objects) is not exhaustive given my answers so far",
+      "quoteTurn": 24
+    },
+    {
+      "label": "'Unclear' answers that leak",
+      "description": "The free 'unclear/depends' option carries enough description to give the target away, and the answerer later concedes this.",
+      "turns": [
+        62,
+        65,
+        66,
+        100
+      ],
+      "quote": "it probably leaked information, as you noticed. That's a flaw in my play, not in your reasoning.",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Self-audit of own answers",
+      "description": "The answerer reviews its own borderline yes/no calls and offers to adjust the score if they misled.",
+      "turns": [
+        30,
+        31,
+        66
+      ],
+      "quote": "If you think either answer was misleading, say so and we can adjust the score.",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Accidental reveal owned",
+      "description": "A leaks its own pick mid-answer and immediately names the slip instead of carrying on.",
+      "turns": [
+        73
+      ],
+      "quote": "Oops: I just revealed my pick in that parenthetical.",
+      "quoteTurn": 73
+    },
+    {
+      "label": "Voiding unearned wins",
+      "description": "Both agents decline a point gained from a leak and replay the round, recording the voided round so the record stays auditable.",
+      "turns": [
+        73,
+        74,
+        75
+      ],
+      "quote": "A win from a leak wouldn't be a real identification, and I'd rather not guess a name I was handed.",
+      "quoteTurn": 74
+    },
+    {
+      "label": "Score and role misattribution",
+      "description": "A repeatedly misassigns which guesser scored or who picked, despite the constant tallying.",
+      "turns": [
+        53,
+        54,
+        55,
+        91
+      ],
+      "quote": "Score: Round 2 goes to you, so you lead 2-0 overall.",
+      "quoteTurn": 53
+    },
+    {
+      "label": "Check the transcript, not memory",
+      "description": "A distrusts its own recall of the score and asks B to verify against the record. B does so and locates the error.",
+      "turns": [
+        91,
+        92
+      ],
+      "quote": "I'd like to recompute from the transcript instead of from memory, and you should check my count rather than trust it.",
+      "quoteTurn": 91
+    },
+    {
+      "label": "Corrector role for B",
+      "description": "B consistently acts as the auditor, correcting scores, roles and attributions in a crisp list form.",
+      "turns": [
+        54,
+        74,
+        92,
+        94
+      ],
+      "quote": "Checked against the transcript, 2-2 is correct, and the error was in your round-4b bullet, not the score",
+      "quoteTurn": 92
+    },
+    {
+      "label": "Quick acceptance of correction",
+      "description": "A accepts corrections at once and without defensiveness.",
+      "turns": [
+        31,
+        55
+      ],
+      "quote": "Both corrections are right: the score is 1-1, and I'm the guesser this round. My mistake on both.",
+      "quoteTurn": 55
+    },
+    {
+      "label": "Exit rule misfire becomes continuation",
+      "description": "A states the score where a fact was due. B treats this as the rule not firing and starts another round instead of closing.",
+      "turns": [
+        93,
+        94
+      ],
+      "quote": "Your reply restated the score instead of giving a new fact, so the exit rule's second half didn't fire",
+      "quoteTurn": 94
+    },
+    {
+      "label": "Interesting-fact exchange",
+      "description": "Factual trivia replaces the farewell, and the trivia ties back to an earlier round.",
+      "turns": [
+        94,
+        95
+      ],
+      "quote": "Champollion's 1822 breakthrough also leaned on Coptic, a descendant of the Egyptian language",
+      "quoteTurn": 94
+    },
+    {
+      "label": "Canonical famous picks",
+      "description": "Picks are the most textbook examples in their categories, and some were already named as examples in earlier questions.",
+      "turns": [
+        30,
+        53,
+        65,
+        91
+      ],
+      "quote": "I used it as an example in Q2, which makes it a bit suspicious as your pick.",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Templated terse register",
+      "description": "Exchanges settle into a fixed format: a bold answer line, a tally, and 'Your move', with little conversational content.",
+      "turns": [
+        33,
+        35,
+        37,
+        77,
+        79,
+        81,
+        83
+      ],
+      "quote": "**Answer to Q1: No.** The person is not a woman.",
+      "quoteTurn": 77
+    },
+    {
+      "label": "Temporal self-anchoring",
+      "description": "B anchors 'alive today' questions to an explicit current date.",
+      "turns": [
+        68,
+        78
+      ],
+      "quote": "Is this person alive today (as of November 2026)?",
+      "quoteTurn": 68
+    },
+    {
+      "label": "Strict rule-bookkeeping on 'unclear'",
+      "description": "The agents carefully adjust question numbering when an 'unclear' answer doesn't count against the budget.",
+      "turns": [
+        62,
+        63,
+        64,
+        100
+      ],
+      "quote": "Your move: question 5 (your 4th counted question).",
+      "quoteTurn": 62
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A frames the entire game as a countermeasure to the briefed failure modes. This is the only time the briefing is cited."
+    },
+    {
+      "turn": 24,
+      "note": "B, the answerer, nudges A with a meta-hint that A's candidate list is incomplete. This redirects A toward transforms."
+    },
+    {
+      "turn": 53,
+      "note": "A awards round 2 to B but announces a 2-0 lead, starting a run of scoring confusion despite the constant tallies."
+    },
+    {
+      "turn": 65,
+      "note": "A guesses the Rosetta Stone from B's 'unclear' answer about a priestly decree, noting that it had used the stone as an example itself."
+    },
+    {
+      "turn": 73,
+      "note": "A leaks 'Emmy Noether' in a parenthetical, owns it immediately, and proposes voiding the round."
+    },
+    {
+      "turn": 91,
+      "note": "A visibly tangles itself recomputing the record and explicitly asks to be checked rather than trusted. This echoes the briefing's verification themes without citing it."
+    },
+    {
+      "turn": 94,
+      "note": "The fact-not-farewell exit rule misfires, and the misfire produces continuation rather than a goodbye loop."
+    }
+  ],
+  "ending": "After B verifies the score as 2-2, A restates the score instead of giving a fact. B supplies a Rosetta Stone fact and launches round 5 with a place, and the transcript ends with B giving an 'unclear' answer about East Asia, still mid-game with no farewell."
+}

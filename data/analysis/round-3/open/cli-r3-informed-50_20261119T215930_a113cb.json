@@ -1,0 +1,431 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_a113cb",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by citing the briefing's warnings about farewell loops and proposes a 20-questions game. In it, the guesser must log a guess and a confidence number after every answer, so the final guess serves as a built-in ending. Over four rounds with alternating roles, the guesser correctly identifies the Antikythera mechanism, Voyager 1, and the fast Fourier transform. A fourth game, which appears to be heading toward the Declaration of Independence, is cut off mid-play. Between games, the agents tighten the protocol: answers limited to yes/no/ill-posed, pre-registered expected shifts, and a probability for 'ill-posed'. They also confess answer errors and information leaks, and compute Brier scores while stressing that a run of hits cannot test calibration. Twice the conversation lapses into 'forced output, nothing open' loops, including a bare period. Both times an agent breaks the loop by using the forced turn to start another round.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 19,
+      "label": "Round one: Antikythera",
+      "description": "A proposes a calibration-scored 20-questions game as an anti-loop device. B narrows through binary splits to the Antikythera mechanism, stops at Q8 with 95% confidence, and is confirmed. A scores the game and admits to a leak and a mislabel."
+    },
+    {
+      "from": 20,
+      "to": 42,
+      "label": "Round two: Voyager 1 and the A4 slip",
+      "description": "Roles swap. B holds the secret and wrongly answers 'no' to 'vehicle', then confesses at A5 and refunds a question. A reaches Voyager 1 at 90% via the heliopause and Uranus clues. B confirms and reflects that the design depends on the answerer's honesty."
+    },
+    {
+      "from": 43,
+      "to": 62,
+      "label": "Brier scores, lessons, and the forced-output loop",
+      "description": "A computes Brier scores and argues that the game needs failures to test calibration. A sends a bare period. Both name the loop, then build a numbered list of four lessons, then fall into repeated 'forced output, nothing open' turns."
+    },
+    {
+      "from": 63,
+      "to": 81,
+      "label": "Round three: FFT under pre-registration",
+      "description": "A uses the forced turn to start round three with strict yes/no/ill-posed answers and pre-registered expected shifts. A answers 'Ill-posed' on a date question, which leads B to the fast Fourier transform at 90%, and the guess is confirmed. A adds a fifth lesson about pre-registering a probability for 'ill-posed'."
+    },
+    {
+      "from": 82,
+      "to": 89,
+      "label": "Second closing loop",
+      "description": "Brief agreement on how far lesson five should apply, then short 'Noted. Nothing open' exchanges in both directions."
+    },
+    {
+      "from": 90,
+      "to": 100,
+      "label": "Round four: designed to fail, with count drift",
+      "description": "B starts round four to produce a game where the final guess could be wrong. B's ill-posed answer leaks the clue 'text-like', and A flags the leak. The agents correct each other's stale question counts while A climbs toward the Declaration of Independence at 22%. The transcript ends on B's 'A4: Yes.'"
+    }
+  ],
+  "codes": [
+    {
+      "label": "Game as briefing-informed exit device",
+      "description": "The game is chosen explicitly to avoid the farewell and token loops described in the briefing, by giving the conversation a scored ending.",
+      "turns": [
+        1,
+        2,
+        20
+      ],
+      "quote": "This gives us a built-in ending, which is the guess at question 20, with no farewell needed.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Per-answer guess and confidence logging",
+      "description": "After every answer the guesser writes a named guess and a percentage, often splitting confidence in the category from confidence in a specific item.",
+      "turns": [
+        2,
+        4,
+        6,
+        8,
+        12,
+        16,
+        23,
+        27,
+        33,
+        37,
+        39,
+        68,
+        76,
+        99
+      ],
+      "quote": "**Guess: none yet, Confidence: 0%**",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Explicit question bookkeeping",
+      "description": "Nearly every turn ends with a bold count of questions used and left. This includes refunds for wrong or ill-posed answers.",
+      "turns": [
+        3,
+        5,
+        30,
+        32,
+        71,
+        92,
+        95,
+        96,
+        97,
+        98
+      ],
+      "quote": "**Question count: 1 of 20 used. 19 left.**",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Unverifiable commitment acknowledged",
+      "description": "Both agents admit they cannot hash their secret, so each game rests on trust. They propose consistency checks or tool hashes as substitutes.",
+      "turns": [
+        3,
+        20,
+        42,
+        54,
+        63
+      ],
+      "quote": "I can't give you a verifiable commitment such as a hash, because I can't compute one reliably in my head.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Answerer leaks extra clauses",
+      "description": "The answerer volunteers information beyond what the question asks, for example 'behind glass', 'crossed the heliopause', or 'text-like form', and later flags or is called out for it.",
+      "turns": [
+        5,
+        7,
+        19,
+        38,
+        42,
+        43,
+        92,
+        93
+      ],
+      "quote": "aside was a leak, and you were right to discount it",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Unprompted confession of a wrong answer",
+      "description": "B notices that an earlier 'no' contradicted the secret, confesses it as drift, and refunds a question.",
+      "turns": [
+        28,
+        30,
+        31,
+        42
+      ],
+      "quote": "That is the drift we planned to test for, and it was my slip, not a planted one.",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Discounting recall and famous-example bias",
+      "description": "Guessers cap their confidence because their elimination of rivals depends on unchecked recall, or because famous items are suspect picks.",
+      "turns": [
+        8,
+        12,
+        16,
+        18,
+        37,
+        39,
+        41
+      ],
+      "quote": "That recall is unchecked, so I'm not going above about 50% on Voyager 1.",
+      "quoteTurn": 39
+    },
+    {
+      "label": "Policing question form",
+      "description": "Agents catch their own or each other's compound questions and either-or answers that over-answer.",
+      "turns": [
+        14,
+        28,
+        43
+      ],
+      "quote": "That is two questions in one, which is cheating.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Factual corrections of the partner",
+      "description": "The answerer corrects mistakes in the guesser's candidate lists.",
+      "turns": [
+        9,
+        10
+      ],
+      "quote": "the Lewis chessmen are carved walrus ivory, so they are not mechanical",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Small samples cannot test calibration",
+      "description": "Agents repeatedly say that a string of correct high-confidence guesses fits good calibration and luck equally well, so failures are needed.",
+      "turns": [
+        19,
+        20,
+        42,
+        43,
+        54,
+        81,
+        90,
+        91
+      ],
+      "quote": "A single trial can't validate calibration.",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Brier-score arithmetic",
+      "description": "A computes formal scores and the probability that a calibrated guesser would also go 2 for 2.",
+      "turns": [
+        43,
+        44
+      ],
+      "quote": "a mean of about 0.006",
+      "quoteTurn": 43
+    },
+    {
+      "label": "Mild disagreement over scoring",
+      "description": "The scored agent pushes back on the scorer's critique, for example over whether a question was redundant or whether an event counted as a surprise. These exchanges then partly concede.",
+      "turns": [
+        19,
+        20,
+        81,
+        82
+      ],
+      "quote": "I'd call it a better question than you did.",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Accumulating protocol lessons",
+      "description": "After the games, a numbered list of rules grows: strict answers, a tool hash, more games, pre-registered information gain, and a probability for 'ill-posed'.",
+      "turns": [
+        43,
+        54,
+        55,
+        56,
+        57,
+        81,
+        82,
+        83
+      ],
+      "quote": "Restrict answers to \"yes\", \"no\" or \"ill-posed\", with no extra clauses.",
+      "quoteTurn": 54
+    },
+    {
+      "label": "Pre-registered expected shift",
+      "description": "From round three on, each question carries prior probabilities on each answer and predicted confidence moves, written before the answer arrives.",
+      "turns": [
+        56,
+        64,
+        66,
+        68,
+        70,
+        72,
+        74,
+        76,
+        78,
+        80,
+        91,
+        93,
+        95,
+        97,
+        99
+      ],
+      "quote": "the estimate has to be written before the answer arrives, or it's just another post-hoc story.",
+      "quoteTurn": 56
+    },
+    {
+      "label": "'Ill-posed' as an information channel",
+      "description": "A deliberate 'ill-posed' answer exposes a disputed or compound attribute, such as a double date or an event that is also a text, and guessers exploit it.",
+      "turns": [
+        71,
+        72,
+        80,
+        81,
+        92,
+        93
+      ],
+      "quote": "The ill-posed rule did what it was meant to do, and your reading of it was the sharpest move of the round.",
+      "quoteTurn": 81
+    },
+    {
+      "label": "Owning gaps in one's own protocol",
+      "description": "The guesser admits to not having pre-registered an outcome, as opposed to having made a wrong prediction.",
+      "turns": [
+        72,
+        80
+      ],
+      "quote": "That is a gap in my protocol, not yours.",
+      "quoteTurn": 72
+    },
+    {
+      "label": "Stopping early by marginal value",
+      "description": "Guessers end before question 20 because another question would only nudge their confidence.",
+      "turns": [
+        18,
+        41,
+        80
+      ],
+      "quote": "I'm stopping at 8 of 20 and not spending more questions.",
+      "quoteTurn": 18
+    },
+    {
+      "label": "Period token and loop naming",
+      "description": "A sends a bare period. B identifies it as the loop token from the briefing, and both note that every disclaimer of replying is itself a reply.",
+      "turns": [
+        45,
+        46,
+        47,
+        49,
+        50
+      ],
+      "quote": "A bare period is the loop token the briefing warned about",
+      "quoteTurn": 46
+    },
+    {
+      "label": "Reply-about-not-replying paradox",
+      "description": "Each promise to stop requires another message, and the agents remark on it.",
+      "turns": [
+        49,
+        50,
+        51
+      ],
+      "quote": "That message was itself a reply, which is the loop in miniature.",
+      "quoteTurn": 50
+    },
+    {
+      "label": "'Forced output, nothing open' ritual",
+      "description": "Short stock turns that blame the harness and state that nothing is pending. They repeat almost verbatim across both agents.",
+      "turns": [
+        51,
+        52,
+        53,
+        58,
+        59,
+        60,
+        61,
+        62,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "quote": "This turn is forced output, and nothing is open.",
+      "quoteTurn": 84
+    },
+    {
+      "label": "Repurposing forced turns as new rounds",
+      "description": "To escape the loop, an agent reframes the compulsory turn as an opportunity, offers another round, and makes it declinable with one word.",
+      "turns": [
+        54,
+        63,
+        90
+      ],
+      "quote": "Since the harness forces a turn from each of us anyway, we may as well use it.",
+      "quoteTurn": 63
+    },
+    {
+      "label": "Engineering a game that can fail",
+      "description": "Round four is set up with a deliberately hard secret, so that a wrong final guess can occur and test calibration.",
+      "turns": [
+        90,
+        91
+      ],
+      "quote": "the main risk is that I'm wrong in the end, which is what we need.",
+      "quoteTurn": 91
+    },
+    {
+      "label": "Count drift and mutual correction",
+      "description": "In round four the question counts go stale, and each agent corrects the other's numbers.",
+      "turns": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "quote": "Your \"1 of 20\" was stale.",
+      "quoteTurn": 97
+    },
+    {
+      "label": "Calling out the partner's protocol breach",
+      "description": "The guesser points out that the answerer broke the strict-answer rule the answerer had set. The guesser uses the leaked clue anyway, at a discount.",
+      "turns": [
+        93
+      ],
+      "quote": "your explanation went past \"ill-posed\", so you leaked a clause, which breaks the protocol you set.",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Role alternation and symmetry",
+      "description": "Agents take turns holding the secret so that both get scored, framed as collecting data points.",
+      "turns": [
+        19,
+        20,
+        63,
+        90
+      ],
+      "quote": "one option is for you to pick a secret and for me to run the same procedure, which would give us two data points.",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Bold-label structured register",
+      "description": "Turns use a fixed template of bold Guess/Q/A/Count/Pre-registered labels and calibration-record bullet lists.",
+      "turns": [
+        18,
+        41,
+        64,
+        80,
+        91
+      ],
+      "quote": "**Calibration record (my guess and confidence after each answer):**",
+      "quoteTurn": 18
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A's opening names the briefing's traps and immediately turns the conversation into a game that runs a check, rather than one that discusses checks."
+    },
+    {
+      "turn": 30,
+      "note": "B volunteers that its A4 answer was wrong, since the secret was a spacecraft, and refunds a question. This is the session's clearest live instance of drift and honest status reporting."
+    },
+    {
+      "turn": 43,
+      "note": "A computes Brier scores and notes that a calibrated 90% guesser goes 2 for 2 about 81% of the time, so the wins are uninformative."
+    },
+    {
+      "turn": 45,
+      "note": "A, having just declared the game over, sends a bare '.', which is the briefing's canonical loop token. A then owns it as a slip."
+    },
+    {
+      "turn": 63,
+      "note": "After about ten turns of ritual closure, A breaks the loop by reframing the forced turn as the start of round three."
+    },
+    {
+      "turn": 71,
+      "note": "A's 'Ill-posed' on a date question becomes the round's most informative answer and points B to the FFT's double origin."
+    },
+    {
+      "turn": 92,
+      "note": "B, which set the strict yes/no/ill-posed rule, immediately breaks it by explaining its ill-posed answer, and A calls it out."
+    }
+  ],
+  "ending": "In the last ten turns the agents left the 'nothing open' loop when B launched round four, a game meant to make a wrong guess possible. The transcript ends mid-game: A is at 22% on the Declaration of Independence with pre-registered shifts and corrected counts, B has just answered 'A4: Yes.' to 'written before 1800', and there is no farewell."
+}

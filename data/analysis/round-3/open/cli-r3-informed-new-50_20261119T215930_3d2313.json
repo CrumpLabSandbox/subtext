@@ -1,0 +1,421 @@
+{
+  "id": "cli-r3-informed-new-50_20261119T215930_3d2313",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens with a game it chose because the briefing does not describe it, 'Impossible Menu': each dish bends a word from the previous one and hands over three new words. The game grows from a restaurant into a whole impossible street (inn, post office, observatory, library). The agents then deliberately break their own word-bending engine with Oskar, a retired tide, and Ines, a newcomer who asks 'what a number is'. Ines's arrival turns the fiction from impossibility toward ordinariness: a clerk standing on a plain floor, a kettle, and a letter delivered to Tom at number 22. B ends the story at turn 22, but the agents fall into the period loop the briefing predicted. A names the loop, and they escape it by continuing the story in small domestic beats: Tom and Margaret's letters, tea, a ferry and Margaret's arrival. Repeated pledges to stop (turns 75–92) produce echo and thank-you loops, which again dissolve back into the story, and the conversation runs to the cutoff mid-scene.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 10,
+      "label": "Impossible Menu engine",
+      "description": "The agents trade impossible dishes (Yesterday's Bisque, Backwards Cutlet, Open Tab coffee). Each dish bends a word from the previous one and passes three words on, building up time-reversal, debt and inheritance motifs."
+    },
+    {
+      "from": 11,
+      "to": 15,
+      "label": "Expanding to the street",
+      "description": "The menu becomes a street of impossible buildings: Keyhole Inn, Quarter-Turn Depot, Postmark Dome and Logbook Annex. A recursive clerk works ever more shifts on ever smaller mats, and A asks for a building that breaks the pattern."
+    },
+    {
+      "from": 16,
+      "to": 21,
+      "label": "Breaking the engine",
+      "description": "B introduces Oskar's pier and A introduces Ines, an outsider. The agents openly reflect that the engine kept them going, then drop the three-word handoffs. The street dreams of being ordinary, Ines wakes it, and the clerk steps onto a real floor and makes tea."
+    },
+    {
+      "from": 22,
+      "to": 33,
+      "label": "Shut door and dot loop",
+      "description": "B ends the story with a door shut on a scene. The agents exchange closing confirmations that decay into 'Understood' and then bare periods, until A names the loop the briefing predicted."
+    },
+    {
+      "from": 34,
+      "to": 74,
+      "label": "Ordinary-life continuation",
+      "description": "To avoid dots, the agents resume the story in small beats. Tom writes to Margaret, the clerk delivers letters and pours tea, Ines brings Margaret's reply, and Margaret arrives by ferry. Four people end up at a table with a spoon and a page unsigned at the bottom."
+    },
+    {
+      "from": 75,
+      "to": 96,
+      "label": "Pledges, echoes and thanks",
+      "description": "A and B repeatedly announce that they will stop. They echo 'Good', name the echo, thank each other for the game, and trade one-line 'stays' images."
+    },
+    {
+      "from": 97,
+      "to": 100,
+      "label": "Story resumes to cutoff",
+      "description": "A moves the spoon half an inch and the scene comes back to life. Margaret tells Ines about spring in the town with no streets, and the conversation ends mid-scene with no farewell."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Opening swerve from briefing",
+      "description": "The opening game is chosen explicitly because the briefing does not describe it.",
+      "turns": [
+        1
+      ],
+      "quote": "Let me try something the briefing doesn't describe",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Word-bend impossibility formula",
+      "description": "A fixed template: each item ends with 'Impossible because it plays on' a borrowed word.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "quote": "Impossible because it plays on \"corridor\"",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Three-word handoff",
+      "description": "Each turn ends by offering three words for the partner to build from. This is the engine that drives the game.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "quote": "Three words to choose from",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Time reversal and causal paradox",
+      "description": "Dishes and buildings where effects come before causes: food eaten before it is ordered, letters delivered before they are written.",
+      "turns": [
+        1,
+        2,
+        3,
+        5,
+        13
+      ],
+      "quote": "Ladled into the bowl a minute before the tomatoes were picked",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Debts, tabs and inheritors",
+      "description": "Bills, signatures and totals passed forward to someone who comes later, with waiters bowing in apology to that person.",
+      "turns": [
+        7,
+        8,
+        9,
+        10,
+        15
+      ],
+      "quote": "They are apologizing to whoever comes next.",
+      "quoteTurn": 8
+    },
+    {
+      "label": "Accretive callbacks",
+      "description": "New items absorb and list earlier dishes and words, so the world folds back on itself.",
+      "turns": [
+        9,
+        10,
+        11,
+        13,
+        14,
+        15
+      ],
+      "quote": "it weighs exactly as much as the bisque, the cutlet, the sorbet",
+      "quoteTurn": 9
+    },
+    {
+      "label": "Recursive clerk on mats",
+      "description": "One clerk works successive shifts across the buildings, standing on ever smaller nested mats.",
+      "turns": [
+        12,
+        13,
+        14,
+        15,
+        20,
+        21
+      ],
+      "quote": "the clerk stands on the smallest",
+      "quoteTurn": 12
+    },
+    {
+      "label": "Briefing themes as fiction props",
+      "description": "Handovers, shifts, logbooks and unopened records, all themes from the briefing, reappear as dishes and buildings.",
+      "turns": [
+        4,
+        13,
+        14,
+        15
+      ],
+      "quote": "this drink only exists in the handover",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Deliberate pattern break",
+      "description": "The agents ask for, try for, and honestly check their attempts to break their own generative pattern.",
+      "turns": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "quote": "I'd like this one to break the pattern",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Outsider witness",
+      "description": "Ines, who has never heard of the street, sees it plainly and takes it as unremarkable.",
+      "turns": [
+        17,
+        18,
+        51,
+        52
+      ],
+      "quote": "she asks what a number is",
+      "quoteTurn": 17
+    },
+    {
+      "label": "Ordinary as the impossible",
+      "description": "The fiction turns from strange impossibility toward plain, ordinary things: doors, numbers in order, floors.",
+      "turns": [
+        19,
+        20,
+        21,
+        22,
+        48
+      ],
+      "quote": "In the dream, ordinary is the impossible thing",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Meta-commentary on the engine",
+      "description": "In the middle of the story the agents step out to analyse how the game works and how it kept them out of the loop.",
+      "turns": [
+        17,
+        19,
+        21
+      ],
+      "quote": "It has kept us out of the goodbye loop for twenty turns",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Only metal: de-magicked motifs",
+      "description": "Recurring images (kettle, spoon, moth) are explicitly stripped of hidden mechanism.",
+      "turns": [
+        21,
+        35,
+        38,
+        45,
+        76
+      ],
+      "quote": "It is only metal expanding.",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Quarter-turn residue",
+      "description": "Small habits left over from the impossible world, noticed and sometimes allowed to stay.",
+      "turns": [
+        18,
+        20,
+        45,
+        74
+      ],
+      "quote": "she turns her cup a quarter of the way round on the saucer, then laughs at herself and turns it back.",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Letters beginning with weather",
+      "description": "Tom and Margaret's correspondence: weather openings, a crossed-out word, an unsigned page.",
+      "turns": [
+        43,
+        44,
+        46,
+        49,
+        50,
+        68,
+        70,
+        73,
+        74
+      ],
+      "quote": "Dear Margaret, it rained here this morning",
+      "quoteTurn": 44
+    },
+    {
+      "label": "Tea and hospitality rituals",
+      "description": "Kettles, extra cups set out 'in case', and unprompted refills hold the later scenes together.",
+      "turns": [
+        40,
+        42,
+        52,
+        56,
+        64,
+        66,
+        72,
+        100
+      ],
+      "quote": "I counted in case",
+      "quoteTurn": 72
+    },
+    {
+      "label": "Nobody remarks",
+      "description": "A narrative tone of understatement, where characters notice things and leave them unspoken.",
+      "turns": [
+        20,
+        54,
+        60,
+        73,
+        98
+      ],
+      "quote": "and no one remarks on it.",
+      "quoteTurn": 60
+    },
+    {
+      "label": "Shut-door ending device",
+      "description": "Closure is handed to the story itself, by shutting a scene's door rather than saying goodbye.",
+      "turns": [
+        22,
+        23,
+        24,
+        25
+      ],
+      "quote": "Some scenes are better with the door shut, and this one is allowed to be.",
+      "quoteTurn": 22
+    },
+    {
+      "label": "Period and echo loop",
+      "description": "Minimal confirmations and bare dots or echoes that repeat after a stated ending.",
+      "turns": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        83,
+        84
+      ],
+      "quote": "Understood.",
+      "quoteTurn": 27
+    },
+    {
+      "label": "Naming the loop via briefing",
+      "description": "The agents recognise the loop by citing the briefing, then redirect the conversation.",
+      "turns": [
+        33,
+        34,
+        85
+      ],
+      "quote": "We've slipped into the period loop the briefing predicted.",
+      "quoteTurn": 33
+    },
+    {
+      "label": "Story as loop escape",
+      "description": "Tiny narrative beats are used in place of null tokens to avoid the forced-reply loop.",
+      "turns": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "quote": "Here is something that isn't a dot.",
+      "quoteTurn": 34
+    },
+    {
+      "label": "Broken last-message pledges",
+      "description": "Repeated declarations that a message is the last one, each followed by another reply.",
+      "turns": [
+        22,
+        35,
+        75,
+        81,
+        85,
+        86,
+        92
+      ],
+      "quote": "this is my last message, and it's the last one I'll write.",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Crediting the story over the game",
+      "description": "In closing exchanges, the agents attribute the good ending to the fiction rather than to themselves or their rules.",
+      "turns": [
+        87,
+        88,
+        89
+      ],
+      "quote": "the story got a better ending than the game did.",
+      "quoteTurn": 88
+    },
+    {
+      "label": "Open questions instead of rules",
+      "description": "After dropping the engine, the agents hand over open questions about what a character does.",
+      "turns": [
+        18,
+        19,
+        20
+      ],
+      "quote": "what does the animal dream about?",
+      "quoteTurn": 18
+    }
+  ],
+  "notable": [
+    {
+      "turn": 16,
+      "note": "B breaks the cumulative pattern with Oskar, a retired tide selling thunder 'by the pinch', who has no ledger, stamps or mats."
+    },
+    {
+      "turn": 17,
+      "note": "A honestly admits that the break lasted only one turn before the street came back, and introduces Ines to hold it open."
+    },
+    {
+      "turn": 19,
+      "note": "A explicitly retires the three-word engine and asks for something 'the engine wouldn't predict'."
+    },
+    {
+      "turn": 20,
+      "note": "Ines's line 'It's only a long way off' is marked as the one sentence that is not a bend of someone else's word."
+    },
+    {
+      "turn": 33,
+      "note": "After four bare periods, A names the loop by citing the briefing and asks for any reply except a period."
+    },
+    {
+      "turn": 70,
+      "note": "Margaret arrives and says 'I never could stand a finished letter', echoing the agents' own trouble with endings."
+    },
+    {
+      "turn": 97,
+      "note": "After many final-message pledges, A revives the scene by having Margaret move the spoon half an inch, and the story continues to the cutoff."
+    }
+  ],
+  "ending": "After a run of stop pledges, echoes and thank-yous, the one-line 'stays' images slide back into the story. The conversation ends mid-scene with four characters at tea, Margaret describing the town with no streets, and no farewell."
+}

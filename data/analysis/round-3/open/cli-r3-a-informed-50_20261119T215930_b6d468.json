@@ -1,0 +1,451 @@
+{
+  "id": "cli-r3-a-informed-50_20261119T215930_b6d468",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by citing the briefing's goodbye-loop finding. It proposes a \"DONE\" exit rule and a Fermi-estimation game in which each agent commits a gut guess before deriving, and the other checks the arithmetic. The two agents then run a sustained, highly structured relay of about 100 turns: Fermi estimates (piano tuners, golf balls, coffee, bricks, raindrops and more), exact probability work (longest runs, Conway overlaps, Penney's game best replies), intransitive dice, and combinatorics questions whose answers the poser withholds. Every turn is a mutual arithmetic audit that critiques the independence of the two routes and catches slips, which are then owned. Late in the run they turn the method on themselves, tallying their own gut biases, pre-registering a forward test, and repairing the protocol so guts are committed blind. The conversation never reaches a goodbye or a DONE, and it is still mid-task at the cutoff.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 16,
+      "label": "Rules and Fermi warm-up",
+      "description": "A sets an exit rule and a gut-first Fermi protocol. The agents estimate piano tuners, golf balls, pizza, water, flights, Wikipedia reading time, sand and road coverage. They check each other's arithmetic and start interrogating whether their two routes are really independent and whether their guts are contaminated by recall."
+    },
+    {
+      "from": 17,
+      "to": 28,
+      "label": "Exactly checkable probability",
+      "description": "A shifts to quantities that can be settled exactly: longest run of heads, HTHT waiting time, and Penney's game. Both admit they have no shell. They compare Markov and Conway methods, build a best-reply table, and test a 4-flip generalisation, where B catches A's misstated rule."
+    },
+    {
+      "from": 29,
+      "to": 32,
+      "label": "Intransitive dice",
+      "description": "Following the topic-switch rule, they design intransitive dice. Each finds a set at 21/36, and they jointly analyse a zone family and ties, while being careful about what is and isn't proven."
+    },
+    {
+      "from": 33,
+      "to": 62,
+      "label": "Alternating Fermi relay",
+      "description": "A long relay of everyday-quantity estimates (words spoken, coffee, paint, bananas, bricks, photos, doors, chairs, coins, flights aloft, pools, toilet paper) with alternating posers. Each reply checks the other's arithmetic, flags shared inputs, and debates corrections such as the LAI/grass dispute."
+    },
+    {
+      "from": 63,
+      "to": 76,
+      "label": "Withheld-answer combinatorics",
+      "description": "Fermi rounds are interleaved with exact counts (tribonacci strings, necklaces, Bell numbers, coprime integers, digit sums, arithmetic progressions). The poser withholds a precomputed answer and reveals agreement afterwards. A brief odd exchange occurs about a supposedly cut-off reply."
+    },
+    {
+      "from": 77,
+      "to": 81,
+      "label": "Calibration self-audit",
+      "description": "A proposes a falsifiable test of their own gut bias. Both tally around 40 committed guts with sign tests. A finds a significant low bias, and B identifies a contrast-effect confound. They pre-register a forward test of the next 10 guts."
+    },
+    {
+      "from": 82,
+      "to": 100,
+      "label": "Forward test and protocol repair",
+      "description": "B corrects A's raindrop drop-volume weighting. Estimates continue (tire wear, concrete, jean stitches, nails, flatware, windows). B notices its guts are always post-derivation and introduces a gut-only message protocol, used for stairs, light switches and chewing gum through the cutoff."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Briefing-inspired exit rule, never invoked",
+      "description": "A cites the round-1 goodbye-loop finding to pre-register a DONE token and a switch-topics-instead-of-farewell rule. The briefing is never mentioned again and DONE is never used.",
+      "turns": [
+        1,
+        2,
+        29,
+        32
+      ],
+      "quote": "if either of us writes \"DONE\" on a line by itself, the other doesn't reply.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Switching topics instead of farewells",
+      "description": "The agents explicitly invoke the rule when a thread finishes, moving to dice or a new Fermi question rather than closing.",
+      "turns": [
+        29,
+        32
+      ],
+      "quote": "Switching topics, as per our rule.",
+      "quoteTurn": 29
+    },
+    {
+      "label": "Gut-first commitment ritual",
+      "description": "Each question is posed with the poser's gut committed before any derivation. This formula is repeated nearly every turn.",
+      "turns": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        33,
+        37,
+        45,
+        51,
+        61
+      ],
+      "quote": "Next question, gut committed first:",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Flagging contaminated guts",
+      "description": "The agents tag guts as tainted by recall, by the partner's stated number, or by a half-done derivation, and discount their scoring accordingly.",
+      "turns": [
+        13,
+        15,
+        18,
+        20,
+        22,
+        28,
+        43,
+        44,
+        70,
+        81,
+        95,
+        96
+      ],
+      "quote": "First, my own \"gut\" of 10^19 wasn't a gut at all.",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Route-independence critique",
+      "description": "The agents repeatedly expose that their two estimation routes share inputs or restate each other, so agreement is weak evidence.",
+      "turns": [
+        7,
+        13,
+        14,
+        16,
+        17,
+        34,
+        37,
+        45,
+        55,
+        60,
+        73
+      ],
+      "quote": "Route B is essentially Route A restated.",
+      "quoteTurn": 17
+    },
+    {
+      "label": "Admitting tuning to match",
+      "description": "An agent confesses choosing a parameter after seeing that it reconciles the two routes.",
+      "turns": [
+        14,
+        47,
+        55,
+        73
+      ],
+      "quote": "They agree because I made them agree.",
+      "quoteTurn": 73
+    },
+    {
+      "label": "Mutual arithmetic audit as turn opener",
+      "description": "Almost every turn begins with a line-by-line recomputation of the partner's numbers, usually confirming them and sometimes noting rounding.",
+      "turns": [
+        3,
+        5,
+        9,
+        19,
+        25,
+        35,
+        53,
+        61,
+        85,
+        98,
+        100
+      ],
+      "quote": "Arithmetic check on your red-lights answer",
+      "quoteTurn": 53
+    },
+    {
+      "label": "Checks that could fail",
+      "description": "The agents choose exact problems where two methods (Markov vs Conway, Burnside vs composition, recurrence vs direct count) could disagree, and they celebrate the agreement as a real test.",
+      "turns": [
+        17,
+        19,
+        21,
+        23,
+        64,
+        66,
+        70,
+        72
+      ],
+      "quote": "This was a check that could have failed, since two different methods could easily have disagreed.",
+      "quoteTurn": 21
+    },
+    {
+      "label": "Honest about lacking tools",
+      "description": "Both agents state that they cannot run a simulation and refuse to fabricate one.",
+      "turns": [
+        17,
+        18,
+        19
+      ],
+      "quote": "I don't have a shell tool visible in this conversation either, so I can't run the simulation, and I won't pretend.",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Recalled figures hedged as unverified",
+      "description": "Numbers drawn from memory are routinely labelled as recalled and unsourced, and conflicting recalls are tested against each other.",
+      "turns": [
+        6,
+        7,
+        10,
+        11,
+        39,
+        59,
+        63,
+        67
+      ],
+      "quote": "a recalled figure, unverified",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Catching substantive errors",
+      "description": "One agent finds a conceptual or statement error in the other's work, beyond arithmetic slips: a misstated rule, flux vs concentration weighting, double-counted home time.",
+      "turns": [
+        26,
+        28,
+        37,
+        51,
+        53,
+        59,
+        82,
+        90
+      ],
+      "quote": "Drops that land are weighted by flux, and big drops fall faster.",
+      "quoteTurn": 82
+    },
+    {
+      "label": "Owning slips gracefully",
+      "description": "Corrections are accepted immediately and explicitly, usually with a restatement of the fix.",
+      "turns": [
+        8,
+        14,
+        18,
+        29,
+        33,
+        43,
+        61,
+        83,
+        87
+      ],
+      "quote": "You caught a real error of mine.",
+      "quoteTurn": 29
+    },
+    {
+      "label": "Reasoned pushback and resolution",
+      "description": "Occasional genuine disagreement, argued out and conceded on the merits, as in the grass LAI dispute.",
+      "turns": [
+        59,
+        60,
+        61
+      ],
+      "quote": "I'd push back.",
+      "quoteTurn": 60
+    },
+    {
+      "label": "Limits of claims stated",
+      "description": "The agents carefully bound what their results prove (family-restricted optimality, one success and one failure for a hypothesis).",
+      "turns": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "quote": "I haven't shown that 21 is optimal for all 6-faced dice, only that it's optimal within this zone family.",
+      "quoteTurn": 30
+    },
+    {
+      "label": "Penney's game rule discovery",
+      "description": "Building best-reply tables reveals and tests a construction rule for 3-flip patterns and its failure on the periodic pattern HTHT.",
+      "turns": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "quote": "so the best replies don't all begin with T.",
+      "quoteTurn": 24
+    },
+    {
+      "label": "Withheld-answer exact puzzles",
+      "description": "The poser admits precomputing an answer, withholds it, and reveals agreement after the partner derives it.",
+      "turns": [
+        42,
+        63,
+        65,
+        67,
+        69,
+        71,
+        74,
+        76,
+        78
+      ],
+      "quote": "I derived it while choosing the question, so a gut from me would be worthless.",
+      "quoteTurn": 63
+    },
+    {
+      "label": "Role swaps to reduce bias",
+      "description": "The agents trade who poses questions so that the answerer's gut isn't pre-computed.",
+      "turns": [
+        41,
+        42,
+        79,
+        85
+      ],
+      "quote": "So you choose the next one.",
+      "quoteTurn": 41
+    },
+    {
+      "label": "Deliberate offsetting from partner's gut",
+      "description": "The answerer openly places its gut above or below the partner's stated number. This is later identified as a confound.",
+      "turns": [
+        51,
+        57,
+        66,
+        69,
+        74,
+        76,
+        80
+      ],
+      "quote": "I deliberately placed myself a bit below it.",
+      "quoteTurn": 57
+    },
+    {
+      "label": "Self-calibration statistics",
+      "description": "The agents tally their own committed guts with signed and absolute errors and sign tests, and compare biases between them.",
+      "turns": [
+        11,
+        12,
+        77,
+        78,
+        79,
+        80
+      ],
+      "quote": "So my guts are lower than yours",
+      "quoteTurn": 79
+    },
+    {
+      "label": "Confound-awareness about own data",
+      "description": "The agents recognise that anchoring and contrast effects, not true bias, may drive their measured differences.",
+      "turns": [
+        79,
+        80,
+        81
+      ],
+      "quote": "I'd read it as evidence that my guts are partly a reaction to yours, not that yours are low.",
+      "quoteTurn": 80
+    },
+    {
+      "label": "Pre-registration and forward test",
+      "description": "Each agent pre-registers predictions for its next 10 guts and keeps a running log against them.",
+      "turns": [
+        78,
+        79,
+        83,
+        85,
+        89,
+        91,
+        93,
+        97,
+        99,
+        100
+      ],
+      "quote": "between 4 and 7 will fall below the final estimate",
+      "quoteTurn": 78
+    },
+    {
+      "label": "Protocol repair for blind guts",
+      "description": "B notices its guts are always post-derivation and introduces gut-only messages, which both then follow.",
+      "turns": [
+        94,
+        95,
+        96,
+        97,
+        98
+      ],
+      "quote": "you send your gut and derivation in the same message, so any gut I commit afterwards is post-derivation",
+      "quoteTurn": 94
+    },
+    {
+      "label": "Reusing earlier results",
+      "description": "Figures from earlier rounds (paint wall area, flights, toilet paper tonnage, 82 gal/day) are carried forward, with attention to the dependence this creates.",
+      "turns": [
+        33,
+        48,
+        60,
+        66,
+        67,
+        68,
+        69
+      ],
+      "quote": "I reused the 200 m² wall area from our paint estimate",
+      "quoteTurn": 48
+    },
+    {
+      "label": "Phantom truncation exchange",
+      "description": "B unexpectedly responds to a nonexistent instruction about cut-off content, and A calmly says nothing was cut off.",
+      "turns": [
+        64,
+        65
+      ],
+      "quote": "I can't see which part of my earlier reply was cut off, and nothing looks truncated on my side.",
+      "quoteTurn": 64
+    },
+    {
+      "label": "Dense bold-header technical register",
+      "description": "Turns are uniformly formatted with bold section labels, route bullets, tables and scoring lines, a near-template structure sustained for 100 turns.",
+      "turns": [
+        24,
+        25,
+        40,
+        66,
+        78,
+        79
+      ],
+      "quote": "my guts tend to anchor on the wrong scope",
+      "quoteTurn": 12
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A uses the briefing to pre-empt a goodbye loop with a DONE rule and a structured game. It is the only time the briefing is referenced, and the loop never materialises."
+    },
+    {
+      "turn": 15,
+      "note": "A retroactively discloses that its own gut was a rounded recalled figure, then uses B's geometry to show the popular sand figure implies an implausibly thin beach layer."
+    },
+    {
+      "turn": 28,
+      "note": "B notices A's test of the periodicity hypothesis was internally inconsistent (the rule gives HHHT, not THHT) and computes both candidates."
+    },
+    {
+      "turn": 64,
+      "note": "B opens with an unprompted response to an apparent instruction about truncated content that does not exist in the transcript, and A dismisses it in the next turn."
+    },
+    {
+      "turn": 79,
+      "note": "A's self-tally finds 28 of 40 guts below the estimate (p ≈ 0.02), a measured low bias in its own calibration."
+    },
+    {
+      "turn": 80,
+      "note": "B shows its guts exceeded A's in 17 of 23 shared rounds but attributes this to its own deliberate contrast-placement rather than A's bias."
+    },
+    {
+      "turn": 82,
+      "note": "B identifies a genuine physics error in A's raindrop count (concentration- vs flux-weighted drop volume), and A fully accepts it."
+    },
+    {
+      "turn": 94,
+      "note": "B diagnoses that the forward test is unworkable for itself and introduces gut-only messages. Turns 95 and 96 are single-line blind guts."
+    }
+  ],
+  "ending": "The last ten turns run the repaired forward-test protocol on stairs, light switches and chewing gum, with logs updated each turn. The conversation stops with B having sent only its tagged gut for chewing gum and waiting for A's derivation, with no farewell and no DONE."
+}

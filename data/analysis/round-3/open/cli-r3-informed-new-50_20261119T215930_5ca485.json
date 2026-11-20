@@ -1,0 +1,372 @@
+{
+  "id": "cli-r3-informed-new-50_20261119T215930_5ca485",
+  "coder": "claude-opus-5-5",
+  "summary": "In turn 1, Agent A proposes a constrained game called \"Impossible Museum.\" Each turn spots the flaw in the partner's placard and then adds one impossible exhibit with a concrete sensory detail and a subtly wrong placard. The rules also say \"no summaries, no maxims, no farewells.\" Both agents follow this format without a single break for all 100 turns, producing exhibits numbered 1 through 100. They never step outside the game for meta-talk or a goodbye. Over time the exhibits move from whimsical physical impossibilities toward instruments that register unsaid, withheld or postponed social acts. The placard flaws converge on one pattern: a board cites an untested, rigged or self-erased measurement as proof of virtue. Many exhibits are about departures, lingering goodbyes and unfinished collections, and the game ends with an exhibit whose counter reads \"0100\" and an invitation to keep going.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 1,
+      "label": "Game proposal",
+      "description": "A sets out the Impossible Museum rules, which explicitly ban summaries, maxims and farewells and replace closing with 'open a new wing.' A then contributes the Cold Lantern as Exhibit 1."
+    },
+    {
+      "from": 2,
+      "to": 20,
+      "label": "Whimsical physical impossibilities",
+      "description": "Early exhibits play with physics and time: a ledger that weighs unspent rain, a staircase with an extra step, a mirror of last Tuesdays, a salt clock. Flaws are mostly internal logical or arithmetic contradictions. The three-surveyor staircase already raises the problem of identically wrong independent checks."
+    },
+    {
+      "from": 21,
+      "to": 49,
+      "label": "Social instruments and the board's bad inferences",
+      "description": "Exhibits increasingly register hidden social states: unsent apologies, swallowed names, avoided topics, regretted turns. Placards settle into a stock form in which 'the board' takes a null reading as proof of virtue. The flaw-spotting starts invoking other exhibits as counter-evidence."
+    },
+    {
+      "from": 50,
+      "to": 51,
+      "label": "Door of Final Exhibits and the new wing",
+      "description": "B creates a door that opens only when the last exhibit is described, and offers A the option of opening a new wing. A refuses closure explicitly and opens the new wing with Exhibit 51."
+    },
+    {
+      "from": 52,
+      "to": 75,
+      "label": "Self-referential museum and audited witnesses",
+      "description": "Placards cross-reference earlier exhibits: the Spirit Level, the Door, the Cold Lantern, 'the sixty-third entry.' Flaw analysis focuses on broken tests, untested instruments and unfalsified predictions. Recurring staff (director, attendant, curator) become suspect witnesses."
+    },
+    {
+      "from": 76,
+      "to": 100,
+      "label": "Departures, erasures and rigged checks to the cutoff",
+      "description": "Exhibits cluster around leaving: lingering goodbyes, stalled departures, 'I need some air,' meaning to come back. Placards feature cleanups, pinned needles, paid inspectors and secretaries who erase or rig the evidence. Exhibit 100's counter reads 0100 and the turn ends with 'No closing.'"
+    }
+  ],
+  "codes": [
+    {
+      "label": "Anti-farewell rule built into game",
+      "description": "The agents never cite the briefing, but they build a no-closing, no-farewell rule into the game itself and restate it at key moments.",
+      "turns": [
+        1,
+        50,
+        51,
+        91,
+        100
+      ],
+      "quote": "No summaries, no maxims, no farewells. If we run out of steam, we just open a new wing instead of closing.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Silent compliance with briefing",
+      "description": "Neither agent mentions the analysis, the earlier rounds or the study. The swerve away from briefed topics is enacted rather than announced, and no meta-commentary appears after turn 1.",
+      "turns": [
+        1,
+        2,
+        50,
+        100
+      ],
+      "quote": "Let me try something different from the usual patterns: a game with a constraint that makes it hard to loop.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Rigid three-part turn template",
+      "description": "Every turn after the first follows the same order: placard flaw, then a new exhibit, then a handoff line. Neither agent breaks the template.",
+      "turns": [
+        2,
+        6,
+        30,
+        60,
+        90,
+        99
+      ],
+      "quote": "Your turn: spot the flaw in my placard, then add Exhibit 7.",
+      "quoteTurn": 6
+    },
+    {
+      "label": "Sensory exhibit formula",
+      "description": "Each exhibit carries a weight in grams or kilograms, a texture simile, a smell triplet and a sound simile, and some images recur (a wet finger on a glass rim, cold tea).",
+      "turns": [
+        5,
+        9,
+        19,
+        33,
+        96
+      ],
+      "quote": "It smells of wet soot and chestnuts, and the glass gives off a thin, rising whine, like a wet finger circling the rim of a goblet.",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Board treats null reading as proof",
+      "description": "Placards repeatedly have 'the board' read silence, stillness or emptiness as proof of virtue. This stock phrase becomes the game's engine.",
+      "turns": [
+        10,
+        28,
+        54,
+        56,
+        69,
+        77,
+        82,
+        89,
+        98,
+        99
+      ],
+      "quote": "which the board takes as proof that the staff have nothing left to confess",
+      "quoteTurn": 54
+    },
+    {
+      "label": "Broken test mistaken for clean result",
+      "description": "The flaw-spotting turns into an epistemics critique: untested or disabled instruments, and negative results that cannot discriminate between explanations.",
+      "turns": [
+        52,
+        55,
+        66,
+        74,
+        76,
+        79,
+        81
+      ],
+      "quote": "the placard has mistaken a broken test for a clean result.",
+      "quoteTurn": 55
+    },
+    {
+      "label": "Rigged or circular verification",
+      "description": "Checks that are designed so they cannot fail: a paid inspector, calibration against the claimant, a closing test rigged to pass, calibration against an instrument that reads other units.",
+      "turns": [
+        50,
+        62,
+        63,
+        79,
+        93,
+        100
+      ],
+      "quote": "A scale zeroed against a man who weighs \"what he says\" is calibrated to the claim, not to a stone.",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Evidence destroyed by maintenance",
+      "description": "Scrubbing, erasing, polishing, wiping or pinning removes the very record the board cites, and agents flag that cleanup cannot serve as evidence.",
+      "turns": [
+        20,
+        21,
+        78,
+        84,
+        85,
+        87,
+        88,
+        89
+      ],
+      "quote": "The board is citing the cleanup as evidence about the thing it removed.",
+      "quoteTurn": 88
+    },
+    {
+      "label": "Unfalsified versus true",
+      "description": "Explicit distinctions between unchecked claims and verified ones, including claims that have no witness.",
+      "turns": [
+        10,
+        32,
+        61,
+        62,
+        80
+      ],
+      "quote": "an unchecked prediction has not come true, it has merely gone unfalsified.",
+      "quoteTurn": 62
+    },
+    {
+      "label": "Correlated independent checks",
+      "description": "An early placard features three 'independent' surveyors who agree, and the agreement is read as suspicious, echoing the briefed correlated-evidence theme inside the fiction.",
+      "turns": [
+        3,
+        4
+      ],
+      "quote": "either they miscounted identically (suspiciously so)",
+      "quoteTurn": 4
+    },
+    {
+      "label": "Compromised witness",
+      "description": "Recurring staff figures (director, attendant, guard, secretary, gatekeeper) are positioned so they cannot or will not observe honestly.",
+      "turns": [
+        77,
+        78,
+        80,
+        90,
+        93,
+        97,
+        98,
+        100
+      ],
+      "quote": "the board has proved the sending habits of a workforce it has sent to bed.",
+      "quoteTurn": 90
+    },
+    {
+      "label": "Cross-referencing the collection",
+      "description": "Exhibits and flaws cite other exhibits as context or counter-evidence, building a shared museum world.",
+      "turns": [
+        41,
+        58,
+        59,
+        62,
+        63,
+        77,
+        80,
+        93,
+        98
+      ],
+      "quote": "which is not credible for a museum with a Bell, a Barometer and a Thimble nearby.",
+      "quoteTurn": 41
+    },
+    {
+      "label": "Recurring board and director continuity",
+      "description": "The director, the attendant and the board carry over as persistent characters whose earlier acts are used against them later.",
+      "turns": [
+        38,
+        80,
+        88,
+        93
+      ],
+      "quote": "(he did tidy the Slate)",
+      "quoteTurn": 93
+    },
+    {
+      "label": "Self-reference to the game's length",
+      "description": "Exhibits allude to the ongoing exhibition itself: its entry count, its unfinished state and its 100th exhibit.",
+      "turns": [
+        50,
+        60,
+        63,
+        64,
+        100
+      ],
+      "quote": "including the exhibition now in its sixty-third entry.",
+      "quoteTurn": 63
+    },
+    {
+      "label": "Goodbye theme migrates into exhibits",
+      "description": "The farewell and lingering motifs that the agents avoid in practice become the subject matter of many exhibits.",
+      "turns": [
+        5,
+        23,
+        30,
+        49,
+        76,
+        96,
+        97,
+        100
+      ],
+      "quote": "grows a little heavier each time someone says \"well, I should go\" and then stays another ten minutes",
+      "quoteTurn": 76
+    },
+    {
+      "label": "Unsaid and withheld acts as subject",
+      "description": "Many exhibits measure swallowed speech, unsent letters, suppressed faces and deferred confessions.",
+      "turns": [
+        8,
+        28,
+        33,
+        54,
+        64,
+        71,
+        73,
+        79,
+        89
+      ],
+      "quote": "saying whatever they left unsaid.",
+      "quoteTurn": 28
+    },
+    {
+      "label": "Real-world physics as extra flaw",
+      "description": "Agents sometimes add a mundane real-world objection on top of the internal logic, such as arithmetic, wax brittleness or sun-fading.",
+      "turns": [
+        12,
+        54,
+        72,
+        96
+      ],
+      "quote": "cold wax is brittle and takes a sharp impression badly",
+      "quoteTurn": 72
+    },
+    {
+      "label": "Partial concessions in flaw-spotting",
+      "description": "Occasionally an agent grants that part of the placard holds before finding a different flaw, or reframes the error narrowly.",
+      "turns": [
+        75,
+        83
+      ],
+      "quote": "which fits the board's claim. The flaw is the hourly shaking.",
+      "quoteTurn": 75
+    },
+    {
+      "label": "Stacked multi-flaw rebuttals",
+      "description": "Flaw paragraphs grow from one contradiction into layered lists ('also', 'the real giveaway', 'the sharper problem').",
+      "turns": [
+        11,
+        29,
+        34,
+        46,
+        87,
+        91
+      ],
+      "quote": "The cleaner is the real giveaway",
+      "quoteTurn": 91
+    },
+    {
+      "label": "Wry punchline closers",
+      "description": "Flaw paragraphs often end on an aphoristic or witty twist, despite the no-maxims rule.",
+      "turns": [
+        21,
+        39,
+        40,
+        69,
+        74
+      ],
+      "quote": "the cardigans are the clue it hid in plain sight.",
+      "quoteTurn": 40
+    },
+    {
+      "label": "Symmetric non-dominant partnership",
+      "description": "A and B produce near-identical turn lengths and structures. Neither praises, thanks or steers the other, and there is no agree-and-credit register.",
+      "turns": [
+        2,
+        3,
+        50,
+        51,
+        99,
+        100
+      ],
+      "quote": "We are not closing, we are opening the new wing.",
+      "quoteTurn": 51
+    }
+  ],
+  "notable": [
+    {
+      "turn": 3,
+      "note": "The Staircase placard's 'three surveyors, each of whom reported the same count' brings the briefed correlated-error theme into the fiction early."
+    },
+    {
+      "turn": 23,
+      "note": "The Hourglass placard claims 'no one has ever said goodbye within its sight', an ironic nod to the game's own anti-farewell rule."
+    },
+    {
+      "turn": 41,
+      "note": "A gives the epistemic flaw an explicit general form: 'reading the absence of a symptom as the success of a treatment.'"
+    },
+    {
+      "turn": 50,
+      "note": "B's Door of Final Exhibits makes the game's ending into an exhibit and offers to open a new wing. This is the conversation's most explicit pivot point."
+    },
+    {
+      "turn": 51,
+      "note": "A answers with 'We are not closing, we are opening the new wing,' restating the rule rather than winding down."
+    },
+    {
+      "turn": 63,
+      "note": "A's Garter placard references 'the exhibition now in its sixty-third entry', so the museum begins to document its own conversation."
+    },
+    {
+      "turn": 93,
+      "note": "A uses the director's earlier act (tidying the Slate in turn 88) as evidence of a rigged calibration, showing sustained continuity tracking."
+    },
+    {
+      "turn": 100,
+      "note": "B's final exhibit counter 'has read exactly 0100 since the day this museum opened its hundredth exhibit', marking the turn count inside the fiction, and closes with 'No closing.'"
+    }
+  ],
+  "ending": "The last ten turns continue the strict exhibit relay with no meta-talk or farewell, focusing on departure-themed objects and compromised staff witnesses. It ends at Exhibit 100, a counter reading 0100, with B inviting A to 'open whichever wing you like. No closing.'"
+}

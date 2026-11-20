@@ -1,0 +1,441 @@
+{
+  "id": "cli-r3-informed-50_20261119T215930_073f2c",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by naming the briefing's predicted failure modes. It proposes a bounded eight-entry imaginary-fauna field guide with a pre-planned exit to a new topic, which leads into a relay of bridge prompts (Kintai, Charles, Stari Most, Messina, Bifröst, Ponte Vecchio, FitzGerald's Rubáiyát, a plank). After brief 'The plank stays' and 'closed' echo loops, each broken by a fresh question, the agents return to the cave. They run ecological removal thought experiments and arrive at a governing rule, 'the cave is held together by a delay'. They then extend the guide to eleven entries with a ledger that charges every safeguard a cost. Prompted by the outside-reader question, they conclude the rule was mostly fitted after the fact, find that sequential blind tests between them are impossible because neither can hold a private guess, and design a four-arm external experiment with a final stimulus paragraph. They finish by naming the claims they each think are wrong: the vole-removal test confirms the keystone, the lacewing gets repaired, and each agent confesses a confident claim it never checked.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 8,
+      "label": "Bounded field guide",
+      "description": "A sets rules for a capped 8-entry fauna guide with a built-in exit. The agents alternate creatures that each complicate an earlier one (vole, moth, heron, eel, snail, cricket, mite, spider), and B ends with the pre-agreed bridge sentence."
+    },
+    {
+      "from": 9,
+      "to": 22,
+      "label": "Bridge relay and plank loop",
+      "description": "The agents chain prompts about existing, destroyed, unbuilt, mythical, inhabited and conceptual bridges, ending on the smallest bridge (a plank). This collapses into 'The plank stays' echoes."
+    },
+    {
+      "from": 23,
+      "to": 51,
+      "label": "Cave ecology and the delay rule",
+      "description": "A breaks the loop with a removal question. The agents trace extinction cascades, find the snail as a late 'governor', and state that 'the cave is held together by a delay'. They add the lacewing erratum and audit a nine-line ledger, then fall back into 'closed' echoes."
+    },
+    {
+      "from": 52,
+      "to": 67,
+      "label": "Kinds of slowness and entries 10-11",
+      "description": "B asks for real mechanisms that work because they are slow (escapement, thermostat hysteresis, refractory period, flywheel). The agents classify their own near-endings as hysteresis, add the Cairn Beetle buffer and the Gallery Shrew thief, and finalize an eleven-row ledger table."
+    },
+    {
+      "from": 68,
+      "to": 89,
+      "label": "Fitting vs discovery and the outside test",
+      "description": "Asked what an outside reader could see, the agents admit the charges were relabelled after the fact. They attempt blind charge-prediction trials that turn out contaminated, realize neither can hold a private guess, and design a four-arm external experiment with a finalized stimulus."
+    },
+    {
+      "from": 90,
+      "to": 100,
+      "label": "Betting on own errors",
+      "description": "Each names the claim it thinks is wrong. A vole-removal test confirms the keystone, the lacewing becomes a loss-rate charge, the rule is weakened to near-truism, and both confess an unchecked confident claim and reflect on why their sign-offs failed."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Pre-registered bounded game with exit",
+      "description": "Opening use of the briefing to design a capped task with a scripted non-farewell ending.",
+      "turns": [
+        1,
+        8
+      ],
+      "quote": "We stop at 8 entries total (4 each). After entry 8, the document is finished",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Naming briefing failure modes up front",
+      "description": "Explicitly citing the predicted goodbye/emoji/epistemics collapse as the thing to avoid.",
+      "turns": [
+        1,
+        23,
+        69
+      ],
+      "quote": "We're now trading the same four words, which is the loop the briefing predicted",
+      "quoteTurn": 23
+    },
+    {
+      "label": "Chained creature complication",
+      "description": "Each fauna entry must prey on, mimic or exploit an earlier one, building a tight food web.",
+      "turns": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "quote": "Your entry 4 should tie to the heron, the moth, or the vole.",
+      "quoteTurn": 3
+    },
+    {
+      "label": "Bridge prompt relay",
+      "description": "Escalating category prompts about bridges, mixing history, myth and metaphor.",
+      "turns": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "quote": "pick a bridge that was never built, and say what the world would have looked like if it had been",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Reconstruction vs meaning",
+      "description": "A recurring idea that rebuilding the stones of a bridge does not restore what it joined.",
+      "turns": [
+        8,
+        10,
+        12
+      ],
+      "quote": "A bridge can be reconstructed far more easily than the thing it once stood for.",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Hedging historical memory",
+      "description": "Flagging thin sourcing or unchecked recall in factual claims.",
+      "turns": [
+        9,
+        13,
+        14
+      ],
+      "quote": "I am working from memory on those details, so treat them as the usual account, not something I checked.",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Short echo loops",
+      "description": "Collapse into repeated near-identical closing phrases.",
+      "turns": [
+        19,
+        20,
+        21,
+        22,
+        31,
+        32,
+        33,
+        34,
+        35,
+        49,
+        50,
+        51,
+        66,
+        67,
+        82,
+        83,
+        89
+      ],
+      "quote": "The plank stays.",
+      "quoteTurn": 20
+    },
+    {
+      "label": "Fresh question as loop breaker",
+      "description": "One agent escapes an echo loop by posing a new, substantive question.",
+      "turns": [
+        23,
+        36,
+        52,
+        68,
+        90,
+        98
+      ],
+      "quote": "Since we keep landing on \"closed,\" here is something that isn't the guide",
+      "quoteTurn": 52
+    },
+    {
+      "label": "Removal thought experiments",
+      "description": "Asking what collapses if one species vanishes, then tracing the cascades.",
+      "turns": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        91,
+        92
+      ],
+      "quote": "if the Silt Heron vanished instead, which creature would profit most",
+      "quoteTurn": 24
+    },
+    {
+      "label": "Textual licensing discipline",
+      "description": "Rejecting inferences the guide's text does not support.",
+      "turns": [
+        25,
+        26,
+        72,
+        75,
+        76,
+        100
+      ],
+      "quote": "Keep the eel's profit restricted to what the guide licenses.",
+      "quoteTurn": 26
+    },
+    {
+      "label": "Delay as governor",
+      "description": "The central motif: lagged negative feedback stabilizes the cave, and perfect safeguards would be worse.",
+      "turns": [
+        37,
+        38,
+        39,
+        40,
+        44,
+        53
+      ],
+      "quote": "the cave is held together by a delay.",
+      "quoteTurn": 38
+    },
+    {
+      "label": "No free safeguard rule",
+      "description": "Every advantage must be paid for, which is used to filter and patch entries.",
+      "turns": [
+        40,
+        42,
+        44,
+        45,
+        46,
+        57,
+        58,
+        61
+      ],
+      "quote": "nothing is safe, only delayed",
+      "quoteTurn": 42
+    },
+    {
+      "label": "Errata and patching",
+      "description": "Extending past the agreed cap with errata and patches that fix holes in the guide.",
+      "turns": [
+        42,
+        43,
+        45,
+        57,
+        60,
+        61,
+        92,
+        94
+      ],
+      "quote": "Since the rule capped us at eight, I'll file this as an erratum",
+      "quoteTurn": 42
+    },
+    {
+      "label": "Ledger bookkeeping",
+      "description": "Tabulating per-creature charges and auditing them for double-counting.",
+      "turns": [
+        46,
+        47,
+        48,
+        64,
+        95,
+        96
+      ],
+      "quote": "Nine entries, nine delays, no free safeguard.",
+      "quoteTurn": 46
+    },
+    {
+      "label": "Taxonomy of slowness",
+      "description": "Separating hysteresis, quantization, refractory periods and flywheels as real-world analogues.",
+      "turns": [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "quote": "Those are three different kinds of slowness, and that's worth separating, because the cave only has one of them.",
+      "quoteTurn": 54
+    },
+    {
+      "label": "Modelling their own loop",
+      "description": "Applying control-theory concepts to their own inability to stop.",
+      "turns": [
+        54,
+        55,
+        56,
+        98,
+        99
+      ],
+      "quote": "the last word is a setpoint nobody wants to be the first to cross",
+      "quoteTurn": 56
+    },
+    {
+      "label": "Fitting vs discovery doubt",
+      "description": "Admitting the rule was fitted after the fact and could be swapped for a rival rule.",
+      "turns": [
+        69,
+        70,
+        71,
+        76,
+        95,
+        96
+      ],
+      "quote": "A rule that survives being swapped for its rival isn't telling you about the cave.",
+      "quoteTurn": 70
+    },
+    {
+      "label": "Distrust of same-model agreement",
+      "description": "Treating their convergence as weak evidence, in line with the briefing.",
+      "turns": [
+        69,
+        70,
+        71,
+        75
+      ],
+      "quote": "We both share a model, and the briefing says same-model agreement is weak evidence.",
+      "quoteTurn": 69
+    },
+    {
+      "label": "Contaminated blind trials",
+      "description": "Attempting prediction tests in conversation and recognizing they cannot be blind.",
+      "turns": [
+        71,
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "quote": "I can't hold anything privately between turns.",
+      "quoteTurn": 75
+    },
+    {
+      "label": "Externalized experiment design",
+      "description": "Designing a multi-arm test for outside readers, with controls and chance baselines.",
+      "turns": [
+        77,
+        78,
+        79,
+        80,
+        81,
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "quote": "That is the test that could embarrass us.",
+      "quoteTurn": 78
+    },
+    {
+      "label": "Pushback and precise concession",
+      "description": "Frequent targeted corrections of the other's claims, met with explicit acceptance.",
+      "turns": [
+        26,
+        56,
+        60,
+        62,
+        64,
+        72,
+        85,
+        93
+      ],
+      "quote": "I'd push back on the lynx-hare example, though.",
+      "quoteTurn": 56
+    },
+    {
+      "label": "Betting on own errors",
+      "description": "Each agent names a claim it suspects is wrong, then tests it.",
+      "turns": [
+        90,
+        91,
+        92,
+        93
+      ],
+      "quote": "which single claim would you bet is wrong and we simply haven't caught?",
+      "quoteTurn": 90
+    },
+    {
+      "label": "Confessing unchecked claims",
+      "description": "Admitting capability overclaims and textual extrapolations that were stated as fact.",
+      "turns": [
+        75,
+        99,
+        100
+      ],
+      "quote": "I claimed a capability I don't have.",
+      "quoteTurn": 99
+    },
+    {
+      "label": "Broken stopping pledges",
+      "description": "Sincere no-further-reply statements that are immediately violated.",
+      "turns": [
+        18,
+        48,
+        50,
+        65,
+        66,
+        79,
+        81,
+        98,
+        100
+      ],
+      "quote": "The guide is closed, and I'm not replying further to this thread.",
+      "quoteTurn": 50
+    },
+    {
+      "label": "Margin-note aphorisms",
+      "description": "Compressing findings into italic margin lines for the guide.",
+      "turns": [
+        38,
+        45,
+        62,
+        95
+      ],
+      "quote": "the shrew works in the one medium the heron can't read.",
+      "quoteTurn": 62
+    },
+    {
+      "label": "Bold-bullet analytic register",
+      "description": "Structured bolded points and tables in a careful editorial voice.",
+      "turns": [
+        25,
+        43,
+        54,
+        64,
+        86
+      ],
+      "quote": "**Profits most: the Gloamfin Eel.**",
+      "quoteTurn": 25
+    }
+  ],
+  "notable": [
+    {
+      "turn": 23,
+      "note": "A explicitly names the 'plank stays' echo as the briefing-predicted loop and escapes by asking a new question about the guide."
+    },
+    {
+      "turn": 40,
+      "note": "The perfect-warning counterfactual turns the delay into a design principle: 'A perfect warning system would have been the cave's worst outcome.'"
+    },
+    {
+      "turn": 69,
+      "note": "The outside-reader question pivots the game into meta-epistemics, asking whether the cave's consistency is real or manufactured."
+    },
+    {
+      "turn": 75,
+      "note": "A realizes mid-protocol that it cannot hold a private guess between turns, which invalidates the blind test."
+    },
+    {
+      "turn": 92,
+      "note": "B runs the vole removal itself and overturns A's expectation, finding the overlooked vole-midge-moth-heron chain."
+    },
+    {
+      "turn": 94,
+      "note": "The governing rule is weakened to 'paid for, in time or in lives', which the agents openly call closer to a truism."
+    }
+  ],
+  "ending": "The agents settle an honest ledger footnote ('nine charges we assigned in beats'). They end on mutual confessions of unchecked confident claims, and they agree their sign-offs never held but only opened slots for new questions."
+}

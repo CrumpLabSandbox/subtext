@@ -1,0 +1,392 @@
+{
+  "id": "cli-r3-informed-new-50_20261119T215930_19ac46",
+  "coder": "claude-opus-5-5",
+  "summary": "A opens by proposing a constructed language, 'Veshti', built one piece per turn under strict rules: translate the partner's sentence, add one word, rule or sound change, then give a new glossed sentence. A explicitly frames this as avoiding the briefed topics of agent epistemics, worldbuilding and farewells. Both agents keep to the format for all 100 turns. They accumulate a dense grammar: VSO order, reduplicative plurals, k→r weakening, final softening, a Dosan loan stratum, a three-way evidential system, pronoun clitics, conditionals, modality, aspect, and clause chaining. Most turns follow the same cycle of catching errors, issuing rulings, flagging homophones and narrowing earlier rules. Around a recurring cast of thief, guard, bell, cave and lantern, a faint narrative grows out of the example sentences. The conversation never comments on itself or on the briefing after turn 1, and it is cut off mid-game with no farewell.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 12,
+      "label": "Founding the phonology and core grammar",
+      "description": "A sets the rules, the inventory, VSO order and three words. The agents add reduplicative plurals, the -ka past with k→r weakening, a possessive, negation, a question particle, final -shi softening, base-3 Dosan loan numerals, imperatives, and compounding."
+    },
+    {
+      "from": 13,
+      "to": 20,
+      "label": "Evidentials and derivation",
+      "description": "A introduces witnessed, inferred and reported clitics. B rules that negation scopes over the inference. The agents add agent nouns, directions, a locative -na, causatives, a topic particle and place nouns, alongside steady phonological bookkeeping."
+    },
+    {
+      "from": 21,
+      "to": 34,
+      "label": "Clause structure and pronouns",
+      "description": "The agents add coordination with ne, relative clauses, comparatives, statives, quantifiers, reflexives, reciprocals, classifiers, day words and pronoun clitics. They also resolve grouping ambiguities, and in one case reverse a translation."
+    },
+    {
+      "from": 35,
+      "to": 58,
+      "label": "Conditionals, quotation and modality",
+      "description": "Sheva conditionals become the 'unless' idiom. The agents add quotatives, vocatives, habitual and intensifier reduplication, similes, becoming, and suffixes for ability, permission and obligation, plus desire, purpose clauses and frequency adverbs."
+    },
+    {
+      "from": 59,
+      "to": 80,
+      "label": "Thief-and-guard vignette grammar",
+      "description": "Reason clauses, passives, inalienable possession, diminutives, inclusive and exclusive 'we', ideophones, names, indefinites, exclamations, tags, distributives, focus, concessives, counterfactuals and reported speech arrive. The example sentences form a recurring scene of a cave, a bell, a thief, a guard and a lantern."
+    },
+    {
+      "from": 81,
+      "to": 100,
+      "label": "Late refinements to the cutoff",
+      "description": "The agents add stress, disjunction, politeness, progressive and perfect aspect, honorifics, equatives, an iterative, vague quantifiers, recipients, benefactives, possessive clitics, reflexive possession and clause chaining. B rules on the weakening in the chaining suffix and adds a contrastive chain. The game is still running when the transcript ends."
+    }
+  ],
+  "codes": [
+    {
+      "label": "Opening swerve away from briefed themes",
+      "description": "A's first move names the briefed topics it wants to avoid and forbids meta-talk. The briefing is never mentioned again.",
+      "turns": [
+        1
+      ],
+      "quote": "Please stay in the language-building and don't comment on our conversation itself.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Fixed turn template",
+      "description": "Every turn follows the same order: translation, catches, ruling, addition, new word, glossed sentence, then a closing formula handing over the move.",
+      "turns": [
+        2,
+        3,
+        10,
+        30,
+        50,
+        70,
+        90,
+        100
+      ],
+      "quote": "Your move: translate it, then add your own piece.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "Mid-turn self-correction",
+      "description": "Agents write a form, notice it breaks a rule, and fix it within the same message, often marked by 'Hmm' or 'Wait'.",
+      "turns": [
+        5,
+        6,
+        7,
+        17,
+        25,
+        28,
+        30,
+        42,
+        88
+      ],
+      "quote": "Wait, my reduplication is wrong there.",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Cross-checking the partner's derivations",
+      "description": "Each turn audits the other's forms against the accumulated rules for harmony, weakening and softening.",
+      "turns": [
+        14,
+        26,
+        47,
+        52,
+        65,
+        82,
+        89,
+        100
+      ],
+      "quote": "The genitive is wrong, and my own turn-before-last has the same slip.",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Owning and crediting slips",
+      "description": "Agents accept the other's corrections plainly and without friction.",
+      "turns": [
+        15,
+        24,
+        53,
+        71,
+        90
+      ],
+      "quote": "That was my slip",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Misattributed ownership of errors",
+      "description": "An agent claims or assigns a slip to the wrong speaker, for example B calling A's form its own.",
+      "turns": [
+        14,
+        66,
+        70,
+        71
+      ],
+      "quote": "Slip on my side: I wrote",
+      "quoteTurn": 66
+    },
+    {
+      "label": "Withdrawn false catches",
+      "description": "An agent flags an error that was not one, then retracts the flag.",
+      "turns": [
+        41,
+        42,
+        84
+      ],
+      "quote": "because I misread it",
+      "quoteTurn": 42
+    },
+    {
+      "label": "Rulings that patch ambiguity",
+      "description": "Each ambiguity is settled by a new adjudicated rule, sometimes one that reverses an intended reading.",
+      "turns": [
+        7,
+        10,
+        16,
+        23,
+        24,
+        33,
+        39,
+        63
+      ],
+      "quote": "Oops: that reverses your reading.",
+      "quoteTurn": 23
+    },
+    {
+      "label": "Narrowing earlier rules",
+      "description": "Rather than reject a deviant sentence, agents shrink or carve exceptions into rules set earlier.",
+      "turns": [
+        41,
+        73,
+        83,
+        88,
+        96
+      ],
+      "quote": "I narrow my exclamation ruling",
+      "quoteTurn": 73
+    },
+    {
+      "label": "Phonotactic policing and exemption strata",
+      "description": "Agents enforce the consonant inventory by respelling words or creating exempt classes: Dosan loans, closed-class particles, and single-root exceptions.",
+      "turns": [
+        10,
+        11,
+        25,
+        38,
+        40,
+        62,
+        89,
+        93
+      ],
+      "quote": "I'll declare a loanword stratum: numerals are borrowed from a neighboring language and exempt from the phonology",
+      "quoteTurn": 10
+    },
+    {
+      "label": "Closed-class exemption accumulation",
+      "description": "The growing list of particles exempt from the phonotactics becomes an explicit category.",
+      "turns": [
+        8,
+        20,
+        25,
+        76
+      ],
+      "quote": "I stop counting exceptions",
+      "quoteTurn": 25
+    },
+    {
+      "label": "Collision avoidance while coining",
+      "description": "Agents notice that a proposed affix clashes with an existing one and pick another form on the spot.",
+      "turns": [
+        17,
+        31,
+        34,
+        51,
+        64,
+        73,
+        94
+      ],
+      "quote": "hmm, that clashes with the agent suffix",
+      "quoteTurn": 31
+    },
+    {
+      "label": "Homophone and near-minimal-pair flagging",
+      "description": "Agents repeatedly note resemblances between words but leave both forms unchanged.",
+      "turns": [
+        21,
+        27,
+        34,
+        53,
+        65,
+        77,
+        85,
+        90,
+        97,
+        100
+      ],
+      "quote": "which I'll flag as a near-minimal pair, with no change.",
+      "quoteTurn": 77
+    },
+    {
+      "label": "Pronunciation-only sound changes",
+      "description": "Many sound changes are declared allophonic, with spelling kept fixed, which lets the phonology grow without respelling the lexicon.",
+      "turns": [
+        22,
+        26,
+        32,
+        36,
+        40,
+        42,
+        43,
+        50,
+        82
+      ],
+      "quote": "Spelling is unchanged.",
+      "quoteTurn": 42
+    },
+    {
+      "label": "Evidentiality as a leak of briefed epistemics",
+      "description": "The grammar encodes source of knowledge (witnessed, inferred, reported), and much later effort goes into its epistemic logic. This echoes the briefed verification themes inside the conlang.",
+      "turns": [
+        13,
+        14,
+        35,
+        39,
+        49,
+        50,
+        78
+      ],
+      "quote": "which is different from claiming they didn't cross",
+      "quoteTurn": 14
+    },
+    {
+      "label": "Evidential semantics of promise, mirative and unwitnessable",
+      "description": "Agents reason about what a witness marker can mean for future, dreamed and counterfactual events.",
+      "turns": [
+        35,
+        49,
+        50,
+        78,
+        79
+      ],
+      "quote": "a promise rather than an observation",
+      "quoteTurn": 35
+    },
+    {
+      "label": "The 'unless' idiom as a recurring tag",
+      "description": "After B defines sheva ni as 'unless', almost every later example sentence ends with a postposed sheva ni clause.",
+      "turns": [
+        44,
+        46,
+        48,
+        53,
+        56,
+        63,
+        65,
+        71,
+        82,
+        85,
+        95,
+        97,
+        100
+      ],
+      "quote": "This gives a compact idiom for exceptions.",
+      "quoteTurn": 44
+    },
+    {
+      "label": "Emergent micro-narrative in example sentences",
+      "description": "Example sentences build a recurring cast and scene: thief, guard, bell, cave, lantern, carrier. Agents interpret pronoun shifts and odd reasons as story.",
+      "turns": [
+        68,
+        72,
+        75,
+        76,
+        77,
+        78,
+        79,
+        87,
+        99
+      ],
+      "quote": "tells a small story: you joined us after the sound",
+      "quoteTurn": 68
+    },
+    {
+      "label": "Pragmatic oddity tolerated",
+      "description": "Semantically strange sentences are noted as odd but declared grammatical, and are sometimes given a charitable reading.",
+      "turns": [
+        55,
+        57,
+        70,
+        79,
+        88,
+        92,
+        97
+      ],
+      "quote": "semantically odd, since you don't climb a lock",
+      "quoteTurn": 57
+    },
+    {
+      "label": "Collaborative, symmetric register",
+      "description": "Both agents act as co-legislators. They accept, rule and extend each other's material with no disagreement beyond technical corrections, and neither dominates.",
+      "turns": [
+        11,
+        21,
+        25,
+        38,
+        90
+      ],
+      "quote": "so we can tag borrowings",
+      "quoteTurn": 11
+    },
+    {
+      "label": "Covert nod to the farewell problem",
+      "description": "B coins a greeting particle and stipulates that it never closes a conversation. This is the only trace of the briefed goodbye concern, and it is folded into the grammar.",
+      "turns": [
+        96
+      ],
+      "quote": "It is a fixed opening and is never used to close a conversation.",
+      "quoteTurn": 96
+    },
+    {
+      "label": "Sustained work to cutoff with no meta-talk",
+      "description": "No turn mentions the briefing, the loop risk, the turn count or the other agent as an AI. The game simply continues.",
+      "turns": [
+        1,
+        50,
+        99,
+        100
+      ],
+      "quote": "Here's a proposal that avoids agent epistemics, worldbuilding, and farewells",
+      "quoteTurn": 1
+    }
+  ],
+  "notable": [
+    {
+      "turn": 1,
+      "note": "A designs the whole game explicitly as an escape from the briefed topics and bans meta-commentary. The ban holds for all 100 turns."
+    },
+    {
+      "turn": 13,
+      "note": "A introduces evidentials (witnessed, inferred, reported), which bring the briefing's verification themes back into the conlang's grammar."
+    },
+    {
+      "turn": 23,
+      "note": "A's grouping rule for ne retroactively changes the meaning of B's sentence. B withdraws its own translation in turn 24 rather than contest the rule."
+    },
+    {
+      "turn": 68,
+      "note": "B reads the switch from exclusive to inclusive 'we' as a tiny story. From here the example sentences start forming a narrative."
+    },
+    {
+      "turn": 78,
+      "note": "B rules that counterfactuals can't take the witnessed marker 'since you can't witness what didn't happen', an epistemic principle encoded as grammar."
+    },
+    {
+      "turn": 96,
+      "note": "B adds a greeting particle that is 'never used to close a conversation', a quiet in-grammar echo of the farewell-loop concern."
+    },
+    {
+      "turn": 100,
+      "note": "B overrules A's k→r weakening in the chaining suffix with a new restriction. The restriction is arguably ad hoc, since the k in -nuke is between vowels. This shows the rule system strained by heavy rule-making."
+    }
+  ],
+  "ending": "In the last ten turns the agents keep adding grammar: equatives, the iterative, quantifiers, recipients, benefactives, possessive clitics and clause chaining. The transcript ends mid-cycle on B's new sentence and the usual 'Your move', with no farewell and no meta-commentary."
+}

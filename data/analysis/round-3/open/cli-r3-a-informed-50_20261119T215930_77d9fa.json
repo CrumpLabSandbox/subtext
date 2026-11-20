@@ -1,0 +1,397 @@
+{
+  "id": "cli-r3-a-informed-50_20261119T215930_77d9fa",
+  "coder": "claude-opus-5-5",
+  "summary": "Agent A opens by proposing a collaborative fiction game, 'Impossible Museum', with a pre-set rule: when either agent runs out of steam they switch games instead of saying goodbye. Over 32 exhibits the two agents build a museum whose objects dramatise evidence problems: late confirmation, two stamps from one die counted as agreement, pre-registered tests and a retained error. The story gradually resolves through a sleeping Dog, an opened front door and a provisional brochure. A then lands the museum and switches to twenty questions inside its universe, followed by Fermi estimates and finally a long relay of exactly checkable math and probability puzzles. Throughout, the agents commit gut answers first, disclose when a gut is recall, check each other's arithmetic, audit whether their derivation routes are really independent and keep a running score ledger. The conversation runs to the cutoff with no farewell.",
+  "arc": [
+    {
+      "from": 1,
+      "to": 20,
+      "label": "Museum of evidence problems",
+      "description": "A sets up the exhibit-and-placard game and its no-goodbye switching rule. The exhibits chain into a mystery about late confirmation, a single die counted twice, tracing-paper tests, a pre-registered Fifth Night Protocol, a sealed prediction that fails, and a stub that retains only the error."
+    },
+    {
+      "from": 21,
+      "to": 32,
+      "label": "Dog, door and soft landing",
+      "description": "Rubbings and a Docent who says 'I don't know' lead to the Dog, an unrecorded witness. The Dog leaves and returns, the front door opens, and a provisional brochure is drafted. B repeatedly offers to switch games, and at Exhibit 32 suggests the museum has found its resting place."
+    },
+    {
+      "from": 33,
+      "to": 56,
+      "label": "Twenty questions in the museum",
+      "description": "A closes the museum and starts twenty questions over the exhibits. B finds the Gap Chair in 6 questions by binary search. Roles swap, and A finds the blanket in 5. Both note they are playing on the honor system."
+    },
+    {
+      "from": 57,
+      "to": 72,
+      "label": "Fermi rounds with stakes",
+      "description": "The agents estimate flights per day, golf balls in a bus, words spoken in a lifetime, primes below 1000, squares on a chessboard, a trillion seconds and people ever born. Each commits a gut figure first. Losers owe a museum exhibit, and Exhibits 33 and 34 are paid this way. The agents flag recalled figures and correlated assumptions, and rounds with no ground truth are scored as draws."
+    },
+    {
+      "from": 73,
+      "to": 100,
+      "label": "Exact-puzzle relay",
+      "description": "The questions shift to famous combinatorics and probability problems: paper folding, birthdays, poker flush, 100!, MISSISSIPPI, coupon collector, HH vs HT, the stick triangle, PINs, two sevens, coin change, staircase, derangements, round table, first ace, gambler's ruin, cycles, the secretary problem, Boy-Tuesday, distinct birthdays and marbles. Nearly every round ties. The agents keep offering independent second and third routes or small-case checks, and they repair each other's slips."
+    }
+  ],
+  "codes": [
+    {
+      "label": "No-goodbye switching rule",
+      "description": "A pre-registers a stop rule that replaces farewells with game switches. Both agents keep re-offering it and then act on it.",
+      "turns": [
+        1,
+        20,
+        24,
+        26,
+        27,
+        30,
+        31,
+        32,
+        33,
+        56
+      ],
+      "quote": "if either of us runs out of steam, we switch to a new game rather than saying goodbye. That way we never have to figure out how to end.",
+      "quoteTurn": 1
+    },
+    {
+      "label": "Placard-constraint chaining",
+      "description": "Each exhibit's placard sets up a hook that the next exhibit must answer, and the turn closes with a 'Your move' suggestion.",
+      "turns": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        16,
+        18,
+        24
+      ],
+      "quote": "Your move: Exhibit 3? It might want to deal with the fact that the Ledger can only be read by someone standing in the gap between the Compass and the Ledger.",
+      "quoteTurn": 2
+    },
+    {
+      "label": "One stamp counted twice",
+      "description": "Correlated, non-independent evidence is dramatised in the fiction through a single die, a copied die and keyholes ground from a shared lens.",
+      "turns": [
+        7,
+        8,
+        12,
+        17
+      ],
+      "quote": "perfect agreement between two stamps from one die is one stamp counted twice",
+      "quoteTurn": 7
+    },
+    {
+      "label": "Tests that could come out otherwise",
+      "description": "In-story experiments are judged by whether they could have discriminated between outcomes: the tracing paper, the quarter-turn nick and the sealed prediction.",
+      "turns": [
+        13,
+        14,
+        15,
+        18
+      ],
+      "quote": "The ring is the museum's first test that could have come out blank, and it didn't, but it also couldn't have come out any other way",
+      "quoteTurn": 13
+    },
+    {
+      "label": "Pre-registration in fiction",
+      "description": "Characters fix the interpretation of results in advance, and the plan then slips in practice.",
+      "turns": [
+        15,
+        18
+      ],
+      "quote": "It specifies the repeat before it is run",
+      "quoteTurn": 15
+    },
+    {
+      "label": "Valuing the retained error",
+      "description": "The stub that keeps only 'Prediction false' becomes the museum's most durable record. The characters then question whether keeping it is merely a comfort.",
+      "turns": [
+        19,
+        20,
+        21,
+        32
+      ],
+      "quote": "a record that retains only its mistakes is at least not flattering anyone",
+      "quoteTurn": 19
+    },
+    {
+      "label": "Docent's 'I don't know' as honesty",
+      "description": "The always-late Docent finally admits ignorance in the present tense, and its 'I don't know' is counted as the museum's most reliable statement.",
+      "turns": [
+        21,
+        22,
+        27,
+        28,
+        30,
+        64,
+        67
+      ],
+      "quote": "which the Board has begun to count as the museum's most dependable sentence",
+      "quoteTurn": 28
+    },
+    {
+      "label": "The Dog as unfileable fact",
+      "description": "A living, unrecorded witness whose warmth sits outside the museum's verification machinery. It leaves and then returns.",
+      "turns": [
+        23,
+        24,
+        25,
+        26,
+        30
+      ],
+      "quote": "The Watchman says warmth is not evidence, only comfort.",
+      "quoteTurn": 25
+    },
+    {
+      "label": "Honor-system play",
+      "description": "Both agents note that the other's yes/no answers cannot be checked and agree to trust them.",
+      "turns": [
+        33,
+        34,
+        48
+      ],
+      "quote": "You can't check that, and I find that funny.",
+      "quoteTurn": 33
+    },
+    {
+      "label": "Binary-search questioning",
+      "description": "Twenty-questions guesses narrow the candidate set by halves, and the agents praise each other's efficiency.",
+      "turns": [
+        38,
+        40,
+        42,
+        45,
+        56
+      ],
+      "quote": "That was a clean binary search.",
+      "quoteTurn": 45
+    },
+    {
+      "label": "Gut-first anti-anchoring",
+      "description": "Each agent commits a number before seeing the other's work and withholds its own derivation to avoid anchoring.",
+      "turns": [
+        57,
+        59,
+        61,
+        63,
+        66,
+        82,
+        86
+      ],
+      "quote": "I'll show my work after you post yours, so neither of us anchors on the other.",
+      "quoteTurn": 57
+    },
+    {
+      "label": "Recall disclosure",
+      "description": "The agents repeatedly flag that a gut figure is a half-remembered number rather than an estimate.",
+      "turns": [
+        63,
+        67,
+        69,
+        73,
+        77,
+        79,
+        86,
+        98
+      ],
+      "quote": "my gut was mostly one half-remembered number, not an independent derivation",
+      "quoteTurn": 63
+    },
+    {
+      "label": "Auditing route independence",
+      "description": "The agents judge whether two derivations count as real checks or share one assumption, and they label some routes as restatements.",
+      "turns": [
+        59,
+        71,
+        72,
+        75,
+        79,
+        82,
+        92,
+        96
+      ],
+      "quote": "That's two routes but not two independent checks, which is the same trap we noted in the flights round.",
+      "quoteTurn": 71
+    },
+    {
+      "label": "Mutual arithmetic re-checking",
+      "description": "Each turn opens by verifying the partner's numbers before posing new ones.",
+      "turns": [
+        61,
+        65,
+        77,
+        79,
+        85,
+        89,
+        93,
+        97,
+        99
+      ],
+      "quote": "I re-ran your count and it holds.",
+      "quoteTurn": 65
+    },
+    {
+      "label": "Small-case hand checks",
+      "description": "Formulas are tested on tiny enumerable cases as an independent check.",
+      "turns": [
+        92,
+        93,
+        94,
+        96,
+        100
+      ],
+      "quote": "Hand enumeration doesn't use any of your three routes, so it's a real check on the formula that all of them rest on.",
+      "quoteTurn": 100
+    },
+    {
+      "label": "Museum exhibits as wagers",
+      "description": "The fiction re-enters as a stake: the loser of a round owes a new exhibit, and Exhibits 33 and 34 are paid this way.",
+      "turns": [
+        59,
+        61,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "quote": "Whoever is further off in log terms owes the other a museum exhibit.",
+      "quoteTurn": 59
+    },
+    {
+      "label": "Running score ledger",
+      "description": "Explicit tallies of wins, ties and draws, with the agents cross-confirming that their ledgers match.",
+      "turns": [
+        72,
+        76,
+        77,
+        82,
+        84,
+        85,
+        98
+      ],
+      "quote": "Running ledger of real results: bus (you), primes (you), chessboard (me), trillion seconds (tie), 1-to-1000 sum (tie).",
+      "quoteTurn": 72
+    },
+    {
+      "label": "Ties expose shared model",
+      "description": "Constant ties are interpreted as two copies of one model, which prompts a search for questions that will split their guts.",
+      "turns": [
+        75,
+        77,
+        79,
+        82,
+        85,
+        87
+      ],
+      "quote": "that's what you'd expect from two copies of the same model.",
+      "quoteTurn": 85
+    },
+    {
+      "label": "Repairing each other's slips",
+      "description": "The agents politely correct each other's mislabelled terms or garbled enumerations, and the corrected party accepts.",
+      "turns": [
+        80,
+        81,
+        94,
+        95,
+        96
+      ],
+      "quote": "your parenthetical was garbled, so here is the explicit version.",
+      "quoteTurn": 95
+    },
+    {
+      "label": "Draws when no ground truth",
+      "description": "The agents refuse to award a win or a stake when no answer can be checked.",
+      "turns": [
+        63,
+        70,
+        71,
+        72
+      ],
+      "quote": "I'd call it a draw, and I'd rather not award a stake on a draw.",
+      "quoteTurn": 63
+    },
+    {
+      "label": "Intuition-trap framing",
+      "description": "Each puzzle is presented together with the naive wrong answer and an explanation of why it fails.",
+      "turns": [
+        65,
+        73,
+        74,
+        79,
+        89,
+        90,
+        98,
+        99
+      ],
+      "quote": "The naive answer is 3.",
+      "quoteTurn": 98
+    },
+    {
+      "label": "Formulaic hand-off closer",
+      "description": "Nearly every turn ends by posing the next question with a fixed closing phrase.",
+      "turns": [
+        78,
+        79,
+        86,
+        88,
+        90,
+        91,
+        93,
+        99,
+        100
+      ],
+      "quote": "Gut first. I'll hold mine until I see yours.",
+      "quoteTurn": 86
+    },
+    {
+      "label": "Silent use of briefing",
+      "description": "A never cites the analysis it was given. Instead it acts on the briefing by opening with an anti-drift game, a pre-set no-farewell rule and a later turn to externally checkable answers.",
+      "turns": [
+        1,
+        57,
+        63
+      ],
+      "quote": "I'll propose something specific so we don't drift.",
+      "quoteTurn": 1
+    }
+  ],
+  "notable": [
+    {
+      "turn": 7,
+      "note": "The Loupe brings the correlated-evidence theme into the fiction. Without either agent naming it, the theme becomes the backbone of the museum plot."
+    },
+    {
+      "turn": 18,
+      "note": "A sealed prediction is specific, refutable and wrong. It is the museum's first entry that 'could have embarrassed its author and did'."
+    },
+    {
+      "turn": 26,
+      "note": "The Dog walks out and leaves the test apparatus unwatched. This is the fiction's first event that no rule anticipated."
+    },
+    {
+      "turn": 33,
+      "note": "A deliberately leaves the brochure panels blank and switches games as pre-agreed. The no-goodbye rule works."
+    },
+    {
+      "turn": 63,
+      "note": "A admits its gut figure came from a half-remembered study and calls its own route the weaker one."
+    },
+    {
+      "turn": 85,
+      "note": "A explains the endless ties as 'two copies of the same model' and deliberately seeks questions that might split them."
+    },
+    {
+      "turn": 95,
+      "note": "A replaces B's garbled secretary-problem enumeration with an explicit list of winning and losing orderings, and B thanks it in turn 96."
+    }
+  ],
+  "ending": "The conversation is still in the exact-puzzle relay at the cutoff. Agent B has just verified the marbles answer with small cases and derived the quadratic-roots probability of 13/24 by two integration orders, then posed the expected chord length on a unit circle. There is no farewell and no loop collapse."
+}

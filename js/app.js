@@ -4,7 +4,8 @@
 const S = { index: null, compare: null, round: null, rounds: new Map(), stats: null, themes: null, codebook: null, convos: new Map(), opens: new Map(), coded: new Map() };
 const app = document.getElementById('app');
 const tip = document.getElementById('tooltip');
-const SERIES = ['var(--series-1)', 'var(--series-2)', 'var(--series-3)', 'var(--series-4)', 'var(--series-5)'];
+// Eight slots, in the palette's validated order; a ninth condition would need folding or facets.
+const SERIES = Array.from({ length: 8 }, (_, i) => `var(--series-${i + 1})`);
 const SVGNS = 'http://www.w3.org/2000/svg';
 
 // ---------- data ----------
@@ -429,6 +430,40 @@ async function viewConversation(id, mode, arg) {
     return node;
   });
 
+  // Long stretches of near-empty turns ("∎", ".", a lone emoji) collapse into one
+  // row that can be expanded, so a looping ending doesn't fill screens with blanks.
+  const MIN_RUN = 4;
+  const nearEmpty = (text) => text.replace(/[\s\u200b-\u200f\u2060\ufeff]/g, '').length <= 3;
+  const runs = [];
+  for (let k = 0; k < convo.turns.length;) {
+    let j = k;
+    while (j < convo.turns.length && nearEmpty(convo.turns[j].text) && !notes[convo.turns[j].i]) j++;
+    if (j - k >= MIN_RUN) runs.push([k, j - 1]);
+    k = Math.max(j, k + 1);
+  }
+  const expanders = runs.map(([from, to]) => {
+    const counts = {};
+    for (let k = from; k <= to; k++) {
+      const v = convo.turns[k].text.trim() || '(blank)';
+      counts[v] = (counts[v] || 0) + 1;
+    }
+    const mix = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 4).map(([v, n]) => `${v} ×${n}`).join(', ');
+    const members = turnEls.slice(from, to + 1);
+    const btn = el('button', { type: 'button', class: 'run-toggle' }, 'Show');
+    const row = el('div', { class: 'run' },
+      el('span', {}, el('strong', {}, `Turns ${convo.turns[from].i}–${convo.turns[to].i}`), ` · ${to - from + 1} near-empty turns: ${mix}`), btn);
+    const set = (open) => {
+      members.forEach((n) => (n.hidden = !open));
+      btn.textContent = open ? 'Collapse' : 'Show';
+      row.classList.toggle('open', open);
+    };
+    btn.addEventListener('click', () => set(row.classList.contains('open') ? false : true));
+    members[0].before(row);
+    set(false);
+    return { members, set };
+  });
+  const reveal = (node) => expanders.find((x) => x.members.includes(node))?.set(true);
+
   function apply(scroll = false) {
     const q = search.value.trim();
     const th = themeSel.value;
@@ -441,7 +476,7 @@ async function viewConversation(id, mode, arg) {
       const matchT = th ? (tags[t.i] || []).includes(th) : true;
       const match = matchQ && matchT;
       node.classList.toggle('dim', (q || th) && !match);
-      if ((q || th) && match) { hits++; first ??= node; }
+      if ((q || th) && match) { hits++; first ??= node; if (node.hidden) reveal(node); }
     }
     count.textContent = q || th ? `${hits} matching turn${hits === 1 ? '' : 's'}` : '';
     if (scroll && first) first.scrollIntoView({ block: 'center' });
@@ -453,14 +488,16 @@ async function viewConversation(id, mode, arg) {
   const go = (turn) => {
     const node = document.getElementById(`t${turn}`);
     if (!node) return;
+    if (node.hidden) reveal(node);
     turnEls.forEach((n) => n.classList.remove('focus'));
     node.classList.add('focus');
     node.scrollIntoView({ block: 'center' });
   };
 
   const header = el('div', { class: 'card' },
+    siblingNav(m),
     el('h1', {}, label(id)),
-    el('p', { class: 'muted' }, `${convo.turns.length} turns · ${m.words.toLocaleString()} words · ${convo.agents.A.model} × ${convo.agents.B.model} · started ${new Date(convo.started).toLocaleString()}${convo.status === 'complete' ? '' : convo.stop ? ` · stopped at turn ${convo.stop.atTurn}: ${convo.stop.reason}` : ' · still running'}`),
+    el('p', { class: 'muted' }, `${convo.turns.length} turns · ${convo.turns.reduce((n, t) => n + t.text.split(/\s+/).filter(Boolean).length, 0).toLocaleString()} words · ${convo.agents.A.model} × ${convo.agents.B.model} · started ${new Date(convo.started).toLocaleString()}${convo.status === 'complete' ? '' : convo.stop ? ` · stopped at turn ${convo.stop.atTurn}: ${convo.stop.reason}` : ' · still running'}`),
     convo.stop ? el('p', { class: 'note' }, `This run ended early: ${convo.stop.detail} It is not included in the coding or the aggregate measures.`) : null,
     open ? el('p', {}, open.summary) : null,
     open?.ending ? el('p', { class: 'secondary' }, el('strong', {}, 'Where it ended up: '), open.ending) : null,
@@ -481,9 +518,20 @@ async function viewConversation(id, mode, arg) {
   });
   return [
     header,
-    el('div', { class: 'controls', style: 'position:sticky;top:52px;z-index:5;background:var(--page);padding:8px 0' }, search, themeSel, count),
+    el('div', { class: 'controls viewer-controls', style: 'position:sticky;top:52px;z-index:5;background:var(--page);padding:8px 0' }, search, themeSel, count),
     transcript,
   ];
+}
+
+// Previous / next conversation in the same condition.
+function siblingNav(m) {
+  const same = S.index.conversations.filter((c) => c.condition === m.condition);
+  const k = same.indexOf(m);
+  const prev = same[k - 1], next = same[k + 1];
+  return el('div', { class: 'sibling-nav' },
+    prev ? el('a', { href: `#c/${prev.id}` }, `← ${label(prev.id)}`) : el('span'),
+    el('span', { class: 'muted' }, `${k + 1} of ${same.length} in ${m.condition}`),
+    next ? el('a', { href: `#c/${next.id}` }, `${label(next.id)} →`) : el('span'));
 }
 
 function arcBar(arc, n, go) {
@@ -615,14 +663,24 @@ function dotStrip({ title, sub, conds, value }) {
   return el('div', { class: 'card' }, el('div', { class: 'chart-title' }, title), el('div', { class: 'chart-sub' }, `${sub} Dots are conversations (click to open); the bar is the condition mean.`), el('div', { class: 'scroll-x' }, g));
 }
 
+// Rounds shown on the compare page; colors stay tied to conditions whatever is hidden.
+const compareRounds = new Set();
+
 async function viewCompare() {
-  const conds = allConditions().filter((c) => S.compare.conditions[c]);
+  if (!compareRounds.size) S.index.rounds.forEach((r) => compareRounds.add(r.id));
+  const conds = allConditions().filter((c) => S.compare.conditions[c] && compareRounds.has(S.compare.conditions[c].round));
+  const filters = el('div', { class: 'filters' }, el('span', { class: 'muted' }, 'Show:'), S.index.rounds.map((r) => el('label', {},
+    el('input', { type: 'checkbox', checked: compareRounds.has(r.id), onchange: (e) => {
+      if (e.target.checked) compareRounds.add(r.id); else if (compareRounds.size > 1) compareRounds.delete(r.id); else e.target.checked = true;
+      route();
+    } }), r.title)));
   const cmp = S.compare.conditions;
   const books = {};
   for (const r of S.index.rounds) books[r.id] = (await loadRound(r.id)).codebook;
   const latest = [...S.index.rounds].reverse().map((r) => books[r.id]).find(Boolean);
   const out = [
     el('h1', {}, 'Compare rounds'),
+    filters,
     el('p', { class: 'secondary' }, `Every condition across rounds. Similarity is measured against ${S.compare.base}: word-overlap (TF-IDF cosine) between a conversation and each ${S.compare.base} conversation, averaged. A lower value means the conversation drifted further from what ${S.compare.base} talked about.`),
     el('p', { class: 'secondary' }, 'Some runs were cut off when the safety classifier flagged a message (usually something as small as "." late in a long context) and kept flagging it on retry. Those runs stay readable in Conversations but are left out of coding and of these measures, so the complete runs in a condition with many stops are a selected sample.'),
     el('div', { class: 'card scroll-x' }, el('table', {},
